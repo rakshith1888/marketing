@@ -4,22 +4,34 @@ import Layout from '../components/Layout';
 const Solutions = () => {
   const solutions = [
     {
-      title: 'Enterprise Transformation',
-      description: 'Complete digital transformation solutions for large enterprises',
-      icon: '🚀',
-      benefits: ['Increased Efficiency', 'Cost Reduction', 'Scalable Architecture']
+      title: 'Business Leaders',
+      subtitle: 'Strategic Decision Making',
+      pain: 'Can\'t get cross-functional visibility',
+      gain: 'Forecasting + ROI metrics on day 1',
+      description: 'See where you\'re heading and what to do about it—before others do.',
+      icon: '👔',
+      features: ['Executive Dashboards', 'Risk Forecasting', 'ROI Tracking', 'Strategic Planning'],
+      cta: 'See How GrofleX Drives ROI'
     },
     {
-      title: 'Small Business Growth',
-      description: 'Tailored solutions to accelerate small and medium business growth',
-      icon: '📈',
-      benefits: ['Quick Implementation', 'Affordable Pricing', 'Expert Support']
+      title: 'BI Managers',
+      subtitle: 'Operational Intelligence',
+      pain: 'Reporting fatigue + bottlenecks',
+      gain: 'Instant insights with no analyst lag',
+      description: 'Deliver predictive dashboards that tell leadership what matters.',
+      icon: '📊',
+      features: ['Automated Reporting', 'Predictive Analytics', 'Team Collaboration', 'Data Governance'],
+      cta: 'Explore the Platform'
     },
     {
-      title: 'Industry Specific',
-      description: 'Specialized solutions for healthcare, finance, and retail sectors',
-      icon: '🏢',
-      benefits: ['Compliance Ready', 'Industry Expertise', 'Custom Integration']
+      title: 'Analysts',
+      subtitle: 'Advanced Analytics',
+      pain: 'Manual dashboards & reactive reporting',
+      gain: 'Self-serve AI. Ask, predict, act.',
+      description: 'Automate insight delivery and eliminate low-impact work.',
+      icon: '🔍',
+      features: ['Natural Language Queries', 'Automated Insights', 'Model Building', 'Data Exploration'],
+      cta: 'Try It Free'
     }
   ];
 
@@ -29,57 +41,77 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Solutions</span>
+              <span className="text-gradient">Clarity for Everyone—</span>
+              <br />
+              <span className="text-white">No Matter Your Role</span>
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Comprehensive solutions tailored to your business needs and industry requirements
+              Tailored solutions that address specific pain points and deliver measurable outcomes for every decision-maker
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {/* Role-based Solutions */}
+          <div className="space-y-16">
             {solutions.map((solution, index) => (
-              <div key={index} className="glass-card p-8 hover:bg-white/10 transition-all duration-300 group">
-                <div className="text-6xl mb-6">{solution.icon}</div>
-                <h3 className="text-2xl font-bold text-gradient mb-4">{solution.title}</h3>
-                <p className="text-white/80 mb-6">{solution.description}</p>
-                
-                <div className="mb-6">
-                  <h4 className="text-brand-purple font-semibold mb-3">Key Benefits:</h4>
-                  <ul className="space-y-2">
-                    {solution.benefits.map((benefit, idx) => (
-                      <li key={idx} className="text-white/70 flex items-center">
-                        <div className="w-2 h-2 bg-brand-coral rounded-full mr-3"></div>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
+              <div key={index} className="glass-card p-12 hover:bg-white/10 transition-all duration-300">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                    <div className="flex items-center space-x-4 mb-6">
+                      <div className="text-6xl">{solution.icon}</div>
+                      <div>
+                        <h2 className="text-3xl font-bold text-gradient">{solution.title}</h2>
+                        <p className="text-brand-purple text-lg">{solution.subtitle}</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-xl text-white/90 mb-8">{solution.description}</p>
+                    
+                    {/* Pain/Gain */}
+                    <div className="grid md:grid-cols-2 gap-6 mb-8">
+                      <div className="bg-red-500/10 border border-red-500/30 p-4 rounded-lg">
+                        <h4 className="text-red-400 font-semibold mb-2">Current Pain:</h4>
+                        <p className="text-white/80">{solution.pain}</p>
+                      </div>
+                      <div className="bg-green-500/10 border border-green-500/30 p-4 rounded-lg">
+                        <h4 className="text-green-400 font-semibold mb-2">With GrofleX:</h4>
+                        <p className="text-white/80">{solution.gain}</p>
+                      </div>
+                    </div>
+                    
+                    <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                      {solution.cta}
+                    </button>
+                  </div>
+                  
+                  <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
+                    <div className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-8 rounded-xl">
+                      <h4 className="text-brand-cream font-semibold mb-6 text-center">Key Features:</h4>
+                      <div className="grid grid-cols-2 gap-4">
+                        {solution.features.map((feature, idx) => (
+                          <div key={idx} className="glass-card p-4 text-center">
+                            <div className="w-3 h-3 bg-brand-coral rounded-full mx-auto mb-2"></div>
+                            <p className="text-white/80 text-sm">{feature}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                
-                <button className="bg-gradient-purple text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 group-hover:scale-105 w-full">
-                  Explore Solution
-                </button>
               </div>
             ))}
           </div>
 
-          {/* Process Section */}
-          <div className="glass-card p-12 mb-16">
-            <h2 className="text-3xl font-bold text-gradient text-center mb-12">Our Process</h2>
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { step: '01', title: 'Discovery', desc: 'Understanding your business needs' },
-                { step: '02', title: 'Strategy', desc: 'Developing the perfect solution' },
-                { step: '03', title: 'Implementation', desc: 'Executing with precision' },
-                { step: '04', title: 'Optimization', desc: 'Continuous improvement' }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-purple rounded-full flex items-center justify-center text-2xl font-bold mb-4 mx-auto">
-                    {item.step}
-                  </div>
-                  <h3 className="text-xl font-semibold text-brand-purple mb-2">{item.title}</h3>
-                  <p className="text-white/70">{item.desc}</p>
-                </div>
-              ))}
+          {/* CTA Section */}
+          <div className="glass-card p-12 text-center mt-16">
+            <h2 className="text-3xl font-bold text-gradient mb-4">Ready to See GrofleX in Action?</h2>
+            <p className="text-white/80 mb-8">Choose your path and discover how GrofleX delivers clarity for your specific role</p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+                Start Free Trial
+              </button>
+              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                Book a Demo
+              </button>
             </div>
           </div>
         </div>
