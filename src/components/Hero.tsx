@@ -9,23 +9,54 @@ const Hero = () => {
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-          <span className="text-gradient">Future-Ready</span>
+          <span className="text-gradient">Clarity to Know</span>
           <br />
-          <span className="text-white">Solutions</span>
+          <span className="text-white">What to Do Next</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Empowering businesses with cutting-edge technology and innovative solutions 
-          that drive growth in the digital age.
+        <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Predictive analytics. Prescriptive next steps. 
+          <br />
+          Powered by AI, designed for decisive leaders.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-2xl hover:shadow-brand-purple/50 transition-all duration-300 transform hover:scale-105">
-            Explore Products
+            Start Free Trial
           </button>
           <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
-            Watch Demo
+            See How It Works
           </button>
+        </div>
+        
+        {/* Animated Flywheel */}
+        <div className="glass-card p-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="space-y-2">
+              <div className="w-16 h-16 bg-gradient-purple rounded-full flex items-center justify-center text-2xl mx-auto animate-pulse">
+                🔗
+              </div>
+              <h3 className="text-brand-purple font-semibold">Connect</h3>
+            </div>
+            <div className="space-y-2">
+              <div className="w-16 h-16 bg-gradient-purple rounded-full flex items-center justify-center text-2xl mx-auto animate-pulse" style={{ animationDelay: '0.5s' }}>
+                🔮
+              </div>
+              <h3 className="text-brand-purple font-semibold">Predict</h3>
+            </div>
+            <div className="space-y-2">
+              <div className="w-16 h-16 bg-gradient-purple rounded-full flex items-center justify-center text-2xl mx-auto animate-pulse" style={{ animationDelay: '1s' }}>
+                📋
+              </div>
+              <h3 className="text-brand-purple font-semibold">Prescribe</h3>
+            </div>
+            <div className="space-y-2">
+              <div className="w-16 h-16 bg-gradient-purple rounded-full flex items-center justify-center text-2xl mx-auto animate-pulse" style={{ animationDelay: '1.5s' }}>
+                ⚡
+              </div>
+              <h3 className="text-brand-purple font-semibold">Act</h3>
+            </div>
+          </div>
         </div>
         
         {/* Floating elements */}
