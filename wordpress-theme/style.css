@@ -1,0 +1,34 @@
+
+/*
+Theme Name: Groflex
+Description: A futuristic business theme with glass morphism effects and purple/coral gradient branding
+Author: Your Name
+Version: 1.0
+*/
+
+/* Custom Properties */
+:root {
+  --brand-purple: #8B5CF6;
+  --brand-purple-dark: #7C3AED;
+  --brand-coral: #F97316;
+  --brand-cream: #FEF3C7;
+  --gradient-brand: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-coral) 100%);
+  --gradient-purple: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-dark) 100%);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ... keep existing code (all the CSS rules that were previously defined) */
