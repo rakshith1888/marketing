@@ -5,7 +5,7 @@ A custom WordPress theme for the GrofleX AI Analytics Platform website.
 
 ## Installation
 
-1. Upload the `wordpress-theme` folder to your WordPress `wp-content/themes/` directory
+1. Upload the `groflex-theme` folder to your WordPress `wp-content/themes/` directory
 2. Add your logo image as `assets/logo.png` in the theme directory
 3. Activate the theme in WordPress Admin → Appearance → Themes
 
