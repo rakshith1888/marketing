@@ -109,21 +109,21 @@
                 <div class="card-icon">👔</div>
                 <h3 class="card-title">Executives</h3>
                 <p class="card-description">See where you're heading and what to do about it—before others do.</p>
-                <a href="/solutions" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Explore Use Cases</a>
+                <a href="<?php echo home_url('/solutions'); ?>" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Explore Use Cases</a>
             </div>
             
             <div class="card">
                 <div class="card-icon">📊</div>
                 <h3 class="card-title">BI Managers</h3>
                 <p class="card-description">Deliver predictive dashboards that tell leadership what matters.</p>
-                <a href="/solutions" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Explore Use Cases</a>
+                <a href="<?php echo home_url('/solutions'); ?>" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Explore Use Cases</a>
             </div>
             
             <div class="card">
                 <div class="card-icon">🔍</div>
                 <h3 class="card-title">Analysts</h3>
                 <p class="card-description">Automate insight delivery and eliminate low-impact work.</p>
-                <a href="/solutions" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Explore Use Cases</a>
+                <a href="<?php echo home_url('/solutions'); ?>" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Explore Use Cases</a>
             </div>
         </div>
     </div>
