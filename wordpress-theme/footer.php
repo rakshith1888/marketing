@@ -18,8 +18,8 @@
             <div>
                 <h4 style="color: var(--brand-purple); margin-bottom: 1rem; font-weight: 600;">Product</h4>
                 <ul style="list-style: none; color: rgba(255, 255, 255, 0.7);">
-                    <li style="margin-bottom: 0.5rem;"><a href="/products" style="color: inherit; text-decoration: none;">Features</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="/pricing" style="color: inherit; text-decoration: none;">Pricing</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="<?php echo home_url('/products'); ?>" style="color: inherit; text-decoration: none;">Features</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="<?php echo home_url('/pricing'); ?>" style="color: inherit; text-decoration: none;">Pricing</a></li>
                     <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">API</a></li>
                     <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">Integrations</a></li>
                 </ul>
@@ -28,8 +28,8 @@
             <div>
                 <h4 style="color: var(--brand-purple); margin-bottom: 1rem; font-weight: 600;">Company</h4>
                 <ul style="list-style: none; color: rgba(255, 255, 255, 0.7);">
-                    <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: inherit; text-decoration: none;">About</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: inherit; text-decoration: none;">Blog</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="<?php echo home_url('/about'); ?>" style="color: inherit; text-decoration: none;">About</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="<?php echo home_url('/blog'); ?>" style="color: inherit; text-decoration: none;">Blog</a></li>
                     <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">Careers</a></li>
                     <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">Contact</a></li>
                 </ul>
