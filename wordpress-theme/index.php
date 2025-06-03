@@ -52,36 +52,6 @@
 
 <section class="content-section">
     <h2 class="section-title">
-        <span class="text-gradient">Clarity, for Everyone</span><br>
-        Who Makes Decisions
-    </h2>
-    
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon">👔</div>
-            <h3 class="feature-title">Executives</h3>
-            <p class="feature-description">See where you're heading and what to do about it—before others do.</p>
-            <a href="<?php echo home_url('/solutions'); ?>" class="btn-primary">Explore Use Cases</a>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3 class="feature-title">BI Managers</h3>
-            <p class="feature-description">Deliver predictive dashboards that tell leadership what matters.</p>
-            <a href="<?php echo home_url('/solutions'); ?>" class="btn-primary">Explore Use Cases</a>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">🔍</div>
-            <h3 class="feature-title">Analysts</h3>
-            <p class="feature-description">Automate insight delivery and eliminate low-impact work.</p>
-            <a href="<?php echo home_url('/solutions'); ?>" class="btn-primary">Explore Use Cases</a>
-        </div>
-    </div>
-</section>
-
-<section class="content-section">
-    <h2 class="section-title">
         <span class="text-gradient">From Prediction to Action—</span><br>
         In Real Time
     </h2>
@@ -108,50 +78,6 @@
 </section>
 
 <section class="content-section" style="background: rgba(255, 255, 255, 0.02);">
-    <h2 class="section-title">
-        <span class="text-gradient">What You Get With GrofleX</span>
-    </h2>
-    
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <h3 class="feature-title">Predictive Forecasts</h3>
-            <p class="feature-description">Know what's coming before it happens</p>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">💬</div>
-            <h3 class="feature-title">Ask Anything</h3>
-            <p class="feature-description">Natural language queries in plain English</p>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">➡️</div>
-            <h3 class="feature-title">Next Best Actions</h3>
-            <p class="feature-description">Clear recommendations on what to do</p>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3 class="feature-title">Real-Time Updates</h3>
-            <p class="feature-description">Always current, always relevant insights</p>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">☁️</div>
-            <h3 class="feature-title">Universal Connectors</h3>
-            <p class="feature-description">Works with 200+ data sources</p>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3 class="feature-title">Enterprise Security</h3>
-            <p class="feature-description">Bank-level security and compliance</p>
-        </div>
-    </div>
-</section>
-
-<section class="content-section">
     <div style="text-align: center;">
         <h2 class="section-title">
             <span class="text-gradient">Ready to Get Started?</span>
