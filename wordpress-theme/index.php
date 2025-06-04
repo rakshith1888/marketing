@@ -45,11 +45,16 @@
             </div>
         </div>
         
-        <!-- Dashboard Preview -->
+        <!-- Video/Dashboard Preview -->
         <div class="dashboard-preview">
             <div class="dashboard-placeholder">
-                📊 Dashboard Preview<br>
-                <small>Insert dashboard screenshot or video here</small>
+                🎥 Video Placeholder<br>
+                <small>Insert Arnav's video, dashboard screenshot, or platform image here</small>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 8px;">
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">
+                        AI-generated recommendations with clarity scores
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +75,7 @@
                 <h3 class="card-title">Siloed Systems</h3>
                 <p class="card-description">say their systems are too fragmented</p>
                 <div style="margin-top: 1rem; padding: 1rem; background: rgba(139, 92, 246, 0.2); border-left: 4px solid var(--brand-coral); border-radius: 8px; font-style: italic; color: rgba(255, 255, 255, 0.7);">
-                    "We have data everywhere but insights nowhere"
+                    "We have data everywhere but insights nowhere" - VP Operations
                 </div>
             </div>
             
@@ -80,7 +85,7 @@
                 <h3 class="card-title">Gut Decisions Still Dominate</h3>
                 <p class="card-description">rely on intuition over dashboards</p>
                 <div style="margin-top: 1rem; padding: 1rem; background: rgba(139, 92, 246, 0.2); border-left: 4px solid var(--brand-coral); border-radius: 8px; font-style: italic; color: rgba(255, 255, 255, 0.7);">
-                    "I trust my gut more than our reports"
+                    "I trust my gut more than our reports" - CEO
                 </div>
             </div>
             
@@ -90,7 +95,7 @@
                 <h3 class="card-title">No Prescriptive Path</h3>
                 <p class="card-description">don't trust BI to tell them what to do next</p>
                 <div style="margin-top: 1rem; padding: 1rem; background: rgba(139, 92, 246, 0.2); border-left: 4px solid var(--brand-coral); border-radius: 8px; font-style: italic; color: rgba(255, 255, 255, 0.7);">
-                    "Our dashboards show what happened, not what to do"
+                    "Our dashboards show what happened, not what to do" - CFO
                 </div>
             </div>
         </div>
@@ -180,6 +185,12 @@
             </div>
             
             <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3 class="card-title">Clarity Score</h3>
+                <p class="card-description">Measure decision confidence with AI-powered scoring</p>
+            </div>
+            
+            <div class="card">
                 <div class="card-icon">💬</div>
                 <h3 class="card-title">Natural Language Q&A</h3>
                 <p class="card-description">Ask business questions in plain English</p>
@@ -201,12 +212,6 @@
                 <div class="card-icon">☁️</div>
                 <h3 class="card-title">Multi-Cloud Data Engine</h3>
                 <p class="card-description">Connect any data source, anywhere</p>
-            </div>
-            
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3 class="card-title">Clarity Score</h3>
-                <p class="card-description">Measure decision confidence</p>
             </div>
         </div>
     </div>
@@ -233,15 +238,15 @@
                 <div style="text-align: center; flex: 1; min-width: 150px;">
                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--brand-coral), #FF8E8E); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem; color: white; font-weight: bold;">2</div>
                     <h4 style="color: var(--brand-coral); font-weight: 600; margin-bottom: 0.5rem;">Predict</h4>
-                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Trends and emerging risks</p>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">GrofleX predicts trends and flags emerging risks</p>
                 </div>
                 
                 <div style="color: var(--brand-coral); font-size: 1.5rem;">→</div>
                 
                 <div style="text-align: center; flex: 1; min-width: 150px;">
                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--brand-purple), var(--brand-coral)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem; color: white; font-weight: bold;">3</div>
-                    <h4 style="color: var(--brand-cream); font-weight: 600; margin-bottom: 0.5rem;">Clarity Score</h4>
-                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">+ recommended actions</p>
+                    <h4 style="color: var(--brand-cream); font-weight: 600; margin-bottom: 0.5rem;">Get Clarity</h4>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Clarity Score + recommended actions</p>
                 </div>
                 
                 <div style="color: var(--brand-coral); font-size: 1.5rem;">→</div>
@@ -257,7 +262,7 @@
                 <div style="text-align: center; flex: 1; min-width: 150px;">
                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--brand-purple), var(--brand-coral)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem; color: white; font-weight: bold;">5</div>
                     <h4 style="color: var(--brand-cream); font-weight: 600; margin-bottom: 0.5rem;">Learn</h4>
-                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Platform learns from outcomes</p>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Platform learns from each outcome</p>
                 </div>
             </div>
         </div>
@@ -316,6 +321,14 @@
         </p>
         
         <div class="glass-card" style="padding: 3rem; max-width: 800px; margin: 0 auto;">
+            <!-- Video Placeholder -->
+            <div style="background: rgba(0, 0, 0, 0.5); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; border: 2px dashed rgba(139, 92, 246, 0.3);">
+                <div style="text-align: center; color: rgba(255, 255, 255, 0.6);">
+                    🎥 <strong>Live Demo Video Placeholder</strong><br>
+                    <small>Insert interactive Q&A interface demo video here</small>
+                </div>
+            </div>
+            
             <div style="background: rgba(0, 0, 0, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
                 <div style="color: var(--brand-purple); font-weight: 600; margin-bottom: 1rem;">Try asking:</div>
                 <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -373,18 +386,46 @@
         </h2>
         
         <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 3rem; opacity: 0.6; transition: opacity 0.3s;">
-            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5);">Google</div>
-            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5);">Salesforce</div>
-            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5);">Mailchimp</div>
-            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5);">Looker</div>
-            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5);">Tableau</div>
-            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5);">Power BI</div>
+            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-purple)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">Google</div>
+            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-purple)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">Salesforce</div>
+            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-purple)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">Mailchimp</div>
+            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-purple)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">Looker</div>
+            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-purple)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">Tableau</div>
+            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-purple)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">Power BI</div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS & INVESTORS -->
+<section class="section" style="background: linear-gradient(90deg, rgba(139, 92, 246, 0.05), rgba(255, 107, 107, 0.05));">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="text-gradient">Backed by Leading</span><br>
+            <span>Investors & Partners</span>
+        </h2>
+        
+        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4rem; margin-bottom: 3rem;">
+            <!-- Investor Logos Placeholder -->
+            <div style="width: 120px; height: 60px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Investor Logo</div>
+            <div style="width: 120px; height: 60px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Accelerator</div>
+            <div style="width: 120px; height: 60px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Partner</div>
+            <div style="width: 120px; height: 60px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Investor</div>
+        </div>
+        
+        <!-- Accelerator Badges -->
+        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem;">
+            <div style="padding: 0.5rem 1rem; background: rgba(139, 92, 246, 0.2); border-radius: 20px; font-size: 0.9rem; color: var(--brand-purple); border: 1px solid rgba(139, 92, 246, 0.3);">
+                🚀 Y Combinator S24
+            </div>
+            <div style="padding: 0.5rem 1rem; background: rgba(255, 107, 107, 0.2); border-radius: 20px; font-size: 0.9rem; color: var(--brand-coral); border: 1px solid rgba(255, 107, 107, 0.3);">
+                🏆 Techstars Alumni
+            </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ SECTION -->
-<section class="section" style="background: linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(255, 107, 107, 0.1));">
+<section class="section">
     <div class="container">
         <h2 class="section-title">
             <span class="text-gradient">Still Not Clear?</span>
@@ -393,32 +434,32 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <div class="card" style="margin-bottom: 1rem;">
                 <h4 style="color: var(--brand-purple); font-weight: 600; margin-bottom: 0.5rem;">How does GrofleX explain its AI recommendations?</h4>
-                <p style="color: rgba(255, 255, 255, 0.8);">Every recommendation comes with clear reasoning, confidence scores, and the data sources that informed the decision.</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">Every recommendation comes with clear reasoning, confidence scores, and the data sources that informed the decision. Our AI shows its work.</p>
             </div>
             
             <div class="card" style="margin-bottom: 1rem;">
                 <h4 style="color: var(--brand-purple); font-weight: 600; margin-bottom: 0.5rem;">What data sources can GrofleX connect to?</h4>
-                <p style="color: rgba(255, 255, 255, 0.8);">200+ pre-built connectors including CRMs, databases, cloud platforms, and APIs. Plus custom integrations.</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">200+ pre-built connectors including CRMs, databases, cloud platforms, and APIs. Plus custom integrations for your unique data needs.</p>
             </div>
             
             <div class="card" style="margin-bottom: 1rem;">
                 <h4 style="color: var(--brand-purple); font-weight: 600; margin-bottom: 0.5rem;">How does this help my BI team specifically?</h4>
-                <p style="color: rgba(255, 255, 255, 0.8);">Reduces manual reporting by 80%, automates insight generation, and provides self-serve analytics for stakeholders.</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">Reduces manual reporting by 80%, automates insight generation, and provides self-serve analytics for stakeholders. Your team becomes strategic advisors, not report builders.</p>
             </div>
             
             <div class="card" style="margin-bottom: 1rem;">
                 <h4 style="color: var(--brand-purple); font-weight: 600; margin-bottom: 0.5rem;">Is my data secure with GrofleX?</h4>
-                <p style="color: rgba(255, 255, 255, 0.8);">Enterprise-grade security with SOC 2 Type II compliance, end-to-end encryption, and granular access controls.</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">Enterprise-grade security with SOC 2 Type II compliance, end-to-end encryption, and granular access controls. Your data never leaves your environment.</p>
             </div>
             
             <div class="card" style="margin-bottom: 1rem;">
                 <h4 style="color: var(--brand-purple); font-weight: 600; margin-bottom: 0.5rem;">How quickly can we see results?</h4>
-                <p style="color: rgba(255, 255, 255, 0.8);">Most customers see actionable insights within the first week and measurable business impact within 30 days.</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">Most customers see actionable insights within the first week and measurable business impact within 30 days. No lengthy implementation cycles.</p>
             </div>
             
             <div class="card">
                 <h4 style="color: var(--brand-purple); font-weight: 600; margin-bottom: 0.5rem;">Do I need a data science team to use GrofleX?</h4>
-                <p style="color: rgba(255, 255, 255, 0.8);">No. GrofleX is designed for business users. Our AI handles the complex modeling while you focus on decisions.</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">No. GrofleX is designed for business users. Our AI handles the complex modeling while you focus on decisions. No PhD required.</p>
             </div>
         </div>
     </div>
