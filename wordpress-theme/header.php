@@ -15,17 +15,17 @@
     <div class="nav-container">
         <div class="nav-logo">
             <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="GrofleX" />
+                <span style="font-size: 1.5rem; font-weight: bold; background: linear-gradient(135deg, var(--brand-purple), var(--brand-coral)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GrofleX</span>
             </a>
         </div>
         
         <ul class="nav-menu" id="nav-menu">
             <li><a href="<?php echo home_url(); ?>" class="<?php echo is_home() ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="<?php echo home_url('/products'); ?>">Products</a></li>
-            <li><a href="<?php echo home_url('/solutions'); ?>">Solutions</a></li>
-            <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
-            <li><a href="<?php echo home_url('/blog'); ?>">Blog</a></li>
-            <li><a href="<?php echo home_url('/pricing'); ?>">Pricing</a></li>
+            <li><a href="<?php echo home_url('/products'); ?>" class="<?php echo is_page('products') ? 'active' : ''; ?>">Products</a></li>
+            <li><a href="<?php echo home_url('/solutions'); ?>" class="<?php echo is_page('solutions') ? 'active' : ''; ?>">Solutions</a></li>
+            <li><a href="<?php echo home_url('/about'); ?>" class="<?php echo is_page('about') ? 'active' : ''; ?>">About</a></li>
+            <li><a href="<?php echo home_url('/blog'); ?>" class="<?php echo is_page('blog') ? 'active' : ''; ?>">Blog</a></li>
+            <li><a href="<?php echo home_url('/pricing'); ?>" class="<?php echo is_page('pricing') ? 'active' : ''; ?>">Pricing</a></li>
             <li><a href="#trial" class="nav-cta">Get Started</a></li>
         </ul>
         
