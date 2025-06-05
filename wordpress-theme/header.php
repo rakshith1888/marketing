@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -21,11 +20,11 @@
         
         <ul class="nav-menu" id="nav-menu">
             <li><a href="<?php echo home_url(); ?>" class="<?php echo is_front_page() ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('products')); ?>" class="<?php echo is_page('products') ? 'active' : ''; ?>">Products</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('solutions')); ?>" class="<?php echo is_page('solutions') ? 'active' : ''; ?>">Solutions</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('about')); ?>" class="<?php echo is_page('about') ? 'active' : ''; ?>">About</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('blog')); ?>" class="<?php echo is_page('blog') ? 'active' : ''; ?>">Blog</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('pricing')); ?>" class="<?php echo is_page('pricing') ? 'active' : ''; ?>">Pricing</a></li>
+            <li><a href="<?php echo home_url('/products'); ?>" class="<?php echo is_page('products') ? 'active' : ''; ?>">Products</a></li>
+            <li><a href="<?php echo home_url('/solutions'); ?>" class="<?php echo is_page('solutions') ? 'active' : ''; ?>">Solutions</a></li>
+            <li><a href="<?php echo home_url('/about'); ?>" class="<?php echo is_page('about') ? 'active' : ''; ?>">About</a></li>
+            <li><a href="<?php echo home_url('/blog'); ?>" class="<?php echo is_page('blog') ? 'active' : ''; ?>">Blog</a></li>
+            <li><a href="<?php echo home_url('/pricing'); ?>" class="<?php echo is_page('pricing') ? 'active' : ''; ?>">Pricing</a></li>
             <li><a href="#trial" class="nav-cta">Get Started</a></li>
         </ul>
         
@@ -50,3 +49,6 @@ document.addEventListener('click', function(event) {
     }
 });
 </script>
+
+</body>
+</html>

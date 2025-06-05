@@ -1,4 +1,3 @@
-
 <?php
 // Theme setup
 function groflex_setup() {
@@ -72,80 +71,104 @@ function groflex_scripts() {
 }
 add_action('wp_enqueue_scripts', 'groflex_scripts');
 
-// Create pages on theme activation with proper content
+// Create pages on theme activation with proper content and slugs
 function groflex_create_pages() {
     $pages = array(
         'products' => array(
             'title' => 'Products',
-            'content' => 'Products page content'
+            'content' => 'Products page content',
+            'slug' => 'products'
         ),
         'solutions' => array(
-            'title' => 'Solutions',
-            'content' => 'Solutions page content'
+            'title' => 'Solutions', 
+            'content' => 'Solutions page content',
+            'slug' => 'solutions'
         ),
         'about' => array(
             'title' => 'About',
-            'content' => 'About page content'
+            'content' => 'About page content',
+            'slug' => 'about'
         ),
         'blog' => array(
             'title' => 'Blog',
-            'content' => 'Blog page content'
+            'content' => 'Blog page content',
+            'slug' => 'blog'
         ),
         'pricing' => array(
             'title' => 'Pricing',
-            'content' => 'Pricing page content'
+            'content' => 'Pricing page content',
+            'slug' => 'pricing'
         )
     );
     
-    foreach ($pages as $slug => $page_data) {
-        $existing_page = get_page_by_path($slug);
+    foreach ($pages as $page_key => $page_data) {
+        $existing_page = get_page_by_path($page_data['slug']);
         if (!$existing_page) {
-            wp_insert_post(array(
+            $page_id = wp_insert_post(array(
                 'post_title' => $page_data['title'],
-                'post_name' => $slug,
+                'post_name' => $page_data['slug'],
                 'post_status' => 'publish',
                 'post_type' => 'page',
                 'post_content' => $page_data['content']
             ));
+            
+            // Ensure the page slug is set correctly
+            if ($page_id) {
+                wp_update_post(array(
+                    'ID' => $page_id,
+                    'post_name' => $page_data['slug']
+                ));
+            }
         }
     }
+    
+    // Flush rewrite rules after creating pages
+    flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'groflex_create_pages');
 
 // Force WordPress to use our custom page templates
 function groflex_page_template($template) {
-    if (is_page('products')) {
-        $new_template = locate_template(array('page-products.php'));
-        if (!empty($new_template)) {
-            return $new_template;
-        }
-    }
+    global $post;
     
-    if (is_page('solutions')) {
-        $new_template = locate_template(array('page-solutions.php'));
-        if (!empty($new_template)) {
-            return $new_template;
-        }
-    }
-    
-    if (is_page('about')) {
-        $new_template = locate_template(array('page-about.php'));
-        if (!empty($new_template)) {
-            return $new_template;
-        }
-    }
-    
-    if (is_page('blog')) {
-        $new_template = locate_template(array('page-blog.php'));
-        if (!empty($new_template)) {
-            return $new_template;
-        }
-    }
-    
-    if (is_page('pricing')) {
-        $new_template = locate_template(array('page-pricing.php'));
-        if (!empty($new_template)) {
-            return $new_template;
+    if (is_page()) {
+        $page_slug = $post->post_name;
+        
+        switch($page_slug) {
+            case 'products':
+                $new_template = locate_template(array('page-products.php'));
+                if (!empty($new_template)) {
+                    return $new_template;
+                }
+                break;
+                
+            case 'solutions':
+                $new_template = locate_template(array('page-solutions.php'));
+                if (!empty($new_template)) {
+                    return $new_template;
+                }
+                break;
+                
+            case 'about':
+                $new_template = locate_template(array('page-about.php'));
+                if (!empty($new_template)) {
+                    return $new_template;
+                }
+                break;
+                
+            case 'blog':
+                $new_template = locate_template(array('page-blog.php'));
+                if (!empty($new_template)) {
+                    return $new_template;
+                }
+                break;
+                
+            case 'pricing':
+                $new_template = locate_template(array('page-pricing.php'));
+                if (!empty($new_template)) {
+                    return $new_template;
+                }
+                break;
         }
     }
     
