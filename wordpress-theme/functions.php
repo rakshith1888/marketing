@@ -72,30 +72,86 @@ function groflex_scripts() {
 }
 add_action('wp_enqueue_scripts', 'groflex_scripts');
 
-// Create pages on theme activation
+// Create pages on theme activation with proper content
 function groflex_create_pages() {
     $pages = array(
-        'products' => 'Products',
-        'solutions' => 'Solutions', 
-        'about' => 'About',
-        'blog' => 'Blog',
-        'pricing' => 'Pricing'
+        'products' => array(
+            'title' => 'Products',
+            'content' => 'Products page content'
+        ),
+        'solutions' => array(
+            'title' => 'Solutions',
+            'content' => 'Solutions page content'
+        ),
+        'about' => array(
+            'title' => 'About',
+            'content' => 'About page content'
+        ),
+        'blog' => array(
+            'title' => 'Blog',
+            'content' => 'Blog page content'
+        ),
+        'pricing' => array(
+            'title' => 'Pricing',
+            'content' => 'Pricing page content'
+        )
     );
     
-    foreach ($pages as $slug => $title) {
-        $page = get_page_by_path($slug);
-        if (!$page) {
+    foreach ($pages as $slug => $page_data) {
+        $existing_page = get_page_by_path($slug);
+        if (!$existing_page) {
             wp_insert_post(array(
-                'post_title' => $title,
+                'post_title' => $page_data['title'],
                 'post_name' => $slug,
                 'post_status' => 'publish',
                 'post_type' => 'page',
-                'post_content' => ''
+                'post_content' => $page_data['content']
             ));
         }
     }
 }
 add_action('after_switch_theme', 'groflex_create_pages');
+
+// Force WordPress to use our custom page templates
+function groflex_page_template($template) {
+    if (is_page('products')) {
+        $new_template = locate_template(array('page-products.php'));
+        if (!empty($new_template)) {
+            return $new_template;
+        }
+    }
+    
+    if (is_page('solutions')) {
+        $new_template = locate_template(array('page-solutions.php'));
+        if (!empty($new_template)) {
+            return $new_template;
+        }
+    }
+    
+    if (is_page('about')) {
+        $new_template = locate_template(array('page-about.php'));
+        if (!empty($new_template)) {
+            return $new_template;
+        }
+    }
+    
+    if (is_page('blog')) {
+        $new_template = locate_template(array('page-blog.php'));
+        if (!empty($new_template)) {
+            return $new_template;
+        }
+    }
+    
+    if (is_page('pricing')) {
+        $new_template = locate_template(array('page-pricing.php'));
+        if (!empty($new_template)) {
+            return $new_template;
+        }
+    }
+    
+    return $template;
+}
+add_filter('page_template', 'groflex_page_template');
 
 // Custom post types for solutions, products, etc.
 function groflex_custom_post_types() {
@@ -233,4 +289,10 @@ class Groflex_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
+
+// Ensure proper rewrite rules
+function groflex_flush_rewrite_rules() {
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'groflex_flush_rewrite_rules');
 ?>
