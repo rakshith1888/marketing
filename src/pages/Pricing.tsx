@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
@@ -32,6 +33,22 @@ const Pricing = () => {
         'Custom integrations'
       ],
       popular: true
+    },
+    {
+      name: 'Business',
+      price: '$599',
+      period: '/month',
+      description: 'For established companies scaling fast',
+      features: [
+        'Up to 100 users',
+        'Premium analytics',
+        '24/7 phone support',
+        '500GB storage',
+        'Advanced API access',
+        'Custom integrations',
+        'White-label options'
+      ],
+      popular: false
     },
     {
       name: 'Enterprise',
@@ -99,43 +116,43 @@ const Pricing = () => {
             </FuturisticCard>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {plans.map((plan, index) => (
               <FuturisticCard 
                 key={index} 
                 variant={plan.popular ? "neon" : "default"}
-                className={`p-10 relative hover:bg-white/10 transition-all duration-300 ${
+                className={`p-8 relative hover:bg-white/10 transition-all duration-300 ${
                   plan.popular ? 'border-2 border-brand-purple scale-105' : ''
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-brand-coral to-brand-cream text-black px-6 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-brand-coral to-brand-cream text-black px-4 py-1 rounded-full text-xs font-semibold">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
-                <div className="text-center mb-10">
-                  <h3 className="text-2xl font-bold text-gradient mb-2">{plan.name}</h3>
-                  <p className="text-white/60 mb-4">{plan.description}</p>
+                <div className="text-center mb-8">
+                  <h3 className="text-xl font-bold text-gradient mb-2">{plan.name}</h3>
+                  <p className="text-white/60 mb-4 text-sm">{plan.description}</p>
                   <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-white">{plan.price}</span>
-                    <span className="text-white/60 ml-1">{plan.period}</span>
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                    <span className="text-white/60 ml-1 text-sm">{plan.period}</span>
                   </div>
                 </div>
 
-                <ul className="space-y-5 mb-10">
+                <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-white/80">
-                      <div className="w-2 h-2 bg-brand-coral rounded-full mr-3"></div>
+                    <li key={idx} className="flex items-center text-white/80 text-sm">
+                      <div className="w-2 h-2 bg-brand-coral rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
                 <button 
-                  className={`w-full py-4 rounded-full font-semibold transition-all duration-300 ${
+                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300 text-sm ${
                     plan.popular
                       ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-xl'
                       : 'glass-card border border-brand-purple/50 text-white hover:bg-brand-purple/20'
@@ -147,16 +164,16 @@ const Pricing = () => {
             ))}
           </div>
 
-          <FuturisticCard variant="neon" className="p-8">
-            <h2 className="text-2xl font-bold text-gradient text-center mb-8">Frequently Asked Questions</h2>
+          <FuturisticCard variant="neon" className="p-6">
+            <h2 className="text-xl font-bold text-gradient text-center mb-6">Frequently Asked Questions</h2>
             <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="w-full space-y-3">
+              <Accordion type="single" collapsible className="w-full space-y-2">
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="border border-white/20 rounded-lg overflow-hidden">
-                    <AccordionTrigger className="px-5 py-3 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-base font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
+                    <AccordionTrigger className="px-4 py-2 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-sm font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className="px-5 pb-3 text-white/80 bg-white/5">
+                    <AccordionContent className="px-4 pb-2 text-white/80 bg-white/5 text-sm">
                       <p>{faq.a}</p>
                     </AccordionContent>
                   </AccordionItem>
