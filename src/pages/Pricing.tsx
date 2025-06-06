@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
@@ -83,7 +82,6 @@ const Pricing = () => {
             </p>
           </div>
 
-          {/* Pricing Toggle */}
           <div className="flex justify-center mb-12">
             <FuturisticCard className="p-2 flex rounded-full">
               <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white px-6 py-2 rounded-full">Monthly</button>
@@ -93,7 +91,6 @@ const Pricing = () => {
             </FuturisticCard>
           </div>
 
-          {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {plans.map((plan, index) => (
               <FuturisticCard 
@@ -104,7 +101,7 @@ const Pricing = () => {
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
                     <span className="bg-gradient-to-r from-brand-coral to-brand-cream text-black px-6 py-2 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
@@ -142,7 +139,6 @@ const Pricing = () => {
             ))}
           </div>
 
-          {/* FAQ Section */}
           <FuturisticCard variant="neon" className="p-12">
             <h2 className="text-3xl font-bold text-gradient text-center mb-12">Frequently Asked Questions</h2>
             <div className="max-w-4xl mx-auto">
@@ -152,8 +148,8 @@ const Pricing = () => {
                     <AccordionTrigger className="px-6 py-4 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-lg font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 text-white/80 bg-white/5">
-                      {faq.a}
+                    <AccordionContent className="px-6 pb-4 text-white/80 bg-white/5 flex items-center justify-center min-h-[60px]">
+                      <p className="text-center">{faq.a}</p>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -161,7 +157,6 @@ const Pricing = () => {
             </div>
           </FuturisticCard>
 
-          {/* CTA Section */}
           <div className="text-center mt-16">
             <h2 className="text-3xl font-bold text-gradient mb-4">Ready to Get Started?</h2>
             <p className="text-white/80 mb-8">Join thousands of businesses already using Groflex</p>
