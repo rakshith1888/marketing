@@ -3,35 +3,56 @@ import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 
 const About = () => {
+  const handleGetStarted = () => {
+    window.open('https://app.groflex.ai', '_blank');
+  };
+
+  const teamMembers = [
+    {
+      name: 'Sarah Chen',
+      role: 'CEO & Co-founder',
+      bio: 'Former McKinsey consultant with 15+ years in data analytics and business intelligence.',
+      image: '/placeholder.svg'
+    },
+    {
+      name: 'Marcus Rodriguez',
+      role: 'CTO & Co-founder',
+      bio: 'Ex-Google engineer specializing in machine learning and predictive analytics platforms.',
+      image: '/placeholder.svg'
+    },
+    {
+      name: 'Dr. Emily Watson',
+      role: 'Head of AI Research',
+      bio: 'PhD in Computer Science from Stanford, published researcher in predictive modeling.',
+      image: '/placeholder.svg'
+    },
+    {
+      name: 'James Thompson',
+      role: 'VP of Product',
+      bio: 'Former Salesforce product leader with expertise in enterprise software solutions.',
+      image: '/placeholder.svg'
+    }
+  ];
+
   const values = [
     {
-      title: 'Clarity',
-      description: 'We believe every decision should be made with complete understanding of the outcomes',
-      icon: '🔍'
+      title: 'Clarity First',
+      description: 'We believe complex data should deliver simple, actionable insights.',
+      icon: '🎯'
     },
     {
-      title: 'Simplicity',
-      description: 'Complex problems deserve simple solutions that anyone can understand and use',
-      icon: '⚡'
+      title: 'Predictive Power',
+      description: 'Our AI doesn\'t just analyze the past—it illuminates the future.',
+      icon: '🔮'
     },
     {
-      title: 'Trust',
-      description: 'Our AI explanations are transparent, so you always know why we recommend what we do',
+      title: 'Human-Centered',
+      description: 'Technology should amplify human decision-making, not replace it.',
       icon: '🤝'
     },
     {
-      title: 'Innovation',
-      description: 'We constantly push the boundaries of what AI can do to empower better decisions',
-      icon: '🚀'
-    },
-    {
-      title: 'Reliability',
-      description: 'Our platform delivers consistent, accurate insights you can depend on 24/7',
-      icon: '🛡️'
-    },
-    {
-      title: 'Impact',
-      description: 'Every feature we build is designed to create meaningful, measurable business outcomes',
+      title: 'Continuous Learning',
+      description: 'Our platform evolves with your business, getting smarter over time.',
       icon: '📈'
     }
   ];
@@ -40,161 +61,116 @@ const About = () => {
     <Layout>
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="text-gradient">About GrofleX</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Empower decision-makers with insight they can trust—instantly
+            <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+              We're on a mission to give every business leader the clarity they need to make confident, 
+              data-driven decisions that drive growth and success.
             </p>
           </div>
 
-          {/* Mission Statement */}
+          {/* Mission Section */}
           <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
             <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
-            <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              To empower decision-makers with insight they can trust—instantly. We believe that in a world 
-              drowning in data, what matters most is knowing what to do next.
+            <p className="text-lg text-white/80 max-w-3xl mx-auto mb-8">
+              To transform how businesses understand their data by providing predictive insights 
+              and prescriptive actions that eliminate guesswork and accelerate growth.
             </p>
-          </FuturisticCard>
-
-          {/* Story Section */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-gradient mb-6">Our Story</h2>
-              <div className="space-y-6 text-white/80 leading-relaxed">
-                <p>
-                  <strong className="text-brand-coral">Born from frustration with dashboards.</strong> Built to act in real time.
-                </p>
-                <p>
-                  GrofleX emerged from a simple observation: organizations have more data than ever, 
-                  yet decision-makers still struggle to know what to do next. Traditional BI tools 
-                  show what happened, but they don't provide the clarity leaders need to act decisively.
-                </p>
-                <p>
-                  Our founders experienced this frustration firsthand—watching executives make 
-                  gut decisions despite having access to sophisticated analytics platforms. 
-                  The problem wasn't lack of data; it was lack of actionable insight.
-                </p>
-                <p>
-                  Today, we're building the bridge between prediction and action, helping leaders 
-                  see not just what's coming, but what to do about it.
-                </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="space-y-4">
+                <div className="text-4xl">📊</div>
+                <h3 className="text-xl font-semibold text-gradient">Data Intelligence</h3>
+                <p className="text-white/70">Turning complex data into clear, actionable insights</p>
+              </div>
+              <div className="space-y-4">
+                <div className="text-4xl">⚡</div>
+                <h3 className="text-xl font-semibold text-gradient">Speed to Insight</h3>
+                <p className="text-white/70">Real-time analysis that keeps pace with your business</p>
+              </div>
+              <div className="space-y-4">
+                <div className="text-4xl">🎯</div>
+                <h3 className="text-xl font-semibold text-gradient">Precision Focus</h3>
+                <p className="text-white/70">Targeted recommendations for maximum impact</p>
               </div>
             </div>
-            
-            <div className="relative">
-              <FuturisticCard variant="default" className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gradient mb-4">The Journey</h3>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-brand-purple to-brand-coral rounded-full flex items-center justify-center text-white font-bold">
-                      1
-                    </div>
-                    <div>
-                      <h4 className="text-brand-purple font-semibold">Problem Identified</h4>
-                      <p className="text-white/70 text-sm">Leaders needed clarity, not just data</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-brand-coral to-brand-cream rounded-full flex items-center justify-center text-black font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="text-brand-coral font-semibold">Solution Designed</h4>
-                      <p className="text-white/70 text-sm">AI that predicts and prescribes</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-brand-purple to-brand-coral rounded-full flex items-center justify-center text-white font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="text-brand-cream font-semibold">Platform Launched</h4>
-                      <p className="text-white/70 text-sm">Helping leaders act with confidence</p>
-                    </div>
-                  </div>
-                </div>
-              </FuturisticCard>
-            </div>
-          </div>
+          </FuturisticCard>
 
           {/* Values Section */}
           <div className="mb-16">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gradient mb-6">Our Core Values</h2>
-              <p className="text-white/80 max-w-3xl mx-auto">
-                These principles guide everything we build and every decision we make
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 className="text-3xl font-bold text-gradient text-center mb-12">Our Values</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
-                <FuturisticCard key={index} variant="default" className="p-8 text-center hover:bg-white/10 transition-all duration-300 group">
-                  <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{value.icon}</div>
-                  <h3 className="text-2xl font-bold text-gradient mb-4">{value.title}</h3>
-                  <p className="text-white/80">{value.description}</p>
+                <FuturisticCard key={index} className="p-6 text-center">
+                  <div className="text-4xl mb-4">{value.icon}</div>
+                  <h3 className="text-xl font-semibold text-gradient mb-3">{value.title}</h3>
+                  <p className="text-white/70 text-sm">{value.description}</p>
                 </FuturisticCard>
               ))}
             </div>
           </div>
 
-          {/* Impact Section */}
-          <FuturisticCard variant="hologram" className="p-12 mb-16">
-            <h2 className="text-3xl font-bold text-gradient text-center mb-12">Our Impact</h2>
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              {[
-                { metric: '10,000+', label: 'Decisions Enhanced Daily' },
-                { metric: '500+', label: 'Organizations Trust Us' },
-                { metric: '95%', label: 'Faster Decision Making' },
-                { metric: '24/7', label: 'AI-Powered Insights' }
-              ].map((stat, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="text-4xl font-bold text-gradient">{stat.metric}</div>
-                  <div className="text-white/80">{stat.label}</div>
-                </div>
+          {/* Team Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-gradient text-center mb-12">Meet Our Team</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {teamMembers.map((member, index) => (
+                <FuturisticCard key={index} className="p-6 text-center">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full mx-auto mb-4 bg-brand-purple/20"
+                  />
+                  <h3 className="text-lg font-semibold text-gradient mb-1">{member.name}</h3>
+                  <p className="text-brand-coral text-sm mb-3">{member.role}</p>
+                  <p className="text-white/70 text-xs">{member.bio}</p>
+                </FuturisticCard>
               ))}
             </div>
-          </FuturisticCard>
+          </div>
 
-          {/* Team Preview */}
-          <FuturisticCard variant="default" className="p-12 text-center mb-16">
-            <h2 className="text-3xl font-bold text-gradient mb-6">Leadership Team</h2>
-            <p className="text-white/80 mb-8">
-              Industry veterans from AI, analytics, and enterprise software, united by a mission to bring clarity to decision-making
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { role: 'CEO & Co-Founder', expertise: 'Enterprise Strategy' },
-                { role: 'CTO & Co-Founder', expertise: 'AI & Machine Learning' },
-                { role: 'VP of Product', expertise: 'User Experience' },
-                { role: 'VP of Engineering', expertise: 'Scalable Systems' }
-              ].map((member, index) => (
-                <div key={index} className="space-y-4">
-                  <div>
-                    <h3 className="text-brand-purple font-semibold">{member.role}</h3>
-                    <p className="text-white/70 text-sm">{member.expertise}</p>
-                  </div>
-                </div>
-              ))}
+          {/* Story Section */}
+          <FuturisticCard className="p-12 mb-16">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-gradient text-center mb-8">Our Story</h2>
+              <div className="space-y-6 text-white/80">
+                <p className="text-lg">
+                  GrofleX was born from a simple frustration: why was it so hard for smart business 
+                  leaders to get clear answers from their data? Despite having access to more 
+                  information than ever before, decision-makers were still operating on gut instinct 
+                  rather than data-driven insights.
+                </p>
+                <p className="text-lg">
+                  Our founders, Sarah and Marcus, experienced this challenge firsthand while working 
+                  at Fortune 500 companies. They saw executives making million-dollar decisions 
+                  based on incomplete information, simply because their data was trapped in silos 
+                  and their analytics tools required PhD-level expertise to operate.
+                </p>
+                <p className="text-lg">
+                  Today, GrofleX serves hundreds of businesses worldwide, from fast-growing startups 
+                  to established enterprises. Our platform has helped companies increase revenue by 
+                  an average of 34% and reduce operational costs by 28% through better decision-making.
+                </p>
+              </div>
             </div>
           </FuturisticCard>
 
           {/* CTA Section */}
           <FuturisticCard variant="neon" className="p-12 text-center">
-            <h2 className="text-3xl font-bold text-gradient mb-4">Join Our Mission</h2>
-            <p className="text-white/80 mb-8">
-              Help us bring clarity to decision-making across every industry and organization
+            <h2 className="text-3xl font-bold text-gradient mb-4">Ready to Join Our Mission?</h2>
+            <p className="text-white/80 mb-8 text-lg">
+              Experience the clarity and confidence that comes with predictive analytics
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
-                View Open Positions
+              <button 
+                onClick={handleGetStarted}
+                className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+              >
+                Start Free Trial
               </button>
-              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
-                Contact Our Team
+              <button className="border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                Learn More
               </button>
             </div>
           </FuturisticCard>
