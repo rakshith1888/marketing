@@ -19,16 +19,16 @@ const Solutions = () => {
           {/* Tabbed Interface */}
           <FuturisticCard variant="neon" className="p-8">
             <Tabs defaultValue="business-leaders" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-12 bg-white/5 border border-white/10">
+              <TabsList className="grid w-full grid-cols-3 mb-12 bg-white/5 border border-white/10 h-auto">
                 {solutions.map((solution) => (
                   <TabsTrigger 
                     key={solution.id}
                     value={solution.id} 
-                    className="text-white data-[state=active]:bg-brand-purple/20 data-[state=active]:text-brand-cream"
+                    className="text-white data-[state=active]:bg-brand-purple/20 data-[state=active]:text-brand-cream p-4 h-auto"
                   >
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl">{solution.icon}</span>
-                      <span className="font-semibold">{solution.title}</span>
+                    <div className="flex flex-col items-center space-y-2">
+                      <span className="text-3xl">{solution.icon}</span>
+                      <span className="font-semibold text-center leading-tight">{solution.title}</span>
                     </div>
                   </TabsTrigger>
                 ))}
