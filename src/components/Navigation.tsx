@@ -27,8 +27,8 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/a3aae564-5196-4ed4-8841-3948ebfd1bfe.png" 
-              alt="Groflex" 
+            style={{height: '40px', width: '40px'}}
+              src="/lovable-uploads/logo.png" 
               className="h-8 w-auto"
             />
           </Link>
