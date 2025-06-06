@@ -1,5 +1,6 @@
 
 import Layout from '../components/Layout';
+import FuturisticCard from '../components/FuturisticCard';
 
 const Blog = () => {
   const featuredPost = {
@@ -83,7 +84,7 @@ const Blog = () => {
                 key={index}
                 className={`px-6 py-3 rounded-full transition-all duration-300 ${
                   index === 0 
-                    ? 'bg-gradient-purple text-white shadow-lg' 
+                    ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-lg' 
                     : 'glass-card border border-brand-purple/30 text-white/80 hover:bg-brand-purple/20 hover:text-white'
                 }`}
               >
@@ -93,9 +94,9 @@ const Blog = () => {
           </div>
 
           {/* Featured Post */}
-          <div className="glass-card p-12 mb-16 hover:bg-white/10 transition-all duration-300 group">
+          <FuturisticCard variant="neon" className="p-12 mb-16 hover:bg-white/10 transition-all duration-300 group">
             <div className="flex items-center gap-3 mb-6">
-              <span className="bg-gradient-coral text-black px-4 py-2 rounded-full text-sm font-semibold">Featured</span>
+              <span className="bg-gradient-to-r from-brand-coral to-brand-cream text-black px-4 py-2 rounded-full text-sm font-semibold">Featured</span>
               <span className="text-brand-cream text-sm font-medium">{featuredPost.category}</span>
               <span className="text-white/60 text-sm">•</span>
               <span className="text-white/60 text-sm">{featuredPost.readTime}</span>
@@ -115,16 +116,16 @@ const Blog = () => {
                 <span>•</span>
                 <span>By {featuredPost.author}</span>
               </div>
-              <button className="bg-gradient-purple text-white px-8 py-3 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
+              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white px-8 py-3 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
                 Read Article
               </button>
             </div>
-          </div>
+          </FuturisticCard>
 
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {blogPosts.map((post, index) => (
-              <div key={index} className="glass-card p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer">
+              <FuturisticCard key={index} className="p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-brand-purple text-sm font-semibold">{post.category}</span>
                   <span className="text-white/40 text-sm">•</span>
@@ -141,7 +142,7 @@ const Blog = () => {
                   <span>{post.date}</span>
                   <span>By {post.author}</span>
                 </div>
-              </div>
+              </FuturisticCard>
             ))}
           </div>
 
@@ -153,7 +154,7 @@ const Blog = () => {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="glass-card p-12 text-center">
+          <FuturisticCard variant="neon" className="p-12 text-center">
             <h2 className="text-3xl font-bold text-gradient mb-4">Subscribe to the GrofleX Insight Brief</h2>
             <p className="text-white/80 mb-8 max-w-2xl mx-auto">
               Get weekly insights on decision intelligence, AI trends, and actionable strategies 
@@ -165,14 +166,14 @@ const Blog = () => {
                 placeholder="Enter your email address"
                 className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/50 focus:outline-none focus:border-brand-purple focus:bg-white/15 transition-all duration-300"
               />
-              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl hover:shadow-brand-purple/25 transition-all duration-300 whitespace-nowrap">
+              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl hover:shadow-brand-purple/25 transition-all duration-300 whitespace-nowrap">
                 Subscribe Now
               </button>
             </div>
             <p className="text-white/60 text-sm mt-4">
               No spam. Unsubscribe anytime. Read by leaders at Fortune 500 companies.
             </p>
-          </div>
+          </FuturisticCard>
         </div>
       </div>
     </Layout>

@@ -1,5 +1,6 @@
 
 import Layout from '../components/Layout';
+import FuturisticCard from '../components/FuturisticCard';
 
 const About = () => {
   const values = [
@@ -35,13 +36,13 @@ const About = () => {
           </div>
 
           {/* Mission Statement */}
-          <div className="glass-card p-12 mb-16 text-center">
+          <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
             <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
             <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               To empower decision-makers with insight they can trust—instantly. We believe that in a world 
               drowning in data, what matters most is knowing what to do next.
             </p>
-          </div>
+          </FuturisticCard>
 
           {/* Story Section */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -69,13 +70,13 @@ const About = () => {
             </div>
             
             <div className="relative">
-              <div className="glass-card p-8">
+              <FuturisticCard variant="hologram" className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gradient mb-4">The Journey</h3>
                 </div>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-purple rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-gradient-to-r from-brand-purple to-brand-coral rounded-full flex items-center justify-center text-white font-bold">
                       1
                     </div>
                     <div>
@@ -84,7 +85,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-coral rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-gradient-to-r from-brand-coral to-brand-cream rounded-full flex items-center justify-center text-black font-bold">
                       2
                     </div>
                     <div>
@@ -93,7 +94,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center text-black font-bold">
+                    <div className="w-12 h-12 bg-gradient-to-r from-brand-purple to-brand-coral rounded-full flex items-center justify-center text-white font-bold">
                       3
                     </div>
                     <div>
@@ -102,7 +103,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </FuturisticCard>
             </div>
           </div>
 
@@ -117,17 +118,17 @@ const About = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               {values.map((value, index) => (
-                <div key={index} className="glass-card p-8 text-center hover:bg-white/10 transition-all duration-300 group">
+                <FuturisticCard key={index} variant="default" className="p-8 text-center hover:bg-white/10 transition-all duration-300 group">
                   <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{value.icon}</div>
                   <h3 className="text-2xl font-bold text-gradient mb-4">{value.title}</h3>
                   <p className="text-white/80">{value.description}</p>
-                </div>
+                </FuturisticCard>
               ))}
             </div>
           </div>
 
           {/* Impact Section */}
-          <div className="glass-card p-12 mb-16">
+          <FuturisticCard variant="neon" className="p-12 mb-16">
             <h2 className="text-3xl font-bold text-gradient text-center mb-12">Our Impact</h2>
             <div className="grid md:grid-cols-4 gap-8 text-center">
               {[
@@ -142,10 +143,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </FuturisticCard>
 
           {/* Team Preview */}
-          <div className="glass-card p-12 text-center mb-16">
+          <FuturisticCard variant="hologram" className="p-12 text-center mb-16">
             <h2 className="text-3xl font-bold text-gradient mb-6">Leadership Team</h2>
             <p className="text-white/80 mb-8">
               Industry veterans from AI, analytics, and enterprise software, united by a mission to bring clarity to decision-making
@@ -166,23 +167,23 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </FuturisticCard>
 
           {/* CTA Section */}
-          <div className="glass-card p-12 text-center">
+          <FuturisticCard variant="neon" className="p-12 text-center">
             <h2 className="text-3xl font-bold text-gradient mb-4">Join Our Mission</h2>
             <p className="text-white/80 mb-8">
               Help us bring clarity to decision-making across every industry and organization
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
                 View Open Positions
               </button>
               <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
                 Contact Our Team
               </button>
             </div>
-          </div>
+          </FuturisticCard>
         </div>
       </div>
     </Layout>

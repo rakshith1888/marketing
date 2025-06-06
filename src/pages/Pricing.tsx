@@ -1,5 +1,6 @@
 
 import Layout from '../components/Layout';
+import FuturisticCard from '../components/FuturisticCard';
 
 const Pricing = () => {
   const plans = [
@@ -64,26 +65,27 @@ const Pricing = () => {
 
           {/* Pricing Toggle */}
           <div className="flex justify-center mb-12">
-            <div className="glass-card p-2 flex rounded-full">
-              <button className="bg-gradient-purple text-white px-6 py-2 rounded-full">Monthly</button>
+            <FuturisticCard className="p-2 flex rounded-full">
+              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white px-6 py-2 rounded-full">Monthly</button>
               <button className="text-white/80 px-6 py-2 rounded-full hover:text-white transition-colors">
                 Yearly (Save 20%)
               </button>
-            </div>
+            </FuturisticCard>
           </div>
 
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {plans.map((plan, index) => (
-              <div 
+              <FuturisticCard 
                 key={index} 
-                className={`glass-card p-8 relative hover:bg-white/10 transition-all duration-300 ${
+                variant={plan.popular ? "neon" : "default"}
+                className={`p-8 relative hover:bg-white/10 transition-all duration-300 ${
                   plan.popular ? 'border-2 border-brand-purple scale-105' : ''
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-coral text-black px-6 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-brand-coral to-brand-cream text-black px-6 py-2 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -110,18 +112,18 @@ const Pricing = () => {
                 <button 
                   className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-gradient-brand text-black hover:shadow-xl'
+                      ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-xl'
                       : 'glass-card border border-brand-purple/50 text-white hover:bg-brand-purple/20'
                   }`}
                 >
                   {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                 </button>
-              </div>
+              </FuturisticCard>
             ))}
           </div>
 
           {/* FAQ Section */}
-          <div className="glass-card p-12">
+          <FuturisticCard variant="neon" className="p-12">
             <h2 className="text-3xl font-bold text-gradient text-center mb-12">Frequently Asked Questions</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
@@ -148,13 +150,13 @@ const Pricing = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </FuturisticCard>
 
           {/* CTA Section */}
           <div className="text-center mt-16">
             <h2 className="text-3xl font-bold text-gradient mb-4">Ready to Get Started?</h2>
             <p className="text-white/80 mb-8">Join thousands of businesses already using Groflex</p>
-            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300">
+            <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300">
               Start Free Trial
             </button>
           </div>

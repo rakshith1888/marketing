@@ -1,5 +1,6 @@
 
 import Layout from '../components/Layout';
+import FuturisticCard from '../components/FuturisticCard';
 
 const Solutions = () => {
   const solutions = [
@@ -53,7 +54,7 @@ const Solutions = () => {
           {/* Role-based Solutions */}
           <div className="space-y-16">
             {solutions.map((solution, index) => (
-              <div key={index} className="glass-card p-12 hover:bg-white/10 transition-all duration-300">
+              <FuturisticCard key={index} variant="neon" className="p-12 hover:bg-white/10 transition-all duration-300">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                     <div className="flex items-center space-x-4 mb-6">
@@ -78,7 +79,7 @@ const Solutions = () => {
                       </div>
                     </div>
                     
-                    <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                       {solution.cta}
                     </button>
                   </div>
@@ -88,32 +89,32 @@ const Solutions = () => {
                       <h4 className="text-brand-cream font-semibold mb-6 text-center">Key Features:</h4>
                       <div className="grid grid-cols-2 gap-4">
                         {solution.features.map((feature, idx) => (
-                          <div key={idx} className="glass-card p-4 text-center">
+                          <FuturisticCard key={idx} className="p-4 text-center">
                             <div className="w-3 h-3 bg-brand-coral rounded-full mx-auto mb-2"></div>
                             <p className="text-white/80 text-sm">{feature}</p>
-                          </div>
+                          </FuturisticCard>
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </FuturisticCard>
             ))}
           </div>
 
           {/* CTA Section */}
-          <div className="glass-card p-12 text-center mt-16">
+          <FuturisticCard variant="neon" className="p-12 text-center mt-16">
             <h2 className="text-3xl font-bold text-gradient mb-4">Ready to See GrofleX in Action?</h2>
             <p className="text-white/80 mb-8">Choose your path and discover how GrofleX delivers clarity for your specific role</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
                 Start Free Trial
               </button>
               <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
                 Book a Demo
               </button>
             </div>
-          </div>
+          </FuturisticCard>
         </div>
       </div>
     </Layout>
