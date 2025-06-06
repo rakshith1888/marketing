@@ -122,61 +122,46 @@ const Home = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '3s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Text content */}
-            <div className="text-left">
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                <span className="text-gradient">Clarity to Know</span><br />
-                <span className="text-white">What to Do Next</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
-                Predictive analytics. Prescriptive next steps.<br />
-                Powered by AI, designed for decisive leaders.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6">
-                <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
-                  See How It Works
-                </button>
-              </div>
-            </div>
-
-            {/* Right side - Video */}
-            <div className="flex justify-center lg:justify-end">
-              <FuturisticCard variant="hologram" className="w-full max-w-lg">
-                <div className="aspect-video bg-gradient-to-br from-black/80 to-gray-900/80 rounded-xl flex items-center justify-center relative overflow-hidden border border-brand-purple/30">
-                  {/* Video background pattern */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-brand-coral/10"></div>
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23AD72BD\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')]"></div>
-                  
-                  {/* Play button */}
-                  <button className="relative z-10 bg-gradient-brand text-black p-4 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                    <Play className="w-8 h-8 ml-1" />
-                  </button>
-                  
-                  {/* Video info overlay */}
-                  <div className="absolute bottom-4 left-4 text-white/90 text-sm font-medium">
-                    See GrofleX in Action
-                  </div>
-                  <div className="absolute top-4 right-4 text-brand-purple text-xs font-mono bg-black/30 px-2 py-1 rounded">
-                    03:42
-                  </div>
-                  
-                  {/* Corner accents */}
-                  <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-brand-purple"></div>
-                  <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-brand-coral"></div>
-                  <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-brand-coral"></div>
-                  <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-brand-purple"></div>
-                </div>
-              </FuturisticCard>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+            <span className="text-gradient">Clarity to Know</span><br />
+            <span className="text-white">What to Do Next</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed">
+            Predictive analytics. Prescriptive next steps.<br />
+            Powered by AI, designed for decisive leaders.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+              Start Free Trial
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+              See How It Works
+            </button>
           </div>
+
+          {/* Animated Flywheel */}
+          <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { icon: '🔗', title: 'Connect', step: '01' },
+                { icon: '🔮', title: 'Predict', step: '02' },
+                { icon: '📋', title: 'Prescribe', step: '03' },
+                { icon: '⚡', title: 'Act', step: '04' }
+              ].map((item, index) => (
+                <div key={index} className="text-center group">
+                  <div className="text-sm text-brand-purple font-mono mb-2">STEP {item.step}</div>
+                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gradient">{item.title}</h3>
+                </div>
+              ))}
+            </div>
+          </FuturisticCard>
         </div>
       </div>
 
@@ -344,7 +329,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 7. AI INTERFACE DEMO */}
+      {/* 7. AI INTERFACE DEMO - CHATBOT SCREENSHOTS */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
