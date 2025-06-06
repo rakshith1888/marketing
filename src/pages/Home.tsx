@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
-import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play } from 'lucide-react';
+import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, PresentationChart, ChartBar } from 'lucide-react';
 import { useState } from 'react';
 
 const Home = () => {
@@ -43,17 +43,17 @@ const Home = () => {
     {
       title: 'Executives',
       description: 'See where you\'re heading and what to do about it—before others do.',
-      icon: '👔'
+      icon: <Briefcase className="w-12 h-12" />
     },
     {
       title: 'BI Managers',
       description: 'Deliver predictive dashboards that tell leadership what matters.',
-      icon: '📊'
+      icon: <PresentationChart className="w-12 h-12" />
     },
     {
       title: 'Analysts',
       description: 'Automate insight delivery and eliminate low-impact work.',
-      icon: '🔍'
+      icon: <ChartBar className="w-12 h-12" />
     }
   ];
 
@@ -207,7 +207,9 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {audienceCards.map((card, index) => (
               <FuturisticCard key={index} variant="neon" className="text-center">
-                <div className="text-6xl mb-6">{card.icon}</div>
+                <div className="text-brand-purple mb-6 flex justify-center">
+                  {card.icon}
+                </div>
                 <h3 className="text-2xl font-bold text-gradient mb-4">{card.title}</h3>
                 <p className="text-white/80 mb-6">{card.description}</p>
                 <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
