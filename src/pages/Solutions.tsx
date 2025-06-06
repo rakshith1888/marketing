@@ -1,10 +1,13 @@
 
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import { Button } from '../components/ui/button';
 
 const Solutions = () => {
   const solutions = [
     {
+      id: 'business-leaders',
       title: 'Business Leaders',
       subtitle: 'Strategic Decision Making',
       pain: 'Can\'t get cross-functional visibility',
@@ -12,9 +15,11 @@ const Solutions = () => {
       description: 'See where you\'re heading and what to do about it—before others do.',
       icon: '👔',
       features: ['Executive Dashboards', 'Risk Forecasting', 'ROI Tracking', 'Strategic Planning'],
-      cta: 'See How GrofleX Drives ROI'
+      cta: 'See How GrofleX Drives ROI',
+      metrics: ['85% faster decision making', '3x ROI visibility', '67% reduction in strategic risks']
     },
     {
+      id: 'bi-managers',
       title: 'BI Managers',
       subtitle: 'Operational Intelligence',
       pain: 'Reporting fatigue + bottlenecks',
@@ -22,9 +27,11 @@ const Solutions = () => {
       description: 'Deliver predictive dashboards that tell leadership what matters.',
       icon: '📊',
       features: ['Automated Reporting', 'Predictive Analytics', 'Team Collaboration', 'Data Governance'],
-      cta: 'Explore the Platform'
+      cta: 'Explore the Platform',
+      metrics: ['90% less manual reporting', '5x faster insights delivery', '60% analyst time savings']
     },
     {
+      id: 'analysts',
       title: 'Analysts',
       subtitle: 'Advanced Analytics',
       pain: 'Manual dashboards & reactive reporting',
@@ -32,7 +39,8 @@ const Solutions = () => {
       description: 'Automate insight delivery and eliminate low-impact work.',
       icon: '🔍',
       features: ['Natural Language Queries', 'Automated Insights', 'Model Building', 'Data Exploration'],
-      cta: 'Try It Free'
+      cta: 'Try It Free',
+      metrics: ['70% reduction in manual work', '4x faster analysis', '95% query automation']
     }
   ];
 
@@ -40,6 +48,7 @@ const Solutions = () => {
     <Layout>
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="text-gradient">Clarity for Everyone—</span>
@@ -51,68 +60,136 @@ const Solutions = () => {
             </p>
           </div>
 
-          {/* Role-based Solutions */}
-          <div className="space-y-16">
-            {solutions.map((solution, index) => (
-              <FuturisticCard key={index} variant="neon" className="p-12 hover:bg-white/10 transition-all duration-300">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                  <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className="text-6xl">{solution.icon}</div>
-                      <div>
-                        <h2 className="text-3xl font-bold text-gradient">{solution.title}</h2>
-                        <p className="text-brand-purple text-lg">{solution.subtitle}</p>
+          {/* Tabbed Interface */}
+          <FuturisticCard variant="neon" className="p-8">
+            <Tabs defaultValue="business-leaders" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 mb-12 bg-white/5 border border-white/10">
+                {solutions.map((solution) => (
+                  <TabsTrigger 
+                    key={solution.id}
+                    value={solution.id} 
+                    className="text-white data-[state=active]:bg-brand-purple/20 data-[state=active]:text-brand-cream"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <span className="text-2xl">{solution.icon}</span>
+                      <span className="font-semibold">{solution.title}</span>
+                    </div>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {solutions.map((solution) => (
+                <TabsContent key={solution.id} value={solution.id} className="mt-0">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Content Side */}
+                    <div>
+                      <div className="mb-8">
+                        <h2 className="text-4xl font-bold text-gradient mb-4">{solution.title}</h2>
+                        <p className="text-brand-purple text-xl mb-6">{solution.subtitle}</p>
+                        <p className="text-xl text-white/90 mb-8">{solution.description}</p>
                       </div>
+                      
+                      {/* Pain/Gain Cards */}
+                      <div className="grid md:grid-cols-2 gap-6 mb-8">
+                        <FuturisticCard className="bg-red-500/10 border-red-500/30 p-6">
+                          <h4 className="text-red-400 font-semibold mb-3 text-lg">Current Pain:</h4>
+                          <p className="text-white/80 text-lg">{solution.pain}</p>
+                        </FuturisticCard>
+                        <FuturisticCard className="bg-green-500/10 border-green-500/30 p-6">
+                          <h4 className="text-green-400 font-semibold mb-3 text-lg">With GrofleX:</h4>
+                          <p className="text-white/80 text-lg">{solution.gain}</p>
+                        </FuturisticCard>
+                      </div>
+
+                      {/* Metrics */}
+                      <div className="mb-8">
+                        <h4 className="text-brand-cream font-semibold mb-4 text-lg">Key Outcomes:</h4>
+                        <div className="space-y-3">
+                          {solution.metrics.map((metric, idx) => (
+                            <div key={idx} className="flex items-center space-x-3">
+                              <div className="w-2 h-2 bg-brand-coral rounded-full"></div>
+                              <span className="text-white/80">{metric}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <Button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        {solution.cta}
+                      </Button>
                     </div>
                     
-                    <p className="text-xl text-white/90 mb-8">{solution.description}</p>
-                    
-                    {/* Pain/Gain */}
-                    <div className="grid md:grid-cols-2 gap-6 mb-8">
-                      <div className="bg-red-500/10 border border-red-500/30 p-4 rounded-lg">
-                        <h4 className="text-red-400 font-semibold mb-2">Current Pain:</h4>
-                        <p className="text-white/80">{solution.pain}</p>
-                      </div>
-                      <div className="bg-green-500/10 border border-green-500/30 p-4 rounded-lg">
-                        <h4 className="text-green-400 font-semibold mb-2">With GrofleX:</h4>
-                        <p className="text-white/80">{solution.gain}</p>
-                      </div>
+                    {/* Features Side */}
+                    <div>
+                      <FuturisticCard className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-8">
+                        <h4 className="text-brand-cream font-semibold mb-8 text-center text-xl">Key Features:</h4>
+                        <div className="grid grid-cols-2 gap-6">
+                          {solution.features.map((feature, idx) => (
+                            <FuturisticCard key={idx} className="p-6 text-center hover:bg-white/10 transition-all duration-300">
+                              <div className="w-4 h-4 bg-brand-coral rounded-full mx-auto mb-3"></div>
+                              <p className="text-white/80 font-medium">{feature}</p>
+                            </FuturisticCard>
+                          ))}
+                        </div>
+                        
+                        {/* Sample Dashboard Preview */}
+                        <div className="mt-8 p-6 bg-black/20 rounded-lg border border-white/10">
+                          <h5 className="text-brand-cream text-sm font-semibold mb-4 text-center">Sample Dashboard View</h5>
+                          <div className="space-y-3">
+                            <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
+                            <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
+                            <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
+                          </div>
+                        </div>
+                      </FuturisticCard>
                     </div>
-                    
-                    <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                      {solution.cta}
-                    </button>
                   </div>
-                  
-                  <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                    <div className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-8 rounded-xl">
-                      <h4 className="text-brand-cream font-semibold mb-6 text-center">Key Features:</h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        {solution.features.map((feature, idx) => (
-                          <FuturisticCard key={idx} className="p-4 text-center">
-                            <div className="w-3 h-3 bg-brand-coral rounded-full mx-auto mb-2"></div>
-                            <p className="text-white/80 text-sm">{feature}</p>
-                          </FuturisticCard>
-                        ))}
-                      </div>
-                    </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </FuturisticCard>
+
+          {/* GrofleX Q&A Demo Section */}
+          <FuturisticCard variant="hologram" className="p-12 mt-16">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gradient mb-4">Ask GrofleX Anything</h2>
+              <p className="text-white/80 text-lg">Experience our AI-powered Q&A interface with natural language queries</p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <FuturisticCard className="bg-black/40 p-8 border border-brand-purple/30">
+                <div className="space-y-4 mb-6">
+                  <div className="bg-brand-purple/20 p-4 rounded-lg border-l-4 border-brand-purple">
+                    <p className="text-white/90">"Why is our churn rate increasing in Q3?"</p>
+                  </div>
+                  <div className="bg-brand-coral/20 p-4 rounded-lg border-l-4 border-brand-coral">
+                    <p className="text-white/90">"What's our highest revenue risk this quarter?"</p>
+                  </div>
+                  <div className="bg-green-500/20 p-4 rounded-lg border-l-4 border-green-500">
+                    <p className="text-white/90">"Which marketing channels should we prioritize?"</p>
                   </div>
                 </div>
+                
+                <div className="text-center">
+                  <Button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full">
+                    Try Live Demo
+                  </Button>
+                </div>
               </FuturisticCard>
-            ))}
-          </div>
+            </div>
+          </FuturisticCard>
 
-          {/* CTA Section */}
+          {/* Final CTA Section */}
           <FuturisticCard variant="neon" className="p-12 text-center mt-16">
             <h2 className="text-3xl font-bold text-gradient mb-4">Ready to See GrofleX in Action?</h2>
-            <p className="text-white/80 mb-8">Choose your path and discover how GrofleX delivers clarity for your specific role</p>
+            <p className="text-white/80 mb-8 text-lg">Choose your path and discover how GrofleX delivers clarity for your specific role</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+              <Button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
                 Start Free Trial
-              </button>
-              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+              </Button>
+              <Button variant="outline" className="border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
                 Book a Demo
-              </button>
+              </Button>
             </div>
           </FuturisticCard>
         </div>
