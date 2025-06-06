@@ -16,6 +16,10 @@ const Navigation = () => {
     { name: 'Pricing', path: '/pricing' },
   ];
 
+  const handleGetStarted = () => {
+    window.open('https://app.groflex.ai', '_blank');
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,11 +48,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Link to="/get-started">
-              <button className="bg-gradient-purple text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
-                Get Started
-              </button>
-            </Link>
+            <button 
+              onClick={handleGetStarted}
+              className="bg-gradient-purple text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300"
+            >
+              Get Started
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -80,11 +85,15 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link to="/get-started" onClick={() => setIsOpen(false)}>
-                <button className="bg-gradient-purple text-white px-6 py-2 rounded-full self-start">
-                  Get Started
-                </button>
-              </Link>
+              <button 
+                onClick={() => {
+                  handleGetStarted();
+                  setIsOpen(false);
+                }}
+                className="bg-gradient-purple text-white px-6 py-2 rounded-full self-start"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         )}
