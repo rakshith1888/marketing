@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play } from 'lucide-react';
@@ -109,14 +110,6 @@ const Home = () => {
     }
   ];
 
-  const sampleQuestions = [
-    "Why is churn rising?",
-    "Where's my highest risk?",
-    "What should we do this quarter?",
-    "Which customers are most likely to expand?",
-    "What's driving our revenue decline?"
-  ];
-
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
@@ -160,7 +153,7 @@ const Home = () => {
                 <div className="aspect-video bg-gradient-to-br from-black/80 to-gray-900/80 rounded-xl flex items-center justify-center relative overflow-hidden border border-brand-purple/30">
                   {/* Video background pattern */}
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-brand-coral/10"></div>
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23AD72BD" fill-opacity="0.05"%3E%3Ccircle cx="3" cy="3" r="3"/%3E%3C/g%3E%3C/svg%3E')]"></div>
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23AD72BD\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')]"></div>
                   
                   {/* Play button */}
                   <button className="relative z-10 bg-gradient-brand text-black p-4 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110 group">
@@ -326,55 +319,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 6. HOW IT WORKS */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">How GrofleX Helps You</span><br />
-              <span className="text-white">Make the Right Move—Fast</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-5 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Connect',
-                description: 'Connect systems and data sources'
-              },
-              {
-                step: '02',
-                title: 'Predict',
-                description: 'GrofleX predicts trends and flags emerging risks'
-              },
-              {
-                step: '03',
-                title: 'Recommend',
-                description: 'You get recommended actions and insights'
-              },
-              {
-                step: '04',
-                title: 'Visualize',
-                description: 'Visualize trade-offs and act'
-              },
-              {
-                step: '05',
-                title: 'Learn',
-                description: 'Platform learns from each outcome'
-              }
-            ].map((step, index) => (
-              <FuturisticCard key={index} variant="hologram" className="text-center">
-                <div className="text-sm text-brand-purple font-mono mb-4">STEP {step.step}</div>
-                <h3 className="text-lg font-bold text-gradient mb-4">{step.title}</h3>
-                <p className="text-white/70 text-sm">{step.description}</p>
-              </FuturisticCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. SOCIAL PROOF */}
+      {/* 6. SOCIAL PROOF */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -399,7 +344,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 8. AI INTERFACE DEMO */}
+      {/* 7. AI INTERFACE DEMO */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -504,7 +449,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 9. FINAL CTA SECTION */}
+      {/* 8. FINAL CTA SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 cyber-grid opacity-30"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -537,7 +482,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 10. TOOL INTEGRATIONS */}
+      {/* 9. TOOL INTEGRATIONS */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -557,7 +502,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 11. FAQ SECTION */}
+      {/* 10. FAQ SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -591,7 +536,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 12. PARTNERS & FOOTER INFO */}
+      {/* 11. PARTNERS & FOOTER INFO */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div className="max-w-7xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-gradient mb-8">Backed by Leading Investors</h3>
