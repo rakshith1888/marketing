@@ -1,6 +1,7 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
-import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, PresentationChart, ChartBar } from 'lucide-react';
+import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
 import { useState } from 'react';
 
 const Home = () => {
@@ -48,7 +49,7 @@ const Home = () => {
     {
       title: 'BI Managers',
       description: 'Deliver predictive dashboards that tell leadership what matters.',
-      icon: <PresentationChart className="w-12 h-12" />
+      icon: <Presentation className="w-12 h-12" />
     },
     {
       title: 'Analysts',
