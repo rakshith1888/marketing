@@ -4,6 +4,7 @@ import FuturisticCard from '../components/FuturisticCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import SolutionHero from '../components/solutions/SolutionHero';
 import SolutionTab from '../components/solutions/SolutionTab';
+import IndustrySolutions from '../components/solutions/IndustrySolutions';
 import QADemo from '../components/solutions/QADemo';
 import FinalCTA from '../components/solutions/FinalCTA';
 import { solutions } from '../data/solutionsData';
@@ -41,6 +42,7 @@ const Solutions = () => {
             </Tabs>
           </FuturisticCard>
 
+          <IndustrySolutions />
           <QADemo />
           <FinalCTA />
         </div>
