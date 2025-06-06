@@ -147,34 +147,38 @@ const Home = () => {
       </div>
 
       {/* VIDEO CONTENT SECTION */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden cyber-grid">
+        {/* Floating orbs */}
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8">
               <span className="text-gradient">See GrofleX in Action</span>
             </h2>
-            <p className="text-xl text-white/80 mb-8">
+            <p className="text-xl md:text-2xl text-white/80 mb-12">
               Watch how leaders transform data into decisive action
             </p>
           </div>
           
-          <FuturisticCard variant="neon" className="relative overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-black/50 to-gray-900/50 rounded-lg flex items-center justify-center relative group cursor-pointer">
+          <FuturisticCard variant="neon" className="relative overflow-hidden max-w-6xl mx-auto">
+            <div className="aspect-video bg-gradient-to-br from-black/50 to-gray-900/50 rounded-lg flex items-center justify-center relative group cursor-pointer min-h-[60vh]">
               {/* Video placeholder with play button */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 rounded-lg"></div>
               
               {/* Play button */}
-              <div className="relative z-10 w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+              <div className="relative z-10 w-24 h-24 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Play className="w-10 h-10 text-black ml-1" fill="currentColor" />
               </div>
               
               {/* Video overlay info */}
-              <div className="absolute bottom-6 left-6 right-6 z-10">
-                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4">
-                  <h3 className="text-white font-semibold text-lg mb-2">
+              <div className="absolute bottom-8 left-8 right-8 z-10">
+                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-6">
+                  <h3 className="text-white font-semibold text-xl mb-3">
                     From Data Confusion to Clear Action in 3 Minutes
                   </h3>
-                  <p className="text-white/80 text-sm">
+                  <p className="text-white/80 text-base">
                     See how Sarah, VP of Strategy at TechCorp, uses GrofleX to predict market shifts
                   </p>
                 </div>
@@ -183,11 +187,12 @@ const Home = () => {
               {/* Floating elements for visual appeal */}
               <div className="absolute top-8 right-8 w-3 h-3 bg-brand-coral rounded-full animate-pulse"></div>
               <div className="absolute top-16 right-16 w-2 h-2 bg-brand-purple rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-12 left-12 w-2 h-2 bg-brand-cream rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
             </div>
           </FuturisticCard>
           
-          <div className="text-center mt-8">
-            <p className="text-white/60 text-sm">
+          <div className="text-center mt-12">
+            <p className="text-white/60 text-lg">
               ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results shown
             </p>
           </div>
@@ -580,4 +585,3 @@ const Home = () => {
 };
 
 export default Home;
-
