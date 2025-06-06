@@ -66,6 +66,14 @@ const Pricing = () => {
     {
       q: 'Can I cancel anytime?',
       a: 'Yes, you can cancel your subscription at any time. No long-term contracts.'
+    },
+    {
+      q: 'Do you offer discounts for annual subscriptions?',
+      a: 'Yes, we offer a 20% discount when you choose our yearly billing option. This applies to all plans.'
+    },
+    {
+      q: 'Is customer support included in all plans?',
+      a: 'All plans include customer support. Starter plans get email support, Professional plans get priority support, and Enterprise plans get dedicated support with a personal account manager.'
     }
   ];
 
@@ -148,8 +156,8 @@ const Pricing = () => {
                     <AccordionTrigger className="px-6 py-4 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-lg font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 text-white/80 bg-white/5 flex items-center justify-center min-h-[60px]">
-                      <p className="text-center">{faq.a}</p>
+                    <AccordionContent className="px-6 pb-4 text-white/80 bg-white/5">
+                      <p>{faq.a}</p>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
