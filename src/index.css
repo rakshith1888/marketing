@@ -54,20 +54,94 @@
   body {
     @apply bg-black text-white;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg relative overflow-hidden;
+    box-shadow: 0 8px 32px rgba(173, 114, 189, 0.1), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(173, 114, 189, 0.3), transparent);
   }
   
   .neon-glow {
     @apply shadow-lg;
-    box-shadow: 0 0 20px rgba(173, 114, 189, 0.3);
+    box-shadow: 0 0 20px rgba(173, 114, 189, 0.4),
+                0 0 40px rgba(255, 159, 148, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   
   .text-gradient {
     @apply bg-gradient-brand bg-clip-text text-transparent;
+  }
+  
+  .futuristic-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, rgba(173, 114, 189, 0.1), rgba(255, 159, 148, 0.1));
+    background-clip: padding-box;
+  }
+  
+  .futuristic-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #AD72BD, #FF9F94);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(173, 114, 189, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(173, 114, 189, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .hologram-effect {
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(173, 114, 189, 0.1) 50%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: hologram 3s ease-in-out infinite;
+  }
+  
+  @keyframes hologram {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(173, 114, 189, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(173, 114, 189, 0.6), 
+                  0 0 60px rgba(255, 159, 148, 0.3);
+    }
   }
 }
