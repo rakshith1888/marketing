@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play } from 'lucide-react';
@@ -133,7 +132,7 @@ const Home = () => {
             Powered by AI, designed for decisive leaders.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -142,26 +141,6 @@ const Home = () => {
               See How It Works
             </button>
           </div>
-
-          {/* Animated Flywheel */}
-          <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { icon: '🔗', title: 'Connect', step: '01' },
-                { icon: '🔮', title: 'Predict', step: '02' },
-                { icon: '📋', title: 'Prescribe', step: '03' },
-                { icon: '⚡', title: 'Act', step: '04' }
-              ].map((item, index) => (
-                <div key={index} className="text-center group">
-                  <div className="text-sm text-brand-purple font-mono mb-2">STEP {item.step}</div>
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gradient">{item.title}</h3>
-                </div>
-              ))}
-            </div>
-          </FuturisticCard>
         </div>
       </div>
 
