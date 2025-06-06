@@ -1,9 +1,12 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Brain, Zap, Shield, BarChart3, Cpu, Database, Network, MessageSquare, Users, Lock } from 'lucide-react';
 
 const ProductsPage = () => {
+  const handleGetStarted = () => {
+    window.open('https://app.groflex.ai', '_blank');
+  };
+
   const features = [
     {
       icon: <Database className="w-12 h-12" />,
@@ -75,7 +78,10 @@ const ProductsPage = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gradient mb-2">Interactive Demo</h3>
                   <p className="text-white/70">See GrofleX in action with real business scenarios</p>
-                  <button className="mt-4 bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300">
+                  <button 
+                    onClick={handleGetStarted}
+                    className="mt-4 bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
+                  >
                     Watch Demo
                   </button>
                 </div>
@@ -217,7 +223,10 @@ const ProductsPage = () => {
                 </div>
                 
                 <div className="text-center">
-                  <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+                  <button 
+                    onClick={handleGetStarted}
+                    className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+                  >
                     Try Live Demo
                   </button>
                 </div>
@@ -232,7 +241,10 @@ const ProductsPage = () => {
               Discover how our AI-powered platform transforms data into decisive action
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+              <button 
+                onClick={handleGetStarted}
+                className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+              >
                 Start Free Trial
               </button>
               <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
