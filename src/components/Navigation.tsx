@@ -44,9 +44,11 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <button className="bg-gradient-purple text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
-              Get Started
-            </button>
+            <Link to="/get-started">
+              <button className="bg-gradient-purple text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
+                Get Started
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -78,9 +80,11 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <button className="bg-gradient-purple text-white px-6 py-2 rounded-full self-start">
-                Get Started
-              </button>
+              <Link to="/get-started" onClick={() => setIsOpen(false)}>
+                <button className="bg-gradient-purple text-white px-6 py-2 rounded-full self-start">
+                  Get Started
+                </button>
+              </Link>
             </div>
           </div>
         )}

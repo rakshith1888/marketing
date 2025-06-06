@@ -1,7 +1,9 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -142,10 +144,12 @@ const Home = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-8 justify-start">
-                <button className="bg-gradient-brand text-black font-semibold px-10 py-5 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
-                  Start Free Trial
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <Link to="/get-started">
+                  <button className="bg-gradient-brand text-black font-semibold px-10 py-5 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+                    Start Free Trial
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
                 <button className="glass-card border border-brand-purple/50 text-white font-semibold px-10 py-5 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300">
                   See How It Works
                 </button>
@@ -506,9 +510,11 @@ const Home = () => {
               <div className="text-4xl mb-4">🚀</div>
               <h3 className="text-xl font-bold text-gradient mb-4">For Leaders</h3>
               <p className="text-white/80 mb-6">Get strategic clarity and predictive insights</p>
-              <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
-                Start Free Trial
-              </button>
+              <Link to="/get-started">
+                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
+                  Start Free Trial
+                </button>
+              </Link>
             </FuturisticCard>
             
             <FuturisticCard variant="neon" className="text-center">
