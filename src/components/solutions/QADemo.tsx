@@ -3,6 +3,10 @@ import FuturisticCard from '../FuturisticCard';
 import { Button } from '../ui/button';
 
 const QADemo = () => {
+  const handleLiveDemo = () => {
+    window.open('https://app.groflex.ai', '_blank');
+  };
+
   return (
     <div className="mt-12">
       <div className="text-center mb-6">
@@ -25,7 +29,10 @@ const QADemo = () => {
           </div>
           
           <div className="text-center">
-            <Button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-6 py-3 rounded-full">
+            <Button 
+              onClick={handleLiveDemo}
+              className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-6 py-3 rounded-full"
+            >
               Try Live Demo
             </Button>
           </div>

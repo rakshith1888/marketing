@@ -4,6 +4,10 @@ import FuturisticCard from '../components/FuturisticCard';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 
 const Pricing = () => {
+  const handleGetStarted = () => {
+    window.open('https://app.groflex.ai', '_blank');
+  };
+
   const plans = [
     {
       name: 'Starter',
@@ -152,6 +156,7 @@ const Pricing = () => {
                 </ul>
 
                 <button 
+                  onClick={handleGetStarted}
                   className={`w-full py-3 rounded-full font-semibold transition-all duration-300 text-sm ${
                     plan.popular
                       ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-xl'
@@ -185,7 +190,10 @@ const Pricing = () => {
           <div className="text-center mt-12">
             <h2 className="text-3xl font-bold text-gradient mb-4">Ready to Get Started?</h2>
             <p className="text-white/80 mb-8">Join thousands of businesses already using Groflex</p>
-            <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300">
+            <button 
+              onClick={handleGetStarted}
+              className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300"
+            >
               Start Free Trial
             </button>
           </div>
