@@ -160,7 +160,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Side - Square Video */}
+            {/* Right Side - YouTube Video */}
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
                 <div className="mb-8 text-center">
@@ -174,41 +174,17 @@ const Home = () => {
                 </div>
                 
                 <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
-                  <div className="aspect-square bg-gradient-to-br from-black/60 to-gray-900/60 rounded-xl flex items-center justify-center relative group cursor-pointer border border-white/10">
-                    {/* Video placeholder with enhanced gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/30 to-brand-coral/30 rounded-xl"></div>
-                    
-                    {/* Enhanced play button */}
-                    <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-white to-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl border-4 border-white/20">
-                      <Play className="w-6 h-6 text-black ml-1" fill="currentColor" />
-                    </div>
-                    
-                    {/* Enhanced video overlay info */}
-                    <div className="absolute bottom-3 left-3 right-3 z-10">
-                      <div className="bg-black/80 backdrop-blur-lg rounded-lg p-3 border border-white/10">
-                        <h3 className="text-white font-bold text-base mb-1">
-                          From Data Confusion to Clear Action
-                        </h3>
-                        <p className="text-white/90 text-xs leading-relaxed">
-                          See how Sarah, VP of Strategy at TechCorp, uses GrofleX to predict market shifts
-                        </p>
-                        <div className="flex items-center gap-3 mt-2">
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-white/70 text-xs">Live Demo</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-brand-coral rounded-full"></div>
-                            <span className="text-white/70 text-xs">Real Results</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Enhanced floating elements */}
-                    <div className="absolute top-4 right-4 w-3 h-3 bg-brand-coral rounded-full animate-pulse"></div>
-                    <div className="absolute top-8 right-8 w-2 h-2 bg-brand-purple rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute top-6 left-6 w-2 h-2 bg-brand-cream rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                  <div className="aspect-square rounded-xl overflow-hidden">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/HvBaHdzyF54"
+                      title="GrofleX Demo Video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                    ></iframe>
                   </div>
                 </FuturisticCard>
                 
@@ -221,7 +197,7 @@ const Home = () => {
                     className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto"
                   >
                     <Play className="w-5 h-5" />
-                    Watch Full Case Study
+                    Start Free Trial
                   </button>
                 </div>
               </div>

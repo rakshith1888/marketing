@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Brain, Zap, Shield, BarChart3, Cpu, Database, Network, MessageSquare, Users, Lock } from 'lucide-react';
@@ -69,22 +70,27 @@ const ProductsPage = () => {
               Discover how GrofleX transforms fragmented data into clear, actionable insights that drive confident decision-making across your entire organization.
             </p>
             
-            {/* Demo Video Placeholder */}
+            {/* YouTube Video */}
             <FuturisticCard variant="neon" className="max-w-4xl mx-auto mb-16">
-              <div className="aspect-video bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-brand-purple/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-10 h-10 text-brand-purple" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gradient mb-2">Interactive Demo</h3>
-                  <p className="text-white/70">See GrofleX in action with real business scenarios</p>
-                  <button 
-                    onClick={handleGetStarted}
-                    className="mt-4 bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
-                  >
-                    Watch Demo
-                  </button>
-                </div>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/HvBaHdzyF54"
+                  title="GrofleX Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              <div className="mt-6 text-center">
+                <button 
+                  onClick={handleGetStarted}
+                  className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
+                >
+                  Start Free Trial
+                </button>
               </div>
             </FuturisticCard>
           </div>
