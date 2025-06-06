@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 const About = () => {
   const values = [
     {
-      title: 'Clarity',
+      title: 'Visible',
       description: 'We believe every decision should be made with complete understanding of the outcomes',
       icon: '🔍'
     },
