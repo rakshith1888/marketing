@@ -115,7 +115,7 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* 1. HERO + VIDEO SECTION - HERO CONTENT AND VIDEO STACKED ON LEFT */}
+      {/* 1. HERO + VIDEO SECTION - CENTERED LAYOUT */}
       <div className="min-h-screen flex items-center justify-center relative overflow-hidden cyber-grid">
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
@@ -123,11 +123,11 @@ const Home = () => {
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-          {/* Left Side - Hero Content + Video Stacked */}
-          <div className="flex flex-col gap-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen py-20 flex items-center justify-center">
+          {/* Centered Content */}
+          <div className="text-center">
             {/* Hero Content */}
-            <div className="text-center lg:text-left">
+            <div className="mb-16">
               <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
                 <span className="text-gradient">Clarity to Know</span><br />
                 <span className="text-white">What to Do Next</span>
@@ -138,30 +138,30 @@ const Home = () => {
                 Powered by AI, designed for decisive leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-                <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group mx-auto sm:mx-0">
                   Start Free Trial
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300 mx-auto sm:mx-0">
                   See How It Works
                 </button>
               </div>
             </div>
 
             {/* Video Content Below Hero */}
-            <div className="relative">
-              <div className="text-center lg:text-left mb-6">
+            <div>
+              <div className="mb-6">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3">
                   <span className="text-gradient">See GrofleX in Action</span>
                 </h2>
                 <p className="text-lg text-white/80 mb-3">
                   Watch how leaders transform data into decisive action
                 </p>
-                <div className="w-16 h-1 bg-gradient-brand mx-auto lg:mx-0"></div>
+                <div className="w-16 h-1 bg-gradient-brand mx-auto"></div>
               </div>
               
-              <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
+              <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl max-w-3xl mx-auto">
                 <div className="aspect-video bg-gradient-to-br from-black/60 to-gray-900/60 rounded-xl flex items-center justify-center relative group cursor-pointer border border-white/10">
                   {/* Video placeholder with enhanced gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/30 to-brand-coral/30 rounded-xl"></div>
@@ -200,21 +200,16 @@ const Home = () => {
                 </div>
               </FuturisticCard>
               
-              <div className="text-center lg:text-left mt-4">
+              <div className="mt-4">
                 <p className="text-white/60 text-sm mb-3">
                   ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results
                 </p>
-                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto lg:mx-0">
+                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
                   <Play className="w-4 h-4" />
                   Watch Full Case Study
                 </button>
               </div>
             </div>
-          </div>
-
-          {/* Right Side - Empty space for balance */}
-          <div className="hidden lg:block">
-            {/* This space provides visual balance and can be used for additional content later */}
           </div>
         </div>
       </div>
