@@ -190,7 +190,7 @@ const Home = () => {
                 
                 <div className="mt-6 text-center">
                   <p className="text-white/60 text-base mb-4">
-                    ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results
+                    ⏱️ 2 min watch • 🎯 Real customer story • 📈 Actual results
                   </p>
                   <button 
                     onClick={handleGetStarted}
