@@ -133,17 +133,17 @@ const Home = () => {
                 <span className="text-white">What to Do Next</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
+              <p className="text-2xl md:text-3xl text-white/80 mb-16 leading-relaxed max-w-4xl mx-auto">
                 Predictive analytics. Prescriptive next steps.<br />
                 Powered by AI, designed for decisive leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group mx-auto sm:mx-0">
+              <div className="flex flex-col sm:flex-row gap-8 justify-center mb-12">
+                <button className="bg-gradient-brand text-black font-semibold px-10 py-5 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group mx-auto sm:mx-0">
                   Start Free Trial
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300 mx-auto sm:mx-0">
+                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-10 py-5 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300 mx-auto sm:mx-0">
                   See How It Works
                 </button>
               </div>
@@ -151,11 +151,11 @@ const Home = () => {
 
             {/* Video Content Below Hero */}
             <div>
-              <div className="mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              <div className="mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   <span className="text-gradient">See GrofleX in Action</span>
                 </h2>
-                <p className="text-lg text-white/80 mb-3">
+                <p className="text-xl md:text-2xl text-white/80 mb-4">
                   Watch how leaders transform data into decisive action
                 </p>
                 <div className="w-16 h-1 bg-gradient-brand mx-auto"></div>
@@ -200,12 +200,12 @@ const Home = () => {
                 </div>
               </FuturisticCard>
               
-              <div className="mt-4">
-                <p className="text-white/60 text-sm mb-3">
+              <div className="mt-6">
+                <p className="text-white/60 text-base mb-4">
                   ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results
                 </p>
-                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
-                  <Play className="w-4 h-4" />
+                <button className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
+                  <Play className="w-5 h-5" />
                   Watch Full Case Study
                 </button>
               </div>
