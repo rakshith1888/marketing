@@ -130,46 +130,69 @@ const Home = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '3s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-            <span className="text-gradient">Clarity to Know</span><br />
-            <span className="text-white">What to Do Next</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Predictive analytics. Prescriptive next steps.<br />
-            Powered by AI, designed for decisive leaders.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
-              See How It Works
-            </button>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Text content */}
+            <div className="text-left">
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                <span className="text-gradient">Clarity to Know</span><br />
+                <span className="text-white">What to Do Next</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
+                Predictive analytics. Prescriptive next steps.<br />
+                Powered by AI, designed for decisive leaders.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 mb-16">
+                <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                  See How It Works
+                </button>
+              </div>
 
-          {/* Animated Flywheel */}
-          <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { icon: '🔗', title: 'Connect', step: '01' },
-                { icon: '🔮', title: 'Predict', step: '02' },
-                { icon: '📋', title: 'Prescribe', step: '03' },
-                { icon: '⚡', title: 'Act', step: '04' }
-              ].map((item, index) => (
-                <div key={index} className="text-center group">
-                  <div className="text-sm text-brand-purple font-mono mb-2">STEP {item.step}</div>
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gradient">{item.title}</h3>
+              {/* Animated Flywheel */}
+              <FuturisticCard variant="neon" className="max-w-2xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {[
+                    { icon: '🔗', title: 'Connect', step: '01' },
+                    { icon: '🔮', title: 'Predict', step: '02' },
+                    { icon: '📋', title: 'Prescribe', step: '03' },
+                    { icon: '⚡', title: 'Act', step: '04' }
+                  ].map((item, index) => (
+                    <div key={index} className="text-center group">
+                      <div className="text-xs text-brand-purple font-mono mb-2">STEP {item.step}</div>
+                      <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                        {item.icon}
+                      </div>
+                      <h3 className="text-sm font-bold text-gradient">{item.title}</h3>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </FuturisticCard>
             </div>
-          </FuturisticCard>
+
+            {/* Right side - Video */}
+            <div className="flex justify-center lg:justify-end">
+              <FuturisticCard variant="hologram" className="w-full max-w-2xl">
+                <div className="aspect-video bg-black/50 rounded-lg flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-brand-coral/20"></div>
+                  <button className="relative z-10 bg-gradient-brand text-black p-6 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110">
+                    <Play className="w-12 h-12" />
+                  </button>
+                  <div className="absolute bottom-4 left-4 text-white/80 text-sm">
+                    Watch GrofleX in Action
+                  </div>
+                  <div className="absolute top-4 right-4 text-brand-purple text-xs font-mono">
+                    02:34
+                  </div>
+                </div>
+              </FuturisticCard>
+            </div>
+          </div>
         </div>
       </div>
 
