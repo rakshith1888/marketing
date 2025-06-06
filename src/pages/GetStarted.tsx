@@ -4,6 +4,10 @@ import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Users, Target, CheckCircle } from 'lucide-react';
 
 const GetStarted = () => {
+  const handleRedirectToApp = () => {
+    window.open('https://app.groflex.ai', '_blank');
+  };
+
   return (
     <Layout>
       <div className="min-h-screen flex flex-col relative overflow-hidden cyber-grid">
@@ -48,7 +52,10 @@ const GetStarted = () => {
                   <span className="text-white/70">Full feature access</span>
                 </li>
               </ul>
-              <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 w-full">
+              <button 
+                onClick={handleRedirectToApp}
+                className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 w-full"
+              >
                 Start Team Trial
               </button>
             </FuturisticCard>
@@ -75,7 +82,10 @@ const GetStarted = () => {
                   <span className="text-white/70">Core AI features</span>
                 </li>
               </ul>
-              <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 w-full">
+              <button 
+                onClick={handleRedirectToApp}
+                className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 w-full"
+              >
                 Start Individual Trial
               </button>
             </FuturisticCard>
@@ -116,7 +126,10 @@ const GetStarted = () => {
                 See GrofleX in action with a personalized demo
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="glass-card border border-brand-coral/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-coral/20 transition-all duration-300 flex items-center gap-2">
+                <button 
+                  onClick={handleRedirectToApp}
+                  className="glass-card border border-brand-coral/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-coral/20 transition-all duration-300 flex items-center gap-2"
+                >
                   <ArrowRight className="w-5 h-5" />
                   Book a Demo
                 </button>
