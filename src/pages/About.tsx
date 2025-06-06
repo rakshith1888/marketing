@@ -18,6 +18,21 @@ const About = () => {
       title: 'Trust',
       description: 'Our AI explanations are transparent, so you always know why we recommend what we do',
       icon: '🤝'
+    },
+    {
+      title: 'Innovation',
+      description: 'We constantly push the boundaries of what AI can do to empower better decisions',
+      icon: '🚀'
+    },
+    {
+      title: 'Reliability',
+      description: 'Our platform delivers consistent, accurate insights you can depend on 24/7',
+      icon: '🛡️'
+    },
+    {
+      title: 'Impact',
+      description: 'Every feature we build is designed to create meaningful, measurable business outcomes',
+      icon: '📈'
     }
   ];
 
@@ -116,7 +131,7 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {values.map((value, index) => (
                 <FuturisticCard key={index} variant="default" className="p-8 text-center hover:bg-white/10 transition-all duration-300 group">
                   <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{value.icon}</div>
@@ -153,13 +168,12 @@ const About = () => {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { role: 'CEO & Co-Founder', icon: '👨‍💼', expertise: 'Enterprise Strategy' },
-                { role: 'CTO & Co-Founder', icon: '👩‍💻', expertise: 'AI & Machine Learning' },
-                { role: 'VP of Product', icon: '👨‍🎨', expertise: 'User Experience' },
-                { role: 'VP of Engineering', icon: '👩‍🔬', expertise: 'Scalable Systems' }
+                { role: 'CEO & Co-Founder', expertise: 'Enterprise Strategy' },
+                { role: 'CTO & Co-Founder', expertise: 'AI & Machine Learning' },
+                { role: 'VP of Product', expertise: 'User Experience' },
+                { role: 'VP of Engineering', expertise: 'Scalable Systems' }
               ].map((member, index) => (
                 <div key={index} className="space-y-4">
-                  <div className="text-6xl">{member.icon}</div>
                   <div>
                     <h3 className="text-brand-purple font-semibold">{member.role}</h3>
                     <p className="text-white/70 text-sm">{member.expertise}</p>
