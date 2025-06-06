@@ -70,7 +70,7 @@ const About = () => {
             </div>
             
             <div className="relative">
-              <FuturisticCard variant="hologram" className="p-8">
+              <FuturisticCard variant="default" className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gradient mb-4">The Journey</h3>
                 </div>
@@ -128,7 +128,7 @@ const About = () => {
           </div>
 
           {/* Impact Section */}
-          <FuturisticCard variant="neon" className="p-12 mb-16">
+          <FuturisticCard variant="hologram" className="p-12 mb-16">
             <h2 className="text-3xl font-bold text-gradient text-center mb-12">Our Impact</h2>
             <div className="grid md:grid-cols-4 gap-8 text-center">
               {[
@@ -146,7 +146,7 @@ const About = () => {
           </FuturisticCard>
 
           {/* Team Preview */}
-          <FuturisticCard variant="hologram" className="p-12 text-center mb-16">
+          <FuturisticCard variant="default" className="p-12 text-center mb-16">
             <h2 className="text-3xl font-bold text-gradient mb-6">Leadership Team</h2>
             <p className="text-white/80 mb-8">
               Industry veterans from AI, analytics, and enterprise software, united by a mission to bring clarity to decision-making
