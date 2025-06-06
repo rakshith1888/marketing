@@ -60,14 +60,14 @@ const Footer = () => {
           {/* Legal Links */}
           <div className="space-y-4">
             <h3 className="text-white font-medium">Legal</h3>
-            <div className="space-y-2">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               {legalLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-white/60 hover:text-brand-purple transition-colors text-sm"
+                  className="text-white/60 hover:text-brand-purple transition-colors text-sm"
                 >
                   {link.name}
                 </a>
