@@ -80,9 +80,9 @@ const Solutions = () => {
 
               {solutions.map((solution) => (
                 <TabsContent key={solution.id} value={solution.id} className="mt-0">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Content Side */}
-                    <div>
+                  <div className="grid lg:grid-cols-3 gap-8 items-start">
+                    {/* Content Side - Takes 2 columns */}
+                    <div className="lg:col-span-2">
                       <div className="mb-8">
                         <h2 className="text-4xl font-bold text-gradient mb-4">{solution.title}</h2>
                         <p className="text-brand-purple text-xl mb-6">{solution.subtitle}</p>
@@ -119,26 +119,26 @@ const Solutions = () => {
                       </Button>
                     </div>
                     
-                    {/* Features Side */}
+                    {/* Compact Features Side - Takes 1 column */}
                     <div>
-                      <FuturisticCard className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-8">
-                        <h4 className="text-brand-cream font-semibold mb-8 text-center text-xl">Key Features:</h4>
-                        <div className="grid grid-cols-2 gap-6">
+                      <FuturisticCard className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-6">
+                        <h4 className="text-brand-cream font-semibold mb-6 text-center text-lg">Key Features</h4>
+                        <div className="space-y-3">
                           {solution.features.map((feature, idx) => (
-                            <FuturisticCard key={idx} className="p-6 text-center hover:bg-white/10 transition-all duration-300">
-                              <div className="w-4 h-4 bg-brand-coral rounded-full mx-auto mb-3"></div>
-                              <p className="text-white/80 font-medium">{feature}</p>
-                            </FuturisticCard>
+                            <div key={idx} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-300">
+                              <div className="w-2 h-2 bg-brand-coral rounded-full flex-shrink-0"></div>
+                              <p className="text-white/80 font-medium text-sm">{feature}</p>
+                            </div>
                           ))}
                         </div>
                         
-                        {/* Sample Dashboard Preview */}
-                        <div className="mt-8 p-6 bg-black/20 rounded-lg border border-white/10">
-                          <h5 className="text-brand-cream text-sm font-semibold mb-4 text-center">Sample Dashboard View</h5>
-                          <div className="space-y-3">
-                            <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
-                            <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
-                            <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
+                        {/* Compact Sample Dashboard Preview */}
+                        <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/10">
+                          <h5 className="text-brand-cream text-xs font-semibold mb-3 text-center">Dashboard Preview</h5>
+                          <div className="space-y-2">
+                            <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
+                            <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
+                            <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
                           </div>
                         </div>
                       </FuturisticCard>
