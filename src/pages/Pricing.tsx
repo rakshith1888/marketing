@@ -1,6 +1,7 @@
 
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 
 const Pricing = () => {
   const plans = [
@@ -47,6 +48,25 @@ const Pricing = () => {
         'Custom development'
       ],
       popular: false
+    }
+  ];
+
+  const faqs = [
+    {
+      q: 'Can I upgrade or downgrade my plan?',
+      a: 'Yes, you can change your plan at any time. Changes take effect immediately.'
+    },
+    {
+      q: 'Is there a free trial available?',
+      a: 'We offer a 14-day free trial for all plans. No credit card required.'
+    },
+    {
+      q: 'What payment methods do you accept?',
+      a: 'We accept all major credit cards, PayPal, and bank transfers for enterprise plans.'
+    },
+    {
+      q: 'Can I cancel anytime?',
+      a: 'Yes, you can cancel your subscription at any time. No long-term contracts.'
     }
   ];
 
@@ -125,30 +145,19 @@ const Pricing = () => {
           {/* FAQ Section */}
           <FuturisticCard variant="neon" className="p-12">
             <h2 className="text-3xl font-bold text-gradient text-center mb-12">Frequently Asked Questions</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  q: 'Can I upgrade or downgrade my plan?',
-                  a: 'Yes, you can change your plan at any time. Changes take effect immediately.'
-                },
-                {
-                  q: 'Is there a free trial available?',
-                  a: 'We offer a 14-day free trial for all plans. No credit card required.'
-                },
-                {
-                  q: 'What payment methods do you accept?',
-                  a: 'We accept all major credit cards, PayPal, and bank transfers for enterprise plans.'
-                },
-                {
-                  q: 'Can I cancel anytime?',
-                  a: 'Yes, you can cancel your subscription at any time. No long-term contracts.'
-                }
-              ].map((faq, index) => (
-                <div key={index} className="space-y-2">
-                  <h3 className="text-lg font-semibold text-brand-purple">{faq.q}</h3>
-                  <p className="text-white/80">{faq.a}</p>
-                </div>
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border border-white/20 rounded-lg overflow-hidden">
+                    <AccordionTrigger className="px-6 py-4 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-lg font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
+                      {faq.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-4 text-white/80 bg-white/5">
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </FuturisticCard>
 
