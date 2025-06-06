@@ -24,7 +24,7 @@ const Solutions = () => {
                   <TabsTrigger 
                     key={solution.id}
                     value={solution.id} 
-                    className="text-white data-[state=active]:bg-brand-purple/20 data-[state=active]:text-brand-cream p-4 h-auto"
+                    className="text-white data-[state=active]:bg-brand-purple/20 data-[state=active]:text-brand-cream hover:bg-brand-coral/20 hover:text-brand-cream transition-all duration-300 p-4 h-auto"
                   >
                     <div className="flex flex-col items-center space-y-2">
                       <span className="text-3xl">{solution.icon}</span>
