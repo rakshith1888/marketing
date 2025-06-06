@@ -115,103 +115,101 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO + VIDEO SECTION - SIDE BY SIDE */}
       <div className="min-h-screen flex items-center justify-center relative overflow-hidden cyber-grid">
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '3s'}}></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-            <span className="text-gradient">Clarity to Know</span><br />
-            <span className="text-white">What to Do Next</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Predictive analytics. Prescriptive next steps.<br />
-            Powered by AI, designed for decisive leaders.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
-              See How It Works
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* VIDEO CONTENT SECTION - REDUCED GAP */}
-      <section className="relative overflow-hidden cyber-grid -mt-20 pt-20">
-        {/* Floating orbs */}
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">
-              <span className="text-gradient">See GrofleX in Action</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-white/80 mb-4">
-              Watch how leaders transform data into decisive action
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          {/* Left Side - Hero Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              <span className="text-gradient">Clarity to Know</span><br />
+              <span className="text-white">What to Do Next</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
+              Predictive analytics. Prescriptive next steps.<br />
+              Powered by AI, designed for decisive leaders.
             </p>
-            <div className="w-24 h-1 bg-gradient-brand mx-auto"></div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+                Start Free Trial
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                See How It Works
+              </button>
+            </div>
           </div>
-          
-          <FuturisticCard variant="neon" className="relative overflow-hidden max-w-6xl mx-auto shadow-2xl">
-            <div className="aspect-video bg-gradient-to-br from-black/60 to-gray-900/60 rounded-xl flex items-center justify-center relative group cursor-pointer min-h-[65vh] border border-white/10">
-              {/* Video placeholder with enhanced gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/30 to-brand-coral/30 rounded-xl"></div>
-              
-              {/* Enhanced play button */}
-              <div className="relative z-10 w-28 h-28 bg-gradient-to-br from-white to-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl border-4 border-white/20">
-                <Play className="w-12 h-12 text-black ml-1" fill="currentColor" />
-              </div>
-              
-              {/* Enhanced video overlay info */}
-              <div className="absolute bottom-8 left-8 right-8 z-10">
-                <div className="bg-black/80 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-                  <h3 className="text-white font-bold text-2xl mb-4">
-                    From Data Confusion to Clear Action in 3 Minutes
-                  </h3>
-                  <p className="text-white/90 text-lg leading-relaxed">
-                    See how Sarah, VP of Strategy at TechCorp, uses GrofleX to predict market shifts and make decisive business moves ahead of competition
-                  </p>
-                  <div className="flex items-center gap-4 mt-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-white/70 text-sm">Live Demo</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-brand-coral rounded-full"></div>
-                      <span className="text-white/70 text-sm">Real Results</span>
+
+          {/* Right Side - Video Content */}
+          <div className="relative">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-gradient">See GrofleX in Action</span>
+              </h2>
+              <p className="text-lg text-white/80 mb-4">
+                Watch how leaders transform data into decisive action
+              </p>
+              <div className="w-24 h-1 bg-gradient-brand mx-auto"></div>
+            </div>
+            
+            <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
+              <div className="aspect-video bg-gradient-to-br from-black/60 to-gray-900/60 rounded-xl flex items-center justify-center relative group cursor-pointer border border-white/10">
+                {/* Video placeholder with enhanced gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/30 to-brand-coral/30 rounded-xl"></div>
+                
+                {/* Enhanced play button */}
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-white to-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl border-4 border-white/20">
+                  <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+                </div>
+                
+                {/* Enhanced video overlay info */}
+                <div className="absolute bottom-4 left-4 right-4 z-10">
+                  <div className="bg-black/80 backdrop-blur-lg rounded-lg p-4 border border-white/10">
+                    <h3 className="text-white font-bold text-lg mb-2">
+                      From Data Confusion to Clear Action
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed">
+                      See how Sarah, VP of Strategy at TechCorp, uses GrofleX to predict market shifts
+                    </p>
+                    <div className="flex items-center gap-3 mt-3">
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-white/70 text-xs">Live Demo</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 bg-brand-coral rounded-full"></div>
+                        <span className="text-white/70 text-xs">Real Results</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                
+                {/* Enhanced floating elements */}
+                <div className="absolute top-4 right-4 w-3 h-3 bg-brand-coral rounded-full animate-pulse"></div>
+                <div className="absolute top-8 right-8 w-2 h-2 bg-brand-purple rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute top-6 left-6 w-2 h-2 bg-brand-cream rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
               </div>
-              
-              {/* Enhanced floating elements */}
-              <div className="absolute top-8 right-8 w-4 h-4 bg-brand-coral rounded-full animate-pulse"></div>
-              <div className="absolute top-20 right-20 w-3 h-3 bg-brand-purple rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-12 left-12 w-3 h-3 bg-brand-cream rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-              <div className="absolute bottom-32 right-12 w-2 h-2 bg-brand-purple rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+            </FuturisticCard>
+            
+            <div className="text-center mt-6">
+              <p className="text-white/60 text-sm mb-4">
+                ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results
+              </p>
+              <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
+                <Play className="w-4 h-4" />
+                Watch Full Case Study
+              </button>
             </div>
-          </FuturisticCard>
-          
-          <div className="text-center mt-16">
-            <p className="text-white/60 text-lg mb-6">
-              ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results shown
-            </p>
-            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
-              <Play className="w-5 h-5" />
-              Watch Full Case Study
-            </button>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* 2. PROBLEM SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
