@@ -1,4 +1,5 @@
 
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -144,6 +145,54 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* VIDEO CONTENT SECTION */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <span className="text-gradient">See GrofleX in Action</span>
+            </h2>
+            <p className="text-xl text-white/80 mb-8">
+              Watch how leaders transform data into decisive action
+            </p>
+          </div>
+          
+          <FuturisticCard variant="neon" className="relative overflow-hidden">
+            <div className="aspect-video bg-gradient-to-br from-black/50 to-gray-900/50 rounded-lg flex items-center justify-center relative group cursor-pointer">
+              {/* Video placeholder with play button */}
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 rounded-lg"></div>
+              
+              {/* Play button */}
+              <div className="relative z-10 w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+              </div>
+              
+              {/* Video overlay info */}
+              <div className="absolute bottom-6 left-6 right-6 z-10">
+                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4">
+                  <h3 className="text-white font-semibold text-lg mb-2">
+                    From Data Confusion to Clear Action in 3 Minutes
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    See how Sarah, VP of Strategy at TechCorp, uses GrofleX to predict market shifts
+                  </p>
+                </div>
+              </div>
+              
+              {/* Floating elements for visual appeal */}
+              <div className="absolute top-8 right-8 w-3 h-3 bg-brand-coral rounded-full animate-pulse"></div>
+              <div className="absolute top-16 right-16 w-2 h-2 bg-brand-purple rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
+          </FuturisticCard>
+          
+          <div className="text-center mt-8">
+            <p className="text-white/60 text-sm">
+              ⏱️ 3 min watch • 🎯 Real customer story • 📈 Actual results shown
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* 2. PROBLEM SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
@@ -531,3 +580,4 @@ const Home = () => {
 };
 
 export default Home;
+
