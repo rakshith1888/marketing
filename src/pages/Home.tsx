@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -116,24 +115,27 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* 1. HERO + VIDEO SECTION - SIDE BY SIDE LAYOUT */}
-      <div className="min-h-screen flex items-center justify-center relative overflow-hidden cyber-grid">
+      {/* 1. HERO + VIDEO SECTION - MAIN HEADING AT TOP */}
+      <div className="min-h-screen flex flex-col relative overflow-hidden cyber-grid">
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '3s'}}></div>
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen py-20 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 py-20 flex flex-col justify-center">
+          {/* Main Heading at Top */}
+          <div className="text-center mb-16">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+              <span className="text-gradient">Clarity to Know</span><br />
+              <span className="text-white">What to Do Next</span>
+            </h1>
+          </div>
+
           {/* Side by Side Content */}
           <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
             {/* Left Side - Hero Content */}
             <div className="text-left">
-              <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-                <span className="text-gradient">Clarity to Know</span><br />
-                <span className="text-white">What to Do Next</span>
-              </h1>
-              
               <p className="text-2xl md:text-3xl text-white/80 mb-16 leading-relaxed">
                 Predictive analytics. Prescriptive next steps.<br />
                 Powered by AI, designed for decisive leaders.
