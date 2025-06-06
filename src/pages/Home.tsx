@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play } from 'lucide-react';
@@ -144,7 +143,7 @@ const Home = () => {
                 Powered by AI, designed for decisive leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 mb-16">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
                   Start Free Trial
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -153,42 +152,34 @@ const Home = () => {
                   See How It Works
                 </button>
               </div>
-
-              {/* Animated Flywheel */}
-              <FuturisticCard variant="neon" className="max-w-2xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {[
-                    { icon: '🔗', title: 'Connect', step: '01' },
-                    { icon: '🔮', title: 'Predict', step: '02' },
-                    { icon: '📋', title: 'Prescribe', step: '03' },
-                    { icon: '⚡', title: 'Act', step: '04' }
-                  ].map((item, index) => (
-                    <div key={index} className="text-center group">
-                      <div className="text-xs text-brand-purple font-mono mb-2">STEP {item.step}</div>
-                      <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                        {item.icon}
-                      </div>
-                      <h3 className="text-sm font-bold text-gradient">{item.title}</h3>
-                    </div>
-                  ))}
-                </div>
-              </FuturisticCard>
             </div>
 
             {/* Right side - Video */}
             <div className="flex justify-center lg:justify-end">
-              <FuturisticCard variant="hologram" className="w-full max-w-2xl">
-                <div className="aspect-video bg-black/50 rounded-lg flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-brand-coral/20"></div>
-                  <button className="relative z-10 bg-gradient-brand text-black p-6 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110">
-                    <Play className="w-12 h-12" />
+              <FuturisticCard variant="hologram" className="w-full max-w-lg">
+                <div className="aspect-video bg-gradient-to-br from-black/80 to-gray-900/80 rounded-xl flex items-center justify-center relative overflow-hidden border border-brand-purple/30">
+                  {/* Video background pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-brand-coral/10"></div>
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23AD72BD" fill-opacity="0.05"%3E%3Ccircle cx="3" cy="3" r="3"/%3E%3C/g%3E%3C/svg%3E')]"></div>
+                  
+                  {/* Play button */}
+                  <button className="relative z-10 bg-gradient-brand text-black p-4 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                    <Play className="w-8 h-8 ml-1" />
                   </button>
-                  <div className="absolute bottom-4 left-4 text-white/80 text-sm">
-                    Watch GrofleX in Action
+                  
+                  {/* Video info overlay */}
+                  <div className="absolute bottom-4 left-4 text-white/90 text-sm font-medium">
+                    See GrofleX in Action
                   </div>
-                  <div className="absolute top-4 right-4 text-brand-purple text-xs font-mono">
-                    02:34
+                  <div className="absolute top-4 right-4 text-brand-purple text-xs font-mono bg-black/30 px-2 py-1 rounded">
+                    03:42
                   </div>
+                  
+                  {/* Corner accents */}
+                  <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-brand-purple"></div>
+                  <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-brand-coral"></div>
+                  <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-brand-coral"></div>
+                  <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-brand-purple"></div>
                 </div>
               </FuturisticCard>
             </div>
@@ -417,34 +408,99 @@ const Home = () => {
               <span className="text-white">Get Clarity.</span>
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Type a business question—GrofleX will respond with context-aware recommendations
+              Experience our AI-powered interface with natural language queries
             </p>
           </div>
           
-          <FuturisticCard variant="hologram" className="max-w-4xl mx-auto">
-            <div className="bg-black/50 rounded-lg p-6 mb-6">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-white/70 ml-4 text-sm">GrofleX AI Interface</span>
-              </div>
-              <div className="space-y-4">
-                {sampleQuestions.map((question, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
-                    <MessageSquare className="w-4 h-4 text-brand-purple" />
-                    <span className="text-white/80">{question}</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Chatbot Screenshot 1 */}
+            <FuturisticCard variant="hologram">
+              <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-4 relative">
+                {/* GrofleX Icon in top right */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
+                  <span className="text-black font-bold text-xs">G</span>
+                </div>
+                
+                {/* Chat header */}
+                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
+                  <div className="w-8 h-8 bg-brand-purple rounded-full flex items-center justify-center">
+                    <MessageSquare className="w-4 h-4 text-white" />
                   </div>
-                ))}
+                  <span className="text-white font-semibold">GrofleX AI Assistant</span>
+                  <div className="ml-auto w-2 h-2 bg-green-500 rounded-full"></div>
+                </div>
+                
+                {/* Chat messages */}
+                <div className="space-y-4">
+                  <div className="flex justify-end">
+                    <div className="bg-brand-purple/20 border border-brand-purple/30 rounded-lg px-4 py-2 max-w-xs">
+                      <p className="text-white text-sm">Why is our customer churn increasing?</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-start">
+                    <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 max-w-xs">
+                      <p className="text-white/90 text-sm mb-2">Based on your data analysis, churn is up 23% due to:</p>
+                      <ul className="text-white/80 text-xs space-y-1">
+                        <li>• Pricing sensitivity (40%)</li>
+                        <li>• Support response time (35%)</li>
+                        <li>• Feature gaps (25%)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="text-center">
-              <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
-                <Play className="w-5 h-5" />
-                Try the Live Demo
-              </button>
-            </div>
-          </FuturisticCard>
+            </FuturisticCard>
+
+            {/* Chatbot Screenshot 2 */}
+            <FuturisticCard variant="hologram">
+              <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-4 relative">
+                {/* GrofleX Icon in top right */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
+                  <span className="text-black font-bold text-xs">G</span>
+                </div>
+                
+                {/* Chat header */}
+                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
+                  <div className="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center">
+                    <BarChart3 className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-white font-semibold">Revenue Insights</span>
+                  <div className="ml-auto w-2 h-2 bg-green-500 rounded-full"></div>
+                </div>
+                
+                {/* Chat messages */}
+                <div className="space-y-4">
+                  <div className="flex justify-end">
+                    <div className="bg-brand-coral/20 border border-brand-coral/30 rounded-lg px-4 py-2 max-w-xs">
+                      <p className="text-white text-sm">What should we focus on this quarter?</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-start">
+                    <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 max-w-xs">
+                      <p className="text-white/90 text-sm mb-2">Recommended priorities:</p>
+                      <div className="space-y-2">
+                        <div className="bg-green-500/20 rounded px-2 py-1">
+                          <p className="text-green-400 text-xs font-semibold">1. Enterprise expansion (+34% revenue)</p>
+                        </div>
+                        <div className="bg-yellow-500/20 rounded px-2 py-1">
+                          <p className="text-yellow-400 text-xs font-semibold">2. Product feature gap closure</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FuturisticCard>
+          </div>
+
+          <div className="text-center mt-12">
+            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
+              <Play className="w-5 h-5" />
+              Try the Live Demo
+            </button>
+          </div>
         </div>
       </section>
 
