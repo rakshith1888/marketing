@@ -1,5 +1,6 @@
 
 import Layout from '../components/Layout';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table';
 
 const PrivacyPolicy = () => {
   return (
@@ -339,6 +340,110 @@ const PrivacyPolicy = () => {
               <p>
                 This Notice provides more information about specific disclosures and rights we provide to residents of the U.S. in accordance with U.S. law.
               </p>
+
+              <div className="mt-8 overflow-x-auto">
+                <Table className="w-full">
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="text-white font-bold">Category</TableHead>
+                      <TableHead className="text-white font-bold">Types of Information Collected</TableHead>
+                      <TableHead className="text-white font-bold">Purpose for Collection</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">A. Identifiers.</TableCell>
+                      <TableCell className="text-white/80">Name, mailing address, Internet Protocol (IP) address, email address.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Account registration</li>
+                          <li>– Fulfilling customer orders for our services</li>
+                          <li>– Marketing our services</li>
+                          <li>– Customer service</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">B. Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e)).</TableCell>
+                      <TableCell className="text-white/80">
+                        Name, address, telephone number, education, employment, employment history, credit card number, debit card number.
+                        <br /><br />
+                        (Some personal information included in this category may overlap with other categories.)
+                      </TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Account registration</li>
+                          <li>– Fulfilling customer orders for our services</li>
+                          <li>– Marketing our services</li>
+                          <li>– Customer service</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">C. Characteristics of protected classifications under California or federal law.</TableCell>
+                      <TableCell className="text-white/80">Age (40 years or older), race, color, national origin, citizenship, physical or mental disability, sex (including gender, gender identity, gender expression, pregnancy or childbirth and related medical conditions), veteran or military status.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Fulfilling customer orders for our services</li>
+                          <li>– Analytics and improvement of our services</li>
+                          <li>– Customer service</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">D. Commercial information.</TableCell>
+                      <TableCell className="text-white/80">Records of products or services purchased.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Account registration</li>
+                          <li>– Fulfilling customer orders for our services</li>
+                          <li>– Marketing our services</li>
+                          <li>– Customer service</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">F. Internet or other similar network activity.</TableCell>
+                      <TableCell className="text-white/80">Browsing history, search history, information on a consumer's interaction with a website, application, or advertisement.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Web site optimization</li>
+                          <li>– Marketing our services</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">G. Geolocation data.</TableCell>
+                      <TableCell className="text-white/80">Physical location or movements.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Web site personalization</li>
+                          <li>– Marketing our services</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">H. Sensory data.</TableCell>
+                      <TableCell className="text-white/80">Audio, visual, and electronic information.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Fulfilling customer orders for our services</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-white/80 font-medium">I. Inferences drawn from other personal information.</TableCell>
+                      <TableCell className="text-white/80">Profile about a consumer reflecting the consumer's preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.</TableCell>
+                      <TableCell className="text-white/80">
+                        <ul className="list-none space-y-1">
+                          <li>– Marketing our services</li>
+                          <li>– Analytics and improvement of our services</li>
+                        </ul>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
             </div>
           </div>
         </div>
