@@ -18,7 +18,7 @@ const FinalCTA = () => {
         >
           Start Free Trial
         </Button>
-        <Button variant="outline" className="border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+        <Button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
           Book a Demo
         </Button>
       </div>

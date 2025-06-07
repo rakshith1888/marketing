@@ -253,7 +253,7 @@ const ProductsPage = () => {
               >
                 Start Free Trial
               </button>
-              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+              <button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
                 Schedule Demo
               </button>
             </div>
