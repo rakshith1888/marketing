@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -55,21 +56,16 @@ const About = () => {
           <h2 className="text-3xl font-bold text-gradient text-center mb-8">Our Story</h2>
           <div className="space-y-6 text-white/80">
             <p className="text-lg">
-              GrofleX was born from a simple frustration: why was it so hard for smart business 
-              leaders to get clear answers from their data? Despite having access to more 
-              information than ever before, decision-makers were still operating on gut instinct 
-              rather than data-driven insights.
+              Born from frustration with dashboards. Built to act in real time.
             </p>
             <p className="text-lg">
-              Our founders, Sarah and Marcus, experienced this challenge firsthand while working 
-              at Fortune 500 companies. They saw executives making million-dollar decisions 
-              based on incomplete information, simply because their data was trapped in silos 
-              and their analytics tools required PhD-level expertise to operate.
+              GrofleX emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
             </p>
             <p className="text-lg">
-              Today, GrofleX serves hundreds of businesses worldwide, from fast-growing startups 
-              to established enterprises. Our platform has helped companies increase revenue by 
-              an average of 34% and reduce operational costs by 28% through better decision-making.
+              Our founders experienced this frustration firsthand—watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data; it was lack of actionable insight.
+            </p>
+            <p className="text-lg">
+              Today, we're building the bridge between prediction and action, helping leaders see not just what's coming, but what to do about it.
             </p>
           </div>
         </div>
@@ -117,19 +113,19 @@ const About = () => {
 
       {/* CTA Section */}
       <FuturisticCard variant="neon" className="p-12 text-center">
-        <h2 className="text-3xl font-bold text-gradient mb-4">Ready to Join Our Mission?</h2>
+        <h2 className="text-3xl font-bold text-gradient mb-4">Join Our Mission</h2>
         <p className="text-white/80 mb-8 text-lg">
-          Experience the clarity and confidence that comes with predictive analytics
+          Help us bring clarity to decision-making across every industry and organization
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <button 
             onClick={handleGetStarted}
             className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
           >
-            Start Free Trial
+            View Open Positions
           </button>
           <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
-            Contact Us
+            Contact Our Team
           </button>
         </div>
       </FuturisticCard>
