@@ -1,5 +1,4 @@
 
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -70,42 +69,54 @@ const About = () => {
       </section>
 
       {/* Story and Journey Section */}
-      <div className="mb-16 grid lg:grid-cols-2 gap-8">
-        {/* Our Story */}
-        <div>
-          <h2 className="text-3xl font-bold text-gradient mb-6">Our Story</h2>
-          <div className="space-y-4 text-white/80">
-            <p className="text-sm leading-relaxed">
-              Born from frustration with dashboards. Built to act in real time.
-            </p>
-            <p className="text-sm leading-relaxed">
-              GrofleX emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
-            </p>
-            <p className="text-sm leading-relaxed">
-              Our founders experienced this frustration firsthand—watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data; it was lack of actionable insight.
-            </p>
-            <p className="text-sm leading-relaxed">
-              Today, we're building the bridge between prediction and action, helping leaders see not just what's coming, but what to do about it.
-            </p>
-          </div>
-        </div>
-
-        {/* The Journey */}
-        <div>
-          <h2 className="text-3xl font-bold text-gradient mb-6">The Journey</h2>
-          <div className="space-y-6">
-            {journeySteps.map((step, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-brand-purple to-brand-coral flex items-center justify-center text-white font-bold text-sm">
-                  {step.number}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gradient mb-1">{step.title}</h3>
-                  <p className="text-sm text-white/70">{step.description}</p>
-                </div>
+      <div className="mb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Our Story */}
+          <FuturisticCard className="p-8">
+            <h2 className="text-3xl font-bold text-gradient mb-8">Our Story</h2>
+            <div className="space-y-6">
+              <div className="p-6 bg-white/5 rounded-lg border border-white/10">
+                <p className="text-lg font-medium text-gradient mb-3">
+                  Born from frustration with dashboards. Built to act in real time.
+                </p>
               </div>
-            ))}
-          </div>
+              
+              <div className="space-y-4 text-white/80">
+                <p className="leading-relaxed">
+                  GrofleX emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
+                </p>
+                <p className="leading-relaxed">
+                  Our founders experienced this frustration firsthand—watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data; it was lack of actionable insight.
+                </p>
+                <p className="leading-relaxed">
+                  Today, we're building the bridge between prediction and action, helping leaders see not just what's coming, but what to do about it.
+                </p>
+              </div>
+            </div>
+          </FuturisticCard>
+
+          {/* The Journey */}
+          <FuturisticCard className="p-8">
+            <h2 className="text-3xl font-bold text-gradient mb-8">The Journey</h2>
+            <div className="space-y-6">
+              {journeySteps.map((step, index) => (
+                <div key={index} className="relative">
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-r from-brand-purple to-brand-coral flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      {step.number}
+                    </div>
+                    <div className="flex-1 pb-6">
+                      <h3 className="text-xl font-semibold text-gradient mb-3">{step.title}</h3>
+                      <p className="text-white/70 leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
+                  {index < journeySteps.length - 1 && (
+                    <div className="absolute left-7 top-14 w-0.5 h-8 bg-gradient-to-b from-brand-purple/50 to-brand-coral/50"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </FuturisticCard>
         </div>
       </div>
 
@@ -162,7 +173,7 @@ const About = () => {
           >
             View Open Positions
           </button>
-          <button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
+          <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
             Contact Our Team
           </button>
         </div>
@@ -172,4 +183,3 @@ const About = () => {
 };
 
 export default About;
-
