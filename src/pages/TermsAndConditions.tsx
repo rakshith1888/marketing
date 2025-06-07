@@ -7,7 +7,8 @@ const TermsAndConditions = () => {
       <div className="min-h-screen bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 md:p-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">Terms & Conditions</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Terms and Conditions</h1>
+            <p className="text-white/60 mb-8">Last modified: June 01, 2024</p>
             
             <div className="prose prose-invert max-w-none text-white/80 space-y-6">
               <section>
@@ -112,7 +113,22 @@ const TermsAndConditions = () => {
                   <li>Circumvent, disable, or otherwise interfere with security-related features of the Platform.</li>
                   <li>Copy, adapt, decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Platform.</li>
                   <li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools.</li>
+                  <li>Systematically retrieve data or other content from the Platform to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
+                  <li>Make any unauthorized use of the Platform, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.</li>
+                  <li>Interfere with, disrupt, or create an undue burden on the Platform or the networks or services connected to the Platform.</li>
+                  <li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party's uninterrupted use and enjoyment of the Platform.</li>
+                  <li>Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics interchange formats ("gifs"), 1×1 pixels, web bugs, cookies, or other similar devices (sometimes referred to as "spyware" or "passive collection mechanisms" or "pcms").</li>
+                  <li>Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader that accesses the Platform, or using or launching any unauthorized script or other software.</li>
+                  <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Platform.</li>
+                  <li>Use the Platform in a manner inconsistent with any applicable laws or regulations.</li>
                 </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-white mb-4">Contact Us</h2>
+                <p>
+                  In order to resolve a complaint regarding the Platform or to receive further information regarding use of the Platform, please contact us at hello@groflexerp.com.
+                </p>
               </section>
             </div>
           </div>
