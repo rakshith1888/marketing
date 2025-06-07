@@ -11,6 +11,10 @@ const Home = () => {
     window.open('https://app.groflex.ai', '_blank');
   };
 
+  const handleBookDemo = () => {
+    window.open('https://sibforms.com/serve/MUIFAAKayAu5X2pGgP6oFM-sUgP1mZMYaQqiAVUS39zY8bDJNjnT1ArRNIzt21QdCoz3gdKbyiyvYP7q9VKclwSvNI-yKjNZGm_sSyJWbAg2298SfqQ1JWH5wI7Pmm6DJfS5_TFUdnGoiVflgwr2DCTcTD1dHxXX-qkpmxp_fEzVot7GqFH9-4hOFqkED-PokcoO7dlDhVulWHoy', '_blank');
+  };
+
   const features = [
     {
       icon: <BarChart3 className="w-8 h-8" />,
@@ -484,11 +488,12 @@ const Home = () => {
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-gradient mb-4">For Teams</h3>
               <p className="text-white/80 mb-6">See how GrofleX transforms your workflow</p>
-              <Link to="/solutions">
-                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
-                  Book a Demo
-                </button>
-              </Link>
+              <button 
+                onClick={handleBookDemo}
+                className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300"
+              >
+                Book a Demo
+              </button>
             </FuturisticCard>
           </div>
         </div>
