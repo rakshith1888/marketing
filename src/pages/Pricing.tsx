@@ -101,70 +101,71 @@ const Pricing = () => {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {plans.map((plan, index) => (
-              <FuturisticCard 
+              <div 
                 key={index} 
-                variant={plan.popular ? "neon" : "default"}
-                className={`p-8 relative hover:bg-white/10 transition-all duration-300 ${
-                  plan.popular ? 'border-2 border-brand-purple scale-105' : ''
+                className={`bg-white/10 backdrop-blur-md border rounded-xl p-8 relative transition-all duration-300 hover:bg-white/15 ${
+                  plan.popular 
+                    ? 'border-brand-purple/60 shadow-xl' 
+                    : 'border-white/20 hover:border-white/30'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-brand-coral to-brand-cream text-black px-4 py-1 rounded-full text-xs font-semibold">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-medium">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-xl font-bold text-gradient mb-2">{plan.name}</h3>
-                  <p className="text-white/60 mb-4 text-sm">{plan.description}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-3xl font-bold text-white">{plan.price}</span>
-                    <span className="text-white/60 ml-1 text-sm">{plan.period}</span>
+                  <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
+                  <p className="text-white/70 mb-6 text-base leading-relaxed">{plan.description}</p>
+                  <div className="flex items-baseline justify-center mb-2">
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-white/60 ml-2">{plan.period}</span>
                   </div>
                 </div>
 
-                <div className="space-y-3 mb-8 text-sm">
-                  <div className="flex justify-between text-white/80">
-                    <span>Incoming Data Size:</span>
+                <div className="space-y-4 mb-10">
+                  <div className="flex justify-between items-center py-2 border-b border-white/10">
+                    <span className="text-white/80 font-medium">Incoming Data Size:</span>
                     <span className="text-white font-semibold">{plan.dataSize}</span>
                   </div>
-                  <div className="flex justify-between text-white/80">
-                    <span>AI Assistant:</span>
-                    <span className="text-white font-semibold text-right flex-1 ml-2">{plan.aiAssistant}</span>
+                  <div className="flex justify-between items-start py-2 border-b border-white/10">
+                    <span className="text-white/80 font-medium">AI Assistant:</span>
+                    <span className="text-white font-semibold text-right flex-1 ml-4">{plan.aiAssistant}</span>
                   </div>
-                  <div className="flex justify-between text-white/80">
-                    <span>Dashboards:</span>
+                  <div className="flex justify-between items-center py-2 border-b border-white/10">
+                    <span className="text-white/80 font-medium">Dashboards:</span>
                     <span className="text-white font-semibold">{plan.dashboards}</span>
                   </div>
-                  <div className="flex justify-between text-white/80">
-                    <span>Data Sources:</span>
-                    <span className="text-white font-semibold text-right flex-1 ml-2">{plan.dataSources}</span>
+                  <div className="flex justify-between items-start py-2 border-b border-white/10">
+                    <span className="text-white/80 font-medium">Data Sources:</span>
+                    <span className="text-white font-semibold text-right flex-1 ml-4">{plan.dataSources}</span>
                   </div>
-                  <div className="flex justify-between text-white/80">
-                    <span>SSO and Audit Trail:</span>
+                  <div className="flex justify-between items-center py-2 border-b border-white/10">
+                    <span className="text-white/80 font-medium">SSO and Audit Trail:</span>
                     <span className="text-white font-semibold">{plan.ssoAudit}</span>
                   </div>
-                  <div className="flex justify-between text-white/80">
-                    <span>Support:</span>
-                    <span className="text-white font-semibold text-right flex-1 ml-2">{plan.support}</span>
+                  <div className="flex justify-between items-start py-2">
+                    <span className="text-white/80 font-medium">Support:</span>
+                    <span className="text-white font-semibold text-right flex-1 ml-4">{plan.support}</span>
                   </div>
                 </div>
 
                 <button 
                   onClick={handleGetStarted}
-                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300 text-sm ${
+                  className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-xl'
-                      : 'glass-card border border-brand-purple/50 text-white hover:bg-brand-purple/20'
+                      ? 'bg-brand-purple text-white hover:bg-brand-purple/90 shadow-lg'
+                      : 'border-2 border-brand-purple/50 text-white hover:bg-brand-purple/10 hover:border-brand-purple'
                   }`}
                 >
                   Get Started
                 </button>
-              </FuturisticCard>
+              </div>
             ))}
           </div>
 
