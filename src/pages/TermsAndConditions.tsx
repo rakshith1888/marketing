@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 
 const TermsAndConditions = () => {
@@ -131,15 +130,6 @@ const TermsAndConditions = () => {
                   <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Platform.</li>
                   <li>Use the Platform in a manner inconsistent with any applicable laws or regulations.</li>
                 </ul>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
-              <div className="text-white/80">
-                <p>
-                  In order to resolve a complaint regarding the Platform or to receive further information regarding use of the Platform, please contact us at hello@groflexerp.com.
-                </p>
               </div>
             </section>
           </div>
