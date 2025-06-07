@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -125,38 +126,38 @@ const Home = () => {
   return (
     <Layout>
       {/* 1. HERO + VIDEO SECTION - SIDE BY SIDE LAYOUT */}
-      <div className="min-h-screen flex flex-col relative overflow-hidden cyber-grid">
+      <div className="relative overflow-hidden cyber-grid">
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '3s'}}></div>
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 py-20 flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Side by Side Content */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center py-16 lg:py-24">
             {/* Left Side - Hero Content */}
-            <div className="text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+            <div className="text-left space-y-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 <span className="text-gradient">Clarity to Know</span><br />
                 <span className="text-white">What to Do Next</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl">
                 Predictive analytics. Prescriptive next steps.<br />
                 Powered by AI, designed for decisive leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button 
                   onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
+                  className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
                   Start Free Trial
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <Link to="/products">
-                  <button className="bg-gradient-purple text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
+                  <button className="bg-gradient-purple text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300 w-full">
                     See How It Works
                   </button>
                 </Link>
@@ -164,8 +165,8 @@ const Home = () => {
             </div>
 
             {/* Right Side - YouTube Video */}
-            <div className="flex justify-center">
-              <div className="w-full max-w-2xl">
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-full max-w-lg lg:max-w-xl">
                 <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
                   <div className="aspect-video rounded-xl overflow-hidden">
                     <iframe
