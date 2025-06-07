@@ -1,5 +1,3 @@
-
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -34,18 +32,18 @@ const About = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Hero Section - Reduced height and padding */}
+      <section className="flex items-center justify-center relative overflow-hidden py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 via-transparent to-brand-purple-dark/20"></div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-purple/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-coral/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
         
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="text-gradient">About Groflex</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
             We're on a mission to give every business leader the clarity they need to make confident, data-driven decisions that drive growth and success.
           </p>
         </div>
@@ -140,4 +138,3 @@ const About = () => {
 };
 
 export default About;
-
