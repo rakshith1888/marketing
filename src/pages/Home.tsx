@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -486,7 +485,7 @@ const Home = () => {
               <h3 className="text-xl font-bold text-gradient mb-4">For Teams</h3>
               <p className="text-white/80 mb-6">See how GrofleX transforms your workflow</p>
               <Link to="/solutions">
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
                   Book a Demo
                 </button>
               </Link>
