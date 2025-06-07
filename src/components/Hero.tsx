@@ -27,16 +27,13 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <button 
             onClick={handleGetStarted}
-            className="bg-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-2xl hover:shadow-brand-coral/50 transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-2xl hover:shadow-brand-purple/50 transition-all duration-300 transform hover:scale-105"
           >
             Start Free Trial
           </button>
-          <a 
-            href="/products"
-            className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300 inline-block"
-          >
+          <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
             See How It Works
-          </a>
+          </button>
         </div>
         
         {/* Animated Flywheel */}
