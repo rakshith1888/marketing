@@ -120,7 +120,7 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* 1. HERO + VIDEO SECTION - MAIN HEADING AT TOP */}
+      {/* 1. HERO + VIDEO SECTION - SIDE BY SIDE LAYOUT */}
       <div className="min-h-screen flex flex-col relative overflow-hidden cyber-grid">
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
@@ -128,33 +128,30 @@ const Home = () => {
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 py-20 flex flex-col justify-center">
-          {/* Main Heading at Top */}
-          <div className="text-center mb-16">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              <span className="text-gradient">Clarity to Know</span><br />
-              <span className="text-white">What to Do Next</span>
-            </h1>
-          </div>
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 py-20 flex items-center">
           {/* Side by Side Content */}
           <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
             {/* Left Side - Hero Content */}
             <div className="text-left">
-              <p className="text-2xl md:text-3xl text-white/80 mb-16 leading-relaxed">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                <span className="text-gradient">Clarity to Know</span><br />
+                <span className="text-white">What to Do Next</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
                 Predictive analytics. Prescriptive next steps.<br />
                 Powered by AI, designed for decisive leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-8 justify-start">
+              <div className="flex flex-col sm:flex-row gap-6 justify-start">
                 <button 
                   onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-10 py-5 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
+                  className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
                 >
                   Start Free Trial
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-10 py-5 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300">
                   See How It Works
                 </button>
               </div>
@@ -162,19 +159,9 @@ const Home = () => {
 
             {/* Right Side - YouTube Video */}
             <div className="flex justify-center">
-              <div className="w-full max-w-lg">
-                <div className="mb-8 text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    <span className="text-gradient">See GrofleX in Action</span>
-                  </h2>
-                  <p className="text-xl md:text-2xl text-white/80 mb-4">
-                    Watch how leaders transform data into decisive action
-                  </p>
-                  <div className="w-16 h-1 bg-gradient-brand mx-auto"></div>
-                </div>
-                
+              <div className="w-full max-w-2xl">
                 <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
-                  <div className="aspect-square rounded-xl overflow-hidden">
+                  <div className="aspect-video rounded-xl overflow-hidden">
                     <iframe
                       width="100%"
                       height="100%"
@@ -187,19 +174,6 @@ const Home = () => {
                     ></iframe>
                   </div>
                 </FuturisticCard>
-                
-                <div className="mt-6 text-center">
-                  <p className="text-white/60 text-base mb-4">
-                    ⏱️ 2 min watch • 🎯 Real customer story • 📈 Actual results
-                  </p>
-                  <button 
-                    onClick={handleGetStarted}
-                    className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto"
-                  >
-                    <Play className="w-5 h-5" />
-                    Start Free Trial
-                  </button>
-                </div>
               </div>
             </div>
           </div>
