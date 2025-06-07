@@ -68,6 +68,17 @@ const About = () => {
         </div>
       </section>
 
+      {/* Mission Section */}
+      <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
+        <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
+        <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          To empower decision-makers with insight they can trust—instantly. We believe that in a world
+          where data is abundant, clarity is rare. Our mission is to transform how businesses understand their
+          data by providing predictive insights and prescriptive actions that eliminate guesswork and
+          accelerate growth.
+        </p>
+      </FuturisticCard>
+
       {/* Story and Journey Section */}
       <div className="mb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12">
@@ -119,15 +130,6 @@ const About = () => {
           </FuturisticCard>
         </div>
       </div>
-
-      {/* Mission Section */}
-      <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
-        <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
-        <p className="text-lg text-white/80 max-w-3xl mx-auto">
-          To transform how businesses understand their data by providing predictive insights 
-          and prescriptive actions that eliminate guesswork and accelerate growth.
-        </p>
-      </FuturisticCard>
 
       {/* Values Section */}
       <div className="mb-16">
