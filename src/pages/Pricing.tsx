@@ -11,46 +11,43 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$99',
-      period: '/month',
-      description: 'Perfect for small businesses and startups',
+      price: '$49',
+      period: '/user/month',
       features: [
-        'Up to 5 users',
-        'Basic analytics', 
-        'Email support',
-        '10GB storage',
-        'API access'
+        { label: 'Incoming Data Size', value: '1GB' },
+        { label: 'AI Assistant', value: 'Guided (basic Q&A)' },
+        { label: 'Dashboards', value: '3' },
+        { label: 'Data Sources', value: '2 connectors' },
+        { label: 'SSO and Audit Trail', value: 'No' },
+        { label: 'Support', value: 'Email' }
       ],
       popular: false
     },
     {
-      name: 'Professional',
-      price: '$299',
-      period: '/month',
-      description: 'Ideal for growing businesses',
+      name: 'Pro',
+      price: '$99',
+      period: '/user/month',
       features: [
-        'Up to 25 users',
-        'Advanced analytics',
-        'Priority support',
-        '100GB storage',
-        'Full API access',
-        'Custom integrations'
+        { label: 'Incoming Data Size', value: '5GB' },
+        { label: 'AI Assistant', value: 'Predictive insights' },
+        { label: 'Dashboards', value: '25' },
+        { label: 'Data Sources', value: 'All connectors' },
+        { label: 'SSO and Audit Trail', value: 'No' },
+        { label: 'Support', value: 'Email + chat' }
       ],
       popular: true
     },
     {
-      name: 'Business',
-      price: '$599',
-      period: '/month',
-      description: 'For established companies scaling fast',
+      name: 'Growth',
+      price: '$249',
+      period: '/user/month',
       features: [
-        'Up to 100 users',
-        'Premium analytics',
-        '24/7 phone support',
-        '500GB storage',
-        'Advanced API access',
-        'Custom integrations',
-        'White-label options'
+        { label: 'Incoming Data Size', value: '25GB' },
+        { label: 'AI Assistant', value: 'Prescriptive + "What-If"' },
+        { label: 'Dashboards', value: '100+' },
+        { label: 'Data Sources', value: 'All + premium APIs' },
+        { label: 'SSO and Audit Trail', value: 'Yes' },
+        { label: 'Support', value: 'Priority + onboarding' }
       ],
       popular: false
     }
@@ -110,10 +107,10 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
+                className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border ${
                   plan.popular 
-                    ? 'bg-gradient-to-b from-brand-purple/20 to-brand-purple/10 border-2 border-brand-purple/60' 
-                    : 'bg-white/5 border border-white/20'
+                    ? 'border-brand-purple/60 shadow-lg shadow-brand-purple/20' 
+                    : 'border-white/20'
                 }`}
               >
                 {/* Popular Badge */}
@@ -126,8 +123,7 @@ const Pricing = () => {
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
-                  <p className="text-white/70 mb-6">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-6">{plan.name}</h3>
                   <div className="flex items-baseline justify-center mb-6">
                     <span className="text-4xl font-bold text-white">{plan.price}</span>
                     <span className="text-white/60 ml-2">{plan.period}</span>
@@ -137,9 +133,9 @@ const Pricing = () => {
                 {/* Features */}
                 <div className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center">
-                      <div className="w-2 h-2 bg-brand-coral rounded-full mr-3 flex-shrink-0"></div>
-                      <span className="text-white/90">{feature}</span>
+                    <div key={featureIndex} className="flex justify-between items-start">
+                      <span className="text-white/70 text-sm font-medium">{feature.label}:</span>
+                      <span className="text-white text-sm font-semibold text-right ml-2">{feature.value}</span>
                     </div>
                   ))}
                 </div>
