@@ -123,27 +123,10 @@ const About = () => {
       {/* Mission Section */}
       <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
         <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
-        <p className="text-lg text-white/80 max-w-3xl mx-auto mb-8">
+        <p className="text-lg text-white/80 max-w-3xl mx-auto">
           To transform how businesses understand their data by providing predictive insights 
           and prescriptive actions that eliminate guesswork and accelerate growth.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <div className="text-4xl">📊</div>
-            <h3 className="text-xl font-semibold text-gradient">Data Intelligence</h3>
-            <p className="text-white/70">Turning complex data into clear, actionable insights</p>
-          </div>
-          <div className="space-y-4">
-            <div className="text-4xl">⚡</div>
-            <h3 className="text-xl font-semibold text-gradient">Speed to Insight</h3>
-            <p className="text-white/70">Real-time analysis that keeps pace with your business</p>
-          </div>
-          <div className="space-y-4">
-            <div className="text-4xl">🎯</div>
-            <h3 className="text-xl font-semibold text-gradient">Precision Focus</h3>
-            <p className="text-white/70">Targeted recommendations for maximum impact</p>
-          </div>
-        </div>
       </FuturisticCard>
 
       {/* Values Section */}
