@@ -1,4 +1,5 @@
 
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -124,7 +125,7 @@ const About = () => {
           >
             View Open Positions
           </button>
-          <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
+          <button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
             Contact Our Team
           </button>
         </div>
@@ -134,3 +135,4 @@ const About = () => {
 };
 
 export default About;
+
