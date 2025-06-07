@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -151,7 +152,7 @@ const Home = () => {
                   Start Free Trial
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                <button className="bg-gradient-purple text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
                   See How It Works
                 </button>
               </div>
@@ -223,7 +224,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+            <button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
               Learn Why Clarity Matters
             </button>
           </div>
