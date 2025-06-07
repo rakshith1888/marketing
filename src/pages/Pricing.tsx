@@ -105,66 +105,78 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`bg-white/10 backdrop-blur-md border rounded-xl p-8 relative transition-all duration-300 hover:bg-white/15 ${
+                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl group ${
                   plan.popular 
-                    ? 'border-brand-purple/60 shadow-xl' 
-                    : 'border-white/20 hover:border-white/30'
+                    ? 'border-brand-purple/60 shadow-xl shadow-brand-purple/20' 
+                    : 'border-white/20 hover:border-brand-purple/40'
                 }`}
               >
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/5 to-brand-coral/5 opacity-50"></div>
+                
+                {/* Popular Badge */}
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-medium">
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-brand-purple to-brand-coral text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
-                    </span>
+                    </div>
                   </div>
                 )}
                 
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
-                  <p className="text-white/70 mb-6 text-base leading-relaxed">{plan.description}</p>
-                  <div className="flex items-baseline justify-center mb-2">
-                    <span className="text-4xl font-bold text-white">{plan.price}</span>
-                    <span className="text-white/60 ml-2">{plan.period}</span>
+                <div className="relative z-10 p-8">
+                  {/* Header */}
+                  <div className="text-center mb-8 mt-4">
+                    <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
+                    <p className="text-white/70 mb-6 text-base leading-relaxed">{plan.description}</p>
+                    <div className="flex items-baseline justify-center mb-2">
+                      <span className="text-5xl font-bold text-white">{plan.price}</span>
+                      <span className="text-white/60 ml-2 text-lg">{plan.period}</span>
+                    </div>
                   </div>
+
+                  {/* Features */}
+                  <div className="space-y-4 mb-10">
+                    <div className="flex justify-between items-center py-3 border-b border-white/10">
+                      <span className="text-white/80 font-medium">Incoming Data Size:</span>
+                      <span className="text-white font-semibold">{plan.dataSize}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-white/10">
+                      <span className="text-white/80 font-medium">AI Assistant:</span>
+                      <span className="text-white font-semibold text-right flex-1 ml-4">{plan.aiAssistant}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3 border-b border-white/10">
+                      <span className="text-white/80 font-medium">Dashboards:</span>
+                      <span className="text-white font-semibold">{plan.dashboards}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-white/10">
+                      <span className="text-white/80 font-medium">Data Sources:</span>
+                      <span className="text-white font-semibold text-right flex-1 ml-4">{plan.dataSources}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3 border-b border-white/10">
+                      <span className="text-white/80 font-medium">SSO and Audit Trail:</span>
+                      <span className="text-white font-semibold">{plan.ssoAudit}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3">
+                      <span className="text-white/80 font-medium">Support:</span>
+                      <span className="text-white font-semibold text-right flex-1 ml-4">{plan.support}</span>
+                    </div>
+                  </div>
+
+                  {/* Button - restored to original style */}
+                  <button 
+                    onClick={handleGetStarted}
+                    className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-brand-purple text-white hover:bg-brand-purple/90 shadow-lg'
+                        : 'border-2 border-brand-purple/50 text-white hover:bg-brand-purple/10 hover:border-brand-purple'
+                    }`}
+                  >
+                    Get Started
+                  </button>
                 </div>
 
-                <div className="space-y-4 mb-10">
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-white/80 font-medium">Incoming Data Size:</span>
-                    <span className="text-white font-semibold">{plan.dataSize}</span>
-                  </div>
-                  <div className="flex justify-between items-start py-2 border-b border-white/10">
-                    <span className="text-white/80 font-medium">AI Assistant:</span>
-                    <span className="text-white font-semibold text-right flex-1 ml-4">{plan.aiAssistant}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-white/80 font-medium">Dashboards:</span>
-                    <span className="text-white font-semibold">{plan.dashboards}</span>
-                  </div>
-                  <div className="flex justify-between items-start py-2 border-b border-white/10">
-                    <span className="text-white/80 font-medium">Data Sources:</span>
-                    <span className="text-white font-semibold text-right flex-1 ml-4">{plan.dataSources}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-white/80 font-medium">SSO and Audit Trail:</span>
-                    <span className="text-white font-semibold">{plan.ssoAudit}</span>
-                  </div>
-                  <div className="flex justify-between items-start py-2">
-                    <span className="text-white/80 font-medium">Support:</span>
-                    <span className="text-white font-semibold text-right flex-1 ml-4">{plan.support}</span>
-                  </div>
-                </div>
-
-                <button 
-                  onClick={handleGetStarted}
-                  className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-brand-purple text-white hover:bg-brand-purple/90 shadow-lg'
-                      : 'border-2 border-brand-purple/50 text-white hover:bg-brand-purple/10 hover:border-brand-purple'
-                  }`}
-                >
-                  Get Started
-                </button>
+                {/* Subtle glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-purple/10 to-brand-coral/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
           </div>
