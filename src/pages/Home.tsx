@@ -152,9 +152,11 @@ const Home = () => {
                   Start Free Trial
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="bg-gradient-purple text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
-                  See How It Works
-                </button>
+                <Link to="/products">
+                  <button className="bg-gradient-purple text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
+                    See How It Works
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -483,9 +485,11 @@ const Home = () => {
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-gradient mb-4">For Teams</h3>
               <p className="text-white/80 mb-6">See how GrofleX transforms your workflow</p>
-              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
-                Book a Demo
-              </button>
+              <Link to="/solutions">
+                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                  Book a Demo
+                </button>
+              </Link>
             </FuturisticCard>
           </div>
         </div>
