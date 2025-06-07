@@ -225,7 +225,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300">
+            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
               Learn Why Clarity Matters
             </button>
           </div>
