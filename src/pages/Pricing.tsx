@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
@@ -12,41 +11,47 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$49',
-      period: '/user/month',
-      description: 'Perfect for small businesses getting started',
-      dataSize: '1GB',
-      aiAssistant: 'Guided (basic Q&A)',
-      dashboards: '3',
-      dataSources: '2 connectors',
-      ssoAudit: 'No',
-      support: 'Email',
+      price: '$99',
+      period: '/month',
+      description: 'Perfect for small businesses and startups',
+      features: [
+        'Up to 5 users',
+        'Basic analytics', 
+        'Email support',
+        '10GB storage',
+        'API access'
+      ],
       popular: false
     },
     {
-      name: 'Pro',
-      price: '$99',
-      period: '/user/month',
+      name: 'Professional',
+      price: '$299',
+      period: '/month',
       description: 'Ideal for growing businesses',
-      dataSize: '5GB',
-      aiAssistant: 'Predictive insights',
-      dashboards: '25',
-      dataSources: 'All connectors',
-      ssoAudit: 'No',
-      support: 'Email + chat',
+      features: [
+        'Up to 25 users',
+        'Advanced analytics',
+        'Priority support',
+        '100GB storage',
+        'Full API access',
+        'Custom integrations'
+      ],
       popular: true
     },
     {
-      name: 'Growth',
-      price: '$249',
-      period: '/user/month',
+      name: 'Business',
+      price: '$599',
+      period: '/month',
       description: 'For established companies scaling fast',
-      dataSize: '25GB',
-      aiAssistant: 'Prescriptive + "What-If"',
-      dashboards: '100+',
-      dataSources: 'All + premium APIs',
-      ssoAudit: 'Yes',
-      support: 'Priority + onboarding',
+      features: [
+        'Up to 100 users',
+        'Premium analytics',
+        '24/7 phone support',
+        '500GB storage',
+        'Advanced API access',
+        'Custom integrations',
+        'White-label options'
+      ],
       popular: false
     }
   ];
@@ -92,12 +97,12 @@ const Pricing = () => {
           </div>
 
           <div className="flex justify-center mb-12">
-            <FuturisticCard className="p-2 flex rounded-full">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-2 flex">
               <button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white px-6 py-2 rounded-full">Monthly</button>
               <button className="text-white/80 px-6 py-2 rounded-full hover:text-white transition-colors">
                 Yearly (Save 20%)
               </button>
-            </FuturisticCard>
+            </div>
           </div>
 
           {/* Pricing Cards */}
@@ -105,78 +110,51 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl group ${
+                className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
                   plan.popular 
-                    ? 'border-brand-purple/60 shadow-xl shadow-brand-purple/20' 
-                    : 'border-white/20 hover:border-brand-purple/40'
+                    ? 'bg-gradient-to-b from-brand-purple/20 to-brand-purple/10 border-2 border-brand-purple/60' 
+                    : 'bg-white/5 border border-white/20'
                 }`}
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/5 to-brand-coral/5 opacity-50"></div>
-                
                 {/* Popular Badge */}
                 {plan.popular && (
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-brand-purple to-brand-coral text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-brand-coral to-brand-purple text-white px-4 py-1 rounded-full text-sm font-medium">
                       Most Popular
                     </div>
                   </div>
                 )}
                 
-                <div className="relative z-10 p-8">
-                  {/* Header */}
-                  <div className="text-center mb-8 mt-4">
-                    <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
-                    <p className="text-white/70 mb-6 text-base leading-relaxed">{plan.description}</p>
-                    <div className="flex items-baseline justify-center mb-2">
-                      <span className="text-5xl font-bold text-white">{plan.price}</span>
-                      <span className="text-white/60 ml-2 text-lg">{plan.period}</span>
-                    </div>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
+                  <p className="text-white/70 mb-6">{plan.description}</p>
+                  <div className="flex items-baseline justify-center mb-6">
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-white/60 ml-2">{plan.period}</span>
                   </div>
-
-                  {/* Features */}
-                  <div className="space-y-4 mb-10">
-                    <div className="flex justify-between items-center py-3 border-b border-white/10">
-                      <span className="text-white/80 font-medium">Incoming Data Size:</span>
-                      <span className="text-white font-semibold">{plan.dataSize}</span>
-                    </div>
-                    <div className="flex justify-between items-start py-3 border-b border-white/10">
-                      <span className="text-white/80 font-medium">AI Assistant:</span>
-                      <span className="text-white font-semibold text-right flex-1 ml-4">{plan.aiAssistant}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-white/10">
-                      <span className="text-white/80 font-medium">Dashboards:</span>
-                      <span className="text-white font-semibold">{plan.dashboards}</span>
-                    </div>
-                    <div className="flex justify-between items-start py-3 border-b border-white/10">
-                      <span className="text-white/80 font-medium">Data Sources:</span>
-                      <span className="text-white font-semibold text-right flex-1 ml-4">{plan.dataSources}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-white/10">
-                      <span className="text-white/80 font-medium">SSO and Audit Trail:</span>
-                      <span className="text-white font-semibold">{plan.ssoAudit}</span>
-                    </div>
-                    <div className="flex justify-between items-start py-3">
-                      <span className="text-white/80 font-medium">Support:</span>
-                      <span className="text-white font-semibold text-right flex-1 ml-4">{plan.support}</span>
-                    </div>
-                  </div>
-
-                  {/* Button - restored to original style */}
-                  <button 
-                    onClick={handleGetStarted}
-                    className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
-                      plan.popular
-                        ? 'bg-brand-purple text-white hover:bg-brand-purple/90 shadow-lg'
-                        : 'border-2 border-brand-purple/50 text-white hover:bg-brand-purple/10 hover:border-brand-purple'
-                    }`}
-                  >
-                    Get Started
-                  </button>
                 </div>
 
-                {/* Subtle glow effect on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-purple/10 to-brand-coral/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                {/* Features */}
+                <div className="space-y-4 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center">
+                      <div className="w-2 h-2 bg-brand-coral rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-white/90">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <button 
+                  onClick={handleGetStarted}
+                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-brand-coral to-brand-purple text-white hover:shadow-lg'
+                      : 'border border-white/30 text-white hover:bg-white/10'
+                  }`}
+                >
+                  Get Started
+                </button>
               </div>
             ))}
           </div>
