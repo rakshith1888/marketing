@@ -32,6 +32,24 @@ const About = () => {
     }
   ];
 
+  const journeySteps = [
+    {
+      number: '01',
+      title: 'Problem Identified',
+      description: 'Recognized the gap between complex data and actionable insights'
+    },
+    {
+      number: '02',
+      title: 'Solution Developed',
+      description: 'Built AI-powered predictive analytics that deliver clear recommendations'
+    },
+    {
+      number: '03',
+      title: 'Platform Matured',
+      description: 'Evolved into comprehensive business intelligence with real-time insights'
+    }
+  ];
+
   return (
     <Layout>
       {/* Hero Section - Reduced height and padding */}
@@ -51,26 +69,45 @@ const About = () => {
         </div>
       </section>
 
-      {/* Story Section */}
-      <FuturisticCard className="p-12 mb-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gradient text-center mb-8">Our Story</h2>
-          <div className="space-y-6 text-white/80">
-            <p className="text-lg">
+      {/* Story and Journey Section */}
+      <div className="mb-16 grid lg:grid-cols-2 gap-8">
+        {/* Our Story */}
+        <div>
+          <h2 className="text-3xl font-bold text-gradient mb-6">Our Story</h2>
+          <div className="space-y-4 text-white/80">
+            <p className="text-sm leading-relaxed">
               Born from frustration with dashboards. Built to act in real time.
             </p>
-            <p className="text-lg">
+            <p className="text-sm leading-relaxed">
               GrofleX emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
             </p>
-            <p className="text-lg">
+            <p className="text-sm leading-relaxed">
               Our founders experienced this frustration firsthand—watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data; it was lack of actionable insight.
             </p>
-            <p className="text-lg">
+            <p className="text-sm leading-relaxed">
               Today, we're building the bridge between prediction and action, helping leaders see not just what's coming, but what to do about it.
             </p>
           </div>
         </div>
-      </FuturisticCard>
+
+        {/* The Journey */}
+        <div>
+          <h2 className="text-3xl font-bold text-gradient mb-6">The Journey</h2>
+          <div className="space-y-6">
+            {journeySteps.map((step, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-brand-purple to-brand-coral flex items-center justify-center text-white font-bold text-sm">
+                  {step.number}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gradient mb-1">{step.title}</h3>
+                  <p className="text-sm text-white/70">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Mission Section */}
       <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
