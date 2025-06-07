@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,7 +65,7 @@ export default {
 				},
 				brand: {
 					cream: '#FFF3CA',
-					coral: '#E91E63',
+					coral: '#FF9F94',
 					purple: '#AD72BD',
 					'purple-dark': '#7152DA',
 					black: '#000000'
@@ -116,9 +117,9 @@ export default {
 				'float': 'float 6s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'gradient-brand': 'linear-gradient(135deg, #FFF3CA 0%, #E91E63 25%, #AD72BD 75%, #7152DA 100%)',
+				'gradient-brand': 'linear-gradient(135deg, #FFF3CA 0%, #FF9F94 25%, #AD72BD 75%, #7152DA 100%)',
 				'gradient-purple': 'linear-gradient(135deg, #AD72BD 0%, #7152DA 100%)',
-				'gradient-coral': 'linear-gradient(135deg, #E91E63 0%, #AD72BD 100%)'
+				'gradient-coral': 'linear-gradient(135deg, #FF9F94 0%, #AD72BD 100%)'
 			}
 		}
 	},
