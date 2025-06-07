@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 
 const TermsAndConditions = () => {
@@ -269,6 +268,318 @@ const TermsAndConditions = () => {
                 </p>
                 <p>
                   We cannot guarantee the Platform will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Platform, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Platform at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Platform during any downtime or discontinuance of the Platform. Nothing in these Terms will be construed to obligate us to maintain and support the Platform or to supply any corrections, updates, or releases in connection therewith.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Governing Law</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  Unless the laws of your jurisdiction require that those laws apply, these Terms and your use of the Platform are governed by and construed in accordance with the following, without regard to conflict of law principles: the laws of the United States of America and the State of Delaware, USA with venue in Kent County, Delaware.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Dispute Resolution</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  If you are a resident of the EEA, please see the EU Residents – Supplemental Terms of Use for more information.
+                </p>
+                <p>
+                  All other users, please read this section carefully. It affects your rights. You agree that by entering into these Terms, you and we are each waiving any right to trial by jury or to participate in a class action. You and we agree that each may bring claims against the other only in your or its individual capacity, and not as a plaintiff or class member in any purported class or representative proceeding. Any arbitration will take place on an individual basis; class arbitrations and class actions are not permitted.
+                </p>
+                <p>
+                  <strong>Governing Law.</strong> All claims, disputes, or other legal proceedings by or between you or us, including but not limited to any such claims or disputes that are in any way related to or arising under these Terms or your access to or use of the Platform, shall be governed by the laws of the United States of America and the State of Delaware without giving effect to any conflict of laws principles that may otherwise provide for the application of the law of another jurisdiction. Application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transaction Act (UCITA) are expressly excluded by these Terms. The parties agree that their arrangement under these Terms is in interstate commerce and that the Federal Arbitration Act applies to the construction of the "Agreement to Binding Arbitration" provision below. For any claim, dispute, or other legal proceeding not subject to the "Agreement to Binding Arbitration" provision below, the claim or dispute shall be brought and litigated exclusively in the state courts located within Kent County, Delaware or the federal courts in the District of Delaware, as appropriate, and you agree to submit to the personal jurisdiction of each of these courts for the purpose of litigating such claims or disputes.
+                </p>
+                <p>
+                  <strong>Informal Negotiations.</strong> To expedite resolution and control the cost of any dispute, controversy, or claim related to these Terms (each a "Dispute" and collectively, the "Disputes") brought by either you or us (individually, a "Party" and collectively, the "Parties"), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least thirty (30) days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party. You may provide notice to us using the information provided in the "CONTACT US" section below.
+                </p>
+                <p>
+                  <strong>Agreement to Binding Arbitration.</strong> Subject to the Exceptions to Arbitration set forth below, you and we each agree that any and all disputes between Platform users arising under or related in any way to these Terms and such users' use of the Platform must be resolved through binding arbitration as described in this section. With the exception of the prohibition on class arbitrations set forth in this "DISPUTE RESOLUTION" section, if an arbitrator or court decides that any part of this agreement to arbitrate is unenforceable, the other parts of this Agreement to Arbitrate will still apply.
+                </p>
+                <p>
+                  <strong>Exceptions to Arbitration.</strong> This Agreement to Arbitrate will not apply to the following: (a) small claims court cases; (b) legal proceedings that involve efforts to obtain user identifying information; (c) any legal proceedings brought against the Company by companies or other legal entities or individuals acting on behalf of such companies or other legal entities; (d) any legal proceedings brought by the Company against companies or other legal entities or individuals acting on behalf of any such companies or other legal entities; (e) a party's right to seek injunctive or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation or violation of a party's copyrights, trademarks, trade secrets, patents, or other intellectual property rights; or (f) where the application of this provision is prohibited by applicable law. If, for some reason, the prohibition on class arbitrations set forth in this DISPUTE RESOLUTION section cannot be enforced, then the entirety of this Agreement to Arbitrate will not apply. Where this Agreement to Arbitrate does not apply, the remainder of this Agreement and the Dispute Resolution section will continue to apply.
+                </p>
+                <p>
+                  <strong>Arbitration Procedure.</strong> The arbitration will be governed by the Consumer Arbitration Rules of the American Arbitration Association ("AAA"), as modified by this section, and will be administered by the AAA. The AAA's rules and a form for initiating the proceeding are available at www.adr.org. Any settlement offer made by you or us shall not be disclosed to the arbitrator. Unless otherwise required by the applicable arbitration rules at the time the arbitration is commenced, the arbitration shall be held in Dover, Delaware. For any claim where the total amount of the award sought is $10,000 or less, you and we may elect to have the arbitration conducted by telephone or based solely on written submissions, which election shall be binding on you and us subject to the arbitrator's discretion to require an in-person hearing. In cases where an in-person hearing is held, you or we may attend by telephone, unless the arbitrator requires otherwise. The arbitrator will decide the substance of all claims in accordance with applicable law, including recognized principles of equity, and will honor all claims of privilege recognized by law. The arbitrator shall not be bound by rulings in prior arbitrations involving different users, but is bound by rulings in prior arbitrations involving the same Platform user to the extent required by applicable law. The arbitrator's award shall be final and binding and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction thereof.
+                </p>
+                <p>
+                  <strong>Limitation to Assert a Claim.</strong> In no event shall any Dispute be commenced more than one (1) year after the facts giving rise to the claim occurred.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Corrections</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  There may be information on the Platform that inadvertently contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Platform at any time, without prior notice.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Disclaimer</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  <strong>THE PLATFORM IS PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS, WHICH MEANS THAT WE GIVE NO GUARANTEES AS TO THE OPERATION OF THE PLATFORM. YOU AGREE THAT YOUR USE OF THE PLATFORM AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE PLATFORM AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE PLATFORM'S CONTENT OR THE CONTENT OF ANY WEBSITES LINKED TO THE PLATFORM AND WE ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY: (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS; (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE PLATFORM; (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED ON THE SERVERS; (4) ANY INTERRUPTION OR CESSATION OF ANY TRANSMISSION TO OR FROM THE PLATFORM; OR (5) ANY VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE PLATFORM BY ANY THIRD PARTY. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE PLATFORM, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.</strong>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Limitation Of Liability</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  <strong>TO THE FULLEST EXTENT PERMITTED BY LAW, NEITHER WE NOR OUR DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS WILL BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE PLATFORM, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE THREE (3) MONTH PERIOD PRIOR TO THE OCCURRENCE GIVING RISE TO ANY CLAIM. CERTAIN STATE OR NATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.</strong>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Indemnification</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, employees, and agents from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party arising out of: (1) your Contributions or Submissions; (2) your use of the Platform; (3) your breach of these Terms; (4) any breach of your representations and warranties set forth in these Terms; (5) your violation of the rights of a third party, including but not limited to intellectual property rights; or (6) any harmful act by you toward any other user of the Platform with whom you connected via the Platform. Notwithstanding the foregoing unless prohibited by applicable law, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Electronic Communications, Transactions, and Signatures</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  Visiting the Platform, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Platform, satisfy any legal requirement that such communication be in writing. <strong>YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE PLATFORM.</strong> You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Miscellaneous</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  These Terms and any policies or operating rules posted by us on the Platform or in respect to the Platform constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms shall not operate as a waiver of such right or provision. These Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms or use of the Platform. Except where prohibited by applicable law, you agree that these Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms and the lack of signing by the parties hereto to execute these Terms.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  In order to resolve a complaint regarding the Platform or to receive further information regarding use of the Platform, please contact us at hello@groflexerp.com.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">SMS Terms of Use</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  These SMS Terms set forth the terms and conditions under which we agree to provide and you agree to receive SMS Text Messages ("SMS Messaging") from us. By using SMS Messaging, you acknowledge that you have read and agree to be bound by these SMS Terms, unless you opt out of further SMS Messaging. Each time you use the SMS Messaging, you will be deemed to have accepted these terms and you should only use the SMS Messaging if you agree to these terms. We may change these terms at any time and recommend you check these terms each time you use the SMS Messaging.
+                </p>
+                <p>
+                  <strong>GENERAL AGREEMENTS</strong><br />
+                  By agreeing to and using the SMS Messaging service, you represent that you are the authorized account holder of the carrier which issued your mobile telephone number.
+                </p>
+                <p>
+                  In offering the SMS Messaging service, we agree to: (i) comply with these SMS Terms; and (ii) process unsubscribe or opt-out requests received from you in a timely manner.
+                </p>
+                <p>
+                  <strong>CONSENT</strong><br />
+                  If you provide express written consent to receive text messages from us, we will send you such messages via an automatic telephone dialing system. Your consent may be provided by: (i) manually entering your phone number, (ii) clicking a checkbox, or (iii) otherwise indicating that you agree to receive such messages.
+                </p>
+                <p>
+                  Consent to receive text messages for these purposes is not a condition of any service. If you receive an unwanted text message from us, you may opt out of receiving future text messages from us by following the instructions outlined in the message.
+                </p>
+                <p>
+                  <strong>DELIVERY AND FREQUENCY OF MESSAGES</strong><br />
+                  Delivery of text messages is subject to effective transmission from your wireless service provider/network operator and may vary depending on your network and carrier. We are not liable for any delays in the delivery and/or receipt of text messages. Text messages will be recurring.
+                </p>
+                <p>
+                  <strong>ACTIVATION, DEACTIVATION, AND REACTIVATION</strong><br />
+                  When you opt-in to the service, we will send you an SMS message with an activation code to verify your telephone number. You will receive 1 message with the activation code. You can cancel the SMS service at any time, just reply "STOP" to the message. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us.
+                </p>
+                <p>
+                  If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.
+                </p>
+                <p>
+                  If at any time you need assistance, just reply "HELP" to the message. After you send the SMS message "HELP" to us, we will respond with instructions on how to use our SMS Messaging service as well as how to unsubscribe.
+                </p>
+                <p>
+                  <strong>YOUR USE</strong><br />
+                  You must not and must not attempt to or permit another person to:
+                </p>
+                <p>
+                  Use SMS Messaging or the information or content disclosed to you via SMS Messaging:<br />
+                  in any way which is unlawful, offensive or results, or could result, in damage to property or injury to any person, including by harassing or threatening people;<br />
+                  in a way which infringes our or any other person's rights (including intellectual property rights and moral rights);<br />
+                  Knowingly transmit any virus, worm, Trojan horse or other disabling feature to or via SMS Messaging.
+                </p>
+                <p>
+                  <strong>ACCEPTANCE NOT MANDATORY FOR EMPLOYMENT, PURCHASE OR RECEIPT OF SERVICES</strong><br />
+                  Use of SMS Messaging is not required as a condition of any purchase or receipt of services from us.
+                </p>
+                <p>
+                  <strong>FEES</strong><br />
+                  We do not charge you fees to receive text messages; however, standard message and data rates may apply to all user mobile usage from your telecommunications provider. You agree to be fully responsible for all such charges, fees and amounts.
+                </p>
+                <p>
+                  <strong>SUPPORTED CELL PHONE CARRIERS</strong><br />
+                  This SMS Messaging service is available if you use one of the supported cell phone carriers.
+                </p>
+                <p>
+                  <strong>SAFETY OF MESSAGES</strong><br />
+                  You understand that text messages we send may be seen by anyone with access to your phone. Accordingly, you should take steps to safeguard your phone and your text messages if you want your messages to be secure.
+                </p>
+                <p>
+                  <strong>NO GUARANTEE</strong><br />
+                  We, and our related entities and contractors, do not guarantee that SMS Messaging or the application version will operate on your mobile handset or operate without causing damage to or disturbing the usual operation of your mobile handset. Carriers are not responsible for delayed or undeliverable messages.
+                </p>
+                <p>
+                  <strong>INTELLECTUAL PROPERTY</strong><br />
+                  Unless otherwise indicated, we own, or use under license, copyright in the content made available via SMS Messaging and design of SMS Messaging. Except as set out in these terms, or as permitted by law, you must not reproduce, adapt, store in a retrieval system, transmit, print, display, perform, publish or create derivative works from any part of SMS Messaging or the content made available via SMS Messaging, including for commercial purposes or for commercial gain.
+                </p>
+                <p>
+                  <strong>TERMINATION</strong><br />
+                  We may suspend or terminate your right to use SMS Messaging at any time without notice and for any or no reason and without liability.
+                </p>
+                <p>
+                  <strong>DATA RETENTION</strong><br />
+                  Data obtained from you in connection with the SMS Messaging service includes your cell phone number, content of the text message (including date, time and location) and any other information that is provided as a result of engaging in SMS Messaging. Please see our Privacy Policy for more information about our data collection and handling practices.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">EU RESIDENTS – SUPPLEMENTAL TERMS OF USE</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  Last Updated: June 23, 2024
+                </p>
+                <p>
+                  We offer our Platform and services within the European Union. These supplemental terms of use apply to you if you are a resident of the European Union ("EU Supplemental Terms").
+                </p>
+                <p>
+                  Therefore, if you are residing in the European Union, the general Terms of Use and these EU Supplemental Terms will apply. If there is any conflict between the Terms of Use and these EU Supplemental Terms, and these EU Supplemental Terms apply to you, then the EU Supplemental Terms will prevail.
+                </p>
+                <p>
+                  Unless otherwise specified, definitions in this EU Supplemental Terms will have the same meaning as the definitions used in the Terms of Use.
+                </p>
+                <p>
+                  Prior to the creation of your account, the text of these Terms of Use will be made available to you electronically via the Platform in such a manner that it can be easily stored by you on a durable data carrier.
+                </p>
+                <p>
+                  We reserve the right, in our sole discretion, to make changes or modifications to the Terms of Use or these EU Supplemental Terms at any time. We will inform you about any changes before the effective date of the changes. If you continue to use the Platform after the effective date of the changes, you will be deemed to have been made aware of and to have accepted the changes in any revised Terms or EU Supplemental Terms.
+                </p>
+                <p>
+                  <strong>Intellectual Property Rights</strong><br />
+                  Intellectual Property Rights are all present and future Intellectual Property Rights, anywhere in the world, in respect of the Platform, belonging to us and/or our licensors now or in the future, including copyrights, database rights, trademark rights, design rights, trade name rights, domain name rights, patent rights, trade secret rights as well as similar rights under unwritten law, such as rights regarding slavish imitation.
+                </p>
+                <p>
+                  Provided that you are eligible to use the Platform, you are granted, solely for the purpose of execution of your account, a limited, non-exclusive, non-transferable and non-sublicensable license to access and use the Platform and to download or print a copy of any portion of the Content to which you have properly gained access solely for your personal, non-commercial use. We reserve all rights not expressly granted to you in and to the Platform, the Content and the Marks. This license is given for the duration of your account and you hereby accept this license. We are at all times entitled to terminate this license unilaterally, early and with immediate effect, without having to pay you any compensation.
+                </p>
+                <p>
+                  You indemnify us against any loss arising from any infringement of Intellectual Property Rights by you in respect of the Platform. You will compensate us for all costs and loss, including the costs of legal assistance, arising from a violation of Intellectual Property Rights. You will take measures at your own expense in order to limit the costs to be incurred and/or loss to be suffered by us.
+                </p>
+                <p>
+                  <strong>Fees and Payment</strong><br />
+                  If we determine any taxes, such as sales/value added taxes, or any other charges apply to our fees, the price of purchase on the Platform will include these taxes and/or fees during the ordering process.
+                </p>
+                <p>
+                  If your purchase is subject to recurring charges, then you have the option to provide us the right to charge you payment by direct debit. In which case we will charge your payment on a recurring basis, without requiring you prior approval before each recurring charge, until you notify us of your cancellation.
+                </p>
+                <p>
+                  <strong>Right of Withdrawal</strong><br />
+                  When purchasing digital content, you, as a consumer residing in the EU, have the right to withdraw from the agreement for a period of 14 days from the delivery date, without providing a reason for the withdrawal.
+                </p>
+                <p>
+                  The right to withdraw from the agreement for the supply of digital content shall not apply if you have expressly stated that you wish to receive the digital service within the withdrawal period and have expressly waived the right of withdrawal.
+                </p>
+                <p>
+                  When entering into a 7-day trial subscription, a money-back-guarantee shall apply for the duration of the trial subscription. Within 14 days of your declaration that you are invoking this guarantee, the amount already paid by you shall refunded.
+                </p>
+                <p>
+                  <strong>Liability</strong><br />
+                  We are not liable for:
+                </p>
+                <p>
+                  a) any misunderstandings, errors or failures with respect to the performance of the Platform and/or our services, if these are caused by or are the result of your actions, such as the failure to supply complete, sound, correct and clear data (or the failure to do so in time);<br />
+                  b) errors or failures by third parties engaged by or on behalf of you;<br />
+                  c) information that third parties have placed on the Platform.
+                </p>
+                <p>
+                  We can only be held liable for direct damages or loss attributable to us. Liability for any (financial) damage or loss other than direct damages and/or loss, such as indirect damage or loss, including but not limited to consequential damage or loss, loss of profit, damage or loss caused by stolen, inaccessible, mutilated, destroyed or lost (personal) data or materials, lost savings, loss due to business interruption or damage or loss due to or resulting from a security leak, security breach or cybercrime, is excluded.
+                </p>
+                <p>
+                  Except in the case of gross negligence or willful misconduct, our aggregate liability for damage or loss arising from our services and/or the Platform, or otherwise arising out of or in connection with these Terms, will be limited to an amount equal to the fees paid to us by you.
+                </p>
+                <p>
+                  <strong>Force Majeure</strong><br />
+                  In the event of force majeure, we will not be obliged to fulfill any of our obligations, including any statutory and/or agreed guarantee obligation. Furthermore, we are not liable for any damage suffered by you as a result of a force majeure situation.
+                </p>
+                <p>
+                  Force majeure on our part includes, but is not limited to:
+                </p>
+                <p>
+                  a) suppliers on whom we depend not fulfilling their obligations;<br />
+                  b) defective goods, equipment, software or materials from third parties;<br />
+                  c) epidemics and pandemics;<br />
+                  d) when our network comes to a standstill for reasons for which we cannot be held accountable, including – but not limited to – a cyber-attack or (D)DoS attacks in any form or a failure in internet traffic, hardware or software problems or any other external cause;<br />
+                  e) maintenance to the Platform, resulting in interruptions, delays or errors;<br />
+                  f) government measures including financial regulation and legislation;<br />
+                  g) strikes, forced business closures, riots and any other form of disruption and/or hindrance caused by third parties, which hinders us;<br />
+                  h) illness of one or more employees who are difficult to replace;<br />
+                  i) a power failure, failure of internet, data network or telecommunications facilities; or<br />
+                  j) any other cause beyond our reasonable control.
+                </p>
+                <p>
+                  <strong>Dispute Resolution</strong><br />
+                  All claims, disputes, or other legal proceedings by or between you or us, including but not limited to any such claims or disputes that are in any way related to or arising under the Terms of Use, the EU Supplemental Terms, or your access to or use of the Platform, shall be governed by the laws of the Netherlands.
+                </p>
+                <p>
+                  Application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded by the Terms of Use and these EU Supplemental Terms.
+                </p>
+                <p>
+                  Unless you opt – in writing – for settlement of the dispute by the court which is competent under the law within one month after this provision was invoked in writing, each claim, dispute, or other legal proceeding shall be brought and litigated exclusively to the court of the Netherlands, located in Amsterdam.
+                </p>
+                <p>
+                  <strong>Complaints</strong><br />
+                  In order to resolve a complaint regarding the Platform, please contact us within a reasonable period of time after you have detected or could reasonably have detected a problem at hello@groflexerp.com. We will reply within a reasonable period of time.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">US RESIDENTS – SUPPLEMENTAL TERMS OF USE</h2>
+              <div className="text-white/80 space-y-4">
+                <p>
+                  Last Updated: June 23, 2024
+                </p>
+                <p>
+                  These supplemental terms of use to you if you are a resident of the United States ("US Supplemental Terms"). Therefore, if you reside in the United States, both Terms of Use and this US Supplemental Terms will apply. If there is any conflict between the Terms of Use and these US Supplemental Terms and these US Supplemental Terms apply to you, then the US Supplemental Terms will prevail.
+                </p>
+                <p>
+                  <strong>Copyright Infringement</strong><br />
+                  If you believe that any material available on or through the Platform infringes upon any copyright you own or control, please immediately notify us using the contact information provided below (a "Notification"). A copy of your Notification will be sent to the person who posted or stored the material addressed in the Notification. In accordance with the Online Copyright Infringement Liability Limitation Act of the Digital Millennium Copyright Act (17 U.S.C. § 512) (DMCA), the Notification must include substantially the following:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>your physical or electronic signature;</li>
+                  <li>identification of the copyrighted work you believe to have been infringed;</li>
+                  <li>identification of the material on the Platform that you believe is infringing the copyright in a sufficiently precise manner to allow us to locate the material;</li>
+                  <li>your contact information including your name, mailing address, telephone number and, if available, email address;</li>
+                  <li>a statement that you have a good faith belief that use of the copyrighted material is not authorized by the copyright owner, its agent or the law;</li>
+                  <li>a statement that the information in the notice is accurate; and</li>
+                  <li>a statement, under penalty of perjury, that you are the copyright owner or are authorized to act on behalf of the copyright owner.</li>
+                </ul>
+                <p>
+                  If you do not comply with these requirements, your notice may not be effective. If you knowingly misrepresent that materials on the Platform infringe a copyright, you may be held liable for damages, including costs and attorney's fees under Section 512(f) of the DMCA. Thus, if you are not sure that material located on or linked to by the Platform infringes your copyright, you should consider first contacting an attorney.
+                </p>
+                <p>
+                  <strong>U.S. Government Rights</strong><br />
+                  Our services are "commercial items" as defined in Federal Acquisition Regulation ("FAR"), 48 C.F.R. § 2.101. If our services are acquired by or on behalf of any agency not within the Department of Defense ("DOD"), our services are subject to the terms of these Terms in accordance with 48 C.F.R. § 12.212 (for computer software) and 48 C.F.R. § 12.211 (for technical data). If our services are acquired by or on behalf of any agency within the Department of Defense ("DOD"), our services are subject to these Terms in accordance with Defense Federal Acquisition Regulation ("DFARS"), 48 C.F.R. § 227.7202-3. In addition, 48 C.F.R. § 252.227-7015 applies to technical data acquired by the DOD. This U.S. Government Rights clause is in lieu of, and supersedes, any other FAR, DFARS, or other clause or provision that addresses government rights in computer software or technical data under these Terms.
                 </p>
               </div>
             </section>
