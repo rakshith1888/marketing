@@ -87,7 +87,7 @@ const ProductsPage = () => {
               <div className="mt-6 text-center">
                 <button 
                   onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
+                  className="bg-brand-coral text-white font-semibold px-6 py-3 rounded-full hover:shadow-xl hover:shadow-brand-coral/50 transition-all duration-300"
                 >
                   Start Free Trial
                 </button>
@@ -231,7 +231,7 @@ const ProductsPage = () => {
                 <div className="text-center">
                   <button 
                     onClick={handleGetStarted}
-                    className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+                    className="bg-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl hover:shadow-brand-coral/50 transition-all duration-300"
                   >
                     Try Live Demo
                   </button>
@@ -249,7 +249,7 @@ const ProductsPage = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button 
                 onClick={handleGetStarted}
-                className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+                className="bg-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl hover:shadow-brand-coral/50 transition-all duration-300"
               >
                 Start Free Trial
               </button>

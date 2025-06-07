@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -130,36 +131,39 @@ const Home = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 py-20 flex items-center">
           {/* Side by Side Content */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+          <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
             {/* Left Side - Hero Content */}
-            <div className="text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+            <div className="text-left space-y-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="text-gradient">Clarity to Know</span><br />
                 <span className="text-white">What to Do Next</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
                 Predictive analytics. Prescriptive next steps.<br />
                 Powered by AI, designed for decisive leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-start">
+              <div className="flex flex-col sm:flex-row gap-6 justify-start pt-4">
                 <button 
                   onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
+                  className="bg-brand-coral text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl hover:shadow-brand-coral/50 transition-all duration-300 flex items-center gap-2 group"
                 >
                   Start Free Trial
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+                <Link
+                  to="/products"
+                  className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 text-lg rounded-full hover:bg-brand-purple/20 transition-all duration-300 inline-block text-center"
+                >
                   See How It Works
-                </button>
+                </Link>
               </div>
             </div>
 
             {/* Right Side - YouTube Video */}
             <div className="flex justify-center">
-              <div className="w-full max-w-2xl">
+              <div className="w-full max-w-lg">
                 <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
                   <div className="aspect-video rounded-xl overflow-hidden">
                     <iframe
@@ -248,7 +252,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gradient mb-4">{card.title}</h3>
                 <p className="text-white/80 mb-6">{card.description}</p>
-                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
+                <button className="bg-brand-coral text-white font-semibold px-6 py-3 rounded-full hover:shadow-lg hover:shadow-brand-coral/50 transition-all duration-300">
                   Explore {card.title}
                 </button>
               </FuturisticCard>
@@ -445,7 +449,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <button 
               onClick={handleGetStarted}
-              className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto"
+              className="bg-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl hover:shadow-brand-coral/50 transition-all duration-300 flex items-center gap-2 mx-auto"
             >
               <Play className="w-5 h-5" />
               Try the Live Demo
@@ -472,7 +476,7 @@ const Home = () => {
               <p className="text-white/80 mb-6">Get strategic clarity and predictive insights</p>
               <button 
                 onClick={handleGetStarted}
-                className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300"
+                className="bg-brand-coral text-white font-semibold px-6 py-3 rounded-full hover:shadow-lg hover:shadow-brand-coral/50 transition-all duration-300"
               >
                 Start Free Trial
               </button>
@@ -482,9 +486,12 @@ const Home = () => {
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-gradient mb-4">For Teams</h3>
               <p className="text-white/80 mb-6">See how GrofleX transforms your workflow</p>
-              <button className="glass-card border border-brand-purple/50 text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
+              <Link
+                to="/solutions"
+                className="glass-card border border-brand-purple/50 text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-purple/20 transition-all duration-300 inline-block"
+              >
                 Book a Demo
-              </button>
+              </Link>
             </FuturisticCard>
           </div>
         </div>
