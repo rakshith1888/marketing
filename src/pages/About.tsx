@@ -1,3 +1,4 @@
+
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -62,7 +63,7 @@ const About = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            We're on a mission to give every business leader the clarity they need to make confident, data-driven decisions that drive growth and success.
+            Empower decision makers with insight they can trust instantly.
           </p>
         </div>
       </section>
