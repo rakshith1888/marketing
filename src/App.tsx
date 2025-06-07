@@ -11,6 +11,10 @@ import Solutions from "./pages/Solutions";
 import Blog from "./pages/Blog";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
+import Imprint from "./pages/Imprint";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +31,10 @@ const App = () => (
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/imprint" element={<Imprint />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
