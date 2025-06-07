@@ -27,8 +27,8 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-            style={{height: '40px', width: '40px'}}
-              src="/lovable-uploads/logo.png" 
+            style={{height: '30px', width: '80px'}}
+              src="/lovable-uploads/headerlogo.png" 
               className="h-8 w-auto"
             />
           </Link>
