@@ -1,5 +1,4 @@
 
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -7,6 +6,10 @@ import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'l
 const About = () => {
   const handleGetStarted = () => {
     window.open('https://app.groflex.ai', '_blank');
+  };
+
+  const handleBookDemo = () => {
+    window.open('https://sibforms.com/serve/MUIFAAKayAu5X2pGgP6oFM-sUgP1mZMYaQqiAVUS39zY8bDJNjnT1ArRNIzt21QdCoz3gdKbyiyvYP7q9VKclwSvNI-yKjNZGm_sSyJWbAg2298SfqQ1JWH5wI7Pmm6DJfS5_TFUdnGoiVflgwr2DCTcTD1dHxXX-qkpmxp_fEzVot7GqFH9-4hOFqkED-PokcoO7dlDhVulWHoy', '_blank');
   };
 
   const values = [
@@ -157,7 +160,10 @@ const About = () => {
           >
             View Open Positions
           </button>
-          <button className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+          <button 
+            onClick={handleBookDemo}
+            className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+          >
             Contact Our Team
           </button>
         </div>
@@ -167,4 +173,3 @@ const About = () => {
 };
 
 export default About;
-
