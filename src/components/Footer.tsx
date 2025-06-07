@@ -1,12 +1,13 @@
 
 import { Facebook, Linkedin, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const legalLinks = [
-    { name: 'Terms & Conditions', url: 'https://groflexerp.com/terms-and-conditions/' },
-    { name: 'Privacy Policy', url: 'https://groflexerp.com/privacy-policy/' },
-    { name: 'Cookie Policy', url: 'https://groflexerp.com/cookie-policy/' },
-    { name: 'Imprint', url: 'https://groflexerp.com/imprint/' },
+    { name: 'Terms & Conditions', path: '/terms-and-conditions' },
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Cookie Policy', path: '/cookie-policy' },
+    { name: 'Imprint', path: '/imprint' },
   ];
 
   const socialLinks = [
@@ -62,15 +63,13 @@ const Footer = () => {
             <h3 className="text-white font-medium">Legal</h3>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {legalLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to={link.path}
                   className="text-white/60 hover:text-brand-purple transition-colors text-sm"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
