@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -73,9 +72,7 @@ const About = () => {
         <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
         <p className="text-lg text-white/80 max-w-3xl mx-auto">
           To empower decision-makers with insight they can trust—instantly. We believe that in a world
-          where data is abundant, clarity is rare. Our mission is to transform how businesses understand their
-          data by providing predictive insights and prescriptive actions that eliminate guesswork and
-          accelerate growth.
+          drowning in data, what matters most is knowing what to do next.
         </p>
       </FuturisticCard>
 
