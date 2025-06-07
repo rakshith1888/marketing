@@ -444,6 +444,126 @@ const PrivacyPolicy = () => {
                   </TableBody>
                 </Table>
               </div>
+
+              <h3 className="text-xl font-semibold text-white mt-8 mb-4">Categories of Information Disclosed</h3>
+
+              <p>
+                In the 12 months preceding the Last Updated date of this Notice, we have disclosed the following categories of personal information for a business purpose as described above:
+              </p>
+
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Category A: Identifiers.</li>
+                <li>Category B: California Customer Records personal information categories.</li>
+                <li>Category C: Protected characteristics information.</li>
+                <li>Category D: Commercial information.</li>
+                <li>Category F: Internet or other similar network activity.</li>
+                <li>Category G: Geolocation data.</li>
+                <li>Category H: Sensory data.</li>
+                <li>Category I: Professional or employment-related information.</li>
+                <li>Category J: Education information.</li>
+                <li>Category K: Inferences drawn from other personal information.</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-8 mb-4">Categories of Information "Sold"</h3>
+
+              <p>
+                We do not sell your personal data for a monetary fee; however, some U.S. privacy laws define a "sale" very broadly such that it may include our sharing of your personal data with certain third parties if we receive anything of value in return. In that regard, we share your personal data with certain third-party marketing partners and in exchange we receive the ability to market or offer our products and services through their websites and applications. This may be considered a "sale" under some laws.
+              </p>
+
+              <p>
+                The personal data that may be shared or sold in this context is: your name; email address; other contact information; and information obtained through cookies about, for example, your location, the website that directed you to our Platform, how you navigate our sites, and what purchases you make.
+              </p>
+
+              <p>
+                Our use of tracking technologies may be considered a "sale" under California law; however, we do not knowingly sell the personal information of consumers under 16 years of age. The categories of personal information shared or sold in this context are:
+              </p>
+
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Category A: Identifiers.</li>
+                <li>Category D: Commercial information.</li>
+                <li>Category F: Internet or other similar network activity.</li>
+                <li>Category G: Geolocation data.</li>
+              </ul>
+
+              <p>
+                The categories of third parties with which personal information collected via tracking technologies was shared or sold are: advertisers and marketing partners, data analytics providers, and social media networks.
+              </p>
+
+              <h3 className="text-xl font-semibold text-white mt-8 mb-4">Do-Not-Track Features</h3>
+
+              <p>
+                Many web browsers and some mobile operating systems and mobile applications include a "do-not-track" feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. No uniform technology standard for recognizing and implementing do-not-track signals has been finalized and, as such, we do not currently respond to do not track browser signals or any other mechanism that automatically communicates your choice not to be tracked online. We will update this Policy if that changes in the future.
+              </p>
+
+              <h3 className="text-xl font-semibold text-white mt-8 mb-4">Additional Privacy Rights</h3>
+
+              <p>
+                <strong>Right to Information.</strong> Subject to certain limits, you may ask us to provide the following information for the 12-month period preceding your request:
+              </p>
+
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>The categories of personal information we collected about you;</li>
+                <li>The categories of sources from which the personal information was collected;</li>
+                <li>The business or commercial purpose for collecting the personal information;</li>
+                <li>The categories of third parties with whom we shared the personal information;</li>
+                <li>If we disclosed personal information for a business purpose, a list of the disclosures including the personal information categories that each category of recipient received; and</li>
+                <li>The specific pieces of personal information we collected about you.</li>
+              </ol>
+
+              <p>
+                We do not provide these information rights for personal information that we obtain through a business-to-business (B2B) relationship.
+              </p>
+
+              <p>
+                <strong>Right to Delete.</strong> You also have the right to ask us to delete any personal information that we have collected about you, subject to certain limitations. We may deny your deletion request if the information is necessary for us or our service providers to, among other things, provide a service you requested, take actions reasonably anticipated in the context of our business relationship with you, perform a contract we have with you, detect and protect against security incidents or illegal activity, comply with a legal obligation, or exercise a right provided for by law.
+              </p>
+
+              <p>
+                <strong>Right to Opt Out of Sale.</strong> You have the right to opt out of the sale of your personal information. You may exercise this right by clicking on the "Do Not Sell My Personal Information – U.S." by submitting a request as described in the "Submission of Requests" section below. You can opt-out third-party tracking technologies by clicking "Do Not Sell My Personal Information – U.S." link at the bottom of our website and selecting your cookies preferences, by clicking on the "Change My Consent" link in our Cookie Policy, or by broadcasting the global privacy control signal. Please note that your use of our website may still be tracked by us and/or our service providers.
+              </p>
+
+              <p>
+                <strong>Right to Nondiscrimination.</strong> We will not discriminate against you if you exercise your privacy rights under any applicable privacy law, including by:
+              </p>
+
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Denying you goods or services.</li>
+                <li>Charging you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties.</li>
+                <li>Providing you a different level or quality of goods or services.</li>
+                <li>Suggesting that you may receive a different price or rate for goods or services or a different level or quality of goods or services.</li>
+              </ul>
+
+              <p>
+                We are permitted under applicable law to offer you certain financial incentives that can result in different prices, rates, or quality levels, which are related to your personal information's value. Participation in a financial incentive program requires your prior opt-in consent, which you may revoke at any time.
+              </p>
+
+              <p>
+                <strong>Submission of Requests.</strong> You may submit a request regarding your personal information by:
+              </p>
+
+              <p>
+                Emailing us at hello@groflexerp.com – please provide your name, telephone number, and type of request (that is, a request for categories of information, a request for specific pieces of information, a request to delete, or a request to opt out the sale of your information).
+              </p>
+
+              <p>
+                <strong>What We May Need from You.</strong> We may need to request specific information from you to help us confirm your identity and ensure your right to access your personal information (or to exercise any of your other rights). This is a security measure to ensure that personal information is not disclosed to someone who has no right to receive it. We may also contact you to ask you for further information in relation to your request to speed up our response.
+              </p>
+
+              <p>
+                <strong>Verifying Your Identity:</strong> To protect your privacy and security, we will take reasonable steps to verify your identity before providing your personal information and before deleting your information. Only you or someone legally authorized to act on your behalf may make a verifiable request related to your personal information. For example, if you make a request, we will ask you to confirm your name, email address, and/or other information we in our records to verify your identity, so that we can help protect your information.
+              </p>
+
+              <p>
+                <strong>Requests from Authorized Agents:</strong> You may designate an authorized agent to make a request for you. If you designate an authorized agent to make a request on your behalf, we may require you to verify your identity and provide the authorized agent's identity and contact information to us.
+              </p>
+
+              <p>
+                <strong>Responses to Requests.</strong> We will confirm receipt of your request within 10 business days of receipt and generally will respond to your request within 45 days of receipt. If we need more time to respond, we will inform you of the reason and we may take up to an additional 45 days to respond.
+              </p>
+
+              <p>
+                <strong>No Fee Usually Required.</strong> You will not have to pay a fee to access your personal information (or to exercise any of the other rights). However, we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive. Alternatively, we may refuse to comply with your request in these circumstances.
+              </p>
             </div>
           </div>
         </div>
