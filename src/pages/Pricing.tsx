@@ -15,9 +15,9 @@ const Pricing = () => {
   const getPrice = (monthlyPrice: number) => {
     if (isYearly) {
       switch (monthlyPrice) {
-        case 49: return 588;
-        case 99: return 1188;
-        case 249: return 2988;
+        case 59: return 588;
+        case 119: return 1188;
+        case 299: return 2988;
         default: return monthlyPrice * 12;
       }
     }
