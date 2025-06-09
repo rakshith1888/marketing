@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
@@ -26,8 +27,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$59',
-      period: '/user/month',
+      monthlyPrice: 49,
       features: [
         { label: 'Incoming Data Size', value: '1GB' },
         { label: 'AI Assistant', value: 'Guided (basic Q&A)' },
@@ -40,8 +40,7 @@ const Pricing = () => {
     },
     {
       name: 'Pro',
-      price: '$119',
-      period: '/user/month',
+      monthlyPrice: 99,
       features: [
         { label: 'Incoming Data Size', value: '5GB' },
         { label: 'AI Assistant', value: 'Predictive insights' },
@@ -54,8 +53,7 @@ const Pricing = () => {
     },
     {
       name: 'Growth',
-      price: '$299',
-      period: '/user/month',
+      monthlyPrice: 249,
       features: [
         { label: 'Incoming Data Size', value: '25GB' },
         { label: 'AI Assistant', value: 'Prescriptive + "What-If"' },
