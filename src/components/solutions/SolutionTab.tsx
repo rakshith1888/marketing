@@ -75,27 +75,27 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
           <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/10">
             <h5 className="text-brand-cream text-xs font-semibold mb-3 text-center">Dashboard Preview</h5>
             {solution.id === 'business-leaders' ? (
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer">
                 <img 
                   src="/lovable-uploads/53f2f6ff-5005-4645-8b2a-27912b6007fa.png" 
                   alt="Business Leaders Dashboard"
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded transition-transform duration-300"
                 />
               </div>
             ) : solution.id === 'bi-managers' ? (
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer">
                 <img 
                   src="/lovable-uploads/79aa1eaf-e1bc-4cb4-8601-27f98e5733d6.png" 
                   alt="BI Managers Dashboard"
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded transition-transform duration-300"
                 />
               </div>
             ) : solution.id === 'analysts' ? (
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer">
                 <img 
                   src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png" 
                   alt="Analysts Dashboard"
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded transition-transform duration-300"
                 />
               </div>
             ) : (
