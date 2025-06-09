@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar, Mail, Calendar, Snowflake, Youtube, X, Video } from 'lucide-react';
@@ -568,24 +567,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 11. CONNECT GROFLEX */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-gradient mb-8">Connect GrofleX</h3>
-          <div className="flex justify-center items-center gap-12">
-            {connectApps.map((app, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="text-brand-purple mb-2">
-                  {app.icon}
-                </div>
-                <span className="text-white/80 font-semibold">{app.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 12. CONNECTED WITH GROFLEX - MARQUEE */}
+      {/* 11. CONNECTED WITH GROFLEX - MARQUEE */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
           <h3 className="text-4xl font-bold text-gradient mb-12">Connected with GrofleX</h3>
@@ -613,23 +595,6 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 13. FOOTER INFO */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex justify-center gap-8">
-            <a href="#" className="text-brand-purple hover:text-brand-coral transition-colors">
-              LinkedIn
-            </a>
-            <a href="#" className="text-brand-purple hover:text-brand-coral transition-colors">
-              X (Twitter)
-            </a>
-            <a href="#" className="text-brand-purple hover:text-brand-coral transition-colors">
-              YouTube
-            </a>
           </div>
         </div>
       </section>
