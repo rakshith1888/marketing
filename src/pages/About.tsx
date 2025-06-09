@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -66,7 +65,7 @@ const About = () => {
             <span className="text-gradient">About Groflex</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground opacity-80 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
             Empower decision makers with insight they can trust instantly.
           </p>
         </div>
@@ -75,7 +74,7 @@ const About = () => {
       {/* Mission Section */}
       <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
         <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
-        <p className="text-lg text-foreground opacity-80 max-w-3xl mx-auto">
+        <p className="text-lg text-white/80 max-w-3xl mx-auto">
           To empower decision-makers with insight they can trust—instantly. We believe that in a world
           drowning in data, what matters most is knowing what to do next.
         </p>
@@ -88,13 +87,13 @@ const About = () => {
           <FuturisticCard className="p-8">
             <h2 className="text-3xl font-bold text-gradient mb-8">Our Story</h2>
             <div className="space-y-6">
-              <div className="p-6 bg-white/5 dark:bg-white/5 light:bg-black/5 rounded-lg border border-white/10 dark:border-white/10 light:border-black/10">
+              <div className="p-6 bg-white/5 rounded-lg border border-white/10">
                 <p className="text-lg font-medium text-gradient mb-3">
                   Born from frustration with dashboards. Built to act in real time.
                 </p>
               </div>
               
-              <div className="space-y-4 text-foreground opacity-80">
+              <div className="space-y-4 text-white/80">
                 <p className="leading-relaxed">
                   GrofleX emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
                 </p>
@@ -120,7 +119,7 @@ const About = () => {
                     </div>
                     <div className="flex-1 pb-6">
                       <h3 className="text-xl font-semibold text-gradient mb-3">{step.title}</h3>
-                      <p className="text-foreground opacity-70 leading-relaxed">{step.description}</p>
+                      <p className="text-white/70 leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                   {index < journeySteps.length - 1 && (
@@ -141,7 +140,7 @@ const About = () => {
             <FuturisticCard key={index} className="p-6 text-center">
               <div className="text-4xl mb-4">{value.icon}</div>
               <h3 className="text-xl font-semibold text-gradient mb-3">{value.title}</h3>
-              <p className="text-foreground opacity-70 text-sm">{value.description}</p>
+              <p className="text-white/70 text-sm">{value.description}</p>
             </FuturisticCard>
           ))}
         </div>
