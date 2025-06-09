@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
@@ -88,10 +87,6 @@ const Home = () => {
     }
   ];
 
-  const integrations = [
-    'Google', 'Salesforce', 'Mailchimp', 'Looker', 'Microsoft', 'AWS', 'Snowflake', 'Tableau'
-  ];
-
   const faqs = [
     {
       question: "How does GrofleX's AI explainability work?",
@@ -117,6 +112,16 @@ const Home = () => {
       question: "What makes GrofleX different from traditional BI tools?",
       answer: "Unlike traditional BI that shows what happened, GrofleX predicts what will happen and prescribes what you should do about it."
     }
+  ];
+
+  const integrations = [
+    'Google', 'Salesforce', 'Mailchimp', 'Looker', 'Microsoft', 'AWS', 'Snowflake', 'Tableau'
+  ];
+
+  const connectApps = [
+    'Salesforce', 'Google Analytics', 'Microsoft', 'Slack', 'HubSpot', 'Tableau', 
+    'Shopify', 'AWS', 'Snowflake', 'Stripe', 'Monday.com', 'Asana', 'Notion', 
+    'Airtable', 'Zapier', 'Looker', 'Power BI', 'QuickBooks', 'Mailchimp', 'Zendesk'
   ];
 
   const toggleFaq = (index: number) => {
@@ -554,14 +559,31 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 11. PARTNERS & FOOTER INFO */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      {/* 11. CONNECT GROFLEX SECTION */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-gradient mb-8">Backed by Leading Investors</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-            {['Investor A', 'Accelerator B', 'Fund C', 'Partner D'].map((partner, index) => (
-              <div key={index} className="text-white/60 font-semibold">{partner}</div>
-            ))}
+          <h3 className="text-4xl font-bold text-gradient mb-12">Connect GrofleX</h3>
+          
+          {/* Marquee Container */}
+          <div className="relative">
+            <div className="flex animate-marquee space-x-8 whitespace-nowrap">
+              {/* First set of apps */}
+              {connectApps.map((app, index) => (
+                <div key={`first-${index}`} className="flex-shrink-0">
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4 hover:bg-white/10 transition-colors">
+                    <span className="text-white/80 font-medium text-lg">{app}</span>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {connectApps.map((app, index) => (
+                <div key={`second-${index}`} className="flex-shrink-0">
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4 hover:bg-white/10 transition-colors">
+                    <span className="text-white/80 font-medium text-lg">{app}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           
           <div className="mt-16 flex justify-center gap-8">
