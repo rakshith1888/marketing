@@ -27,7 +27,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      monthlyPrice: 49,
+      monthlyPrice: 59,
       features: [
         { label: 'Incoming Data Size', value: '1GB' },
         { label: 'AI Assistant', value: 'Guided (basic Q&A)' },
@@ -40,7 +40,7 @@ const Pricing = () => {
     },
     {
       name: 'Pro',
-      monthlyPrice: 99,
+      monthlyPrice: 119,
       features: [
         { label: 'Incoming Data Size', value: '5GB' },
         { label: 'AI Assistant', value: 'Predictive insights' },
@@ -53,7 +53,7 @@ const Pricing = () => {
     },
     {
       name: 'Growth',
-      monthlyPrice: 249,
+      monthlyPrice: 299,
       features: [
         { label: 'Incoming Data Size', value: '25GB' },
         { label: 'AI Assistant', value: 'Prescriptive + "What-If"' },
