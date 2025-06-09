@@ -22,7 +22,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 dark:bg-black/80 light:bg-white/90 backdrop-blur-md border-b border-white/10 dark:border-white/10 light:border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -44,7 +44,7 @@ const Navigation = () => {
                 className={`transition-colors duration-200 ${
                   isActive(item.path)
                     ? 'text-brand-purple'
-                    : 'text-white/80 hover:text-brand-purple'
+                    : 'text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-brand-purple'
                 }`}
               >
                 {item.name}
@@ -58,7 +58,7 @@ const Navigation = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -67,7 +67,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/10">
+          <div className="md:hidden py-4 border-t border-white/10 dark:border-white/10 light:border-black/10">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
@@ -77,7 +77,7 @@ const Navigation = () => {
                   className={`transition-colors duration-200 ${
                     isActive(item.path)
                       ? 'text-brand-purple'
-                      : 'text-white/80 hover:text-brand-purple'
+                      : 'text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-brand-purple'
                   }`}
                 >
                   {item.name}
