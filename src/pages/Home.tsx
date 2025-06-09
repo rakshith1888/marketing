@@ -243,8 +243,10 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <button className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
-              Learn Why Clarity Matters
+            <button 
+            onClick={() => window.open('https://app.groflex.ai/auth/login', '_blank')}
+            className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300">
+              Free Demo
             </button>
           </div>
         </div>
@@ -268,9 +270,9 @@ const Home = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gradient mb-4">{card.title}</h3>
                 <p className="text-white/80 mb-6">{card.description}</p>
-                <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
+                {/* <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
                   Explore {card.title}
-                </button>
+                </button> */}
               </FuturisticCard>
             ))}
           </div>
