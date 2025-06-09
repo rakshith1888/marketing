@@ -569,37 +569,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 11. CONNECTED WITH GROFLEX - MARQUEE */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-4xl font-bold text-gradient mb-12">Connected with GrofleX</h3>
-          
-          {/* Marquee Container */}
-          <div className="relative">
-            <div className="flex animate-[scroll_20s_linear_infinite] gap-16">
-              {/* First set of icons */}
-              {connectedPlatforms.map((platform, index) => (
-                <div key={`first-${index}`} className="flex flex-col items-center min-w-[120px]">
-                  <div className="text-brand-purple mb-4 hover:text-brand-coral transition-colors duration-300">
-                    {platform.icon}
-                  </div>
-                  <span className="text-white/80 font-semibold text-lg">{platform.name}</span>
-                </div>
-              ))}
-              
-              {/* Duplicate set for seamless loop */}
-              {connectedPlatforms.map((platform, index) => (
-                <div key={`second-${index}`} className="flex flex-col items-center min-w-[120px]">
-                  <div className="text-brand-purple mb-4 hover:text-brand-coral transition-colors duration-300">
-                    {platform.icon}
-                  </div>
-                  <span className="text-white/80 font-semibold text-lg">{platform.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    
     </Layout>
   );
 };
