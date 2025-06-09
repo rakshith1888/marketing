@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Users, Target, Lightbulb, ArrowRight, Linkedin, Twitter, Mail } from 'lucide-react';
@@ -146,28 +145,6 @@ const About = () => {
           ))}
         </div>
       </div>
-
-      {/* CTA Section */}
-      <FuturisticCard variant="neon" className="p-12 text-center">
-        <h2 className="text-3xl font-bold text-gradient mb-4">Join Our Mission</h2>
-        <p className="text-white/80 mb-8 text-lg">
-          Help us bring clarity to decision-making across every industry and organization
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <button 
-            onClick={handleGetStarted}
-            className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
-          >
-            View Open Positions
-          </button>
-          <button 
-            onClick={handleBookDemo}
-            className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
-          >
-            Contact Our Team
-          </button>
-        </div>
-      </FuturisticCard>
     </Layout>
   );
 };

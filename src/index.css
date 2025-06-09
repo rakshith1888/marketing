@@ -131,6 +131,11 @@
     50% { background-position: 100% 50%; }
   }
   
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
   .pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }

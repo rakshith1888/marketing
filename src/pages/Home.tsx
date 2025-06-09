@@ -1,7 +1,6 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
-import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
+import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar, Mail, Calendar, Snowflake, Youtube, X, Video } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -122,6 +121,20 @@ const Home = () => {
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
+
+  const connectApps = [
+    { name: 'Teams', icon: <Users className="w-8 h-8" /> },
+    { name: 'Gmail', icon: <Mail className="w-8 h-8" /> },
+    { name: 'Snowflake', icon: <Database className="w-8 h-8" /> }
+  ];
+
+  const connectedPlatforms = [
+    { name: 'Teams', icon: <Users className="w-12 h-12" /> },
+    { name: 'Snowflake', icon: <Snowflake className="w-12 h-12" /> },
+    { name: 'Google Meet', icon: <Video className="w-12 h-12" /> },
+    { name: 'YouTube', icon: <Youtube className="w-12 h-12" /> },
+    { name: 'X', icon: <X className="w-12 h-12" /> }
+  ];
 
   return (
     <Layout>
@@ -554,26 +567,34 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 11. PARTNERS & FOOTER INFO */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      {/* 11. CONNECTED WITH GROFLEX - MARQUEE */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-gradient mb-8">Backed by Leading Investors</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-            {['Investor A', 'Accelerator B', 'Fund C', 'Partner D'].map((partner, index) => (
-              <div key={index} className="text-white/60 font-semibold">{partner}</div>
-            ))}
-          </div>
+          <h3 className="text-4xl font-bold text-gradient mb-12">Connected with GrofleX</h3>
           
-          <div className="mt-16 flex justify-center gap-8">
-            <a href="#" className="text-brand-purple hover:text-brand-coral transition-colors">
-              LinkedIn
-            </a>
-            <a href="#" className="text-brand-purple hover:text-brand-coral transition-colors">
-              X (Twitter)
-            </a>
-            <a href="#" className="text-brand-purple hover:text-brand-coral transition-colors">
-              YouTube
-            </a>
+          {/* Marquee Container */}
+          <div className="relative">
+            <div className="flex animate-[scroll_20s_linear_infinite] gap-16">
+              {/* First set of icons */}
+              {connectedPlatforms.map((platform, index) => (
+                <div key={`first-${index}`} className="flex flex-col items-center min-w-[120px]">
+                  <div className="text-brand-purple mb-4 hover:text-brand-coral transition-colors duration-300">
+                    {platform.icon}
+                  </div>
+                  <span className="text-white/80 font-semibold text-lg">{platform.name}</span>
+                </div>
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {connectedPlatforms.map((platform, index) => (
+                <div key={`second-${index}`} className="flex flex-col items-center min-w-[120px]">
+                  <div className="text-brand-purple mb-4 hover:text-brand-coral transition-colors duration-300">
+                    {platform.icon}
+                  </div>
+                  <span className="text-white/80 font-semibold text-lg">{platform.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
