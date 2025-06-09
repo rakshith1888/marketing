@@ -1,7 +1,6 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
-import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar } from 'lucide-react';
+import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar, Mail, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -122,6 +121,12 @@ const Home = () => {
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
+
+  const connectApps = [
+    { name: 'Teams', icon: <Users className="w-8 h-8" /> },
+    { name: 'Gmail', icon: <Mail className="w-8 h-8" /> },
+    { name: 'Snowflake', icon: <Database className="w-8 h-8" /> }
+  ];
 
   return (
     <Layout>
@@ -549,6 +554,23 @@ const Home = () => {
                   </div>
                 )}
               </FuturisticCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. CONNECT GROFLEX */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        <div className="max-w-7xl mx-auto text-center">
+          <h3 className="text-2xl font-bold text-gradient mb-8">Connect GrofleX</h3>
+          <div className="flex justify-center items-center gap-12">
+            {connectApps.map((app, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div className="text-brand-purple mb-2">
+                  {app.icon}
+                </div>
+                <span className="text-white/80 font-semibold">{app.name}</span>
+              </div>
             ))}
           </div>
         </div>
