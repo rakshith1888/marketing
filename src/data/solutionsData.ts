@@ -10,7 +10,6 @@ export const solutions = [
     icon: '👔',
     features: ['Executive Dashboards', 'Risk Forecasting', 'ROI Tracking', 'Strategic Planning'],
     cta: 'See How GrofleX Drives ROI',
-    ctaLink:'https://app.groflex.ai/auth/login',
     metrics: ['85% faster decision making', '3x ROI visibility', '67% reduction in strategic risks']
   },
   {
@@ -23,7 +22,6 @@ export const solutions = [
     icon: '📊',
     features: ['Automated Reporting', 'Predictive Analytics', 'Team Collaboration', 'Data Governance'],
     cta: 'Explore the Platform',
-    ctaLink:'#',
     metrics: ['90% less manual reporting', '5x faster insights delivery', '60% analyst time savings']
   },
   {
@@ -36,7 +34,6 @@ export const solutions = [
     icon: '🔍',
     features: ['Natural Language Queries', 'Automated Insights', 'Model Building', 'Data Exploration'],
     cta: 'Try It Free',
-    ctaLink:'#',
     metrics: ['70% reduction in manual work', '4x faster analysis', '95% query automation']
   }
 ];
