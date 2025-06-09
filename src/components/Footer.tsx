@@ -1,3 +1,4 @@
+
 import { Facebook, Linkedin, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -37,7 +38,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/80 backdrop-blur-md border-t border-white/10 mt-auto">
+    <footer className="backdrop-blur-md border-t mt-auto transition-colors duration-300 dark:bg-black/80 dark:border-white/10 light:bg-white/80 light:border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
@@ -50,8 +51,8 @@ const Footer = () => {
                 className="h-8 w-auto"
               />
             </div>
-            <div className="text-white/60 text-sm">
-              <p className="font-medium text-white/80 mb-2">Headquarters</p>
+            <div className="text-muted-foreground text-sm">
+              <p className="font-medium mb-2 text-foreground/80">Headquarters</p>
               <p>2261 Market Street STE 5943</p>
               <p>San Francisco, CA, USA</p>
             </div>
@@ -59,13 +60,13 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-medium">Legal</h3>
+            <h3 className="text-foreground font-medium">Legal</h3>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {legalLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="text-white/60 hover:text-brand-purple transition-colors text-sm"
+                  className="text-muted-foreground hover:text-brand-purple transition-colors text-sm"
                 >
                   {link.name}
                 </Link>
@@ -75,7 +76,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-medium">Follow Us</h3>
+            <h3 className="text-foreground font-medium">Follow Us</h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -85,7 +86,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/60 hover:text-brand-purple transition-colors"
+                    className="text-muted-foreground hover:text-brand-purple transition-colors"
                     aria-label={social.name}
                   >
                     <IconComponent />
@@ -97,8 +98,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-white/10 mt-8 pt-8 text-center">
-          <p className="text-white/60 text-sm">
+        <div className="border-t mt-8 pt-8 text-center border-border">
+          <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} GrofleX. All rights reserved.
           </p>
         </div>
