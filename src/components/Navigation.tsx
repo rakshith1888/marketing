@@ -2,33 +2,35 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
     { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
     { name: 'Solutions', path: '/solutions' },
-    { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
     { name: 'Pricing', path: '/pricing' },
   ];
 
-  const handleGetStarted = () => {
-    window.open('https://app.groflex.ai', '_blank');
+  const isActive = (path: string) => {
+    return location.pathname === path;
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 dark:bg-black/80 light:bg-white/90 backdrop-blur-md border-b border-white/10 dark:border-white/10 light:border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-            style={{height: '25px', width: '90px'}}
+              style={{height: '20px', width: '80px'}}
               src="/lovable-uploads/headerlogo.png" 
+              alt="GrofleX Logo"
               className="h-8 w-auto"
             />
           </Link>
@@ -39,61 +41,48 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-all duration-300 hover:text-brand-purple ${
-                  location.pathname === item.path
+                className={`transition-colors duration-200 ${
+                  isActive(item.path)
                     ? 'text-brand-purple'
-                    : 'text-white/80'
+                    : 'text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-brand-purple'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <button 
-              onClick={handleGetStarted}
-              className="bg-gradient-purple text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300"
-            >
-              Get Started
-            </button>
+            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-brand-purple transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground transition-colors"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-white/10">
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-white/10 dark:border-white/10 light:border-black/10">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors ${
-                    location.pathname === item.path
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`transition-colors duration-200 ${
+                    isActive(item.path)
                       ? 'text-brand-purple'
-                      : 'text-white/80 hover:text-brand-purple'
+                      : 'text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-brand-purple'
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <button 
-                onClick={() => {
-                  handleGetStarted();
-                  setIsOpen(false);
-                }}
-                className="bg-gradient-purple text-white px-6 py-2 rounded-full self-start"
-              >
-                Get Started
-              </button>
             </div>
           </div>
         )}
