@@ -1,3 +1,4 @@
+
 import FuturisticCard from '../FuturisticCard';
 import { Button } from '../ui/button';
 
@@ -86,6 +87,14 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
                 <img 
                   src="/lovable-uploads/79aa1eaf-e1bc-4cb4-8601-27f98e5733d6.png" 
                   alt="BI Managers Dashboard"
+                  className="w-full h-auto rounded"
+                />
+              </div>
+            ) : solution.id === 'analysts' ? (
+              <div className="rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png" 
+                  alt="Analysts Dashboard"
                   className="w-full h-auto rounded"
                 />
               </div>
