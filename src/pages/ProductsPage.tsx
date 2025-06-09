@@ -1,4 +1,3 @@
-
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Brain, Zap, Shield, BarChart3, Cpu, Database, Network, MessageSquare, Users, Lock } from 'lucide-react';
@@ -211,15 +210,15 @@ const ProductsPage = () => {
             </div>
           </section>
 
-          {/* Q&A Demo Section */}
-          <FuturisticCard variant="hologram" className="p-12 mb-20">
+          {/* Q&A Demo Section - Removed background flash */}
+          <FuturisticCard variant="neon" className="p-12 mb-20">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gradient mb-4">Ask GrofleX Anything</h2>
               <p className="text-white/80 text-lg">Experience our AI-powered Q&A interface with natural language queries</p>
             </div>
             
             <div className="max-w-4xl mx-auto">
-              <FuturisticCard className="bg-black/40 p-8 border border-brand-purple/30">
+              <FuturisticCard className="p-8 border border-brand-purple/30">
                 <div className="space-y-4 mb-6">
                   <div className="bg-brand-purple/20 p-4 rounded-lg border-l-4 border-brand-purple">
                     <p className="text-white/90">"Why is our churn rate increasing in Q3?"</p>

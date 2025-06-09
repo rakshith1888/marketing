@@ -71,14 +71,24 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
             ))}
           </div>
           
-          {/* Compact Sample Dashboard Preview */}
+          {/* Dashboard Preview */}
           <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/10">
             <h5 className="text-brand-cream text-xs font-semibold mb-3 text-center">Dashboard Preview</h5>
-            <div className="space-y-2">
-              <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
-              <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
-              <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
-            </div>
+            {solution.id === 'business-leaders' ? (
+              <div className="rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/53f2f6ff-5005-4645-8b2a-27912b6007fa.png" 
+                  alt="Business Leaders Dashboard"
+                  className="w-full h-auto rounded"
+                />
+              </div>
+            ) : (
+              <div className="space-y-2">
+                <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
+                <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
+                <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
+              </div>
+            )}
           </div>
         </FuturisticCard>
       </div>
