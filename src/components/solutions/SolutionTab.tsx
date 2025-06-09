@@ -60,13 +60,13 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
       
       {/* Compact Features Side - Takes 1 column */}
       <div>
-        <FuturisticCard className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-6">
-          {/* Dashboard Preview */}
-          <div className="mb-6">
+        <FuturisticCard className="bg-gradient-to-br from-brand-purple/20 to-brand-coral/20 p-6 h-full flex flex-col">
+          {/* Dashboard Preview - Takes half the space */}
+          <div className="flex-1 mb-6">
             <h5 className="text-brand-cream text-xs font-semibold mb-3 text-center">Dashboard Preview</h5>
-            <div className="p-4 bg-black/20 rounded-lg border border-white/10">
+            <div className="p-4 bg-black/20 rounded-lg border border-white/10 h-full flex items-center justify-center">
               {solution.id === 'business-leaders' ? (
-                <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer">
+                <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
                     src="/lovable-uploads/53f2f6ff-5005-4645-8b2a-27912b6007fa.png" 
                     alt="Business Leaders Dashboard"
@@ -74,7 +74,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
                   />
                 </div>
               ) : solution.id === 'bi-managers' ? (
-                <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer">
+                <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
                     src="/lovable-uploads/79aa1eaf-e1bc-4cb4-8601-27f98e5733d6.png" 
                     alt="BI Managers Dashboard"
@@ -82,7 +82,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
                   />
                 </div>
               ) : solution.id === 'analysts' ? (
-                <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer">
+                <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
                     src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png" 
                     alt="Analysts Dashboard"
@@ -99,8 +99,8 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
             </div>
           </div>
 
-          {/* Key Features */}
-          <div>
+          {/* Key Features - Takes half the space */}
+          <div className="flex-1">
             <h4 className="text-brand-cream font-semibold mb-6 text-center text-lg">Key Features</h4>
             <div className="space-y-3">
               {solution.features.map((feature, idx) => (
