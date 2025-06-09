@@ -71,9 +71,9 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
             ))}
           </div>
           
-          {/* Dashboard Preview - Increased size */}
-          <div className="mt-6 p-6 bg-black/20 rounded-lg border border-white/10">
-            <h5 className="text-brand-cream text-xs font-semibold mb-4 text-center">Dashboard Preview</h5>
+          {/* Dashboard Preview */}
+          <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/10">
+            <h5 className="text-brand-cream text-xs font-semibold mb-3 text-center">Dashboard Preview</h5>
             {solution.id === 'business-leaders' ? (
               <div className="rounded-lg overflow-hidden h-48">
                 <img 
@@ -99,10 +99,10 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
                 />
               </div>
             ) : (
-              <div className="space-y-2 h-48 flex flex-col justify-center">
-                <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
-                <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
-                <div className="h-3 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
+              <div className="space-y-2">
+                <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-3/4"></div>
+                <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-1/2"></div>
+                <div className="h-2 bg-gradient-to-r from-brand-purple/40 to-brand-coral/40 rounded-full w-5/6"></div>
               </div>
             )}
           </div>
