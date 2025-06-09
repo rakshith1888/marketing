@@ -130,11 +130,16 @@ const Home = () => {
   ];
 
   const connectedPlatforms = [
-    { name: 'Teams', icon: <Users className="w-12 h-12" /> },
-    { name: 'Snowflake', icon: <Snowflake className="w-12 h-12" /> },
-    { name: 'Google Meet', icon: <Video className="w-12 h-12" /> },
-    { name: 'YouTube', icon: <Youtube className="w-12 h-12" /> },
-    { name: 'X', icon: <X className="w-12 h-12" /> }
+    { name: 'Teams', position: '0 0' },
+    { name: 'Zendesk', position: '-320px 0' },
+    { name: 'Google Meet', position: '-640px 0' },
+    { name: 'NotionHQ', position: '-960px 0' },
+    { name: 'Microsoft', position: '-1280px 0' },
+    { name: 'VerticalResponse', position: '0 -200px' },
+    { name: 'Asana', position: '-320px -200px' },
+    { name: 'Slack', position: '-640px -200px' },
+    { name: 'Google Drive', position: '-960px -200px' },
+    { name: 'ModuleQ', position: '-1280px -200px' }
   ];
 
   return (
@@ -596,8 +601,14 @@ const Home = () => {
               {/* First set of icons */}
               {connectedPlatforms.map((platform, index) => (
                 <div key={`first-${index}`} className="flex flex-col items-center min-w-[120px]">
-                  <div className="text-brand-purple mb-4 hover:text-brand-coral transition-colors duration-300">
-                    {platform.icon}
+                  <div className="w-16 h-16 mb-4 hover:scale-110 transition-transform duration-300">
+                    <div 
+                      className="w-full h-full bg-no-repeat bg-contain"
+                      style={{
+                        backgroundImage: `url(/lovable-uploads/7a368689-0c90-471d-8fde-c3504b6416fd.png)`,
+                        backgroundPosition: platform.position
+                      }}
+                    />
                   </div>
                   <span className="text-white/80 font-semibold text-lg">{platform.name}</span>
                 </div>
@@ -606,8 +617,14 @@ const Home = () => {
               {/* Duplicate set for seamless loop */}
               {connectedPlatforms.map((platform, index) => (
                 <div key={`second-${index}`} className="flex flex-col items-center min-w-[120px]">
-                  <div className="text-brand-purple mb-4 hover:text-brand-coral transition-colors duration-300">
-                    {platform.icon}
+                  <div className="w-16 h-16 mb-4 hover:scale-110 transition-transform duration-300">
+                    <div 
+                      className="w-full h-full bg-no-repeat bg-contain"
+                      style={{
+                        backgroundImage: `url(/lovable-uploads/7a368689-0c90-471d-8fde-c3504b6416fd.png)`,
+                        backgroundPosition: platform.position
+                      }}
+                    />
                   </div>
                   <span className="text-white/80 font-semibold text-lg">{platform.name}</span>
                 </div>
