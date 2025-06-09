@@ -11,7 +11,7 @@ const Imprint = () => {
               <span className="text-gradient">Imprint</span>
             </h1>
             <p className="text-xl text-white/80">
-              Last modified: June 01, 2024
+              Last modified: June 05, 2025
             </p>
           </div>
 

@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
               <span className="text-gradient">Terms and Conditions</span>
             </h1>
             <p className="text-xl text-white/80">
-              Last modified: June 01, 2024
+              Last modified: June 05, 2025
             </p>
           </div>
 

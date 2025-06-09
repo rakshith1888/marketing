@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img 
-                style={{height: '30px', width: '80px'}}
+                style={{height: '20px', width: '80px'}}
                 src="/lovable-uploads/headerlogo.png" 
                 alt="GrofleX Logo"
                 className="h-8 w-auto"
