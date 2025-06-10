@@ -69,21 +69,21 @@ const Home = () => {
   const testimonials = [
     {
       quote: "GrofleX helped us identify market shifts 3 months ahead of our competition",
-      author: "Sarah Chen",
+      author: "Sarah C.",
       role: "VP Strategy",
-      company: "TechCorp"
+      company: "Business Strategies 2k Inc."
     },
     {
       quote: "Finally, dashboards that tell us what to do, not just what happened",
-      author: "Michael Rodriguez",
-      role: "Director of BI",
-      company: "DataFlow Inc"
+      author: "Michael R.",
+      role: "Director of Business Intelligence",
+      company: "DataFlow LLC"
     },
     {
       quote: "I spend 80% less time on reports and 80% more time on insights",
-      author: "Emily Watson",
-      role: "Senior Analyst",
-      company: "Analytics Pro"
+      author: "Emily W.",
+      role: "Senior Data Analyst",
+      company: "MarketROI Incorporated"
     }
   ];
 
