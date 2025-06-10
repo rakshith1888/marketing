@@ -87,9 +87,17 @@ const Home = () => {
     }
   ];
 
-  const integrations = [
-    'Google', 'Salesforce', 'Mailchimp', 'Looker', 'Microsoft', 'AWS', 'Snowflake', 'Tableau'
-  ];
+const integrations = [
+  { name: 'Google', logo: '/lovable-uploads/google.png' },
+  { name: 'Salesforce', logo: '/lovable-uploads/salesforce.png' },
+  { name: '{Postgresql}', logo: '/lovable-uploads/postgresql.png' },
+  { name: 'Looker', logo: '/lovable-uploads/looker.png' },
+  { name: 'Microsoft', logo: '/lovable-uploads/microsoft.png' },
+  { name: 'AWS', logo: '/lovable-uploads/aws.png' },
+  { name: 'Snowflake', logo: '/lovable-uploads/snowflake.png' },
+  { name: 'Tableau', logo: '/lovable-uploads/tableau.png' },
+];
+
 
   const faqs = [
     {
@@ -527,8 +535,13 @@ const Home = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {integrations.map((integration, index) => (
-              <FuturisticCard key={index} variant="hologram" className="text-center opacity-60 hover:opacity-100 transition-opacity">
-                <div className="text-2xl font-bold text-white/80">{integration}</div>
+              <FuturisticCard key={integration.name} className="flex justify-center items-center p-4 bg-white/5 rounded-lg">
+      <img
+      style={{ width:100, height:100 }}
+        src={integration.logo}
+        alt={integration.name}
+        className="h-12 object-contain"
+      />
               </FuturisticCard>
             ))}
           </div>

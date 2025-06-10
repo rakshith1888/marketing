@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -10,9 +9,9 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
     { name: 'Solutions', path: '/solutions' },
+    { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
     { name: 'Pricing', path: '/pricing' },
   ];
@@ -28,7 +27,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              style={{height: '20px', width: '80px'}}
+              style={{ height: '20px', width: '80px' }}
               src="/lovable-uploads/headerlogo.png" 
               alt="GrofleX Logo"
               className="h-8 w-auto"
@@ -50,12 +49,34 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+
+            {/* Get Started Button */}
+            <a
+              href="https://app.groflex.ai/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300"
+            >
+              Get Started
+            </a>
+
             <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button and CTA */}
           <div className="md:hidden flex items-center space-x-2">
+            {/* Get Started Button */}
+            <a
+              href="https://app.groflex.ai/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 rounded-full hover:shadow-lg transition-all duration-300"
+            >
+              Get Started
+            </a>
+
             <ThemeToggle />
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground transition-colors"
@@ -83,6 +104,17 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+
+              {/* CTA for mobile */}
+              <a
+                href="https://app.groflex.ai/auth/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="mt-2 text-center bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300"
+              >
+                Get Started
+              </a>
             </div>
           </div>
         )}
