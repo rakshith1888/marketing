@@ -1,14 +1,17 @@
 import Layout from '../components/Layout';
 import FuturisticCard from '../components/FuturisticCard';
 import { Brain, Zap, Shield, BarChart3, Cpu, Database, Network, MessageSquare, Users, Lock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductsPage = () => {
   const handleGetStarted = () => {
     window.open('https://app.groflex.ai', '_blank');
   };
 
+  const navigate = useNavigate();
+
   const handleBookDemo = () => {
-    window.open('https://sibforms.com/serve/MUIFAAKayAu5X2pGgP6oFM-sUgP1mZMYaQqiAVUS39zY8bDJNjnT1ArRNIzt21QdCoz3gdKbyiyvYP7q9VKclwSvNI-yKjNZGm_sSyJWbAg2298SfqQ1JWH5wI7Pmm6DJfS5_TFUdnGoiVflgwr2DCTcTD1dHxXX-qkpmxp_fEzVot7GqFH9-4hOFqkED-PokcoO7dlDhVulWHoy', '_blank');
+    navigate('/Contactus');
   };
 
   const features = [

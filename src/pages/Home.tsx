@@ -3,6 +3,8 @@ import FuturisticCard from '../components/FuturisticCard';
 import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle, MessageSquare, BarChart3, Database, Cloud, ChevronDown, Play, Briefcase, Presentation, ChartBar, Mail, Calendar, Snowflake, Youtube, X, Video } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -11,8 +13,10 @@ const Home = () => {
     window.open('https://app.groflex.ai', '_blank');
   };
 
-  const handleBookDemo = () => {
-    window.open('https://sibforms.com/serve/MUIFAAKayAu5X2pGgP6oFM-sUgP1mZMYaQqiAVUS39zY8bDJNjnT1ArRNIzt21QdCoz3gdKbyiyvYP7q9VKclwSvNI-yKjNZGm_sSyJWbAg2298SfqQ1JWH5wI7Pmm6DJfS5_TFUdnGoiVflgwr2DCTcTD1dHxXX-qkpmxp_fEzVot7GqFH9-4hOFqkED-PokcoO7dlDhVulWHoy', '_blank');
+ const navigate = useNavigate();
+
+ const handleBookDemo = () => {
+   navigate('/Contactus');
   };
 
   const features = [
