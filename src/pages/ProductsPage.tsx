@@ -79,7 +79,7 @@ const ProductsPage = () => {
             {/* YouTube Video */}
             <FuturisticCard variant="neon" className="max-w-4xl mx-auto mb-16">
               <div className="aspect-video rounded-lg overflow-hidden">
-                <iframe
+                {/* <iframe
                   width="100%"
                   height="100%"
                   src="https://www.youtube.com/embed/3834u1h0188"
@@ -88,7 +88,12 @@ const ProductsPage = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="w-full h-full"
-                ></iframe>
+                ></iframe> */}
+                <img
+                      src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png"
+                      alt="GrofleX Demo"
+                      className="w-full h-full object-cover"
+                    />
               </div>
               <div className="mt-6 text-center">
                 <button 

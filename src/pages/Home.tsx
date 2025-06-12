@@ -4,7 +4,7 @@ import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle,
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import ImageSlider from './imageslider';
 
 const Home = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -194,7 +194,7 @@ const integrations = [
               <div className="w-full max-w-lg lg:max-w-xl">
                 <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
                   <div className="aspect-video rounded-xl overflow-hidden">
-                    <iframe
+                    {/* <iframe
                       width="100%"
                       height="100%"
                       src="https://www.youtube.com/embed/HvBaHdzyF54"
@@ -203,7 +203,12 @@ const integrations = [
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       className="w-full h-full"
-                    ></iframe>
+                    ></iframe> */}
+                    <img
+                      src="/lovable-uploads/53f2f6ff-5005-4645-8b2a-27912b6007fa.png"
+                      alt="GrofleX Demo"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </FuturisticCard>
               </div>
@@ -263,6 +268,15 @@ const integrations = [
           </div>
         </div>
       </section>
+
+
+      {/* {image slider section} */}
+{/* 
+      <div className="p-6 bg-gray-900 min-h-screen flex items-center justify-center">
+       <ImageSlider />
+      </div> */}
+
+
 
       {/* 3. AUDIENCE NAVIGATION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">

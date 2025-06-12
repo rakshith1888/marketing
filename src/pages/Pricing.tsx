@@ -180,7 +180,7 @@ const Pricing = () => {
                       : 'border border-white/30 dark:border-white/30 light:border-black/30 text-white dark:text-white light:text-foreground hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10'
                   }`}
                 >
-                  Get Started
+                  Free 30-day Trial
                 </button>
               </div>
             ))}
