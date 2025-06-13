@@ -2,21 +2,22 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import Home from "./pages/Home";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
-import ProductsPage from "./pages/ProductsPage";
-import Solutions from "./pages/Solutions";
 import Blog from "./pages/Blog";
-import Pricing from "./pages/Pricing";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import BlogPostPage from "./pages/BlogPostPage";
+import ContactUs from "./pages/Contactus";
 import CookiePolicy from "./pages/CookiePolicy";
+import Home from "./pages/Home";
 import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
-import ContactUs from "./pages/Contactus";
+import Pricing from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ProductsPage from "./pages/ProductsPage";
+import Solutions from "./pages/Solutions";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/imprint" element={<Imprint />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
