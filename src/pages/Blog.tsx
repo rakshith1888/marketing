@@ -60,7 +60,7 @@ const Blog = () => {
           </div>
 
           {/* Featured Post */}
-          {posts[0] && (
+          {/* {posts[0] && (
             <FuturisticCard variant="neon" className="p-8 mb-12">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div>
@@ -95,17 +95,17 @@ const Blog = () => {
                 </div>
               </div>
             </FuturisticCard>
-          )}
+          )} */}
 
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {posts.slice(1).map((post) => (
               <FuturisticCard key={post.id} className="p-6 hover:bg-white/10 transition-all duration-300">
-                <img 
+                {/* <img 
                   src={'/placeholder.svg'} 
                   alt="Post"
                   className="w-full h-48 object-cover rounded-lg mb-4 bg-brand-purple/20"
-                />
+                /> */}
                 <div className="flex items-center space-x-4 mb-3">
                   <span className="text-brand-coral text-sm font-semibold">News</span>
                   <span className="text-white/60 text-sm">{new Date(post.date).toLocaleDateString()}</span>
