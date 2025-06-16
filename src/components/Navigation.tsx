@@ -60,7 +60,7 @@ const Navigation = () => {
               Get Started
             </a>
 
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
 
           {/* Mobile menu button and CTA */}
@@ -75,7 +75,7 @@ const Navigation = () => {
               Get Started
             </a>
 
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
