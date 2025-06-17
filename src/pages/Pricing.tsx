@@ -73,7 +73,7 @@ const Pricing = () => {
     },
     {
       q: 'Is there a free trial available?',
-      a: 'We offer a 14-day free trial for all plans. No credit card required.'
+      a: 'We offer a 30-day free trial for all plans. No credit card required.'
     },
     {
       q: 'What payment methods do you accept?',
