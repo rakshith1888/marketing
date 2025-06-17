@@ -145,13 +145,13 @@ const Pricing = () => {
                 }`}
               >
                 {/* Popular Badge */}
-                {plan.popular && (
+                {/* {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <div className="bg-gradient-to-r from-brand-coral to-brand-purple text-white px-4 py-1 rounded-full text-sm font-medium">
                       Most Popular
                     </div>
                   </div>
-                )}
+                )} */}
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-white dark:text-white light:text-foreground mb-6">{plan.name}</h3>
@@ -176,11 +176,14 @@ const Pricing = () => {
                 {/* Button */}
                 <button 
                   onClick={handleGetStarted}
-                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-brand-coral to-brand-purple text-white hover:shadow-lg'
-                      : 'border border-white/30 dark:border-white/30 light:border-black/30 text-white dark:text-white light:text-foreground hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10'
-                  }`}
+                 className="w-full py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
+
+
+                  // className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
+                  //   plan.popular
+                  //     ? 'bg-gradient-to-r from-brand-coral to-brand-purple text-white hover:shadow-lg'
+                  //     : 'border border-white/30 dark:border-white/30 light:border-black/30 text-white dark:text-white light:text-foreground hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10'
+                  // }`}
                 >
                   Free 30-day Trial
                 </button>
@@ -204,7 +207,7 @@ const Pricing = () => {
                 <TableBody>
                   <TableRow className="border-brand-purple/20">
                     <TableCell className="text-white dark:text-white light:text-foreground font-medium">Price</TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
+                    {/* <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
                       ${getPrice(49)}/user/month
                     </TableCell>
                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
@@ -212,7 +215,18 @@ const Pricing = () => {
                     </TableCell>
                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
                       ${getPrice(249)}/user/month
-                    </TableCell>
+                    </TableCell> */}
+
+                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
+                     ${getPrice(plans[0].monthlyPrice)}/user/month
+                     </TableCell>
+                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
+                     ${getPrice(plans[1].monthlyPrice)}/user/month
+                     </TableCell>
+                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
+                     ${getPrice(plans[2].monthlyPrice)}/user/month
+                     </TableCell>
+                     
                   </TableRow>
                   <TableRow className="border-brand-purple/20">
                     <TableCell className="text-white dark:text-white light:text-foreground font-medium">Incoming Data Size</TableCell>
