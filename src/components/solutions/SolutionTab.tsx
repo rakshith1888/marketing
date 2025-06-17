@@ -76,7 +76,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
               ) : solution.id === 'bi-managers' ? (
                 <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
-                    src="/lovable-uploads/products_image.png" 
+                    src="/lovable-uploads/sol_analyst_image2.png" 
                     alt="BI Managers Dashboard"
                     className="w-full h-auto rounded transition-transform duration-300"
                   />
