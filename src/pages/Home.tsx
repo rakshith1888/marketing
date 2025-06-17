@@ -4,7 +4,7 @@ import { ArrowRight, Zap, Brain, Target, Users, TrendingUp, Shield, CheckCircle,
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import ImageSlider from './imageslider';
+
 
 const Home = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
