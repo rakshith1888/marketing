@@ -6,7 +6,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '..
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table';
 
 const Pricing = () => {
-  const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(true);
 
   const handleGetStarted = () => {
     window.open('https://app.groflex.ai', '_blank');
@@ -15,9 +15,9 @@ const Pricing = () => {
   const getPrice = (monthlyPrice: number) => {
     if (isYearly) {
       switch (monthlyPrice) {
-        case 59: return 588;
-        case 119: return 1188;
-        case 299: return 2988;
+        case 59: return 49;
+        case 119: return 99;
+        case 299: return 249;
         default: return monthlyPrice * 12;
       }
     }
@@ -108,6 +108,17 @@ const Pricing = () => {
 
           <div className="flex justify-center mb-12">
             <div className="bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/20 light:border-black/20 rounded-full p-2 flex">
+
+            <button 
+                onClick={() => setIsYearly(true)}
+                className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                  isYearly 
+                    ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white' 
+                    : 'text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground'
+                }`}
+              >
+                Yearly (Save 20%)
+              </button>
               <button 
                 onClick={() => setIsYearly(false)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
@@ -118,16 +129,7 @@ const Pricing = () => {
               >
                 Monthly
               </button>
-              <button 
-                onClick={() => setIsYearly(true)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  isYearly 
-                    ? 'bg-gradient-to-r from-brand-purple to-brand-coral text-white' 
-                    : 'text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground'
-                }`}
-              >
-                Yearly (Save 20%)
-              </button>
+              
             </div>
           </div>
 
@@ -156,7 +158,7 @@ const Pricing = () => {
                   <div className="flex items-baseline justify-center mb-6">
                     <span className="text-4xl font-bold text-white dark:text-white light:text-foreground">${getPrice(plan.monthlyPrice)}</span>
                     <span className="text-white/60 dark:text-white/60 light:text-foreground/60 ml-2">
-                      {isYearly ? '/year' : '/user/month'}
+                      /user/month
                     </span>
                   </div>
                 </div>
@@ -203,13 +205,13 @@ const Pricing = () => {
                   <TableRow className="border-brand-purple/20">
                     <TableCell className="text-white dark:text-white light:text-foreground font-medium">Price</TableCell>
                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      ${getPrice(49)}{isYearly ? '/year' : '/user/month'}
+                      ${getPrice(49)}/user/month
                     </TableCell>
                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      ${getPrice(99)}{isYearly ? '/year' : '/user/month'}
+                      ${getPrice(99)}/user/month
                     </TableCell>
                     <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      ${getPrice(249)}{isYearly ? '/year' : '/user/month'}
+                      ${getPrice(249)}/user/month
                     </TableCell>
                   </TableRow>
                   <TableRow className="border-brand-purple/20">
