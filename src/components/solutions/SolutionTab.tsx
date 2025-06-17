@@ -68,7 +68,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
               {solution.id === 'business-leaders' ? (
                 <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
-                    src="/lovable-uploads/53f2f6ff-5005-4645-8b2a-27912b6007fa.png" 
+                    src="/lovable-uploads/solutions_BILeaders.png" 
                     alt="Business Leaders Dashboard"
                     className="w-full h-auto rounded transition-transform duration-300"
                   />
@@ -76,7 +76,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
               ) : solution.id === 'bi-managers' ? (
                 <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
-                    src="/lovable-uploads/79aa1eaf-e1bc-4cb4-8601-27f98e5733d6.png" 
+                    src="/lovable-uploads/solutions_BIManagers.png" 
                     alt="BI Managers Dashboard"
                     className="w-full h-auto rounded transition-transform duration-300"
                   />
@@ -84,7 +84,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
               ) : solution.id === 'analysts' ? (
                 <div className="rounded-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-brand-purple/30 cursor-pointer hover:z-50 relative">
                   <img 
-                    src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png" 
+                    src="/lovable-uploads/solutions_analysts.png" 
                     alt="Analysts Dashboard"
                     className="w-full h-auto rounded transition-transform duration-300"
                   />

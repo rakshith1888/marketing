@@ -78,7 +78,7 @@ const ProductsPage = () => {
             
             {/* YouTube Video */}
             <FuturisticCard variant="neon" className="max-w-4xl mx-auto mb-16">
-              <div className="aspect-video rounded-lg overflow-hidden">
+              {/* <div className="aspect-video rounded-lg overflow-hidden"> */}
                 {/* <iframe
                   width="100%"
                   height="100%"
@@ -90,11 +90,11 @@ const ProductsPage = () => {
                   className="w-full h-full"
                 ></iframe> */}
                 <img
-                      src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png"
+                      src="/lovable-uploads/products_image.png"
                       alt="Groflex Demo"
                       className="w-full h-full object-cover"
                     />
-              </div>
+              {/* </div> */}
               <div className="mt-6 text-center">
                 <button 
                   onClick={handleGetStarted}

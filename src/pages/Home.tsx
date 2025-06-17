@@ -193,7 +193,7 @@ const integrations = [
             <div className="flex justify-center lg:justify-end">
               <div className="w-full max-w-lg lg:max-w-xl">
                 <FuturisticCard variant="neon" className="relative overflow-hidden shadow-2xl">
-                  <div className="aspect-video rounded-xl overflow-hidden">
+                  {/* <div className="aspect-video rounded-xl overflow-hidden"> */}
                     {/* <iframe
                       width="100%"
                       height="100%"
@@ -205,11 +205,11 @@ const integrations = [
                       className="w-full h-full"
                     ></iframe> */}
                     <img
-                      src="/lovable-uploads/53f2f6ff-5005-4645-8b2a-27912b6007fa.png"
-                      alt="GrofleX Demo"
+                      src="/lovable-uploads/homepage_image.png"
+                      alt="Groflex Demo"
                       className="w-full h-full object-cover"
                     />
-                  </div>
+                  {/* </div> */}
                 </FuturisticCard>
               </div>
             </div>
