@@ -102,7 +102,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What GrofleX Does */}
+      {/* What Groflex Does */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -172,7 +172,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">How GrofleX Helps You</span>
+              <span className="text-gradient">How Groflex Helps You</span>
               <br />
               <span className="text-white">Make the Right Move—Fast</span>
             </h2>
@@ -181,7 +181,7 @@ const Index = () => {
           <div className="space-y-8">
             {[
               'Connect systems and data sources',
-              'GrofleX predicts trends and flags emerging risks',
+              'Groflex predicts trends and flags emerging risks',
               'You get recommended actions',
               'Visualize trade-offs and act',
               'Platform learns from each outcome'
@@ -211,7 +211,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                quote: "GrofleX helped us identify market shifts 3 months before our competitors.",
+                quote: "Groflex helped us identify market shifts 3 months before our competitors.",
                 author: "Sarah Chen",
                 role: "VP Strategy, TechCorp"
               },
@@ -248,7 +248,7 @@ const Index = () => {
               <span className="text-white">Get Clarity.</span>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Type a business question—GrofleX will respond with context-aware recommendations
+              Type a business question—Groflex will respond with context-aware recommendations
             </p>
           </div>
           
@@ -295,7 +295,7 @@ const Index = () => {
               <span className="text-gradient">Clarity Starts Here</span>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Whether you're leading, enabling, or building insight—GrofleX helps you know what to do next
+              Whether you're leading, enabling, or building insight—Groflex helps you know what to do next
             </p>
           </div>
           
@@ -312,7 +312,7 @@ const Index = () => {
             <div className="glass-card p-8 text-center">
               <div className="text-4xl mb-4">📅</div>
               <h3 className="text-2xl font-bold text-gradient mb-4">For Teams</h3>
-              <p className="text-white/80 mb-6">See GrofleX in action with your data</p>
+              <p className="text-white/80 mb-6">See Groflex in action with your data</p>
               <button className="glass-card border border-brand-purple/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-brand-purple/20 transition-all duration-300">
                 Book a Demo
               </button>
@@ -351,8 +351,8 @@ const Index = () => {
                 a: "Our AI combines machine learning models with natural language processing to analyze your data patterns and provide actionable recommendations in plain English."
               },
               {
-                q: "What data sources can GrofleX integrate with?",
-                a: "GrofleX connects with 200+ data sources including CRMs, databases, cloud platforms, and analytics tools through secure APIs."
+                q: "What data sources can Groflex integrate with?",
+                a: "Groflex connects with 200+ data sources including CRMs, databases, cloud platforms, and analytics tools through secure APIs."
               },
               {
                 q: "How will this help my BI team specifically?",

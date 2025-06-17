@@ -29,7 +29,7 @@ const Navigation = () => {
             <img 
               style={{ height: '25px', width: '85px' }}
               src="/lovable-uploads/headerlogo.png" 
-              alt="GrofleX Logo"
+              alt="Groflex Logo"
               className="h-8 w-auto"
             />
           </Link>

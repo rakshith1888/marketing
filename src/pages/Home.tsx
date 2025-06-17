@@ -110,7 +110,7 @@ const integrations = [
     },
     {
       question: "What data integrations does Groflex support?",
-      answer: "GrofleX connects to 150+ data sources including CRMs, ERPs, marketing platforms, cloud databases, and custom APIs."
+      answer: "Groflex connects to 150+ data sources including CRMs, ERPs, marketing platforms, cloud databases, and custom APIs."
     },
     {
       question: "How does this benefit our BI team specifically?",
@@ -126,7 +126,7 @@ const integrations = [
     },
     {
       question: "What makes Groflex different from traditional BI tools?",
-      answer: "Unlike traditional BI that shows what happened, GrofleX predicts what will happen and prescribes what you should do about it."
+      answer: "Unlike traditional BI that shows what happened, Groflex predicts what will happen and prescribes what you should do about it."
     }
   ];
 
@@ -198,7 +198,7 @@ const integrations = [
                       width="100%"
                       height="100%"
                       src="https://www.youtube.com/embed/HvBaHdzyF54"
-                      title="GrofleX Demo Video"
+                      title="Groflex Demo Video"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
@@ -411,7 +411,7 @@ const integrations = [
             {/* Chatbot Screenshot 1 */}
             <FuturisticCard variant="hologram">
               <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-4 relative">
-                {/* GrofleX Icon in top right */}
+                {/* Groflex Icon in top right */}
                 <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-xs">G</span>
                 </div>
@@ -450,7 +450,7 @@ const integrations = [
             {/* Chatbot Screenshot 2 */}
             <FuturisticCard variant="hologram">
               <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-4 relative">
-                {/* GrofleX Icon in top right */}
+                {/* Groflex Icon in top right */}
                 <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-xs">G</span>
                 </div>

@@ -23,10 +23,10 @@ const Imprint = () => {
                 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-3">GrofleX Technology Inc.</h3>
+                    <h3 className="text-xl font-semibold text-white mb-3">Groflex Technology Inc.</h3>
                     <h4 className="text-lg font-medium text-white mb-2">Headquarters:</h4>
                     <div className="ml-4">
-                      <p>GrofleX Technology Inc.</p>
+                      <p>Groflex Technology Inc.</p>
                       <p>2261 Market Street STE 5493</p>
                       <p>San Francisco, CA 94114,</p>
                       <p>United States</p>
@@ -57,7 +57,7 @@ const Imprint = () => {
                   <div>
                     <h4 className="text-lg font-medium text-white mb-2">EU Office:</h4>
                     <div className="ml-4">
-                      <p>GrofleX Technology</p>
+                      <p>Groflex Technology</p>
                       <p>Mörsenbroicher Weg 78,</p>
                       <p>40470 Düsseldorf,</p>
                       <p>Germany</p>
@@ -67,7 +67,7 @@ const Imprint = () => {
                   <div>
                     <h4 className="text-lg font-medium text-white mb-2">Asia Office:</h4>
                     <div className="ml-4">
-                      <p>GrofleX Technology Pvt. Ltd.</p>
+                      <p>Groflex Technology Pvt. Ltd.</p>
                       <p>42, P5, Kudlu Main Rd, Muneshwara Layout, Haralukunte, Muneshwara Nagar, Bengaluru, Karnataka 560068, India</p>
                       <p>CIN: U72900KA2022PTC169171</p>
                     </div>
@@ -78,7 +78,7 @@ const Imprint = () => {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-6">Legal Notice</h2>
                 <p>
-                  All content on this website, including text, images, and logos, is the property of GrofleX Technology Inc. and is protected by copyright laws. Unauthorized use or reproduction is prohibited. GrofleX Technology Inc. is not responsible for the content of external websites linked from this site.
+                  All content on this website, including text, images, and logos, is the property of Groflex Technology Inc. and is protected by copyright laws. Unauthorized use or reproduction is prohibited. Groflex Technology Inc. is not responsible for the content of external websites linked from this site.
                 </p>
               </section>
 
@@ -92,14 +92,14 @@ const Imprint = () => {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-6">Liability for Content</h2>
                 <p>
-                  While we strive to keep the information on our website up to date and accurate, GrofleX Technology Inc. cannot be held liable for any errors or omissions. The content provided is for general informational purposes only and does not constitute professional advice.
+                  While we strive to keep the information on our website up to date and accurate, Groflex Technology Inc. cannot be held liable for any errors or omissions. The content provided is for general informational purposes only and does not constitute professional advice.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-white mb-6">Liability for Links</h2>
                 <p>
-                  Our website may contain links to external websites. GrofleX Technology Inc. has no control over the content of these sites and cannot accept liability for them. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.
+                  Our website may contain links to external websites. Groflex Technology Inc. has no control over the content of these sites and cannot accept liability for them. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.
                 </p>
               </section>
 
@@ -116,19 +116,19 @@ const Imprint = () => {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-6">Use of Imagery</h2>
                 <p>
-                  GrofleX Technology Inc. is committed to respecting the privacy rights and intellectual property of individuals regarding the use of imagery. This policy outlines how we handle imagery on our website and in our products, ensuring compliance with privacy laws and copyright regulations.
+                  Groflex Technology Inc. is committed to respecting the privacy rights and intellectual property of individuals regarding the use of imagery. This policy outlines how we handle imagery on our website and in our products, ensuring compliance with privacy laws and copyright regulations.
                 </p>
 
                 <h3 className="text-xl font-semibold text-white mt-8 mb-4">Image Usage:</h3>
                 <ul className="list-disc list-inside ml-4 space-y-2">
-                  <li><strong>Source of Images:</strong> All images used on our website and in our products are either licensed, owned by GrofleX Technology Inc., or sourced from free-to-use platforms with proper attribution. The majority of our images are sourced from https://freepik.com or https://storyset.com/</li>
+                  <li><strong>Source of Images:</strong> All images used on our website and in our products are either licensed, owned by Groflex Technology Inc., or sourced from free-to-use platforms with proper attribution. The majority of our images are sourced from https://freepik.com or https://storyset.com/</li>
                   <li><strong>Consent for Use:</strong> We ensure that any images of individuals are used with their explicit consent. For any imagery featuring identifiable individuals, we obtain written permission before use.</li>
                   <li><strong>Third-Party Content:</strong> If we use third-party images, we verify that we have the necessary rights and licenses to use them. We respect all terms and conditions associated with these licenses.</li>
                 </ul>
 
                 <h3 className="text-xl font-semibold text-white mt-8 mb-4">User-Provided Images:</h3>
                 <ul className="list-disc list-inside ml-4 space-y-2">
-                  <li><strong>Consent and Rights:</strong> If users upload images to our platform, they must ensure they have the necessary rights and permissions to use and share these images. By uploading, users grant GrofleX Technology Inc. a license to use these images within the scope of our services.</li>
+                  <li><strong>Consent and Rights:</strong> If users upload images to our platform, they must ensure they have the necessary rights and permissions to use and share these images. By uploading, users grant Groflex Technology Inc. a license to use these images within the scope of our services.</li>
                   <li><strong>Privacy Protection:</strong> We are committed to protecting the privacy of individuals featured in user-provided images. Users should avoid uploading sensitive or private images without consent.</li>
                 </ul>
 

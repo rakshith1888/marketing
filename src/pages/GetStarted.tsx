@@ -24,7 +24,7 @@ const GetStarted = () => {
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
               Choose your path to clarity. Whether you're leading, enabling, or building insights, 
-              GrofleX helps you know what to do next.
+              Groflex helps you know what to do next.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ const GetStarted = () => {
               </div>
               <h3 className="text-2xl font-bold text-gradient mb-4">For Teams</h3>
               <p className="text-white/80 mb-6">
-                Start with a team trial and see how GrofleX transforms your workflow
+                Start with a team trial and see how Groflex transforms your workflow
               </p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-2">
@@ -123,7 +123,7 @@ const GetStarted = () => {
             <FuturisticCard variant="hologram" className="p-8 max-w-4xl mx-auto">
               <h3 className="text-3xl font-bold text-gradient mb-6">Not Ready to Start?</h3>
               <p className="text-white/80 mb-8 text-lg">
-                See GrofleX in action with a personalized demo
+                See Groflex in action with a personalized demo
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <button 

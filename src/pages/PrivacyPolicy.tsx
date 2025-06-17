@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-8">
             <div className="text-white/80 space-y-8 prose prose-invert max-w-none">
               <p>
-                Thank you for choosing to be part of our community. At GrofleX and our subsidiary and affiliated sites, we are committed to protecting your personal data and respecting your privacy rights. This Privacy Policy ("Policy") explains what personal data is collected and how it is used by GrofleX and its subsidiaries and affiliates (collectively, "Company", "we", "us", or "our") when you access or use the GrofleX site as well as any other website, mobile site or mobile application related or linked to GrofleX (collectively, the "Platform"). This Policy and other documents referenced in it apply to all personal data collected through our Platform and any related services, sales, marketing or events.
+                Thank you for choosing to be part of our community. At Groflex and our subsidiary and affiliated sites, we are committed to protecting your personal data and respecting your privacy rights. This Privacy Policy ("Policy") explains what personal data is collected and how it is used by Groflex and its subsidiaries and affiliates (collectively, "Company", "we", "us", or "our") when you access or use the Groflex site as well as any other website, mobile site or mobile application related or linked to Groflex (collectively, the "Platform"). This Policy and other documents referenced in it apply to all personal data collected through our Platform and any related services, sales, marketing or events.
               </p>
 
               <p>
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-bold text-white mt-12 mb-6">D. WILL YOUR PERSONAL DATA BE SHARED?</h2>
 
               <p>
-                Yes, your personal will be shared between GrofleX and its affiliates and subsidiaries. In addition, we may share your personal data with the following categories of third-party service providers and marketing partners for one or more of the purposes described above.
+                Yes, your personal will be shared between Groflex and its affiliates and subsidiaries. In addition, we may share your personal data with the following categories of third-party service providers and marketing partners for one or more of the purposes described above.
               </p>
 
               <ul className="list-disc list-inside ml-4 space-y-1">

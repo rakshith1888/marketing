@@ -11,7 +11,7 @@ const ContactUs: React.FC = () => {
             Let&apos;s Talk
           </h1>
           <p className="text-white/80 text-lg">
-            Schedule a demo or reach out to learn how GrofleX can help your business thrive.
+            Schedule a demo or reach out to learn how Groflex can help your business thrive.
           </p>
         </div>
 
