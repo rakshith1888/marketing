@@ -100,7 +100,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t mt-8 pt-8 text-center border-border">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} GrofleX. All rights reserved.
+            © {new Date().getFullYear()} Groflex. All rights reserved.
           </p>
         </div>
       </div>

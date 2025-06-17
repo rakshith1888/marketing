@@ -16,8 +16,8 @@ const FinalCTA = () => {
 
   return (
     <FuturisticCard variant="neon" className="p-12 text-center mt-16">
-      <h2 className="text-3xl font-bold text-gradient mb-4">Ready to See GrofleX in Action?</h2>
-      <p className="text-white/80 mb-8 text-lg">Choose your path and discover how GrofleX delivers clarity for your specific role</p>
+      <h2 className="text-3xl font-bold text-gradient mb-4">Ready to See Groflex in Action?</h2>
+      <p className="text-white/80 mb-8 text-lg">Choose your path and discover how Groflex delivers clarity for your specific role</p>
       <div className="flex flex-col sm:flex-row gap-6 justify-center">
         <Button 
           onClick={handleGetStarted}

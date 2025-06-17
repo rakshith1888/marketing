@@ -72,7 +72,7 @@ const Home = () => {
 
   const testimonials = [
     {
-      quote: "GrofleX helped us identify market shifts 3 months ahead of our competition",
+      quote: "Groflex helped us identify market shifts 3 months ahead of our competition",
       author: "Sarah C.",
       role: "VP Strategy",
       company: "Business Strategies 2k Inc."
@@ -105,11 +105,11 @@ const integrations = [
 
   const faqs = [
     {
-      question: "How does GrofleX's AI explainability work?",
+      question: "How does Groflex's AI explainability work?",
       answer: "Our AI provides transparent reasoning for every recommendation, showing you the data sources, confidence levels, and logic behind each suggestion."
     },
     {
-      question: "What data integrations does GrofleX support?",
+      question: "What data integrations does Groflex support?",
       answer: "GrofleX connects to 150+ data sources including CRMs, ERPs, marketing platforms, cloud databases, and custom APIs."
     },
     {
@@ -117,7 +117,7 @@ const integrations = [
       answer: "BI teams can automate report generation, focus on strategic analysis, and deliver prescriptive insights that drive executive action."
     },
     {
-      question: "Is our data secure with GrofleX?",
+      question: "Is our data secure with Groflex?",
       answer: "Yes, we use enterprise-grade security with SOC 2 compliance, end-to-end encryption, and never store your raw data."
     },
     {
@@ -125,7 +125,7 @@ const integrations = [
       answer: "Most customers see predictive insights within 2 weeks of connecting their first data source."
     },
     {
-      question: "What makes GrofleX different from traditional BI tools?",
+      question: "What makes Groflex different from traditional BI tools?",
       answer: "Unlike traditional BI that shows what happened, GrofleX predicts what will happen and prescribes what you should do about it."
     }
   ];
@@ -351,7 +351,7 @@ const integrations = [
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-gradient">What You'll Get</span><br />
-              <span className="text-white">With GrofleX</span>
+              <span className="text-white">With Groflex</span>
             </h2>
           </div>
           
@@ -421,7 +421,7 @@ const integrations = [
                   <div className="w-8 h-8 bg-brand-purple rounded-full flex items-center justify-center">
                     <MessageSquare className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-white font-semibold">GrofleX AI Assistant</span>
+                  <span className="text-white font-semibold">Groflex AI Assistant</span>
                   <div className="ml-auto w-2 h-2 bg-green-500 rounded-full"></div>
                 </div>
                 
@@ -510,7 +510,7 @@ const integrations = [
             <span className="text-gradient">Clarity Starts Here</span>
           </h2>
           <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
-            Whether you're leading, enabling, or building insight—GrofleX helps you know what to do next
+            Whether you're leading, enabling, or building insight—Groflex helps you know what to do next
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
@@ -529,7 +529,7 @@ const integrations = [
             <FuturisticCard variant="neon" className="text-center">
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-gradient mb-4">For Teams</h3>
-              <p className="text-white/80 mb-6">See how GrofleX transforms your workflow</p>
+              <p className="text-white/80 mb-6">See how Groflex transforms your workflow</p>
               <button 
                 onClick={handleBookDemo}
                 className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300"

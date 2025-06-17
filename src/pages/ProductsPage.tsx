@@ -23,7 +23,7 @@ const ProductsPage = () => {
     },
     {
       icon: <Brain className="w-12 h-12" />,
-      name: 'GrofleX AI Engine',
+      name: 'Groflex AI Engine',
       description: 'Self-learning AI that continuously improves predictions and recommendations based on your business outcomes',
       impact: 'Gets smarter with every decision, delivering increasingly accurate insights'
     },
@@ -55,7 +55,7 @@ const ProductsPage = () => {
 
   const architectureSteps = [
     { title: 'Connect', desc: 'API integrations pull data from all sources' },
-    { title: 'Process', desc: 'GrofleX AI Engine analyzes and learns patterns' },
+    { title: 'Process', desc: 'Groflex AI Engine analyzes and learns patterns' },
     { title: 'Predict', desc: 'ML models forecast trends and identify risks' },
     { title: 'Prescribe', desc: 'Generate actionable recommendations' },
     { title: 'Deliver', desc: 'Role-based dashboards show what matters most' }
@@ -73,7 +73,7 @@ const ProductsPage = () => {
               <span className="text-white">in Plain Language</span>
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto mb-10">
-              Discover how GrofleX transforms fragmented data into clear, actionable insights that drive confident decision-making across your entire organization.
+              Discover how Groflex transforms fragmented data into clear, actionable insights that drive confident decision-making across your entire organization.
             </p>
             
             {/* YouTube Video */}
@@ -83,7 +83,7 @@ const ProductsPage = () => {
                   width="100%"
                   height="100%"
                   src="https://www.youtube.com/embed/3834u1h0188"
-                  title="GrofleX Demo Video"
+                  title="Groflex Demo Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -91,7 +91,7 @@ const ProductsPage = () => {
                 ></iframe> */}
                 <img
                       src="/lovable-uploads/df438a57-b312-4506-babc-8a4a45c0f4f3.png"
-                      alt="GrofleX Demo"
+                      alt="Groflex Demo"
                       className="w-full h-full object-cover"
                     />
               </div>
@@ -174,7 +174,7 @@ const ProductsPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gradient mb-4">Scale as Teams Grow</h3>
                 <p className="text-white/80 mb-6">
-                  Modular architecture lets you add features and capabilities as your organization expands, ensuring GrofleX grows with your business needs.
+                  Modular architecture lets you add features and capabilities as your organization expands, ensuring Groflex grows with your business needs.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center text-white/70">
@@ -198,7 +198,7 @@ const ProductsPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gradient mb-4">Existing BI Integration</h3>
                 <p className="text-white/80 mb-6">
-                  Don't replace your current BI stack - enhance it. GrofleX integrates seamlessly with your existing tools and workflows.
+                  Don't replace your current BI stack - enhance it. Groflex integrates seamlessly with your existing tools and workflows.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center text-white/70">
@@ -221,7 +221,7 @@ const ProductsPage = () => {
           {/* Q&A Demo Section - Removed background flash */}
           <FuturisticCard variant="neon" className="p-12 mb-20">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gradient mb-4">Ask GrofleX Anything</h2>
+              <h2 className="text-3xl font-bold text-gradient mb-4">Ask Groflex Anything</h2>
               <p className="text-white/80 text-lg">Experience our AI-powered Q&A interface with natural language queries</p>
             </div>
             
@@ -253,7 +253,7 @@ const ProductsPage = () => {
 
           {/* Final CTA */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gradient mb-6">Ready to See GrofleX in Action?</h2>
+            <h2 className="text-3xl font-bold text-gradient mb-6">Ready to See Groflex in Action?</h2>
             <p className="text-white/80 mb-8 text-lg">
               Discover how our AI-powered platform transforms data into decisive action
             </p>

@@ -35,7 +35,7 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
             <p className="text-white/80 text-lg">{solution.pain}</p>
           </FuturisticCard>
           <FuturisticCard className="bg-green-500/10 border-green-500/30 p-6">
-            <h4 className="text-green-400 font-semibold mb-3 text-lg">With GrofleX:</h4>
+            <h4 className="text-green-400 font-semibold mb-3 text-lg">With Groflex:</h4>
             <p className="text-white/80 text-lg">{solution.gain}</p>
           </FuturisticCard>
         </div>

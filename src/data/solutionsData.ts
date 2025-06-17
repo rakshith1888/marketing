@@ -9,7 +9,7 @@ export const solutions = [
     description: 'See where you\'re heading and what to do about it—before others do.',
     icon: '👔',
     features: ['Executive Dashboards', 'Risk Forecasting', 'ROI Tracking', 'Strategic Planning'],
-    cta: 'See How GrofleX Drives ROI',
+    cta: 'See How Groflex Drives ROI',
     metrics: ['85% faster decision making', '3x ROI visibility', '67% reduction in strategic risks']
   },
   {

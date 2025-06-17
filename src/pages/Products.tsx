@@ -10,7 +10,7 @@ const Products = () => {
       details: ['200+ pre-built connectors', 'Real-time and batch processing', 'Secure API management']
     },
     {
-      title: 'GrofleX AI Engine',
+      title: 'Groflex AI Engine',
       description: 'Self-learning algorithms that get smarter with every decision you make',
       icon: '🧠',
       details: ['Machine learning models', 'Pattern recognition', 'Continuous optimization']
@@ -59,7 +59,7 @@ const Products = () => {
 
           {/* Architecture Overview */}
           <div className="glass-card p-12 mb-16">
-            <h2 className="text-3xl font-bold text-gradient text-center mb-12">How GrofleX Works</h2>
+            <h2 className="text-3xl font-bold text-gradient text-center mb-12">How Groflex Works</h2>
             <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-purple rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
@@ -75,7 +75,7 @@ const Products = () => {
                 <div className="w-20 h-20 bg-gradient-coral rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                   🧠
                 </div>
-                <h3 className="text-brand-coral font-semibold">GrofleX AI</h3>
+                <h3 className="text-brand-coral font-semibold">Groflex AI</h3>
                 <p className="text-white/70 text-sm">Process, Predict, Prescribe</p>
               </div>
               
@@ -141,7 +141,7 @@ const Products = () => {
                 <h3 className="text-2xl font-bold text-white mb-6">Integration into Existing BI Ecosystems</h3>
                 <div className="bg-black/40 p-6 rounded-lg">
                   <p className="text-white/80 mb-4">
-                    GrofleX doesn't replace your existing tools—it makes them smarter.
+                    Groflex doesn't replace your existing tools—it makes them smarter.
                   </p>
                   <ul className="space-y-2 text-white/70">
                     <li>• Works with Tableau, Power BI, Looker</li>
@@ -156,7 +156,7 @@ const Products = () => {
 
           {/* Demo Section */}
           <div className="glass-card p-12 text-center">
-            <h2 className="text-3xl font-bold text-gradient mb-4">See GrofleX in Action</h2>
+            <h2 className="text-3xl font-bold text-gradient mb-4">See Groflex in Action</h2>
             <p className="text-white/80 mb-8">Experience the power of predictive analytics and prescriptive insights</p>
             <div className="bg-black/40 rounded-lg p-8 mb-8">
               <div className="text-6xl mb-4">🎥</div>

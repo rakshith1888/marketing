@@ -148,7 +148,7 @@ const Blog = () => {
               </button>
             </div>
             <div className="pt-8 border-t border-white/20">
-              <p className="text-white/80 mb-4">Ready to see GrofleX in action?</p>
+              <p className="text-white/80 mb-4">Ready to see Groflex in action?</p>
               <button 
                 onClick={handleGetStarted}
                 className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"

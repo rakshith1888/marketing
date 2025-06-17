@@ -10,7 +10,7 @@ const QADemo = () => {
   return (
     <div className="mt-12">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gradient mb-3">Ask GrofleX Anything</h2>
+        <h2 className="text-2xl font-bold text-gradient mb-3">Ask Groflex Anything</h2>
         <p className="text-white/80">Experience our AI-powered Q&A interface with natural language queries</p>
       </div>
       

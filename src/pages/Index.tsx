@@ -261,7 +261,7 @@ const Index = () => {
               </div>
               <input 
                 type="text" 
-                placeholder="Ask GrofleX anything..."
+                placeholder="Ask Groflex anything..."
                 className="w-full bg-transparent text-white placeholder-white/50 text-lg focus:outline-none"
               />
             </div>

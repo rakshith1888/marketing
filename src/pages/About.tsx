@@ -96,7 +96,7 @@ const About = () => {
               
               <div className="space-y-4 text-foreground opacity-80">
                 <p className="leading-relaxed">
-                  GrofleX emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
+                  Groflex emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
                 </p>
                 <p className="leading-relaxed">
                   Our founders experienced this frustration firsthand—watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data; it was lack of actionable insight.
