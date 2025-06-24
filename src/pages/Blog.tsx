@@ -48,7 +48,7 @@ const Blog = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {/* <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
               <button
                 key={category}
@@ -57,7 +57,7 @@ const Blog = () => {
                 {category}
               </button>
             ))}
-          </div>
+          </div> */}
 
           {/* Featured Post */}
           {/* {posts[0] && (
