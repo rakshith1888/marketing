@@ -1,4 +1,3 @@
-// src/pages/FinanceUseCasePage.tsx
 import Layout from "../components/Layout";
 import FuturisticCard from "../components/FuturisticCard";
 import { Link } from "react-router-dom";

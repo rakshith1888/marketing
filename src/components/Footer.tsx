@@ -1,13 +1,12 @@
-
-import { Facebook, Linkedin, Youtube } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Facebook, Linkedin, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const legalLinks = [
-    { name: 'Terms & Conditions', path: '/terms-and-conditions' },
-    { name: 'Privacy Policy', path: '/privacy-policy' },
-    { name: 'Cookie Policy', path: '/cookie-policy' },
-    { name: 'Imprint', path: '/imprint' },
+    { name: "Terms & Conditions", path: "/terms-and-conditions" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Cookie Policy", path: "/cookie-policy" },
+    { name: "Imprint", path: "/imprint" },
   ];
 
   const socialLinks = [
@@ -43,71 +42,66 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="backdrop-blur-md border-t mt-auto transition-colors duration-300 dark:bg-black/80 dark:border-white/10 light:bg-white/80 light:border-black/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <img 
-                style={{height: '25px', width: '85px'}}
-                src="/lovable-uploads/headerlogo.png" 
-                alt="Groflex Logo"
-                className="h-8 w-auto"
-              />
-            </div>
-            <div className="text-muted-foreground text-sm">
-              <p className="font-medium mb-2 text-foreground/80">Headquarters</p>
-              <p>2261 Market Street STE 5943</p>
-              <p>San Francisco, CA, USA</p>
-            </div>
+    <footer className="bg-black border-t border-gradient-to-r from-brand-purple to-brand-coral py-14 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Company Info */}
+        <div className="space-y-4">
+          <img
+            src="/lovable-uploads/headerlogo.png"
+            alt="Groflex Logo"
+            className="h-7 w-auto"
+          />
+          <div className="text-sm text-foreground/60">
+            <p className="font-semibold text-foreground/80">Headquarters</p>
+            <p>2261 Market Street STE 5943</p>
+            <p>San Francisco, CA, USA</p>
           </div>
+        </div>
 
-          {/* Legal Links */}
-          <div className="space-y-4">
-            <h3 className="text-foreground font-medium">Legal</h3>
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
-              {legalLinks.map((link) => (
+        {/* Legal Links */}
+        <div>
+          <h3 className="text-foreground font-semibold mb-4">Legal</h3>
+          <ul className="space-y-2">
+            {legalLinks.map((link) => (
+              <li key={link.name}>
                 <Link
-                  key={link.name}
                   to={link.path}
-                  className="text-muted-foreground hover:text-brand-purple transition-colors text-sm"
+                  className="text-sm text-foreground/60 hover:text-brand-purple hover:underline transition-all duration-200"
                 >
                   {link.name}
                 </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-foreground font-medium">Follow Us</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-brand-purple transition-colors"
-                    aria-label={social.name}
-                  >
-                    <IconComponent />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t mt-8 pt-8 text-center border-border">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Groflex. All rights reserved.
-          </p>
+        {/* Social Links */}
+        <div>
+          <h3 className="text-foreground font-semibold mb-4">Follow Us</h3>
+          <div className="flex space-x-4">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-coral text-white hover:scale-105 transition-transform shadow-lg"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              );
+            })}
+          </div>
         </div>
+      </div>
+
+      {/* Divider */}
+      <div className="mt-12 border-t border-brand-purple/20 pt-6 text-center">
+        <p className="text-sm text-foreground/50">
+          © {new Date().getFullYear()} Groflex. All rights reserved.
+        </p>
       </div>
     </footer>
   );

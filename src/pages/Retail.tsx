@@ -188,3 +188,146 @@ const Retail = () => {
 };
 
 export default Retail;
+
+
+// import Layout from "../components/Layout";
+// import FuturisticCard from "../components/FuturisticCard";
+// import { Link } from "react-router-dom";
+
+// const Retail = () => {
+//   const benefits = [
+//     {
+//       title: "AI‑Powered Demand Forecasting",
+//       description:
+//         "Predict SKU‑level demand across regions and channels using real‑time inputs.",
+//     },
+//     {
+//       title: "Smart Inventory Optimization",
+//       description:
+//         "Reduce stockouts and excess inventory with predictive restocking models.",
+//     },
+//     {
+//       title: "Personalized Promotions",
+//       description:
+//         "Serve targeted offers based on behavior, location, and buying history.",
+//     },
+//     {
+//       title: "Cross‑Functional Visibility",
+//       description:
+//         "Align operations, merchandising, and marketing with shared intelligence.",
+//     },
+//     {
+//       title: "Regional Strategy Execution",
+//       description:
+//         "Make localized decisions using store‑level trend detection.",
+//     },
+//     {
+//       title: "Returns Reduction",
+//       description:
+//         "Detect early return trends and optimize products and fulfillment.",
+//     },
+//   ];
+
+//   const challenges = [
+//     "Data silos across merchandising, stores & ecommerce",
+//     "Forecasting volatility due to promotions and local trends",
+//     "Ineffective campaigns without customer-level insights",
+//     "Inventory imbalances hurting both cash flow and trust",
+//   ];
+
+//   return (
+//     <Layout>
+//       {/* Hero */}
+//       <section className="relative py-28 bg-gradient-to-br from-black via-[#1a0028] to-[#22003a] text-center overflow-hidden">
+//         <div className="absolute inset-0 opacity-40 blur-3xl bg-gradient-radial from-brand-yellow/30 via-transparent to-brand-purple-dark/40" />
+//         <div className="relative z-10 max-w-4xl mx-auto px-6">
+//           <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-4">
+//             Smarter Retail Decisions with Groflex
+//           </h1>
+//           <p className="text-xl text-foreground opacity-80 mb-8 leading-relaxed">
+//             See how leading retailers use Groflex to forecast demand, optimize
+//             inventory, and personalize customer journeys.
+//           </p>
+//           <Link
+//             to="/contactus"
+//             className="inline-block bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform"
+//           >
+//             Request a Demo
+//           </Link>
+//         </div>
+//       </section>
+
+//       {/* Quick Challenges */}
+//       <section className="py-16 bg-black">
+//         <div className="max-w-5xl mx-auto text-center mb-8">
+//           <h2 className="text-2xl font-semibold text-white/80 uppercase tracking-wider">
+//             Challenges Faced by Retail Teams
+//           </h2>
+//         </div>
+//         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
+//           {challenges.map((text, idx) => (
+//             <FuturisticCard
+//               key={idx}
+//               className="p-5 bg-[#11001a] shadow-sm border border-white/10"
+//             >
+//               <p className="text-sm text-white/70">{text}</p>
+//             </FuturisticCard>
+//           ))}
+//         </div>
+//       </section>
+
+//       {/* Benefits Showcase */}
+//       <section className="relative py-28 bg-gradient-to-t from-black via-[#0a0014] to-black px-6">
+//         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-purple via-brand-coral to-black blur-3xl pointer-events-none" />
+//         <div className="relative z-10 max-w-7xl mx-auto text-center mb-16">
+//           <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+//             Where Groflex Comes In
+//           </h2>
+//         </div>
+//         <div className="relative z-10 max-w-7xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+//           {benefits.map((item, idx) => (
+//             <FuturisticCard
+//               key={idx}
+//               variant="neon"
+//               className="p-6 h-full flex flex-col justify-between hover:scale-[1.03] transition-transform"
+//             >
+//               <h3 className="text-xl font-semibold text-gradient mb-2">
+//                 {item.title}
+//               </h3>
+//               <p className="text-sm text-foreground/75">{item.description}</p>
+//             </FuturisticCard>
+//           ))}
+//         </div>
+//       </section>
+
+//       {/* Testimonial */}
+//       <section className="py-20 bg-black px-6">
+//         <FuturisticCard variant="neon" className="max-w-3xl mx-auto p-12">
+//           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-90 mb-6 leading-relaxed">
+//             “Groflex helped us cut overstock by 22% and increase campaign ROI by
+//             31%. It’s like having an AI strategist for our merchandising team.”
+//           </blockquote>
+//           <p className="text-sm font-semibold text-foreground/60">
+//             — VP of Operations, Leading Apparel Brand
+//           </p>
+//         </FuturisticCard>
+//       </section>
+
+//       {/* Final CTA */}
+//       <section className="py-20 bg-gradient-to-r from-brand-purple to-brand-coral text-center px-6">
+//         <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
+//           Ready to modernize your retail decisions?
+//         </h2>
+//         <Link
+//           to="/contact"
+//           className="bg-black text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl hover:bg-gray-900 transition"
+//         >
+//           Talk to Sales
+//         </Link>
+//       </section>
+//     </Layout>
+//   );
+// };
+
+// export default Retail;
+

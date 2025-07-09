@@ -1,4 +1,3 @@
-// src/pages/FinancialServicesUseCasePage.tsx
 import {
   LucideShieldCheck,
   LucideUserCheck,
