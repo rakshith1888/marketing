@@ -177,7 +177,7 @@ const Retail = () => {
           Ready to modernize your retail decisions?
         </h2>
         <Link
-          to="/contact"
+          to="/contactus"
           className="bg-black text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl hover:bg-gray-900 transition"
         >
           Talk to Sales

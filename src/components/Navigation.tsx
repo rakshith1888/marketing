@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
+  const solutionsRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -30,6 +30,20 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        solutionsRef.current &&
+        !solutionsRef.current.contains(event.target as Node)
+      ) {
+        setIsSolutionsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +64,8 @@ const Navigation = () => {
               item.children ? (
                 <div
                   key={item.name}
-                  className="relative"
+                  ref={solutionsRef}
+                  className="relative group"
                   onMouseEnter={() => setIsSolutionsOpen(true)}
                   onMouseLeave={() => setIsSolutionsOpen(false)}
                 >
@@ -67,8 +82,8 @@ const Navigation = () => {
                     </Link>
                     <button
                       onClick={(e) => {
-                        e.preventDefault(); // prevent navigation
-                        setIsSolutionsOpen(!isSolutionsOpen);
+                        e.preventDefault();
+                        setIsSolutionsOpen(true);
                       }}
                       className="text-white/80 hover:text-brand-purple"
                     >
@@ -78,7 +93,7 @@ const Navigation = () => {
 
                   {/* Dropdown */}
                   <div
-                    className={`absolute top-full mt-2 bg-white dark:bg-black border border-white/10 rounded-md shadow-lg z-10 min-w-[180px] transform transition-all duration-300 origin-top ${
+                    className={`absolute top-full left-0 mt-2 bg-white dark:bg-black border border-white/10 rounded-md shadow-lg z-10 min-w-[180px] transform transition-all duration-200 origin-top ${
                       isSolutionsOpen
                         ? "opacity-100 scale-y-100"
                         : "opacity-0 scale-y-0 pointer-events-none"
