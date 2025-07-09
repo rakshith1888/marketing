@@ -1,5 +1,6 @@
 
 import FuturisticCard from '../FuturisticCard';
+import { Link } from 'react-router-dom';
 
 const IndustrySolutions = () => {
   const industries = [
@@ -38,16 +39,30 @@ const IndustrySolutions = () => {
   return (
     <div className="mt-16">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gradient mb-4">Industry Solutions</h2>
-        <p className="text-white/80 text-lg">Tailored insights for every industry</p>
+        <h2 className="text-3xl font-bold text-gradient mb-4">
+          Industry Solutions
+        </h2>
+        <p className="text-white/80 text-lg">
+          Tailored insights for every industry
+        </p>
       </div>
-      
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {industries.map((industry, idx) => (
-          <FuturisticCard key={idx} className="p-6 text-center hover:scale-105 transition-all duration-300">
+          <FuturisticCard
+            key={idx}
+            className="p-6 text-center hover:scale-105 transition-all duration-300"
+          >
             <div className="text-4xl mb-4">{industry.icon}</div>
-            <h3 className="text-brand-cream font-semibold text-lg mb-2">{industry.name}</h3>
+            <h3 className="text-brand-cream font-semibold text-lg mb-2">
+              {industry.name}
+            </h3>
             <p className="text-white/70 text-sm">{industry.description}</p>
+            <Link to={`/${industry.name.toLowerCase().replace(/\s+/g, "-")}`} className="inline-block">
+              <button className="mt-4 px-3 py-1.5 bg-gradient-to-r from-brand-purple to-brand-coral text-white rounded-full hover:shadow-lg transition-all duration-300">
+                See Use Case
+              </button>
+            </Link>
           </FuturisticCard>
         ))}
       </div>

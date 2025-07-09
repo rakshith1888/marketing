@@ -18,6 +18,12 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ProductsPage from "./pages/ProductsPage";
 import Solutions from "./pages/Solutions";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import Manufacturing from "./pages/Manufacturing";
+import Retail from "./pages/Retail";  
+import FinancialServices from "./pages/FinancialServices";
+import Healthcare from "./pages/Healthcare";
+import Finance from "./pages/Finance";
+import Ecommerce from "./pages/Ecommerce";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +41,13 @@ const App = () => (
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/manufacturing" element={<Manufacturing/>} />
+            <Route path="/retail" element={<Retail />} />
+            <Route path="/financial-services" element={<FinancialServices />} />
+            <Route path="/healthcare" element={<Healthcare />} />
+            <Route path="/finance" element={<Finance />} />
+            <Route path="/e-commerce" element={<Ecommerce />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />}/>
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/imprint" element={<Imprint />} />

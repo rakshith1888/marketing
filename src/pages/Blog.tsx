@@ -109,7 +109,7 @@ const Blog = () => {
           {/*Blog Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {filteredPosts.map((post, index) => {
-              const isFirst = index === 0;
+            const isFirst = index === 0 && activeCategory === "All";
 
               return (
                 <FuturisticCard
