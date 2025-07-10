@@ -54,7 +54,7 @@ const Footer = () => {
           <div className="text-sm text-foreground/60">
             <p className="font-semibold text-foreground/80">Headquarters</p>
             <p>2261 Market Street STE 5943</p>
-            <p>San Francisco, CA, USA</p>
+            <p>San Francisco, CA, USA 94114</p>
           </div>
         </div>
 

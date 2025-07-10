@@ -249,14 +249,16 @@ const Home = () => {
 
                 {/* Badge*/}
                 <div>
+                  <a href="https://www.f6s.com/groflex-technology1" target="_blank" rel="noopener noreferrer">
                   <img
                     src="/lovable-uploads/ranks.png"
                     alt="F65 Top Company Badge"
                     className="w-1/2 ml-auto mt-6"
                   />
-                  <span className="text-sm text-white/70 uppercase tracking-wider text-right block mt-2">
+                  </a>
+                  {/* <span className="text-sm text-white/70 uppercase tracking-wider text-right block mt-2">
                     #55 BY F65, June 2025
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
