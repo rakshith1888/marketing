@@ -206,7 +206,7 @@ const Home = () => {
             {/* Left Side - Hero Content */}
             <div className="text-left space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                <span className="text-gradient">Clarity to Know</span>
+                <span className="text-gradient">Clarity to Know </span>
                 <br />
                 <span className="text-white">What to Do Next</span>
               </h1>

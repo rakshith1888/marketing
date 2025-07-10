@@ -3,7 +3,7 @@ const SolutionHero = () => {
   return (
     <div className="text-center mb-16">
       <h1 className="text-5xl md:text-6xl font-bold mb-6">
-        <span className="text-gradient">Clarity for Everyone—</span>
+        <span className="text-gradient">Clarity for Everyone</span>
         <br />
         <span className="text-white">No Matter Your Role</span>
       </h1>
