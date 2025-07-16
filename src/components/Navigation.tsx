@@ -123,7 +123,7 @@ const Navigation = () => {
 
                     {/* Dropdown Menu */}
                     {isDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-white/10 rounded-lg shadow-lg py-2 z-50">
+                      <div className="absolute top-full left-0 w-48 bg-black/90 backdrop-blur-md border border-white/10 rounded-lg shadow-lg py-2 z-50">
                         {solutionsDropdownItems.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
