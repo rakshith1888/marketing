@@ -2,6 +2,8 @@
 import { ReactNode } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import SensayChatbot from './SensayChatbot';
+
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +17,8 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+
+      <SensayChatbot />
     </div>
   );
 };
