@@ -73,105 +73,109 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
-          >
-            <img
-              style={{ height: "20px", width: "68px" }}
-              src="/lovable-uploads/headerlogo.png"
-              alt="Groflex Logo"
-              className="h-5 w-auto sm:h-6 md:h-7 lg:h-8"
-            />
-          </Link>
+  <div className="flex items-center justify-between h-14 sm:h-16">
+  {/* Left side: Logo + Nav */}
+  <div className="flex items-center space-x-12">
+    {/* Logo */}
+    <Link
+      to="/"
+      className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
+    >
+      <img
+        style={{ height: "35px", width: "110px" }}
+        src="/lovable-uploads/headerlogo.png"
+        alt="Groflex Logo"
+        className="h-5 w-auto sm:h-6 md:h-7 lg:h-8"
+      />
+    </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-            {navItems.map((item) => (
-              <div
-                key={item.name}
-                className="relative"
-                ref={item.hasDropdown ? dropdownRef : null}
+    {/* Nav Items */}
+    <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+      {navItems.map((item) => (
+        <div
+          key={item.name}
+          className="relative"
+          ref={item.hasDropdown ? dropdownRef : null}
+        >
+          {item.hasDropdown ? (
+            <div
+              className="flex items-center space-x-1 cursor-pointer group"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <Link
+                to={item.path}
+                className={`text-base lg:text-lg transition-colors duration-200 ${
+                  isActive(item.path) ||
+                  solutionsDropdownItems.some((dropdownItem) =>
+                    isActive(dropdownItem.path)
+                  )
+                    ? "text-brand-purple"
+                    : "text-white/80 hover:text-brand-purple"
+                }`}
               >
-                {item.hasDropdown ? (
-                  <div
-                    className="flex items-center space-x-1 cursor-pointer group"
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
-                  >
+                {item.name}
+              </Link>
+              <ChevronDown
+                size={16}
+                className={`text-white/80 group-hover:text-brand-purple transition-all duration-200 ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 w-48 bg-black/90 backdrop-blur-md border border-white/10 rounded-lg shadow-lg py-2 z-50">
+                  {solutionsDropdownItems.map((dropdownItem) => (
                     <Link
-                      to={item.path}
-                      className={`text-sm lg:text-base transition-colors duration-200 ${
-                        isActive(item.path) ||
-                        solutionsDropdownItems.some((dropdownItem) =>
-                          isActive(dropdownItem.path)
-                        )
-                          ? "text-brand-purple"
-                          : "text-white/80 hover:text-brand-purple"
+                      key={dropdownItem.name}
+                      to={dropdownItem.path}
+                      onClick={handleDropdownItemClick}
+                      className={`block px-4 py-2 text-base transition-colors duration-200 ${
+                        isActive(dropdownItem.path)
+                          ? "text-brand-purple bg-white/5"
+                          : "text-white/80 hover:text-brand-purple hover:bg-white/5"
                       }`}
                     >
-                      {item.name}
+                      {dropdownItem.name}
                     </Link>
-                    <ChevronDown
-                      size={16}
-                      className={`text-white/80 group-hover:text-brand-purple transition-all duration-200 ${
-                        isDropdownOpen ? "rotate-180" : ""
-                      }`}
-                    />
-
-                    {/* Dropdown Menu */}
-                    {isDropdownOpen && (
-                      <div className="absolute top-full left-0 w-48 bg-black/90 backdrop-blur-md border border-white/10 rounded-lg shadow-lg py-2 z-50">
-                        {solutionsDropdownItems.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            to={dropdownItem.path}
-                            onClick={handleDropdownItemClick}
-                            className={`block px-4 py-2 text-sm transition-colors duration-200 ${
-                              isActive(dropdownItem.path)
-                                ? "text-brand-purple bg-white/5"
-                                : "text-white/80 hover:text-brand-purple hover:bg-white/5"
-                            }`}
-                          >
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className={`text-sm lg:text-base transition-colors duration-200 ${
-                      isActive(item.path)
-                        ? "text-brand-purple"
-                        : "text-white/80 hover:text-brand-purple"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-
-            {/* Free Trial Button */}
-            <a
-              href="https://app.groflex.ai/auth/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 lg:ml-4 bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
-            >
-              Free Trial
-            </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
             <Link
-              to="/Contactus"
-              className="ml-2 lg:ml-4 bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
+              to={item.path}
+              className={`text-base lg:text-lg transition-colors duration-200 ${
+                isActive(item.path)
+                  ? "text-brand-purple"
+                  : "text-white/80 hover:text-brand-purple"
+              }`}
             >
-              Contact Us
+              {item.name}
             </Link>
-          </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Right side: CTAs */}
+  <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+    <a
+      href="https://app.groflex.ai/auth/login"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
+    >
+      Free Trial
+    </a>
+    <Link
+      to="/Contactus"
+      className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
+    >
+      Contact Us
+    </Link>
+  </div>
+
 
           {/* Mobile Menu Toggle & CTA */}
           <div className="md:hidden flex items-center space-x-2 sm:space-x-3">

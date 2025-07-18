@@ -231,6 +231,21 @@ const Home = () => {
                   </button>
                 </Link>
               </div>
+
+              {/* badge */}
+              <div>
+                <a
+                  href="https://www.f6s.com/groflex-technology1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/lovable-uploads/ranks.png"
+                    alt="F65 Top Company Badge"
+                    className="w-1/2 mr-auto mt-6 bg-gradient-to-r from-brand-purple/30 to-brand-coral/30 p-2 rounded-xl shadow-xl backdrop-blur-sm"
+                  />
+                </a>
+              </div>
             </div>
 
             {/* Right Side - image */}
@@ -246,20 +261,6 @@ const Home = () => {
                     className="w-full h-full object-cover"
                   />
                 </FuturisticCard>
-
-                {/* Badge*/}
-                <div>
-                  <a href="https://www.f6s.com/groflex-technology1" target="_blank" rel="noopener noreferrer">
-                  <img
-                    src="/lovable-uploads/ranks.png"
-                    alt="F65 Top Company Badge"
-                    className="w-1/2 ml-auto mt-6"
-                  />
-                  </a>
-                  {/* <span className="text-sm text-white/70 uppercase tracking-wider text-right block mt-2">
-                    #55 BY F65, June 2025
-                  </span> */}
-                </div>
               </div>
             </div>
           </div>

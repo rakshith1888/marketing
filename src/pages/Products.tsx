@@ -96,7 +96,7 @@ const Products = () => {
             <h2 className="text-3xl font-bold text-gradient text-center mb-12">Product Features</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <div key={index} className="glass-card p-8 hover:bg-white/10 transition-all duration-300 group">
+                <div key={index}>
                   <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{feature.icon}</div>
                   <h3 className="text-2xl font-bold text-gradient mb-4">{feature.title}</h3>
                   <p className="text-white/80 mb-6">{feature.description}</p>

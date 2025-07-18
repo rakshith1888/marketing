@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import FuturisticCard from "../components/FuturisticCard";
+import { TicketPercent, Check } from "lucide-react";
 import {
   Accordion,
   AccordionItem,
@@ -22,6 +23,15 @@ const Pricing = () => {
   const handleGetStarted = () => {
     window.open("https://app.groflex.ai", "_blank");
   };
+
+const [copied, setCopied] = useState(false);
+
+const handleCopy = () => {
+  navigator.clipboard.writeText("WELCOMEAI30");
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2000);
+};
+
 
   const getPrice = (monthlyPrice: number) => {
     if (isYearly) {
@@ -67,10 +77,10 @@ const Pricing = () => {
   ];
 
   const faqs = [
-    {
-      q: "Can I upgrade or downgrade my plan?",
-      a: "Yes, you can change your plan at any time. Changes take effect immediately.",
-    },
+    // {
+    //   q: "Can I upgrade or downgrade my plan?",
+    //   a: "Yes, you can change your plan at any time. Changes take effect immediately.",
+    // },
     {
       q: "Is there a free trial available?",
       a: "We offer a 30-day free trial for all plans. No credit card required.",
@@ -143,13 +153,37 @@ const Pricing = () => {
                     : "border-white/20 dark:border-white/20 light:border-black/20"
                 }`}
               >
-                {/* {plan.popular && (
+                {plan.popular && (
+                  // <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  //   <div className="bg-gradient-to-r from-brand-coral to-brand-purple text-white px-4 py-1 rounded-full text-m font-medium">
+                  //     30% Discount
+                  //   </div>
+                  // </div>
+
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-brand-coral to-brand-purple text-white px-4 py-1 rounded-full text-sm font-medium">
-                      Most Popular
+                    <div className="w-96 h-8 bg-gradient-purple text-white px-4 py-1 rounded-full text-sm font-medium flex items-center justify-center gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="flex items-center gap-1">
+                          30% Discount on
+                          <TicketPercent className="w-5 h-4 text-white" />
+                        </span>
+                      </div>
+                      <button
+                        onClick={handleCopy}
+                        className="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded text-xs transition flex items-center gap-1"
+                      >
+                        {copied ? (
+                          <>
+                            <Check className="w-3 h-3" />
+                            Copied!
+                          </>
+                        ) : (
+                          "WELCOMEAI30"
+                        )}
+                      </button>
                     </div>
                   </div>
-                )} */}
+                )}
 
                 <div className="text-center mb-8">
                   <h2 className="text-5xl md:text-4xl font-bold mb-6">
@@ -165,10 +199,11 @@ const Pricing = () => {
                         <div className="text-4xl font-bold text-white">
                           ${getPrice(plan.monthlyPrice)}
                         </div>
-                        <div className="text-m text-white/60 leading-tight">
-                          / monthly
-                          <br />
-                          ( billed yearly )
+                        <div className="text-white/60 leading-tight pt-5 text-center">
+                          <span className="text-m">/ monthly</span>
+                          <span className="text-[11px] ml-1">
+                            (billed yearly)
+                          </span>
                         </div>
                       </div>
                     )}

@@ -68,18 +68,22 @@ const ProductsPage = () => {
           {/* Hero Section */}
           <div className="text-center mb-20">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-gradient">AI that Connects,</span><br />
-              <span className="text-gradient">Predicts, and Prescribes</span><br />
+              <span className="text-gradient">AI that Connects,</span>
+              <br />
+              <span className="text-gradient">Predicts, and Prescribes</span>
+              <br />
               <span className="text-white">in Plain Language</span>
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto mb-10">
-              Discover how Groflex transforms fragmented data into clear, actionable insights that drive confident decision-making across your entire organization.
+              Discover how Groflex transforms fragmented data into clear,
+              actionable insights that drive confident decision-making across
+              your entire organization.
             </p>
-            
+
             {/* YouTube Video */}
             <FuturisticCard variant="neon" className="max-w-4xl mx-auto mb-16">
               {/* <div className="aspect-video rounded-lg overflow-hidden"> */}
-                {/* <iframe
+              {/* <iframe
                   width="100%"
                   height="100%"
                   src="https://www.youtube.com/embed/3834u1h0188"
@@ -89,14 +93,14 @@ const ProductsPage = () => {
                   allowFullScreen
                   className="w-full h-full"
                 ></iframe> */}
-                <img
-                      src="/lovable-uploads/products_image.png"
-                      alt="Groflex Demo"
-                      className="w-full h-full object-cover"
-                    />
+              <img
+                src="/lovable-uploads/products_image.png"
+                alt="Groflex Demo"
+                className="w-full h-full object-cover"
+              />
               {/* </div> */}
               <div className="mt-6 text-center">
-                <button 
+                <button
                   onClick={handleGetStarted}
                   className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
                 >
@@ -108,27 +112,36 @@ const ProductsPage = () => {
 
           {/* Features Section */}
           <section className="mb-24">
-            <h2 className="text-4xl font-bold text-gradient text-center mb-4">What's Under the Hood</h2>
+            <h2 className="text-4xl font-bold text-gradient text-center mb-4">
+              What's Under the Hood
+            </h2>
             <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
-              Six core components work together to deliver clarity and actionable insights for every decision-maker
+              Six core components work together to deliver clarity and
+              actionable insights for every decision-maker
             </p>
-            
+
             <div className="grid lg:grid-cols-2 gap-8">
               {features.map((feature, index) => (
-                <FuturisticCard 
-                  key={index} 
-                  variant="hologram" 
+                <FuturisticCard
+                  key={index}
+                  variant="hologram"
                   className="group cursor-pointer transition-all duration-300 hover:scale-105"
                 >
                   <div className="text-brand-purple mb-6 group-hover:text-brand-coral transition-colors duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gradient mb-4">{feature.name}</h3>
-                  <p className="text-white/80 mb-6 leading-relaxed">{feature.description}</p>
-                  
-                  {/* Impact tooltip - shows on hover */}
-                  <div className="bg-brand-purple/10 border border-brand-purple/30 rounded-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className="text-brand-coral font-semibold mb-2 text-sm">IMPACT:</h4>
+                  <h3 className="text-2xl font-bold text-gradient mb-4">
+                    {feature.name}
+                  </h3>
+                  <p className="text-white/80 mb-6 leading-relaxed">
+                    {feature.description}
+                  </p>
+
+                  {/* Impact tooltip */}
+                  <div className="bg-brand-purple/10 border border-brand-purple/30 rounded-lg p-4">
+                    <h4 className="text-brand-coral font-semibold mb-2 text-sm">
+                      IMPACT:
+                    </h4>
                     <p className="text-white/80 text-sm">{feature.impact}</p>
                   </div>
                 </FuturisticCard>
@@ -138,18 +151,27 @@ const ProductsPage = () => {
 
           {/* Architecture Diagram */}
           <section className="mb-24">
-            <h2 className="text-4xl font-bold text-gradient text-center mb-16">How It All Works Together</h2>
-            
+            <h2 className="text-4xl font-bold text-gradient text-center mb-16">
+              How It All Works Together
+            </h2>
+
             <FuturisticCard variant="neon" className="p-12">
               <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
                 {architectureSteps.map((step, index) => (
-                  <div key={index} className="flex flex-col items-center text-center flex-1">
+                  <div
+                    key={index}
+                    className="flex flex-col items-center text-center flex-1"
+                  >
                     <div className="w-16 h-16 bg-gradient-brand rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">
                       {index + 1}
                     </div>
-                    <h3 className="text-xl font-bold text-gradient mb-2">{step.title}</h3>
-                    <p className="text-white/70 text-sm max-w-xs">{step.desc}</p>
-                    
+                    <h3 className="text-xl font-bold text-gradient mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-white/70 text-sm max-w-xs">
+                      {step.desc}
+                    </p>
+
                     {/* Arrow connector */}
                     {index < architectureSteps.length - 1 && (
                       <div className="hidden lg:block absolute transform translate-x-24 translate-y-8">
@@ -165,16 +187,22 @@ const ProductsPage = () => {
 
           {/* Modular Design Section */}
           <section className="mb-24">
-            <h2 className="text-4xl font-bold text-gradient text-center mb-16">Built for Growth and Integration</h2>
-            
+            <h2 className="text-4xl font-bold text-gradient text-center mb-16">
+              Built for Growth and Integration
+            </h2>
+
             <div className="grid md:grid-cols-2 gap-12">
               <FuturisticCard className="p-8">
                 <div className="text-brand-purple mb-6">
                   <Network className="w-12 h-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-gradient mb-4">Scale as Teams Grow</h3>
+                <h3 className="text-2xl font-bold text-gradient mb-4">
+                  Scale as Teams Grow
+                </h3>
                 <p className="text-white/80 mb-6">
-                  Modular architecture lets you add features and capabilities as your organization expands, ensuring Groflex grows with your business needs.
+                  Modular architecture lets you add features and capabilities as
+                  your organization expands, ensuring Groflex grows with your
+                  business needs.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center text-white/70">
@@ -196,9 +224,12 @@ const ProductsPage = () => {
                 <div className="text-brand-purple mb-6">
                   <Cpu className="w-12 h-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-gradient mb-4">Existing BI Integration</h3>
+                <h3 className="text-2xl font-bold text-gradient mb-4">
+                  Existing BI Integration
+                </h3>
                 <p className="text-white/80 mb-6">
-                  Don't replace your current BI stack - enhance it. Groflex integrates seamlessly with your existing tools and workflows.
+                  Don't replace your current BI stack - enhance it. Groflex
+                  integrates seamlessly with your existing tools and workflows.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center text-white/70">
@@ -221,26 +252,37 @@ const ProductsPage = () => {
           {/* Q&A Demo Section - Removed background flash */}
           <FuturisticCard variant="neon" className="p-12 mb-20">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gradient mb-4">Ask Groflex Anything</h2>
-              <p className="text-white/80 text-lg">Experience our AI-powered Q&A interface with natural language queries</p>
+              <h2 className="text-3xl font-bold text-gradient mb-4">
+                Ask Groflex Anything
+              </h2>
+              <p className="text-white/80 text-lg">
+                Experience our AI-powered Q&A interface with natural language
+                queries
+              </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <FuturisticCard className="p-8 border border-brand-purple/30">
                 <div className="space-y-4 mb-6">
                   <div className="bg-brand-purple/20 p-4 rounded-lg border-l-4 border-brand-purple">
-                    <p className="text-white/90">"Why is our churn rate increasing in Q3?"</p>
+                    <p className="text-white/90">
+                      "Why is our churn rate increasing in Q3?"
+                    </p>
                   </div>
                   <div className="bg-brand-coral/20 p-4 rounded-lg border-l-4 border-brand-coral">
-                    <p className="text-white/90">"What's our highest revenue risk this quarter?"</p>
+                    <p className="text-white/90">
+                      "What's our highest revenue risk this quarter?"
+                    </p>
                   </div>
                   <div className="bg-green-500/20 p-4 rounded-lg border-l-4 border-green-500">
-                    <p className="text-white/90">"Which marketing channels should we prioritize?"</p>
+                    <p className="text-white/90">
+                      "Which marketing channels should we prioritize?"
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="text-center">
-                  <button 
+                  <button
                     onClick={handleGetStarted}
                     className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
                   >
@@ -253,18 +295,21 @@ const ProductsPage = () => {
 
           {/* Final CTA */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gradient mb-6">Ready to See Groflex in Action?</h2>
+            <h2 className="text-3xl font-bold text-gradient mb-6">
+              Ready to See Groflex in Action?
+            </h2>
             <p className="text-white/80 mb-8 text-lg">
-              Discover how our AI-powered platform transforms data into decisive action
+              Discover how our AI-powered platform transforms data into decisive
+              action
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
+              <button
                 onClick={handleGetStarted}
                 className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
               >
                 Start Free Trial
               </button>
-              <button 
+              <button
                 onClick={handleBookDemo}
                 className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300"
               >
