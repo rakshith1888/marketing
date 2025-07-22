@@ -137,7 +137,7 @@ const Navigation = () => {
                           {Object.entries(solutionsDropdownItems).map(
                             ([category, items]) => (
                               <div key={category}>
-                                <h4 className="text-white/70 font-semibold mb-2 text-sm uppercase tracking-wider">
+                                <h4 className="text-white/70 font-semibold mb-3 text-base uppercase tracking-wider">
                                   {category}
                                 </h4>
                                 {items.map((item) => (
@@ -145,7 +145,7 @@ const Navigation = () => {
                                     key={item.name}
                                     to={item.path}
                                     onClick={handleDropdownItemClick}
-                                    className={`block py-1.5 text-sm transition-colors duration-200 ${
+                                    className={`block py-2 text-base transition-colors duration-200 ${
                                       isActive(item.path)
                                         ? "text-brand-purple"
                                         : "text-white/80 hover:text-brand-purple"
@@ -225,7 +225,7 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* ✅ Mobile Navigation (Updated max height) */}
+        {/* ✅ Mobile Navigation */}
         <div
           className={`md:hidden overflow-y-auto transition-all duration-300 ease-in-out ${
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
@@ -279,7 +279,7 @@ const Navigation = () => {
                                   setIsMenuOpen(false);
                                   setIsMobileDropdownOpen(false);
                                 }}
-                                className={`block py-2 px-2 text-sm transition-colors duration-200 ${
+                                className={`block py-2 px-2 text-base transition-colors duration-200 ${
                                   isActive(dropdownItem.path)
                                     ? "text-brand-purple"
                                     : "text-white/60 hover:text-brand-purple"
