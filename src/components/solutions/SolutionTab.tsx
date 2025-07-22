@@ -1,6 +1,5 @@
 
 import FuturisticCard from '../FuturisticCard';
-import { Button } from '../ui/button';
 
 interface SolutionTabProps {
   solution: {
@@ -53,9 +52,9 @@ const SolutionTab = ({ solution }: SolutionTabProps) => {
           </div>
         </div>
         
-        <Button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        {/* <Button className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
           {solution.cta}
-        </Button>
+        </Button> */}
       </div>
       
       {/* Compact Features Side - Takes 1 column */}

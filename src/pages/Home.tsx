@@ -29,7 +29,41 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 const Home = () => {
+
+const partnershipLogos = [
+  "/lovable-uploads/logo_yectra.png",
+  "/lovable-uploads/logo_stationF.png",
+  "/lovable-uploads/logo_launchpad.png",
+  "/lovable-uploads/logo_iese.png",
+  "/lovable-uploads/logo_microsoft_for_startups.png",
+  "/lovable-uploads/logo_dusseldorf.png",
+];
+
+const sliderSettings = {
+  dots: false,
+  infinite: true,
+  speed: 3000, // long duration for continuous scroll
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 0, // continuous motion
+  cssEase: "linear", // smooth motion
+  pauseOnHover: false,
+  arrows: false,
+  responsive: [
+    { breakpoint: 1280, settings: { slidesToShow: 3 } },
+    { breakpoint: 1024, settings: { slidesToShow: 2 } },
+    { breakpoint: 640, settings: { slidesToShow: 1 } },
+  ],
+};
+
+
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const handleGetStarted = () => {
@@ -672,7 +706,36 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 10. FAQ SECTION */}
+      {/* 10. PARTNERSHIPS SECTION */}
+      <section className="bg-black py-20 px-4 md:px-10 lg:px-20 text-center">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="text-gradient">Partnerships</span>
+          </h2>
+        </div>
+        <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
+          We collaborate with global technology leaders to bring you the most
+          reliable, scalable, and cutting-edge solutions.
+        </p>
+
+        <div className="mb-12 bg-gradient-purple">
+          <Slider {...sliderSettings}>
+            {partnershipLogos.map((logo, idx) => (
+              <div key={idx} className="flex justify-center items-center p-4">
+                <div className="w-40 h-36 flex justify-center items-center ">
+                  <img
+                    src={logo}
+                    alt={`Partner logo ${idx + 1}`}
+                    className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
+
+      {/* 11. FAQ SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

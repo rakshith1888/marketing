@@ -3,59 +3,23 @@ import FuturisticCard from "../components/FuturisticCard";
 import { Link } from "react-router-dom";
 
 const Ecommerce = () => {
-  const benefits = [
-    {
-      title: "Real-Time Personalization",
-      description:
-        "Serve tailored recommendations based on live customer behavior.",
-    },
-    {
-      title: "Inventory Forecasting",
-      description: "Predict SKU demand by region, channel, and seasonality.",
-    },
-    {
-      title: "Campaign Performance Optimization",
-      description:
-        "Track, test, and adapt digital campaigns with AI-driven recommendations.",
-    },
-    {
-      title: "Returns & Satisfaction Insights",
-      description:
-        "Analyze return patterns and improve product descriptions and fit guidance.",
-    },
-    {
-      title: "Customer Lifetime Value",
-      description:
-        "Segment users by value and deliver retention strategies with AI precision.",
-    },
-    {
-      title: "Cross-Team Alignment",
-      description:
-        "Connect marketing, fulfillment, and support with shared real-time insights.",
-    },
-  ];
-
-  const challenges = [
-    "Rising customer expectations for personalization",
-    "Inventory misalignment causes stockouts or overstock",
-    "Digital campaign performance is unpredictable",
-    "Data is siloed across marketing, sales, and ops",
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-28 bg-gradient-to-br from-black via-[#1a0028] to-[#22003a] text-center overflow-hidden">
-        <div className="absolute -inset-0 z-0 opacity-40 blur-3xl bg-gradient-radial from-pink-400/20 via-transparent to-brand-purple-dark/30"></div>
+      <section className="relative pt-36 pb-28 bg-gradient-to-br from-black via-[#1a0028] to-[#22003a] text-center overflow-visible">
+        <div className="absolute -inset-0 z-0 opacity-40 blur-3xl bg-gradient-radial from-brand-yellow/30 via-transparent to-brand-purple-dark/40"></div>
+
         <div className="relative z-10 max-w-5xl mx-auto px-6">
-          <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
-            Scale E-Commerce Smarter with Groflex AI
+          <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-snug md:leading-[1.3] tracking-tight break-words">
+            <span className="block">Turn Browsers into Buyers</span>
+            <span className="block">with Predictive Precision</span>
           </h1>
-          <p className="text-xl text-foreground opacity-80 mb-8">
-            Discover how e-commerce brands use Groflex to personalize
-            experiences, forecast inventory, and optimize campaigns in real
-            time.
+
+          <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
+            Groflex gives e-commerce teams clarity on what drives bounce,
+            conversion, and repeat purchases—then tells them what to do next.
           </p>
+
           <Link
             to="/contactus"
             className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300"
@@ -66,44 +30,95 @@ const Ecommerce = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-24 px-6 bg-black">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gradient mb-12 leading-snug">
-            The Challenge for E-Commerce Brands
+      <section className="pt-28 pb-16 px-6 bg-black from-[#0a0014] via-black to-[#0a0014]">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-10 leading-snug">
+            Why E-commerce Teams Struggle to Influence Conversion
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 text-left">
-            {challenges.map((challenge, idx) => (
-              <FuturisticCard key={idx} className="p-6 flex items-start gap-4">
-                <div className="w-4 h-4 bg-brand-yellow rounded-full shadow-md animate-pulse mt-1" />
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  {challenge}
-                </p>
-              </FuturisticCard>
-            ))}
+          <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
+            E-commerce teams are inundated with site metrics, cart behavior, and
+            channel analytics, but struggle to pinpoint what truly influences
+            conversion. Groflex identifies hidden patterns in funnel drop-off
+            and customer behavior and recommends action with measurable ROI.
+          </p>
+
+          <div className="bg-[#12001e] p-10 rounded-2xl shadow-xl border border-white/10 flex flex-col md:flex-row items-start gap-6 text-left">
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-3">
+                Hidden Funnel Gaps = Missed Revenue
+              </h3>
+              <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
+                Groflex uncovers behavioral patterns across bounce, cart, and
+                repeat visit data—connecting signals from marketing,
+                merchandising, and CX to tell you what to optimize for higher
+                conversion and retention.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24 bg-gradient-to-t from-black via-[#0a0014] to-black px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gradient mb-16">
+      {/* Where Groflex Comes In - Use Case List Style */}
+      <section className="py-28 px-6 bg-gradient-to-b from-black via-[#0a0014] to-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient text-center mb-16">
             Where Groflex Comes In
           </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {benefits.map(({ title, description }, idx) => (
-              <FuturisticCard
-                key={idx}
-                className="p-6 h-full flex flex-col justify-between"
-              >
-                <h3 className="text-xl font-semibold text-gradient mb-3">
-                  {title}
+
+          <div className="grid md:grid-cols-12 gap-12 items-stretch">
+            {/* Left Side - Use Cases (8/12 columns) */}
+            <div className="md:col-span-8 flex">
+              <div className="bg-[#12001e] p-10 rounded-2xl border border-white/10 shadow-lg w-full">
+                <h3 className="text-xl font-semibold text-brand-purple mb-6">
+                  Use Cases:
                 </h3>
-                <p className="text-sm text-foreground opacity-75">
-                  {description}
-                </p>
-              </FuturisticCard>
-            ))}
+                <ul className="space-y-4 text-white/85 text-sm md:text-base leading-snug">
+                  <li className="grid gap-y-1">
+                    <span className="font-semibold text-white">
+                      Use Case 1:
+                    </span>
+                    <span>
+                      A consumer brand saw a <strong>28% increase</strong> in
+                      cart conversion after Groflex recommended bundling
+                      underperforming items with top-sellers based on behavioral
+                      clusters.
+                    </span>
+                  </li>
+                  <li className="grid gap-y-1">
+                    <span className="font-semibold text-white">
+                      Use Case 2:
+                    </span>
+                    <span>
+                      Groflex linked a spike in churn to delayed email campaign
+                      timing—shifting cadence restored retention rates by{" "}
+                      <strong>14%</strong>.
+                    </span>
+                  </li>
+                  <li className="grid gap-y-1">
+                    <span className="font-semibold text-white">
+                      Use Case 3:
+                    </span>
+                    <span>
+                      Using Groflex, an e-com company prevented{" "}
+                      <strong>$620K</strong> in lost revenue by identifying a
+                      promo code conflict that was suppressing mobile checkout
+                      success.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Side - Image (4/12 columns) */}
+            <div className="md:col-span-4 flex">
+              <div className="w-full flex items-center justify-center bg-[#12001e] p-6 rounded-2xl border border-white/10 shadow-lg">
+                <img
+                  src="/lovable-uploads/ecommerceindustry.png"
+                  alt="Groflex E-commerce Insights Visual"
+                  className="w-full max-w-xs h-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -115,11 +130,11 @@ const Ecommerce = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex helped us lift campaign ROI by 35% and reduced returns by
-            20%. It’s our growth engine.”
+            “We were flying blind on what drove drop-off. Groflex showed us the
+            gaps—and told us exactly what to change to win more customers.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
-            — CMO, DTC E-Commerce Brand
+            — Head of Growth, D2C Brand
           </p>
         </FuturisticCard>
       </section>
@@ -127,7 +142,7 @@ const Ecommerce = () => {
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-r from-brand-purple to-brand-coral text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-10">
-          Ready to accelerate your e-commerce decisions?
+          Ready to boost conversion with AI-powered insight?
         </h2>
         <Link
           to="/contactus"

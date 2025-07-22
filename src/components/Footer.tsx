@@ -45,16 +45,28 @@ const Footer = () => {
     <footer className="bg-black border-t border-gradient-to-r from-brand-purple to-brand-coral py-14 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Company Info */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           <img
             src="/lovable-uploads/headerlogo.png"
             alt="Groflex Logo"
             className="h-7 w-auto"
           />
-          <div className="text-sm text-foreground/60">
-            <p className="font-semibold text-foreground/80">Headquarters</p>
-            <p>2261 Market Street STE 5943</p>
-            <p>San Francisco, CA, USA 94114</p>
+          <div className="text-sm text-foreground/60 space-y-4">
+            <div>
+              <p className="font-semibold text-foreground/80 mb-1">
+                Headquarters A
+              </p>
+              <p>2261 Market Street STE 5943</p>
+              <p>San Francisco, CA, USA 94114</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground/80 mb-1">
+                Satellite Offices
+              </p>
+              <p>India</p>
+              <p>Germany</p>
+              <p>Qatar</p>
+            </div>
           </div>
         </div>
 
@@ -87,7 +99,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-coral text-white hover:scale-105 transition-transform shadow-lg"
+                  className="group inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-coral text-white hover:scale-105 transition-transform shadow-lg"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -97,7 +109,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
+      {/* Bottom Divider */}
       <div className="mt-12 border-t border-brand-purple/20 pt-6 text-center">
         <p className="text-sm text-foreground/50">
           © {new Date().getFullYear()} Groflex. All rights reserved.

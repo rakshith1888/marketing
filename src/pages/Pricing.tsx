@@ -24,14 +24,13 @@ const Pricing = () => {
     window.open("https://app.groflex.ai", "_blank");
   };
 
-const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-const handleCopy = () => {
-  navigator.clipboard.writeText("WELCOMEAI30");
-  setCopied(true);
-  setTimeout(() => setCopied(false), 2000);
-};
-
+  const handleCopy = () => {
+    navigator.clipboard.writeText("WELCOMEAI30");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const getPrice = (monthlyPrice: number) => {
     if (isYearly) {
@@ -66,7 +65,10 @@ const handleCopy = () => {
       monthlyPrice: 299,
       features: [
         { label: "Target Users", value: "Large enterprises, data-driven orgs" },
-        { label: "Value Focus", value: "Strategic impact + full customization" },
+        {
+          label: "Value Focus",
+          value: "Strategic impact + full customization",
+        },
         // { label: "Monthly Price", value: "Custom" },
         { label: "Users", value: "Custom" },
         { label: "AI Questions / Month", value: "Custom" },
@@ -74,6 +76,105 @@ const handleCopy = () => {
       ],
       popular: false,
     },
+  ];
+
+  // Updated table data with section headers based on Excel image
+  const tableFeatures = [
+    // Data Storage Section
+    { feature: "Data Storage", growth: "", enterprise: "", isHeader: true },
+    {
+      feature: "Files, Relational Databases",
+      growth: "Yes",
+      enterprise: "Yes",
+    },
+    { feature: "Data Size", growth: "15GB", enterprise: "Custom" },
+
+    // Data Preparation and Synthesis Section
+    {
+      feature: "Data Preparation and Synthesis",
+      growth: "",
+      enterprise: "",
+      isHeader: true,
+    },
+    { feature: "No Code Data Prep", growth: "Yes", enterprise: "Yes" },
+    { feature: "Data Pipeline Scheduling", growth: "Yes", enterprise: "Yes" },
+    { feature: "Data Model Schemas", growth: "No", enterprise: "Yes" },
+    { feature: "Data Customization", growth: "No", enterprise: "Yes" },
+    { feature: "Data Quality Checks", growth: "Yes", enterprise: "Yes" },
+
+    // Insights and Visualizations Section
+    {
+      feature: "Insights and Visualizations",
+      growth: "",
+      enterprise: "",
+      isHeader: true,
+    },
+    {
+      feature: "KPI tracking and Management",
+      growth: "Yes",
+      enterprise: "Yes",
+    },
+    { feature: "Dashboards and Insights", growth: "Yes", enterprise: "Yes" },
+    {
+      feature: "Trends, Patterns, Impact Analytics",
+      growth: "Yes",
+      enterprise: "Yes",
+    },
+    { feature: "Narratives", growth: "Yes", enterprise: "Yes" },
+
+    // Predictions and Prescriptions Section
+    {
+      feature: "Predictions and Prescriptions",
+      growth: "",
+      enterprise: "",
+      isHeader: true,
+    },
+    { feature: "Predictions with Insights", growth: "Yes", enterprise: "Yes" },
+    { feature: "What If Analysis", growth: "Yes", enterprise: "Yes" },
+    { feature: "Detailed Reports", growth: "No", enterprise: "Yes" },
+    { feature: "Custom code modeling", growth: "No", enterprise: "Yes" },
+
+    // Agentic AI and Actions Section
+    {
+      feature: "Agentic AI and Actions",
+      growth: "",
+      enterprise: "",
+      isHeader: true,
+    },
+    { feature: "Conversations with Data", growth: "Yes", enterprise: "Yes" },
+    {
+      feature: "Create Actions, Track and Manage",
+      growth: "Yes",
+      enterprise: "Yes",
+    },
+    {
+      feature: "External Actions Tracker Integration",
+      growth: "No",
+      enterprise: "Yes",
+    },
+    {
+      feature: "360 Degree view of Analytics based on Actions",
+      growth: "No",
+      enterprise: "Yes",
+    },
+    {
+      feature: "Create Stories from Insights and Actions",
+      growth: "No",
+      enterprise: "Yes",
+    },
+    { feature: "Create Notes", growth: "No", enterprise: "Yes" },
+    {
+      feature: "Intelligent Chatbot as assistant",
+      growth: "Yes",
+      enterprise: "Yes",
+    },
+    { feature: "AI Questions", growth: "5000", enterprise: "Custom" },
+
+    // Terms and Users Section
+    { feature: "Terms and Users", growth: "", enterprise: "", isHeader: true },
+    { feature: "Users", growth: "5", enterprise: "Custom" },
+    { feature: "Share Dashboards", growth: "Yes", enterprise: "Yes" },
+    { feature: "Creation, Sharing of Notes", growth: "No", enterprise: "Yes" },
   ];
 
   const faqs = [
@@ -238,7 +339,7 @@ const handleCopy = () => {
             ))}
           </div>
 
-          {/* Pricing Table */}
+          {/* Pricing Table - Updated with Excel data */}
           <FuturisticCard className="p-8 mb-16">
             <h2 className="text-2xl font-bold text-gradient text-center mb-8">
               Compare Plans
@@ -247,95 +348,56 @@ const handleCopy = () => {
               <Table className="w-full">
                 <TableHeader>
                   <TableRow className="border-brand-purple/30">
-                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold">
+                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold text-lg">
                       Feature
                     </TableHead>
-                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold">
+                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold text-lg">
                       Growth
                     </TableHead>
-                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold">
+                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold text-lg">
                       Enterprise
                     </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      Price
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      ${getPrice(plans[0].monthlyPrice)}/month
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Custom
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      Target Users
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Mid-sized businesses
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Large enterprises, data-driven orgs
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      Value Focus
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Productivity & automation
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Strategic impact + full customization
-                    </TableCell>
-                  </TableRow>
-                  {/* <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      Monthly Price
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      $999/month
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Custom
-                    </TableCell>
-                  </TableRow> */}
-                  <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      Users
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      5
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Custom
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      AI Questions / Month
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      5,000
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Custom
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="border-brand-purple/20">
-                    <TableCell className="text-white dark:text-white light:text-foreground font-medium">
-                      Data Size
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      15GB
-                    </TableCell>
-                    <TableCell className="text-white/80 dark:text-white/80 light:text-foreground/80">
-                      Custom
-                    </TableCell>
-                  </TableRow>
+                  {tableFeatures.map((row, index) => (
+                    <TableRow
+                      key={index}
+                      className={`${
+                        row.isHeader
+                          ? "border-brand-purple/40"
+                          : "border-brand-purple/20"
+                      }`}
+                    >
+                      <TableCell
+                        className={`${
+                          row.isHeader
+                            ? "text-brand-coral font-bold text-lg bg-gradient-to-r from-brand-purple/20 to-brand-coral/20 py-4"
+                            : "text-white dark:text-white light:text-foreground font-medium pl-6"
+                        }`}
+                      >
+                        {row.feature}
+                      </TableCell>
+                      <TableCell
+                        className={`${
+                          row.isHeader
+                            ? "bg-gradient-to-r from-brand-purple/20 to-brand-coral/20"
+                            : "text-white/80 dark:text-white/80 light:text-foreground/80"
+                        }`}
+                      >
+                        {row.growth}
+                      </TableCell>
+                      <TableCell
+                        className={`${
+                          row.isHeader
+                            ? "bg-gradient-to-r from-brand-purple/20 to-brand-coral/20"
+                            : "text-white/80 dark:text-white/80 light:text-foreground/80"
+                        }`}
+                      >
+                        {row.enterprise}
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>

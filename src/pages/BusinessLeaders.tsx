@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import FuturisticCard from "../components/FuturisticCard";
 import { Link } from "react-router-dom";
 
-const Retail = () => {
+const BusinessLeaders = () => {
   return (
     <Layout>
       {/* Hero Section */}
@@ -11,13 +11,13 @@ const Retail = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-snug md:leading-[1.3] tracking-tight break-words">
-            <span className="block">From Shelf to Sale—</span>
-            <span className="block">Smarter Inventory, Better Margins</span>
+            <span className="block">Clarity in Chaos:</span>
+            <span className="block">Know What’s Driving Your Business</span>
           </h1>
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
-            Groflex helps retailers connect inventory, promotions, staffing, and
-            foot traffic to make better merchandising and pricing decisions.
+            Groflex tells CEOs, COOs, and GMs what’s really affecting
+            performance across departments—before it hits the bottom line.
           </p>
 
           <Link
@@ -33,25 +33,24 @@ const Retail = () => {
       <section className="pt-28 pb-16 px-6 bg-black from-[#0a0014] via-black to-[#0a0014]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-10 leading-snug">
-            Why Retailers Struggle to Act on Store-Level Data
+            Why Leaders Struggle to Drive Coordinated Action
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Retailers are drowning in data from POS systems, loyalty programs,
-            and store ops—but they still can’t tell what’s driving changes in
-            performance. Groflex reveals the cause-and-effect dynamics behind
-            store-level KPIs.
+            Executives get reports and dashboards from every department—but they
+            still don’t know what actions to take. Groflex connects
+            cross-functional data to reveal causal relationships and prescribe
+            next best actions.
           </p>
 
           <div className="bg-[#12001e] p-10 rounded-2xl shadow-xl border border-white/10 flex flex-col md:flex-row items-start gap-6 text-left">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-3">
-                Lack of Actionable Store Intelligence
+                Lack of Connected Insight
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
-                Groflex bridges the gap between operational data and business
-                decisions—revealing the real drivers behind sales, inventory
-                turns, and labor performance so teams can act fast and improve
-                outcomes.
+                Most dashboards focus on siloed outcomes. Groflex finds the
+                signals that link them—so leaders can intervene with confidence
+                and make data-backed decisions that actually move the needle.
               </p>
             </div>
           </div>
@@ -66,7 +65,7 @@ const Retail = () => {
           </h2>
 
           <div className="grid md:grid-cols-12 gap-12 items-stretch">
-            {/* Left Side - Use Cases (8/12 columns) */}
+            {/* Left Side - Use Cases */}
             <div className="md:col-span-8 flex">
               <div className="bg-[#12001e] p-10 rounded-2xl border border-white/10 shadow-lg w-full">
                 <h3 className="text-xl font-semibold text-brand-purple mb-6">
@@ -78,10 +77,9 @@ const Retail = () => {
                       Use Case 1:
                     </span>
                     <span>
-                      Groflex detected that underperformance in a region was
-                      driven by low in-stock availability on key SKUs—
-                      corrective action increased weekly sales by{" "}
-                      <strong>17%</strong>.
+                      A COO used Groflex to discover that sales slowdowns were
+                      driven by delays in onboarding—fixing it improved
+                      quarterly revenue by <strong>$2.7M</strong>.
                     </span>
                   </li>
                   <li className="grid gap-y-1">
@@ -89,9 +87,10 @@ const Retail = () => {
                       Use Case 2:
                     </span>
                     <span>
-                      A national chain cut markdown losses by{" "}
-                      <strong>$1.8M annually</strong> after Groflex identified
-                      overstock patterns tied to poor promo lift forecasts.
+                      Groflex revealed that declining customer satisfaction
+                      stemmed from staffing misalignment during peak support
+                      hours—intervention boosted NPS by{" "}
+                      <strong>11 points</strong>.
                     </span>
                   </li>
                   <li className="grid gap-y-1">
@@ -99,21 +98,21 @@ const Retail = () => {
                       Use Case 3:
                     </span>
                     <span>
-                      Labor-to-sales ratio improved <strong>12%</strong> when
-                      Groflex aligned staff schedules to predicted footfall
-                      patterns across high-traffic hours.
+                      A CEO used Groflex insights to reallocate budget from
+                      underperforming regions to high-growth segments—improving{" "}
+                      <strong>EBITDA margin by 3.4%</strong>.
                     </span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Right Side - Image (4/12 columns) */}
+            {/* Right Side - Image */}
             <div className="md:col-span-4 flex">
               <div className="w-full flex items-center justify-center bg-[#12001e] p-6 rounded-2xl border border-white/10 shadow-lg">
                 <img
-                  src="/lovable-uploads/retailindustry.png"
-                  alt="Groflex Retail Insights Visual"
+                  src="/lovable-uploads/businessleaders.png"
+                  alt="Groflex Business Insights Visual"
                   className="w-full max-w-xs h-auto object-contain"
                 />
               </div>
@@ -129,12 +128,12 @@ const Retail = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex helped our merchandising and ops teams work from the same
-            signal—no more guesswork. It’s completely reshaped our store
-            performance strategy.”
+            “Groflex gave us clarity we never had before—connecting the dots
+            across operations, finance, and sales. It’s become a core part of
+            how we lead.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
-            — Head of Retail Ops, National Apparel Chain
+            — CEO, Multinational Enterprise
           </p>
         </FuturisticCard>
       </section>
@@ -142,17 +141,17 @@ const Retail = () => {
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-r from-brand-purple to-brand-coral text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-10">
-          Ready to transform how your stores run?
+          Want to steer your business with confidence?
         </h2>
         <Link
           to="/contactus"
           className="bg-black text-white font-semibold text-lg py-4 px-8 rounded-full shadow-xl hover:bg-gray-900 transition"
         >
-          Talk to Sales
+          Talk to Our Team
         </Link>
       </section>
     </Layout>
   );
 };
 
-export default Retail;
+export default BusinessLeaders;
