@@ -93,7 +93,7 @@ const Navigation = () => {
               className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
             >
               <img
-                style={{ height: "35px", width: "110px" }}
+                style={{ height: "45px", width: "135px" }}
                 src="/lovable-uploads/headerlogo.png"
                 alt="Groflex Logo"
                 className="h-5 w-auto sm:h-6 md:h-7 lg:h-8"
@@ -115,7 +115,7 @@ const Navigation = () => {
                     >
                       <Link
                         to={item.path}
-                        className={`text-base lg:text-lg transition-colors duration-200 ${
+                        className={`text-base lg:text-xl transition-colors duration-200 ${
                           isActive(item.path) ||
                           Object.values(solutionsDropdownItems)
                             .flat()
@@ -163,7 +163,7 @@ const Navigation = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`text-base lg:text-lg transition-colors duration-200 ${
+                      className={`text-base lg:text-xl transition-colors duration-200 ${
                         isActive(item.path)
                           ? "text-brand-purple"
                           : "text-white/80 hover:text-brand-purple"

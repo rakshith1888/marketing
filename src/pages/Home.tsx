@@ -707,7 +707,7 @@ const sliderSettings = {
       </section>
 
       {/* 10. PARTNERSHIPS SECTION */}
-      <section className="bg-black py-20 px-4 md:px-10 lg:px-20 text-center">
+      <section className="bg-black py-20 text-center w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-gradient">Partnerships</span>
@@ -718,20 +718,22 @@ const sliderSettings = {
           reliable, scalable, and cutting-edge solutions.
         </p>
 
-        <div className="mb-12 bg-gradient-purple">
-          <Slider {...sliderSettings}>
-            {partnershipLogos.map((logo, idx) => (
-              <div key={idx} className="flex justify-center items-center p-4">
-                <div className="w-40 h-36 flex justify-center items-center ">
-                  <img
-                    src={logo}
-                    alt={`Partner logo ${idx + 1}`}
-                    className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  />
+        <div className="mb-12 bg-gradient-purple w-full">
+          <div className="w-full">
+            <Slider {...sliderSettings}>
+              {partnershipLogos.map((logo, idx) => (
+                <div key={idx} className="flex justify-center items-center p-4">
+                  <div className="w-40 h-36 flex justify-center items-center">
+                    <img
+                      src={logo}
+                      alt={`Partner logo ${idx + 1}`}
+                      className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
 
