@@ -17,7 +17,7 @@ const DataAnalysts = () => {
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex empowers analysts to move past charts and into the
-            boardroom—by answering the ‘why’ and recommending the ‘what next’.
+            boardroom by answering the ‘why’ and recommending the ‘what next’.
           </p>
 
           <Link
@@ -36,8 +36,8 @@ const DataAnalysts = () => {
             Why Analysts Struggle to Drive Business Action
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Data analysts often produce visualizations and summaries—but lack
-            the tools to identify cross-functional causality or predict
+            Data analysts often produce visualizations and summaries but lack
+            the tools to identify cross functional causality or predict
             outcomes. Groflex brings advanced modeling to every analyst’s
             fingertips.
           </p>
@@ -48,9 +48,9 @@ const DataAnalysts = () => {
                 Beyond Dashboards
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
-                Groflex enables analysts to go deeper—moving past KPIs and trend
-                lines to explain *why* something happened, and suggest *what to
-                do next*. From modeling relationships to surfacing patterns
+                Groflex enables analysts to go deeper moving past KPIs and trend
+                lines to explain 'why' something happened, and suggest 'what to
+                do next'. From modeling relationships to surfacing patterns
                 across systems, it equips analysts to drive strategic impact.
               </p>
             </div>
@@ -79,7 +79,7 @@ const DataAnalysts = () => {
                     </span>
                     <span>
                       An analyst used Groflex to prove that customer lifetime
-                      value was tied to onboarding time—leading to a{" "}
+                      value was tied to onboarding time leading to a{" "}
                       <strong>19% process overhaul</strong>.
                     </span>
                   </li>
@@ -89,7 +89,7 @@ const DataAnalysts = () => {
                     </span>
                     <span>
                       Groflex accelerated root cause analysis on a spike in
-                      returns—finding it linked to a specific{" "}
+                      returns and finding it linked to a specific{" "}
                       <strong>supplier SKU issue</strong>.
                     </span>
                   </li>
@@ -100,7 +100,7 @@ const DataAnalysts = () => {
                     <span>
                       Analysts became <strong>3× more productive</strong> by
                       automating correlation scans across hundreds of
-                      KPIs—freeing time for strategic projects.
+                      KPIs , freeing time for strategic projects.
                     </span>
                   </li>
                 </ul>
@@ -129,7 +129,7 @@ const DataAnalysts = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “Groflex helped us bridge the gap between analysis and action. We no
-            longer just report results—we influence them.”
+            longer just report results we influence them.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
             — Lead Analyst, Fortune 500 Company

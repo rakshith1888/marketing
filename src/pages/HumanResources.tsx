@@ -36,7 +36,7 @@ const HumanResources = () => {
             Why HR Teams Struggle to Connect People Data to Business Results
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
-            HR has rich data on talent, performance, and engagement—but it’s
+            HR has rich data on talent, performance, and engagement, but it’s
             rarely linked to business results. Groflex bridges that gap and
             helps HR forecast risk, retention, and role readiness with
             precision.
@@ -50,7 +50,7 @@ const HumanResources = () => {
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 While most HR platforms report on headcount and sentiment,
                 Groflex delivers predictive insight into how workforce dynamics
-                impact business outcomes—helping HR leaders drive action with
+                impact business outcomes , helping HR leaders drive action with
                 clarity and foresight.
               </p>
             </div>
@@ -79,7 +79,7 @@ const HumanResources = () => {
                     </span>
                     <span>
                       Groflex linked absenteeism in a business unit to rising
-                      voluntary churn—early action improved retention by{" "}
+                      voluntary churn early action improved retention by{" "}
                       <strong>18%</strong>.
                     </span>
                   </li>
@@ -89,7 +89,7 @@ const HumanResources = () => {
                     </span>
                     <span>
                       A tech firm used Groflex to identify misaligned comp
-                      structures tied to underperformance—adjustments lifted
+                      structures tied to underperformance and adjustments lifted
                       team output <strong>12%</strong>.
                     </span>
                   </li>
@@ -129,7 +129,7 @@ const HumanResources = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “Groflex helped us connect workforce engagement metrics to
-            real-world business outcomes. It’s changed how we invest in our
+            real world business outcomes. It’s changed how we invest in our
             people.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">

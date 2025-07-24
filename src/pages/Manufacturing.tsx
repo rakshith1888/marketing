@@ -16,7 +16,7 @@ const Manufacturing = () => {
           </h1>
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
-            Groflex connects machine-level data, staffing patterns, and supply
+            Groflex connects machine level data, staffing patterns, and supply
             logistics to deliver actionable insights for production leaders.
           </p>
 
@@ -33,11 +33,11 @@ const Manufacturing = () => {
       <section className="pt-28 pb-16 px-6 bg-black from-[#0a0014] via-black to-[#0a0014]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-10 leading-snug">
-            Why Manufacturing Leaders Miss Root-Cause Disruptions
+            Why Manufacturing Leaders Miss Root Cause Disruptions
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             Manufacturing executives are flooded with throughput and quality
-            dashboards—but still struggle to anticipate downtime, waste, and
+            dashboards but still struggle to anticipate downtime, waste, and
             bottlenecks. Groflex uses predictive models to identify the root
             cause behind disruptions and cost overruns.
           </p>
@@ -50,7 +50,7 @@ const Manufacturing = () => {
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 While standard dashboards show lagging production metrics,
                 Groflex brings forward-looking insights by connecting machine
-                performance, operator shifts, and supplier delays—so operations
+                performance, operator shifts, and supplier delays. So operations
                 leaders can reduce waste, increase uptime, and protect margins.
               </p>
             </div>
@@ -80,7 +80,7 @@ const Manufacturing = () => {
                     <span>
                       A global parts manufacturer reduced unplanned downtime by{" "}
                       <strong>22%</strong> after Groflex identified
-                      early-warning trends in shift-level scrap rates.
+                      early warning trends in shift level scrap rates.
                     </span>
                   </li>
                   <li className="grid gap-y-1">
@@ -99,7 +99,7 @@ const Manufacturing = () => {
                     </span>
                     <span>
                       Groflex flagged underutilized production lines that were
-                      driving overhead costs <strong>9%</strong> higher—
+                      driving overhead costs <strong>9%</strong> higher 
                       resulting in a consolidation plan that saved{" "}
                       <strong>$3.2M</strong>.
                     </span>
@@ -129,7 +129,7 @@ const Manufacturing = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex gave us a unified view of production risks—letting us act
+            “Groflex gave us a unified view of production risks , letting us act
             before costs hit the bottom line. It’s a game changer for ops
             planning.”
           </blockquote>

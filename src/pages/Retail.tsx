@@ -11,7 +11,7 @@ const Retail = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-snug md:leading-[1.3] tracking-tight break-words">
-            <span className="block">From Shelf to Sale—</span>
+            <span className="block">From Shelf to Sale</span>
             <span className="block">Smarter Inventory, Better Margins</span>
           </h1>
 
@@ -33,13 +33,13 @@ const Retail = () => {
       <section className="pt-28 pb-16 px-6 bg-black from-[#0a0014] via-black to-[#0a0014]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-10 leading-snug">
-            Why Retailers Struggle to Act on Store-Level Data
+            Why Retailers Struggle to Act on Store Level Data
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             Retailers are drowning in data from POS systems, loyalty programs,
-            and store ops—but they still can’t tell what’s driving changes in
-            performance. Groflex reveals the cause-and-effect dynamics behind
-            store-level KPIs.
+            and store ops. But they still can’t tell what’s driving changes in
+            performance. Groflex reveals the cause and effect dynamics behind
+            store level KPIs.
           </p>
 
           <div className="bg-[#12001e] p-10 rounded-2xl shadow-xl border border-white/10 flex flex-col md:flex-row items-start gap-6 text-left">
@@ -49,7 +49,7 @@ const Retail = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Groflex bridges the gap between operational data and business
-                decisions—revealing the real drivers behind sales, inventory
+                decisions, revealing the real drivers behind sales, inventory
                 turns, and labor performance so teams can act fast and improve
                 outcomes.
               </p>
@@ -79,7 +79,7 @@ const Retail = () => {
                     </span>
                     <span>
                       Groflex detected that underperformance in a region was
-                      driven by low in-stock availability on key SKUs—
+                      driven by low in stock availability on key SKUs 
                       corrective action increased weekly sales by{" "}
                       <strong>17%</strong>.
                     </span>
@@ -99,9 +99,9 @@ const Retail = () => {
                       Use Case 3:
                     </span>
                     <span>
-                      Labor-to-sales ratio improved <strong>12%</strong> when
+                      Labor to sales ratio improved <strong>12%</strong> when
                       Groflex aligned staff schedules to predicted footfall
-                      patterns across high-traffic hours.
+                      patterns across high traffic hours.
                     </span>
                   </li>
                 </ul>
@@ -130,7 +130,7 @@ const Retail = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “Groflex helped our merchandising and ops teams work from the same
-            signal—no more guesswork. It’s completely reshaped our store
+            signal and no more guesswork. It’s completely reshaped our store
             performance strategy.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">

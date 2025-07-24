@@ -17,7 +17,7 @@ const FinanceandAccounting = () => {
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex empowers finance teams to forecast, optimize, and advise
-            with foresight—not hindsight.
+            with foresight and not hindsight.
           </p>
 
           <Link
@@ -37,7 +37,7 @@ const FinanceandAccounting = () => {
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             Finance teams spend weeks closing books and explaining variances.
-            Groflex turns that time into strategic advantage—surfacing
+            Groflex turns that time into strategic advantage by surfacing
             predictive financial signals across all business lines.
           </p>
 
@@ -48,8 +48,8 @@ const FinanceandAccounting = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Traditional reporting is retrospective. Groflex gives
-                forward-looking visibility into cost risks, margin compression,
-                and spend inefficiencies across departments—empowering finance
+                forward looking visibility into cost risks, margin compression,
+                and spend inefficiencies across departments empowering finance
                 to act early and advise better.
               </p>
             </div>
@@ -78,7 +78,7 @@ const FinanceandAccounting = () => {
                     </span>
                     <span>
                       Groflex identified a hidden drop in gross margin tied to
-                      COGS volatility—prompting early renegotiation of supply
+                      COGS volatility by prompting early renegotiation of supply
                       contracts.
                     </span>
                   </li>
@@ -88,7 +88,7 @@ const FinanceandAccounting = () => {
                     </span>
                     <span>
                       FP&A used Groflex to model revenue scenarios based on
-                      channel performance—leading to <strong>$1.1M</strong> in
+                      channel performance leading to <strong>$1.1M</strong> in
                       smarter spend shifts.
                     </span>
                   </li>

@@ -17,7 +17,7 @@ const IT = () => {
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex brings predictive intelligence to IT capacity, risk, and
-            performance—helping teams get ahead of demand.
+            performance and helping teams get ahead of demand.
           </p>
 
           <Link
@@ -49,7 +49,7 @@ const IT = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Most IT teams spend more time reacting than planning. Groflex
-                gives them proactive signal intelligence—helping reduce ticket
+                gives them proactive signal intelligence by helping reduce ticket
                 volume, preempt bottlenecks, and align infrastructure with
                 business needs.
               </p>
@@ -82,7 +82,7 @@ const IT = () => {
                 <p className="font-semibold text-white">Use Case 2:</p>
                 <p>
                   A SaaS firm flagged aging infrastructure as the cause of
-                  hidden latency—new investment plan cut support tickets by{" "}
+                  hidden latency and new investment plan cut support tickets by{" "}
                   <strong>23%</strong>.
                 </p>
               </div>
@@ -90,7 +90,7 @@ const IT = () => {
                 <p className="font-semibold text-white">Use Case 3:</p>
                 <p>
                   IT used Groflex to anticipate app demand spikes during
-                  promos—avoiding outages and saving <strong>$150K</strong> in
+                  promos by avoiding outages and saving <strong>$150K</strong> in
                   potential SLA penalties.
                 </p>
               </div>
@@ -107,7 +107,7 @@ const IT = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “Groflex helped our IT team finally get ahead of demand. Now we act
-            on signals—not tickets.”
+            on signals and not tickets.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
             — Head of IT, Global SaaS Platform

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import FuturisticCard from "../components/FuturisticCard";
 import { TicketPercent, Check } from "lucide-react";
@@ -19,12 +20,16 @@ import {
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(true);
+  const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
 
   const handleGetStarted = () => {
     window.open("https://app.groflex.ai", "_blank");
   };
 
-  const [copied, setCopied] = useState(false);
+  const handleContactUs = () => {
+    navigate("/Contactus");
+  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText("WELCOMEAI30");
@@ -53,7 +58,6 @@ const Pricing = () => {
       features: [
         { label: "Target Users", value: "Mid-sized businesses" },
         { label: "Value Focus", value: "Productivity & automation" },
-        // { label: "Monthly Price", value: "$999/month" },
         { label: "Users", value: "5" },
         { label: "AI Questions / Month", value: "5,000" },
         { label: "Data Size", value: "15GB" },
@@ -69,7 +73,6 @@ const Pricing = () => {
           label: "Value Focus",
           value: "Strategic impact + full customization",
         },
-        // { label: "Monthly Price", value: "Custom" },
         { label: "Users", value: "Custom" },
         { label: "AI Questions / Month", value: "Custom" },
         { label: "Data Size", value: "Custom" },
@@ -78,9 +81,7 @@ const Pricing = () => {
     },
   ];
 
-  // Updated table data with section headers based on Excel image
   const tableFeatures = [
-    // Data Storage Section
     { feature: "Data Storage", growth: "", enterprise: "", isHeader: true },
     {
       feature: "Files, Relational Databases",
@@ -89,7 +90,6 @@ const Pricing = () => {
     },
     { feature: "Data Size", growth: "15GB", enterprise: "Custom" },
 
-    // Data Preparation and Synthesis Section
     {
       feature: "Data Preparation and Synthesis",
       growth: "",
@@ -102,7 +102,6 @@ const Pricing = () => {
     { feature: "Data Customization", growth: "No", enterprise: "Yes" },
     { feature: "Data Quality Checks", growth: "Yes", enterprise: "Yes" },
 
-    // Insights and Visualizations Section
     {
       feature: "Insights and Visualizations",
       growth: "",
@@ -122,7 +121,6 @@ const Pricing = () => {
     },
     { feature: "Narratives", growth: "Yes", enterprise: "Yes" },
 
-    // Predictions and Prescriptions Section
     {
       feature: "Predictions and Prescriptions",
       growth: "",
@@ -134,7 +132,6 @@ const Pricing = () => {
     { feature: "Detailed Reports", growth: "No", enterprise: "Yes" },
     { feature: "Custom code modeling", growth: "No", enterprise: "Yes" },
 
-    // Agentic AI and Actions Section
     {
       feature: "Agentic AI and Actions",
       growth: "",
@@ -170,7 +167,6 @@ const Pricing = () => {
     },
     { feature: "AI Questions", growth: "5000", enterprise: "Custom" },
 
-    // Terms and Users Section
     { feature: "Terms and Users", growth: "", enterprise: "", isHeader: true },
     { feature: "Users", growth: "5", enterprise: "Custom" },
     { feature: "Share Dashboards", growth: "Yes", enterprise: "Yes" },
@@ -178,10 +174,6 @@ const Pricing = () => {
   ];
 
   const faqs = [
-    // {
-    //   q: "Can I upgrade or downgrade my plan?",
-    //   a: "Yes, you can change your plan at any time. Changes take effect immediately.",
-    // },
     {
       q: "Is there a free trial available?",
       a: "We offer a 30-day free trial for all plans. No credit card required.",
@@ -212,38 +204,12 @@ const Pricing = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="text-gradient">Pricing</span>
             </h1>
-            <p className="text-xl text-white/80 dark:text-white/80 light:text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Choose the perfect plan for your business needs. All plans include
               our core features.
             </p>
           </div>
 
-          {/* <div className="flex justify-center mb-12">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/20 light:border-black/20 rounded-full p-2 flex">
-              <button
-                onClick={() => setIsYearly(true)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  isYearly
-                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white"
-                    : "text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground"
-                }`}
-              >
-                Yearly (Save 20%)
-              </button>
-              <button
-                onClick={() => setIsYearly(false)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  !isYearly
-                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white"
-                    : "text-white/80 dark:text-white/80 light:text-foreground/80 hover:text-white dark:hover:text-white light:hover:text-foreground"
-                }`}
-              >
-                Monthly
-              </button>
-            </div>
-          </div> */}
-
-          {/* Pricing Cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
             {plans.map((plan, index) => (
               <div
@@ -251,24 +217,16 @@ const Pricing = () => {
                 className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border ${
                   plan.popular
                     ? "border-brand-purple/60 shadow-lg shadow-brand-purple/20"
-                    : "border-white/20 dark:border-white/20 light:border-black/20"
+                    : "border-white/20"
                 }`}
               >
-                {plan.popular && (
-                  // <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  //   <div className="bg-gradient-to-r from-brand-coral to-brand-purple text-white px-4 py-1 rounded-full text-m font-medium">
-                  //     30% Discount
-                  //   </div>
-                  // </div>
-
+                {/* {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <div className="w-96 h-8 bg-gradient-purple text-white px-4 py-1 rounded-full text-sm font-medium flex items-center justify-center gap-2">
-                      <div className="flex items-center gap-2">
-                        <span className="flex items-center gap-1">
-                          30% Discount on
-                          <TicketPercent className="w-5 h-4 text-white" />
-                        </span>
-                      </div>
+                      <span className="flex items-center gap-1">
+                        30% Discount on{" "}
+                        <TicketPercent className="w-5 h-4 text-white" />
+                      </span>
                       <button
                         onClick={handleCopy}
                         className="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded text-xs transition flex items-center gap-1"
@@ -284,7 +242,7 @@ const Pricing = () => {
                       </button>
                     </div>
                   </div>
-                )}
+                )} */}
 
                 <div className="text-center mb-8">
                   <h2 className="text-5xl md:text-4xl font-bold mb-6">
@@ -292,54 +250,60 @@ const Pricing = () => {
                   </h2>
                   <div className="flex items-baseline justify-center mb-6">
                     {plan.name === "Enterprise" ? (
-                      <span className="text-3xl font-bold text-white dark:text-white light:text-foreground">
+                      <span className="text-3xl font-bold text-white">
                         Custom
                       </span>
                     ) : (
-                      <div className="flex items-start space-x-1">
-                        <div className="text-4xl font-bold text-white">
-                          ${getPrice(plan.monthlyPrice)}
+                      <div className="flex flex-col items-start">
+                        <div className="flex items-baseline space-x-1">
+                          <div className="text-4xl font-bold text-white">
+                            ${getPrice(plan.monthlyPrice)}
+                          </div>
+                          <div className="text-white text-m pt-1">
+                            / month
+                          </div>
                         </div>
-                        <div className="text-white/60 leading-tight pt-5 text-center">
-                          <span className="text-m">/ monthly</span>
-                          <span className="text-[11px] ml-1">
-                            (billed yearly)
-                          </span>
+                        <div className="text-white/60 text-[11px] mt-1">
+                          30% Discount if billed yearly
                         </div>
                       </div>
                     )}
                   </div>
                 </div>
 
-                {/* Features */}
                 <div className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
                       className="flex justify-between items-start"
                     >
-                      <span className="text-white/70 dark:text-white/70 light:text-foreground/70 text-sm font-medium">
+                      <span className="text-white/70 text-sm font-medium">
                         {feature.label}:
                       </span>
-                      <span className="text-white dark:text-white light:text-foreground text-sm font-semibold text-right ml-2">
+                      <span className="text-white text-sm font-semibold text-right ml-2">
                         {feature.value}
                       </span>
                     </div>
                   ))}
                 </div>
 
-                {/* Button */}
                 <button
-                  onClick={handleGetStarted}
+                  onClick={
+                    plan.name === "Enterprise"
+                      ? handleContactUs
+                      : handleGetStarted
+                  }
                   className="w-full py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
                 >
-                  Free 30-day Trial
+                  {plan.name === "Enterprise"
+                    ? "Contact Us"
+                    : "Free 30-day Trial"}
                 </button>
               </div>
             ))}
           </div>
 
-          {/* Pricing Table - Updated with Excel data */}
+          {/* Pricing Table */}
           <FuturisticCard className="p-8 mb-16">
             <h2 className="text-2xl font-bold text-gradient text-center mb-8">
               Compare Plans
@@ -348,13 +312,13 @@ const Pricing = () => {
               <Table className="w-full">
                 <TableHeader>
                   <TableRow className="border-brand-purple/30">
-                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold text-lg">
+                    <TableHead className="text-white font-semibold text-lg">
                       Feature
                     </TableHead>
-                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold text-lg">
+                    <TableHead className="text-white font-semibold text-lg">
                       Growth
                     </TableHead>
-                    <TableHead className="text-white dark:text-white light:text-foreground font-semibold text-lg">
+                    <TableHead className="text-white font-semibold text-lg">
                       Enterprise
                     </TableHead>
                   </TableRow>
@@ -363,36 +327,36 @@ const Pricing = () => {
                   {tableFeatures.map((row, index) => (
                     <TableRow
                       key={index}
-                      className={`${
+                      className={
                         row.isHeader
                           ? "border-brand-purple/40"
                           : "border-brand-purple/20"
-                      }`}
+                      }
                     >
                       <TableCell
                         className={`${
                           row.isHeader
                             ? "text-brand-coral font-bold text-lg bg-gradient-to-r from-brand-purple/20 to-brand-coral/20 py-4"
-                            : "text-white dark:text-white light:text-foreground font-medium pl-6"
+                            : "text-white font-medium pl-6"
                         }`}
                       >
                         {row.feature}
                       </TableCell>
                       <TableCell
-                        className={`${
+                        className={
                           row.isHeader
                             ? "bg-gradient-to-r from-brand-purple/20 to-brand-coral/20"
-                            : "text-white/80 dark:text-white/80 light:text-foreground/80"
-                        }`}
+                            : "text-white/80"
+                        }
                       >
                         {row.growth}
                       </TableCell>
                       <TableCell
-                        className={`${
+                        className={
                           row.isHeader
                             ? "bg-gradient-to-r from-brand-purple/20 to-brand-coral/20"
-                            : "text-white/80 dark:text-white/80 light:text-foreground/80"
-                        }`}
+                            : "text-white/80"
+                        }
                       >
                         {row.enterprise}
                       </TableCell>
@@ -414,12 +378,12 @@ const Pricing = () => {
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="border border-white/20 dark:border-white/20 light:border-black/20 rounded-lg overflow-hidden"
+                    className="border border-white/20 rounded-lg overflow-hidden"
                   >
-                    <AccordionTrigger className="px-4 py-2 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-sm font-semibold text-white dark:text-white light:text-foreground [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
+                    <AccordionTrigger className="px-4 py-2 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-sm font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 pb-2 text-white/80 dark:text-white/80 light:text-foreground/80 bg-white/5 text-sm">
+                    <AccordionContent className="px-4 pb-2 text-white/80 bg-white/5 text-sm">
                       <p>{faq.a}</p>
                     </AccordionContent>
                   </AccordionItem>
@@ -432,7 +396,7 @@ const Pricing = () => {
             <h2 className="text-3xl font-bold text-gradient mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-white/80 dark:text-white/80 light:text-foreground/80 mb-8">
+            <p className="text-white/80 mb-8">
               Join thousands of businesses already using Groflex
             </p>
             <button

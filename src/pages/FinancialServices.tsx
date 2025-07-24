@@ -11,9 +11,9 @@ const FinancialServices = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-snug md:leading-[1.3] tracking-tight break-words">
-            <span className="block">Mitigate Risk and</span>
+            <span className="block">Mitigate Risk and Maximize</span>
             <span className="block">
-              Maximize Returns with Predictive Insight
+               Returns with Predictive Insight
             </span>
           </h1>
 
@@ -39,7 +39,7 @@ const FinancialServices = () => {
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             Banks and insurers juggle compliance, margin pressure, and customer
-            churn—often in silos. Groflex exposes the connections between KPIs
+            churn often in silos. Groflex exposes the connections between KPIs
             to protect value and reduce friction.
           </p>
 
@@ -51,7 +51,7 @@ const FinancialServices = () => {
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Traditional systems track individual metrics but fail to reveal
                 hidden dependencies. Groflex bridges silos to uncover actionable
-                signals—enabling teams to reduce risk exposure, improve
+                signals , enabling teams to reduce risk exposure, improve
                 profitability, and elevate compliance.
               </p>
             </div>
@@ -81,7 +81,7 @@ const FinancialServices = () => {
                     <span>
                       Groflex revealed that{" "}
                       <strong>23% of policy cancellations</strong> were tied to
-                      a billing system flaw—resolving it restored{" "}
+                      a billing system flaw, resolving it restored{" "}
                       <strong>$3.5M</strong> in annual premiums.
                     </span>
                   </li>
@@ -90,9 +90,9 @@ const FinancialServices = () => {
                       Use Case 2:
                     </span>
                     <span>
-                      A commercial bank flagged high-risk lending concentrations
+                      A commercial bank flagged high risk lending concentrations
                       by layering customer behavior with regional economic
-                      stressors—cutting default exposure by <strong>16%</strong>
+                      stressors and cutting default exposure by <strong>16%</strong>
                       .
                     </span>
                   </li>
@@ -102,7 +102,7 @@ const FinancialServices = () => {
                     </span>
                     <span>
                       Groflex linked customer complaints to slow claims
-                      processing on a specific product line—automating steps
+                      processing on a specific product line automating steps
                       saved <strong>18%</strong> in servicing costs.
                     </span>
                   </li>
@@ -132,7 +132,7 @@ const FinancialServices = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “Groflex helped us proactively manage compliance risks and
-            streamline decision-making across our portfolio.”
+            streamline decision making across our portfolio.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
             — Head of Risk Analytics, Leading Financial Institution

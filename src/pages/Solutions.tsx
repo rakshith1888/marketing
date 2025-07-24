@@ -17,7 +17,7 @@ const solutions = [
     pain: "Can't get cross-functional visibility",
     gain: "Forecasting + ROI metrics on day 1",
     description:
-      "See where you're heading and what to do about it—before others do.",
+      "See where you're heading and what to do about it before others do.",
     icon: "👔",
     features: [
       "Executive Dashboards",

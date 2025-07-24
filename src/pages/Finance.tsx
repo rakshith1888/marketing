@@ -48,7 +48,7 @@ const Finance = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 While finance teams report on what happened, Groflex helps them
-                understand what’s about to happen—so they can proactively manage
+                understand what’s about to happen, so they can proactively manage
                 revenue, cost, and margin levers before issues arise.
               </p>
             </div>
@@ -76,8 +76,8 @@ const Finance = () => {
                       Use Case 1:
                     </span>
                     <span>
-                      Groflex flagged a high-margin customer segment with
-                      declining renewals—alerting FP&amp;A to adjust revenue
+                      Groflex flagged a high margin customer segment with
+                      declining renewals and alerting FP&amp;A to adjust revenue
                       forecast assumptions by <strong>$2.3M</strong>.
                     </span>
                   </li>
@@ -88,7 +88,7 @@ const Finance = () => {
                     <span>
                       A SaaS finance team used Groflex to identify pricing plan
                       churn risk <strong>60 days earlier</strong> than LTV
-                      models—boosting NRR by <strong>7%</strong>.
+                      models , boosting NRR by <strong>7%</strong>.
                     </span>
                   </li>
                   <li className="grid gap-y-1">
@@ -126,7 +126,7 @@ const Finance = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex gave us real-time signals we never had before—making our
+            “Groflex gave us real-time signals we never had before , making our
             forecasts tighter and decisions sharper.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">

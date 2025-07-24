@@ -43,9 +43,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-black border-t border-gradient-to-r from-brand-purple to-brand-coral py-14 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-12">
         {/* Company Info */}
-        <div className="space-y-6">
+        <div className="space-y-6 col-span-1 md:col-span-1">
           <img
             src="/lovable-uploads/headerlogo.png"
             alt="Groflex Logo"
@@ -63,15 +63,35 @@ const Footer = () => {
               <p className="font-semibold text-foreground/80 mb-1">
                 Satellite Offices
               </p>
-              <p>India</p>
-              <p>Germany</p>
-              <p>Qatar</p>
+              <div>
+                <p className="font-semibold text-foreground/80 mb-1">India</p>
+                <p>Groflex Technology Pvt. Ltd.</p>
+                <p>
+                  42, P5, Kudlu Main Rd, Muneshwara Layout, Haralukunte,
+                  Muneshwara Nagar, Benglauri 560068, Karnataka, India
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-foreground/80 mb-1">Germany</p>
+                <p>Groflex Technology U.G.</p>
+                <p>
+                  Tech Hub K67, Kasernenstraße 67, 40213 Düsseldorf, Germany.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-foreground/80 mb-1">Qatar</p>
+                <p>Groflex Technology LLC</p>
+                <p>
+                  QFC Business Centre, Office No. 8, situated at First Floor,
+                  QFC Tower 1, West Bay, Doha
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Legal Links */}
-        <div>
+        <div className="col-span-1">
           <h3 className="text-foreground font-semibold mb-4">Legal</h3>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             {legalLinks.map((link) => (
@@ -88,7 +108,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links */}
-        <div>
+        <div className="col-span-1">
           <h3 className="text-foreground font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
             {socialLinks.map((social) => {
@@ -107,6 +127,23 @@ const Footer = () => {
             })}
           </div>
         </div>
+
+        {/* Google Map Embed */}
+        {/* <div className="col-span-1">
+          <h3 className="text-foreground font-semibold mb-4">Our Locations</h3>
+          <div className="w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg border border-brand-purple/30">
+            <iframe
+              title="Groflex Locations"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/d/embed?mid=1TCUlb70Hskj0KNYSja1tq7WS0V-XhBc&ehbc=2E312F"
+            ></iframe>
+          </div>
+        </div> */}
       </div>
 
       {/* Bottom Divider */}

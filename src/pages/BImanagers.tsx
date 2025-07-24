@@ -11,13 +11,13 @@ const BImanagers = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-snug md:leading-[1.3] tracking-tight break-words">
-            <span className="block">Go Beyond Dashboards—</span>
+            <span className="block">Go Beyond Dashboards</span>
             <span className="block">Deliver Strategic Answers</span>
           </h1>
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex equips BI leaders to produce proactive, predictive,
-            decision-ready outputs for executive teams.
+            decision ready outputs for executive teams.
           </p>
 
           <Link
@@ -37,7 +37,7 @@ const BImanagers = () => {
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             BI teams are overwhelmed with requests for views, charts, and
-            dashboards—but often can’t explain what’s causing trends. Groflex
+            dashboards but often can’t explain what’s causing trends. Groflex
             enables your team to surface insights, not just data.
           </p>
 
@@ -47,8 +47,8 @@ const BImanagers = () => {
                 Moving Beyond Report Generation
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
-                Groflex transforms the role of BI teams—from reactive reporting
-                to proactive strategy—by connecting fragmented data and
+                Groflex transforms the role of BI teams from reactive reporting
+                to proactive strategy and by connecting fragmented data and
                 surfacing predictive insights that executive teams can act on
                 with confidence.
               </p>
@@ -88,7 +88,7 @@ const BImanagers = () => {
                     </span>
                     <span>
                       The team delivered insights that connected customer churn
-                      to supply chain delays—leading to operational fixes that
+                      to supply chain delays and leading to operational fixes that
                       cut churn <strong>15%</strong>.
                     </span>
                   </li>
@@ -98,7 +98,7 @@ const BImanagers = () => {
                     </span>
                     <span>
                       BI used Groflex to embed auto-generated ‘why-this-moved’
-                      analysis into dashboards—saving{" "}
+                      analysis into dashboards saving{" "}
                       <strong>15 analyst hours per week</strong>.
                     </span>
                   </li>
@@ -127,7 +127,7 @@ const BImanagers = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex changed the way our BI team supports the business—from
+            “Groflex changed the way our BI team supports the business from
             static dashboards to dynamic answers. Executives now ask us what
             we’re seeing, not just what happened.”
           </blockquote>

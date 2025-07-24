@@ -17,7 +17,7 @@ const Ecommerce = () => {
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex gives e-commerce teams clarity on what drives bounce,
-            conversion, and repeat purchases—then tells them what to do next.
+            conversion, and repeat purchases and tells them what to do next.
           </p>
 
           <Link
@@ -38,7 +38,7 @@ const Ecommerce = () => {
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             E-commerce teams are inundated with site metrics, cart behavior, and
             channel analytics, but struggle to pinpoint what truly influences
-            conversion. Groflex identifies hidden patterns in funnel drop-off
+            conversion. Groflex identifies hidden patterns in funnel drop off
             and customer behavior and recommends action with measurable ROI.
           </p>
 
@@ -49,7 +49,7 @@ const Ecommerce = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Groflex uncovers behavioral patterns across bounce, cart, and
-                repeat visit data—connecting signals from marketing,
+                repeat visit data connecting signals from marketing,
                 merchandising, and CX to tell you what to optimize for higher
                 conversion and retention.
               </p>
@@ -80,7 +80,7 @@ const Ecommerce = () => {
                     <span>
                       A consumer brand saw a <strong>28% increase</strong> in
                       cart conversion after Groflex recommended bundling
-                      underperforming items with top-sellers based on behavioral
+                      underperforming items with top sellers based on behavioral
                       clusters.
                     </span>
                   </li>
@@ -90,7 +90,7 @@ const Ecommerce = () => {
                     </span>
                     <span>
                       Groflex linked a spike in churn to delayed email campaign
-                      timing—shifting cadence restored retention rates by{" "}
+                      timing shifting cadence restored retention rates by{" "}
                       <strong>14%</strong>.
                     </span>
                   </li>
@@ -131,7 +131,7 @@ const Ecommerce = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “We were flying blind on what drove drop-off. Groflex showed us the
-            gaps—and told us exactly what to change to win more customers.”
+            gaps and told us exactly what to change to win more customers.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
             — Head of Growth, D2C Brand

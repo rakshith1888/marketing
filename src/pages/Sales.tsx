@@ -12,12 +12,12 @@ const Sales = () => {
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-snug md:leading-[1.3] tracking-tight break-words">
             <span className="block">See What’s Driving</span>
-            <span className="block">(or Blocking) Your Pipeline</span>
+            <span className="block">or Blocking Your Pipeline</span>
           </h1>
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex helps sales teams focus on the activities and accounts that
-            move the needle—based on predictive indicators.
+            move the needle. Based on predictive indicators.
           </p>
 
           <Link
@@ -38,7 +38,7 @@ const Sales = () => {
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             Sales dashboards show funnel progression, but not the ‘why’ behind
             shifts. Groflex connects CRM, outreach, marketing, and finance
-            signals to prescribe what reps and managers should focus on—now.
+            signals to prescribe what reps and managers should focus on now.
           </p>
 
           <div className="bg-[#12001e] p-10 rounded-2xl shadow-xl border border-white/10 flex flex-col md:flex-row items-start gap-6 text-left">
@@ -48,8 +48,8 @@ const Sales = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 While traditional dashboards show lagging metrics, Groflex gives
-                forward-looking insight into what actions improve
-                outcomes—helping sales teams optimize deal velocity, prioritize
+                forward looking insight into what actions improve
+                outcomes and helping sales teams optimize deal velocity, prioritize
                 accounts, and increase win rates.
               </p>
             </div>
@@ -78,8 +78,8 @@ const Sales = () => {
                     </span>
                     <span>
                       Groflex revealed that slow approvals in legal were
-                      delaying <strong>22% of late-stage deals</strong>
-                      —streamlining cut sales cycle time by{" "}
+                      delaying <strong>22% of late stage deals </strong>
+                      and streamlining cut sales cycle time by{" "}
                       <strong>9 days</strong>.
                     </span>
                   </li>
@@ -100,7 +100,7 @@ const Sales = () => {
                     </span>
                     <span>
                       Reps reprioritized stalled pipeline based on Groflex’s
-                      churn-risk alerts—recovering <strong>$740K</strong> in
+                      churn risk alerts recovering <strong>$740K</strong> in
                       forecasted revenue.
                     </span>
                   </li>

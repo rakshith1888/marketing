@@ -20,7 +20,7 @@ const Marketing = () => {
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             
-            Groflex shows marketers not just what’s working—but why—and what to
+            Groflex shows marketers not just what’s working but why and what to
             do next.
           </p>
 
@@ -51,7 +51,7 @@ const Marketing = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Marketing teams analyze performance metrics, test strategies,
-                and launch campaigns—but they often lack a connected view across
+                and launch campaigns, but they often lack a connected view across
                 channels and time. Groflex helps illuminate what’s working,
                 where delays happen, and how to optimize handoffs, budget, and
                 timing to drive results.
@@ -78,20 +78,20 @@ const Marketing = () => {
                   <li>
                     <strong>Use Case 1:</strong> Groflex found that{" "}
                     <strong>42% of paid search leads</strong> were stalling due
-                    to sales queue delays—fixing handoffs lifted{" "}
-                    <strong>MQL-to-SQL conversion by 19%</strong>.
+                    to sales queue delays and fixing handoffs lifted{" "}
+                    <strong>MQL to SQL conversion by 19%</strong>.
                   </li>
                   <li>
                     <strong>Use Case 2:</strong> A B2B SaaS firm reallocated{" "}
-                    <strong>18% of budget</strong> to under-tapped influencer
-                    campaigns after Groflex tied them to multi-touch revenue
+                    <strong>18% of budget</strong> to under tapped influencer
+                    campaigns after Groflex tied them to multi touch revenue
                     acceleration.
                   </li>
                   <li>
                     <strong>Use Case 3:</strong> Groflex identified that
-                    early-funnel content was driving{" "}
+                    early funnel content was driving{" "}
                     <strong>sales cycle compression</strong> in certain
-                    geos—replicating that content improved{" "}
+                    geos replicating that content improved{" "}
                     <strong>close rates by 11%</strong>.
                   </li>
                 </ul>
@@ -118,7 +118,7 @@ const Marketing = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex helped our team see what truly drives performance—and where
+            “Groflex helped our team see what truly drives performance and where
             we were wasting spend. It changed how we plan campaigns.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">

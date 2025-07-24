@@ -17,7 +17,7 @@ const BusinessLeaders = () => {
 
           <p className="text-xl text-foreground opacity-80 mt-12 mb-16 leading-relaxed">
             Groflex tells CEOs, COOs, and GMs what’s really affecting
-            performance across departments—before it hits the bottom line.
+            performance across departments , before it hits the bottom line.
           </p>
 
           <Link
@@ -36,9 +36,9 @@ const BusinessLeaders = () => {
             Why Leaders Struggle to Drive Coordinated Action
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Executives get reports and dashboards from every department—but they
+            Executives get reports and dashboards from every department but they
             still don’t know what actions to take. Groflex connects
-            cross-functional data to reveal causal relationships and prescribe
+            cross functional data to reveal causal relationships and prescribe
             next best actions.
           </p>
 
@@ -49,8 +49,8 @@ const BusinessLeaders = () => {
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Most dashboards focus on siloed outcomes. Groflex finds the
-                signals that link them—so leaders can intervene with confidence
-                and make data-backed decisions that actually move the needle.
+                signals that link them , so leaders can intervene with confidence
+                and make data backed decisions that actually move the needle.
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ const BusinessLeaders = () => {
                     </span>
                     <span>
                       A COO used Groflex to discover that sales slowdowns were
-                      driven by delays in onboarding—fixing it improved
+                      driven by delays in onboarding and fixing it improved
                       quarterly revenue by <strong>$2.7M</strong>.
                     </span>
                   </li>
@@ -89,7 +89,7 @@ const BusinessLeaders = () => {
                     <span>
                       Groflex revealed that declining customer satisfaction
                       stemmed from staffing misalignment during peak support
-                      hours—intervention boosted NPS by{" "}
+                      hours , intervention boosted NPS by{" "}
                       <strong>11 points</strong>.
                     </span>
                   </li>
@@ -99,7 +99,7 @@ const BusinessLeaders = () => {
                     </span>
                     <span>
                       A CEO used Groflex insights to reallocate budget from
-                      underperforming regions to high-growth segments—improving{" "}
+                      underperforming regions to high growth segments improving{" "}
                       <strong>EBITDA margin by 3.4%</strong>.
                     </span>
                   </li>
@@ -128,7 +128,7 @@ const BusinessLeaders = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “Groflex gave us clarity we never had before—connecting the dots
+            “Groflex gave us clarity we never had before connecting the dots
             across operations, finance, and sales. It’s become a core part of
             how we lead.”
           </blockquote>

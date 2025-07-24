@@ -36,8 +36,8 @@ const Operations = () => {
             Why Operations Teams Struggle to See the Root Cause
           </h2>
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Operations leaders often chase symptoms—missed SLAs, excess costs,
-            underperformance—without visibility into the root causes. Groflex
+            Operations leaders often chase symptoms and missed SLAs, excess costs,
+            underperformance without visibility into the root causes. Groflex
             unifies operational data across teams and systems to spotlight
             what’s causing friction and what to fix.
           </p>
@@ -45,7 +45,7 @@ const Operations = () => {
           <div className="bg-[#12001e] p-10 rounded-2xl shadow-xl border border-white/10 flex flex-col md:flex-row items-start gap-6 text-left">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-3">
-                No More Guesswork—Only Actionable Visibility
+                No More Guesswork , Only Actionable Visibility
               </h3>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Traditional ops metrics highlight issues after the fact. Groflex
@@ -78,7 +78,7 @@ const Operations = () => {
                     </span>
                     <span>
                       A logistics firm used Groflex to predict late deliveries
-                      based on weather and vendor capacity data—on-time rate
+                      based on weather and vendor capacity data on time rate
                       improved by <strong>14%</strong>.
                     </span>
                   </li>
@@ -88,7 +88,7 @@ const Operations = () => {
                     </span>
                     <span>
                       Groflex identified underused warehouse space causing slow
-                      pick rates—redistribution boosted throughput by{" "}
+                      pick rates and redistribution boosted throughput by{" "}
                       <strong>22%</strong>.
                     </span>
                   </li>
@@ -127,7 +127,7 @@ const Operations = () => {
           className="max-w-3xl mx-auto text-center p-12"
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
-            “With Groflex, we no longer react to problems—we prevent them. It’s
+            “With Groflex, we no longer react to problems and we prevent them. It’s
             become essential for keeping our operations agile and efficient.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">

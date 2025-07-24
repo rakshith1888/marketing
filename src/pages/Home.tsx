@@ -109,7 +109,7 @@ const sliderSettings = {
       icon: <Brain className="w-8 h-8" />,
       title: "AI for Everyone",
       description:
-        "Natural language interface works across all roles—executives to analysts",
+        "Natural language interface works across all roles from executives to analysts",
     },
   ];
 
@@ -117,7 +117,7 @@ const sliderSettings = {
     {
       title: "Executives",
       description:
-        "See where you're heading and what to do about it—before others do.",
+        "See where you're heading and what to do about it before others do.",
       icon: <Briefcase className="w-12 h-12" />,
     },
     {
@@ -274,7 +274,7 @@ const sliderSettings = {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/lovable-uploads/ranks.png"
+                    src="/lovable-uploads/rank.png"
                     alt="F65 Top Company Badge"
                     className="w-1/2 mr-auto mt-6 bg-gradient-to-r from-brand-purple/30 to-brand-coral/30 p-2 rounded-xl shadow-xl backdrop-blur-sm"
                   />
@@ -309,7 +309,7 @@ const sliderSettings = {
               <span className="text-gradient">Why Can't You See</span>
               <br />
               <span className="text-white">
-                What's Coming—Or What to Do About It?
+                What's Coming or What to Do About It?
               </span>
             </h2>
           </div>
@@ -426,7 +426,7 @@ const sliderSettings = {
                 icon: <MessageSquare className="w-12 h-12" />,
                 title: "AI for Everyone",
                 description:
-                  "Natural language Q&A works across all roles—executives to analysts",
+                  "Natural language Q&A works across all roles from executives to analysts",
               },
             ].map((concept, index) => (
               <FuturisticCard
@@ -637,7 +637,7 @@ const sliderSettings = {
             <span className="text-gradient">Clarity Starts Here</span>
           </h2>
           <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
-            Whether you're leading, enabling, or building insight—Groflex helps
+            Whether you're leading, enabling, or building insight. Groflex helps
             you know what to do next
           </p>
 

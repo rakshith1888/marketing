@@ -20,7 +20,7 @@ const About = () => {
     },
     {
       title: 'Predictive Power',
-      description: 'Our AI doesn\'t just analyze the past—it illuminates the future.',
+      description: 'Our AI doesn\'t just analyze the past, it illuminates the future.',
       icon: '🔮'
     },
     {
@@ -76,7 +76,7 @@ const About = () => {
       <FuturisticCard variant="neon" className="p-12 mb-16 text-center">
         <h2 className="text-3xl font-bold text-gradient mb-6">Our Mission</h2>
         <p className="text-lg text-foreground opacity-80 max-w-3xl mx-auto">
-          To empower decision-makers with insight they can trust—instantly. We believe that in a world
+          To empower decision-makers with insight they can trust instantly. We believe that in a world
           drowning in data, what matters most is knowing what to do next.
         </p>
       </FuturisticCard>
@@ -99,7 +99,7 @@ const About = () => {
                   Groflex emerged from a simple observation: organizations have more data than ever, yet decision-makers still struggle to know what to do next. Traditional BI tools show what happened, but they don't provide the clarity leaders need to act decisively.
                 </p>
                 <p className="leading-relaxed">
-                  Our founders experienced this frustration firsthand—watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data; it was lack of actionable insight.
+                  Our founders experienced this frustration firsthand watching executives make gut decisions despite having access to sophisticated analytics platforms. The problem wasn't lack of data and  it was lack of actionable insight.
                 </p>
                 <p className="leading-relaxed">
                   Today, we're building the bridge between prediction and action, helping leaders see not just what's coming, but what to do about it.

@@ -14,6 +14,7 @@ interface SolutionTabProps {
     cta: string;
     metrics: string[];
   };
+  
 }
 
 const SolutionTab = ({ solution }: SolutionTabProps) => {

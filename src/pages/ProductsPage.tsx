@@ -30,14 +30,14 @@ const ProductsPage = () => {
     {
       icon: <Zap className="w-12 h-12" />,
       name: 'Predictive Models & Prescriptive Actions',
-      description: 'Built-in ML models that forecast risks and opportunities, plus suggested next-best actions with decision framing',
+      description: 'Built in ML models that forecast risks and opportunities, plus suggested next-best actions with decision framing',
       impact: 'Move from reactive to proactive decision-making with confidence'
     },
     {
       icon: <MessageSquare className="w-12 h-12" />,
       name: 'Natural Language Q&A',
-      description: 'Ask business questions in plain English and get context-aware recommendations instantly',
-      impact: 'Democratizes data access for all roles - no SQL or technical skills required'
+      description: 'Ask business questions in plain English and get context aware recommendations instantly',
+      impact: 'Democratizes data access for all roles  no SQL or technical skills required'
     },
     {
       icon: <Users className="w-12 h-12" />,
@@ -48,7 +48,7 @@ const ProductsPage = () => {
     {
       icon: <Lock className="w-12 h-12" />,
       name: 'Security & Governance',
-      description: 'Enterprise-grade security with SOC 2 compliance, end-to-end encryption, and comprehensive audit trails',
+      description: 'Enterprise grade security with SOC 2 compliance, end-to-end encryption, and comprehensive audit trails',
       impact: 'Trust your data is protected while maintaining full transparency'
     }
   ];
@@ -228,7 +228,7 @@ const ProductsPage = () => {
                   Existing BI Integration
                 </h3>
                 <p className="text-white/80 mb-6">
-                  Don't replace your current BI stack - enhance it. Groflex
+                  Don't replace your current BI stack. Enhance it. Groflex
                   integrates seamlessly with your existing tools and workflows.
                 </p>
                 <ul className="space-y-3">

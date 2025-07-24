@@ -111,7 +111,7 @@ const IndustrySolutions = () => {
     <section className="mt-24 px-4 sm:px-6">
       <div className="text-center mb-12">
         <h2 className="text-5xl font-bold text-gradient mb-2">
-          Clarity for Everyone No Matter Your Role, Industry, or Function"
+          Clarity for Everyone No Matter Your Role, Industry, or Function
         </h2>
         <p className="text-white/80 text-lg">
           Explore Groflex by Industry, Function, or Role

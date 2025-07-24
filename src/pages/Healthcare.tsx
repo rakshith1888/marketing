@@ -38,7 +38,7 @@ const Healthcare = () => {
           <p className="text-lg text-foreground/80 mb-16 max-w-3xl mx-auto leading-relaxed">
             Health systems are awash in data but suffer from siloed insights
             across care, finance, and ops. Groflex surfaces the true drivers
-            behind delays, denials, and cost escalation—before they become
+            behind delays, denials, and cost escalation. Before they become
             systemic.
           </p>
 
@@ -50,7 +50,7 @@ const Healthcare = () => {
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                 Traditional healthcare analytics are reactive. Groflex connects
                 insights across staffing, care, operations, and billing to
-                reveal upstream risks—empowering teams to act before breakdowns
+                reveal upstream risks and empowering teams to act before breakdowns
                 affect outcomes or finances.
               </p>
             </div>
@@ -79,7 +79,7 @@ const Healthcare = () => {
                     </span>
                     <span>
                       Groflex predicted rising ED wait times based on forecasted
-                      nurse shortages—intervention led to a{" "}
+                      nurse shortages and intervention led to a{" "}
                       <strong>22% improvement</strong> in patient satisfaction.
                     </span>
                   </li>
@@ -129,7 +129,7 @@ const Healthcare = () => {
         >
           <blockquote className="text-xl md:text-2xl italic text-foreground opacity-80 mb-6 leading-relaxed">
             “Groflex helped us act on hidden inefficiencies in patient flow and
-            reimbursement—leading to measurable improvements in both outcomes
+            reimbursement , leading to measurable improvements in both outcomes
             and margin.”
           </blockquote>
           <p className="text-sm text-foreground/60 font-semibold">
