@@ -274,7 +274,7 @@ const sliderSettings = {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/lovable-uploads/rank.png"
+                    src="/lovable-uploads/rank2.png"
                     alt="F65 Top Company Badge"
                     className="w-1/2 mr-auto mt-6 bg-gradient-to-r from-brand-purple/30 to-brand-coral/30 p-2 rounded-xl shadow-xl backdrop-blur-sm"
                   />

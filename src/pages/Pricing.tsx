@@ -99,7 +99,7 @@ const Pricing = () => {
     { feature: "No Code Data Prep", growth: "Yes", enterprise: "Yes" },
     { feature: "Data Pipeline Scheduling", growth: "Yes", enterprise: "Yes" },
     { feature: "Data Model Schemas", growth: "No", enterprise: "Yes" },
-    { feature: "Data Customization", growth: "No", enterprise: "Yes" },
+    { feature: "Data Customization", growth: "Yes", enterprise: "Yes" },
     { feature: "Data Quality Checks", growth: "Yes", enterprise: "Yes" },
 
     {
@@ -129,7 +129,7 @@ const Pricing = () => {
     },
     { feature: "Predictions with Insights", growth: "Yes", enterprise: "Yes" },
     { feature: "What If Analysis", growth: "Yes", enterprise: "Yes" },
-    { feature: "Detailed Reports", growth: "No", enterprise: "Yes" },
+    { feature: "Consolidated Reports", growth: "Yes", enterprise: "Yes" },
     { feature: "Custom code modeling", growth: "No", enterprise: "Yes" },
 
     {
@@ -165,10 +165,10 @@ const Pricing = () => {
       growth: "Yes",
       enterprise: "Yes",
     },
-    { feature: "AI Questions", growth: "5000", enterprise: "Custom" },
+    { feature: "AI Questions", growth: "15000", enterprise: "Custom" },
 
     { feature: "Terms and Users", growth: "", enterprise: "", isHeader: true },
-    { feature: "Users", growth: "5", enterprise: "Custom" },
+    { feature: "Users", growth: "5", enterprise: "Custom", isHeader: true },
     { feature: "Share Dashboards", growth: "Yes", enterprise: "Yes" },
     { feature: "Creation, Sharing of Notes", growth: "No", enterprise: "Yes" },
   ];
