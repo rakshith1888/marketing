@@ -1,64 +1,88 @@
-import Layout from '../components/Layout';
-import FuturisticCard from '../components/FuturisticCard';
-import { Brain, Zap, Shield, BarChart3, Cpu, Database, Network, MessageSquare, Users, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import Layout from "../components/Layout";
+import FuturisticCard from "../components/FuturisticCard";
+import {
+  Brain,
+  Zap,
+  Shield,
+  BarChart3,
+  Cpu,
+  Database,
+  Network,
+  MessageSquare,
+  Users,
+  Lock,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProductsPage = () => {
   const handleGetStarted = () => {
-    window.open('https://app.groflex.ai', '_blank');
+    window.open("https://app.groflex.ai", "_blank");
   };
 
   const navigate = useNavigate();
 
   const handleBookDemo = () => {
-    navigate('/Contactus');
+    navigate("/Contactus");
   };
 
   const features = [
     {
       icon: <Database className="w-12 h-12" />,
-      name: 'Data Integration Layer',
-      description: 'Seamlessly connect all your data sources with 200+ pre-built connectors and real-time sync capabilities',
-      impact: 'Eliminates data silos and ensures unified visibility across all systems'
+      name: "Data Integration Layer",
+      description:
+        "Seamlessly connect all your data sources with 200+ pre-built connectors and real-time sync capabilities",
+      impact:
+        "Eliminates data silos and ensures unified visibility across all systems",
     },
     {
       icon: <Brain className="w-12 h-12" />,
-      name: 'Groflex AI Engine',
-      description: 'Self-learning AI that continuously improves predictions and recommendations based on your business outcomes',
-      impact: 'Gets smarter with every decision, delivering increasingly accurate insights'
+      name: "Groflex AI Engine",
+      description:
+        "Self-learning AI that continuously improves predictions and recommendations based on your business outcomes",
+      impact:
+        "Gets smarter with every decision, delivering increasingly accurate insights",
     },
     {
       icon: <Zap className="w-12 h-12" />,
-      name: 'Predictive Models & Prescriptive Actions',
-      description: 'Built in ML models that forecast risks and opportunities, plus suggested next-best actions with decision framing',
-      impact: 'Move from reactive to proactive decision-making with confidence'
+      name: "Predictive Models & Prescriptive Actions",
+      description:
+        "Built in ML models that forecast risks and opportunities, plus suggested next-best actions with decision framing",
+      impact: "Move from reactive to proactive decision-making with confidence",
     },
     {
       icon: <MessageSquare className="w-12 h-12" />,
-      name: 'Natural Language Q&A',
-      description: 'Ask business questions in plain English and get context aware recommendations instantly',
-      impact: 'Democratizes data access for all roles  no SQL or technical skills required'
+      name: "Natural Language Q&A",
+      description:
+        "Ask business questions in plain English and get context aware recommendations instantly",
+      impact:
+        "Democratizes data access for all roles  no SQL or technical skills required",
     },
     {
       icon: <Users className="w-12 h-12" />,
-      name: 'Role-Based Dashboards',
-      description: 'Tailored interfaces for executives, BI managers, and analysts with role-specific insights and actions',
-      impact: 'Everyone gets the clarity they need in the format they prefer'
+      name: "Role-Based Dashboards",
+      description:
+        "Tailored interfaces for executives, BI managers, and analysts with role-specific insights and actions",
+      impact: "Everyone gets the clarity they need in the format they prefer",
     },
     {
       icon: <Lock className="w-12 h-12" />,
-      name: 'Security & Governance',
-      description: 'Enterprise grade security with SOC 2 compliance, end-to-end encryption, and comprehensive audit trails',
-      impact: 'Trust your data is protected while maintaining full transparency'
-    }
+      name: "Security & Governance",
+      description:
+        "Enterprise grade security with SOC 2 compliance, end-to-end encryption, and comprehensive audit trails",
+      impact:
+        "Trust your data is protected while maintaining full transparency",
+    },
   ];
 
   const architectureSteps = [
-    { title: 'Connect', desc: 'API integrations pull data from all sources' },
-    { title: 'Process', desc: 'Groflex AI Engine analyzes and learns patterns' },
-    { title: 'Predict', desc: 'ML models forecast trends and identify risks' },
-    { title: 'Prescribe', desc: 'Generate actionable recommendations' },
-    { title: 'Deliver', desc: 'Role-based dashboards show what matters most' }
+    { title: "Connect", desc: "API integrations pull data from all sources" },
+    {
+      title: "Process",
+      desc: "Groflex AI Engine analyzes and learns patterns",
+    },
+    { title: "Predict", desc: "ML models forecast trends and identify risks" },
+    { title: "Prescribe", desc: "Generate actionable recommendations" },
+    { title: "Deliver", desc: "Role-based dashboards show what matters most" },
   ];
 
   return (
@@ -82,23 +106,11 @@ const ProductsPage = () => {
 
             {/* YouTube Video */}
             <FuturisticCard variant="neon" className="max-w-4xl mx-auto mb-16">
-              {/* <div className="aspect-video rounded-lg overflow-hidden"> */}
-              {/* <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/3834u1h0188"
-                  title="Groflex Demo Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe> */}
               <img
                 src="/lovable-uploads/products_image.png"
                 alt="Groflex Demo"
                 className="w-full h-full object-cover"
               />
-              {/* </div> */}
               <div className="mt-6 text-center">
                 <button
                   onClick={handleGetStarted}
@@ -147,6 +159,39 @@ const ProductsPage = () => {
                 </FuturisticCard>
               ))}
             </div>
+          </section>
+
+          {/* Video Section */}
+          <section className="mb-24">
+            <h2 className="text-4xl font-bold text-gradient text-center mb-4">
+              See Groflex in Action
+            </h2>
+            <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
+              Watch our demo video to explore how Groflex delivers powerful
+              insights and streamlines decision-making.
+            </p>
+            <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="public/lovable-uploads/demo.mp4"
+                  title="Groflex Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              {/* <div className="mt-6 text-center">
+                <button
+                  onClick={handleGetStarted}
+                  className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
+                >
+                  Start Free Trial
+                </button>
+              </div> */}
+            </FuturisticCard>
           </section>
 
           {/* Architecture Diagram */}
@@ -249,7 +294,7 @@ const ProductsPage = () => {
             </div>
           </section>
 
-          {/* Q&A Demo Section - Removed background flash */}
+          {/* Q&A Demo Section */}
           <FuturisticCard variant="neon" className="p-12 mb-20">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gradient mb-4">

@@ -15,6 +15,7 @@ import {
   Cloud,
   ChevronDown,
   Play,
+  Pause,
   Briefcase,
   Presentation,
   ChartBar,
@@ -24,8 +25,11 @@ import {
   Youtube,
   X,
   Video,
+  Volume2,
+  VolumeX,
+  Volume1,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -33,38 +37,48 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const Home = () => {
+  const partnershipLogos = [
+    "/lovable-uploads/logo_yectra.png",
+    "/lovable-uploads/logo_stationF.png",
+    "/lovable-uploads/logo_launchpad.png",
+    "/lovable-uploads/logo_iese.png",
+    "/lovable-uploads/logo_microsoft_for_startups.png",
+    "/lovable-uploads/logo_dusseldorf.png",
+  ];
 
-const partnershipLogos = [
-  "/lovable-uploads/logo_yectra.png",
-  "/lovable-uploads/logo_stationF.png",
-  "/lovable-uploads/logo_launchpad.png",
-  "/lovable-uploads/logo_iese.png",
-  "/lovable-uploads/logo_microsoft_for_startups.png",
-  "/lovable-uploads/logo_dusseldorf.png",
-];
-
-const sliderSettings = {
-  dots: false,
-  infinite: true,
-  speed: 3000, // long duration for continuous scroll
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 0, // continuous motion
-  cssEase: "linear", // smooth motion
-  pauseOnHover: false,
-  arrows: false,
-  responsive: [
-    { breakpoint: 1280, settings: { slidesToShow: 3 } },
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 640, settings: { slidesToShow: 1 } },
-  ],
-};
-
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: false,
+    arrows: false,
+    responsive: [
+      { breakpoint: 1280, settings: { slidesToShow: 3 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
 
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [isPlayingHero, setIsPlayingHero] = useState(true);
+  const [showHeroButton, setShowHeroButton] = useState(false);
+  const [isPlayingDemo, setIsPlayingDemo] = useState(false);
+  const [showDemoButton, setShowDemoButton] = useState(false);
+  const [volume, setVolume] = useState(1); // 0 to 1
+  const [isMuted, setIsMuted] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [showSubtitles, setShowSubtitles] = useState(false);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const demoVideoRef = useRef<HTMLVideoElement>(null);
+  const heroButtonTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const demoButtonTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleGetStarted = () => {
     window.open("https://app.groflex.ai", "_blank");
@@ -75,6 +89,143 @@ const sliderSettings = {
   const handleBookDemo = () => {
     navigate("/Contactus");
   };
+
+  const toggleHeroVideoPlay = () => {
+    if (heroVideoRef.current) {
+      if (isPlayingHero) {
+        heroVideoRef.current.pause();
+      } else {
+        heroVideoRef.current.play();
+      }
+      setIsPlayingHero(!isPlayingHero);
+      setShowHeroButton(true);
+
+      if (heroButtonTimeoutRef.current) {
+        clearTimeout(heroButtonTimeoutRef.current);
+      }
+
+      heroButtonTimeoutRef.current = setTimeout(() => {
+        setShowHeroButton(false);
+      }, 2000);
+    }
+  };
+
+  const toggleDemoVideoPlay = () => {
+    if (demoVideoRef.current) {
+      if (isPlayingDemo) {
+        demoVideoRef.current.pause();
+      } else {
+        demoVideoRef.current.play();
+      }
+      setIsPlayingDemo(!isPlayingDemo);
+      setShowDemoButton(true);
+
+      if (demoButtonTimeoutRef.current) {
+        clearTimeout(demoButtonTimeoutRef.current);
+      }
+
+      demoButtonTimeoutRef.current = setTimeout(() => {
+        setShowDemoButton(false);
+      }, 2000);
+    }
+  };
+
+  const seekForward = () => {
+    if (demoVideoRef.current) {
+      demoVideoRef.current.currentTime = Math.min(
+        demoVideoRef.current.currentTime + 10,
+        demoVideoRef.current.duration
+      );
+      setCurrentTime(demoVideoRef.current.currentTime);
+    }
+  };
+
+  const seekBackward = () => {
+    if (demoVideoRef.current) {
+      demoVideoRef.current.currentTime = Math.max(
+        demoVideoRef.current.currentTime - 10,
+        0
+      );
+      setCurrentTime(demoVideoRef.current.currentTime);
+    }
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(e.target.value);
+    if (demoVideoRef.current) {
+      demoVideoRef.current.volume = newVolume;
+      setVolume(newVolume);
+      setIsMuted(newVolume === 0);
+    }
+  };
+
+  const toggleMute = () => {
+    if (demoVideoRef.current) {
+      demoVideoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+      if (!isMuted) {
+        setVolume(0);
+      } else {
+        setVolume(1);
+        demoVideoRef.current.volume = 1;
+      }
+    }
+  };
+
+  const increaseVolume = () => {
+    if (demoVideoRef.current) {
+      const newVolume = Math.min(volume + 0.1, 1);
+      demoVideoRef.current.volume = newVolume;
+      setVolume(newVolume);
+      setIsMuted(false);
+    }
+  };
+
+  const decreaseVolume = () => {
+    if (demoVideoRef.current) {
+      const newVolume = Math.max(volume - 0.1, 0);
+      demoVideoRef.current.volume = newVolume;
+      setVolume(newVolume);
+      if (newVolume === 0) setIsMuted(true);
+    }
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const time = parseFloat(e.target.value);
+    if (demoVideoRef.current) {
+      demoVideoRef.current.currentTime = time;
+      setCurrentTime(time);
+    }
+  };
+
+  const toggleSubtitles = () => {
+    setShowSubtitles(!showSubtitles);
+  };
+
+  useEffect(() => {
+    const video = demoVideoRef.current;
+    if (video) {
+      const updateTime = () => setCurrentTime(video.currentTime);
+      const updateDuration = () => setDuration(video.duration);
+      video.addEventListener("timeupdate", updateTime);
+      video.addEventListener("loadedmetadata", updateDuration);
+      return () => {
+        video.removeEventListener("timeupdate", updateTime);
+        video.removeEventListener("loadedmetadata", updateDuration);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (heroButtonTimeoutRef.current) {
+        clearTimeout(heroButtonTimeoutRef.current);
+      }
+      if (demoButtonTimeoutRef.current) {
+        clearTimeout(demoButtonTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const features = [
     {
@@ -282,18 +433,40 @@ const sliderSettings = {
               </div>
             </div>
 
-            {/* Right Side - image */}
+            {/* Right Side - Hero Video */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-lg lg:max-w-xl">
+              <div className="w-full max-w-lg lg:max-w-xl h-[430px] relative">
                 <FuturisticCard
                   variant="neon"
-                  className="relative overflow-hidden shadow-2xl"
+                  className="relative overflow-hidden shadow-2xl h-full"
                 >
-                  <img
-                    src="/lovable-uploads/homepage_image.png"
-                    alt="Groflex Demo"
-                    className="w-full h-full object-cover"
-                  />
+                  <video
+                    ref={heroVideoRef}
+                    src="/lovable-uploads/Groflex UI animation.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onClick={toggleHeroVideoPlay}
+                    className="w-full h-full object-cover cursor-pointer"
+                  >
+                    Your browser does not support the video tag. Please try a
+                    different browser or contact support.
+                  </video>
+                  {showHeroButton && (
+                    <button
+                      onClick={toggleHeroVideoPlay}
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 text-black p-3 rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center opacity-0 animate-fadeIn"
+                      style={{ animationFillMode: "forwards" }}
+                      aria-label={isPlayingHero ? "Pause video" : "Play video"}
+                    >
+                      {isPlayingHero ? (
+                        <Pause className="w-6 h-6" />
+                      ) : (
+                        <Play className="w-6 h-6" />
+                      )}
+                    </button>
+                  )}
                 </FuturisticCard>
               </div>
             </div>
@@ -301,7 +474,42 @@ const sliderSettings = {
         </div>
       </div>
 
-      {/* 2. PROBLEM SECTION */}
+      {/* 2. SEE GROFLEX IN ACTION SECTION */}
+      <section className="mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="text-gradient">See Groflex in Action</span>
+          </h2>
+        <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
+          Watch our demo video to explore how Groflex delivers powerful insights
+          and streamlines decision making.
+        </p>
+        </div>
+        <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
+          <div className="aspect-video rounded-lg overflow-hidden">
+            <iframe
+              width="100%"
+              height="100%"
+              src="public/lovable-uploads/demo.mp4"
+              title="Groflex Demo Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+          {/* <div className="mt-6 text-center">
+                <button
+                  onClick={handleGetStarted}
+                  className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
+                >
+                  Start Free Trial
+                </button>
+              </div> */}
+        </FuturisticCard>
+      </section>
+
+      {/* 3. PROBLEM SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -363,7 +571,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 3. AUDIENCE NAVIGATION */}
+      {/* 4. AUDIENCE NAVIGATION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -388,16 +596,13 @@ const sliderSettings = {
                   {card.title}
                 </h3>
                 <p className="text-white/80 mb-6">{card.description}</p>
-                {/* <button className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
-                  Explore {card.title}
-                </button> */}
               </FuturisticCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. WHAT GROFLEX DOES */}
+      {/* 5. WHAT GROFLEX DOES */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -447,7 +652,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 5. FEATURE GRID */}
+      {/* 6. FEATURE GRID */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-coral/5 via-transparent to-brand-purple/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -472,7 +677,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 6. SOCIAL PROOF */}
+      {/* 7. SOCIAL PROOF */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -504,7 +709,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 7. AI INTERFACE DEMO - CHATBOT SCREENSHOTS */}
+      {/* 8. AI INTERFACE DEMO - CHATBOT SCREENSHOTS */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -629,7 +834,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 8. FINAL CTA SECTION */}
+      {/* 9. FINAL CTA SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 cyber-grid opacity-30"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -677,7 +882,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 9. TOOL INTEGRATIONS */}
+      {/* 10. TOOL INTEGRATIONS */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -706,7 +911,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 10. PARTNERSHIPS SECTION */}
+      {/* 11. PARTNERSHIPS SECTION */}
       <section className="bg-black py-20 text-center w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -737,7 +942,7 @@ const sliderSettings = {
         </div>
       </section>
 
-      {/* 11. FAQ SECTION */}
+      {/* 12. FAQ SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

@@ -259,9 +259,7 @@ const Pricing = () => {
                           <div className="text-4xl font-bold text-white">
                             ${getPrice(plan.monthlyPrice)}
                           </div>
-                          <div className="text-white text-m pt-1">
-                            / month
-                          </div>
+                          <div className="text-white text-m pt-1">/ month</div>
                         </div>
                         <div className="text-white/60 text-[11px] mt-1">
                           30% Discount if billed yearly
@@ -301,6 +299,18 @@ const Pricing = () => {
                 </button>
               </div>
             ))}
+          </div>
+
+          {/* Disclaimer */}
+          <div className="text-center text-sm text-white/60 mb-16">
+            <h2 className="text-3xl font-bold text-white text-center mb-4">
+              <span className="gradient-purple">
+                *For pricing in India or the EU, please{" "}
+              </span>
+              <a href="/Contactus" className="text-gradient underline">
+                contact us
+              </a>
+            </h2>
           </div>
 
           {/* Pricing Table */}
