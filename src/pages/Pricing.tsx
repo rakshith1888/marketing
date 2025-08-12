@@ -208,7 +208,43 @@ const Pricing = () => {
               Choose the perfect plan for your business needs. All plans include
               our core features.
             </p>
+            <p className="text-xl text-white/80 text-center mb-4">
+              <span className="gradient-purple">
+                *For pricing in India{" "}
+                <span className="inline-flex items-center">
+                  <img
+                    src="public\lovable-uploads\india.webp" // adjust the path as needed
+                    alt="India Flag"
+                    className="w-15 h-5 mr-1"
+                  />
+                </span>{" "}
+                or the EU{" "}
+                <span className="inline-flex items-center">
+                  <img
+                    src="public\lovable-uploads\gcc.jpg" // adjust the path as needed
+                    alt="India Flag"
+                    className="w-15 h-5 mr-1"
+                  />
+                </span>{" "}
+                , please{" "}
+              </span>
+              <a href="/Contactus" className="text-gradient underline">
+                contact us
+              </a>
+            </p>
           </div>
+
+          {/* Disclaimer */}
+          {/* <div className="text-center text-sm text-white/60 mb-16">
+            <h2 className="text-3xl font-bold text-white text-center mb-4">
+              <span className="gradient-purple">
+                *For pricing in India or the EU, please{" "}
+              </span>
+              <a href="/Contactus" className="text-gradient underline">
+                contact us
+              </a>
+            </h2>
+          </div> */}
 
           <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
             {plans.map((plan, index) => (
@@ -299,18 +335,6 @@ const Pricing = () => {
                 </button>
               </div>
             ))}
-          </div>
-
-          {/* Disclaimer */}
-          <div className="text-center text-sm text-white/60 mb-16">
-            <h2 className="text-3xl font-bold text-white text-center mb-4">
-              <span className="gradient-purple">
-                *For pricing in India or the EU, please{" "}
-              </span>
-              <a href="/Contactus" className="text-gradient underline">
-                contact us
-              </a>
-            </h2>
           </div>
 
           {/* Pricing Table */}

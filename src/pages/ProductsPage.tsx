@@ -11,10 +11,14 @@ import {
   MessageSquare,
   Users,
   Lock,
+  Play,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
 
 const ProductsPage = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const handleGetStarted = () => {
     window.open("https://app.groflex.ai", "_blank");
   };
@@ -23,6 +27,13 @@ const ProductsPage = () => {
 
   const handleBookDemo = () => {
     navigate("/Contactus");
+  };
+
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
   };
 
   const features = [
@@ -170,27 +181,32 @@ const ProductsPage = () => {
               Watch our demo video to explore how Groflex delivers powerful
               insights and streamlines decision-making.
             </p>
-            <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
-              <div className="aspect-video rounded-lg overflow-hidden">
-                <iframe
+            <FuturisticCard
+              variant="neon"
+              className="max-w-4xl mx-auto relative"
+            >
+              <div className="aspect-video rounded-lg overflow-hidden relative">
+                <video
+                  ref={videoRef}
                   width="100%"
                   height="100%"
-                  src="public/lovable-uploads/demo.mp4"
+                  src="/lovable-uploads/demo.mp4"
                   title="Groflex Demo Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                   className="w-full h-full"
-                ></iframe>
+                  controls
+                  playsInline
+                ></video>
+                {!isPlaying && (
+                  <div
+                    className="absolute inset-0 flex items-center justify-center bg-black/50 cursor-pointer"
+                    onClick={handlePlayVideo}
+                  >
+                    <div className="bg-white/80 rounded-full p-4">
+                      <Play className="w-12 h-12 text-black" />
+                    </div>
+                  </div>
+                )}
               </div>
-              {/* <div className="mt-6 text-center">
-                <button
-                  onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
-                >
-                  Start Free Trial
-                </button>
-              </div> */}
             </FuturisticCard>
           </section>
 

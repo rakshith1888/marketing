@@ -69,14 +69,15 @@ const Home = () => {
   const [isPlayingHero, setIsPlayingHero] = useState(true);
   const [showHeroButton, setShowHeroButton] = useState(false);
   const [isPlayingDemo, setIsPlayingDemo] = useState(false);
-  const [showDemoButton, setShowDemoButton] = useState(false);
-  const [volume, setVolume] = useState(1); // 0 to 1
+  const [showDemoButton, setShowDemoButton] = useState(true);
+  const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [showSubtitles, setShowSubtitles] = useState(false);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const demoVideoRef = useRef<HTMLVideoElement>(null);
+  const demoSectionRef = useRef<HTMLDivElement>(null);
   const heroButtonTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const demoButtonTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -125,7 +126,7 @@ const Home = () => {
       }
 
       demoButtonTimeoutRef.current = setTimeout(() => {
-        setShowDemoButton(false);
+        setShowDemoButton(!isPlayingDemo);
       }, 2000);
     }
   };
@@ -215,6 +216,27 @@ const Home = () => {
       };
     }
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !isPlayingDemo) {
+          setShowDemoButton(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (demoSectionRef.current) {
+      observer.observe(demoSectionRef.current);
+    }
+
+    return () => {
+      if (demoSectionRef.current) {
+        observer.unobserve(demoSectionRef.current);
+      }
+    };
+  }, [isPlayingDemo]);
 
   useEffect(() => {
     return () => {
@@ -475,37 +497,43 @@ const Home = () => {
       </div>
 
       {/* 2. SEE GROFLEX IN ACTION SECTION */}
-      <section className="mb-24">
+      <section className="mb-24" ref={demoSectionRef}>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-gradient">See Groflex in Action</span>
           </h2>
-        <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
-          Watch our demo video to explore how Groflex delivers powerful insights
-          and streamlines decision making.
-        </p>
+          <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
+            Watch our demo video to explore how Groflex delivers powerful
+            insights and streamlines decision making.
+          </p>
         </div>
         <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
-          <div className="aspect-video rounded-lg overflow-hidden">
-            <iframe
-              width="100%"
-              height="100%"
+          <div className="aspect-video rounded-lg overflow-hidden relative">
+            <video
+              ref={demoVideoRef}
               src="public/lovable-uploads/demo.mp4"
               title="Groflex Demo Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
+              playsInline
+              onClick={toggleDemoVideoPlay}
+              className="w-full h-full object-cover cursor-pointer"
+            >
+              Your browser does not support the video tag. Please try a
+              different browser or contact support.
+            </video>
+            {showDemoButton && (
+              <button
+                onClick={toggleDemoVideoPlay}
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 text-black p-4 rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center"
+                aria-label={isPlayingDemo ? "Pause video" : "Play video"}
+              >
+                {isPlayingDemo ? (
+                  <Pause className="w-8 h-8" />
+                ) : (
+                  <Play className="w-8 h-8" />
+                )}
+              </button>
+            )}
           </div>
-          {/* <div className="mt-6 text-center">
-                <button
-                  onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300"
-                >
-                  Start Free Trial
-                </button>
-              </div> */}
         </FuturisticCard>
       </section>
 
@@ -526,7 +554,7 @@ const Home = () => {
             {[
               {
                 stat: "86%",
-                issue: "Siloed Systems",
+                thrust: "Siloed Systems",
                 description: "say their systems are too fragmented",
                 quote: '"We have data everywhere but insights nowhere"',
               },
