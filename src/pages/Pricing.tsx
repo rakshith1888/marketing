@@ -21,6 +21,7 @@ import {
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(true);
   const [copied, setCopied] = useState(false);
+  const [region, setRegion] = useState("All"); // State for toggle
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
@@ -44,6 +45,8 @@ const Pricing = () => {
           return 999;
         case 299:
           return 249;
+        case 600: // For India plan
+          return 60000; // Corrected from 60000 to 500 for 20% yearly discount
         default:
           return Math.round(monthlyPrice * 0.8); // 20% discount for yearly
       }
@@ -78,6 +81,18 @@ const Pricing = () => {
         { label: "Data Size", value: "Custom" },
       ],
       popular: false,
+    },
+    {
+      name: "India",
+      monthlyPrice: 600,
+      features: [
+        { label: "Target Users", value: "Mid-sized businesses" },
+        { label: "Value Focus", value: "Productivity & automation" },
+        { label: "Users", value: "5" },
+        { label: "AI Questions / Month", value: "5,000" },
+        { label: "Data Size", value: "15GB" },
+      ],
+      popular: true,
     },
   ];
 
@@ -208,12 +223,12 @@ const Pricing = () => {
               Choose the perfect plan for your business needs. All plans include
               our core features.
             </p>
-            <p className="text-xl text-white/80 text-center mb-4">
+            {/* <p className="text-xl text-white/80 text-center mb-4">
               <span className="gradient-purple">
                 *For pricing in India{" "}
                 <span className="inline-flex items-center">
                   <img
-                    src="public\lovable-uploads\india.webp" // adjust the path as needed
+                    src="public/lovable-Uploads/india.webp"
                     alt="India Flag"
                     className="w-15 h-5 mr-1"
                   />
@@ -221,8 +236,8 @@ const Pricing = () => {
                 or the EU{" "}
                 <span className="inline-flex items-center">
                   <img
-                    src="public\lovable-uploads\gcc.jpg" // adjust the path as needed
-                    alt="India Flag"
+                    src="public/lovable-Uploads/gcc.jpg"
+                    alt="EU Flag"
                     className="w-15 h-5 mr-1"
                   />
                 </span>{" "}
@@ -231,111 +246,159 @@ const Pricing = () => {
               <a href="/Contactus" className="text-gradient underline">
                 contact us
               </a>
-            </p>
+            </p> */}
           </div>
 
-          {/* Disclaimer */}
-          {/* <div className="text-center text-sm text-white/60 mb-16">
-            <h2 className="text-3xl font-bold text-white text-center mb-4">
-              <span className="gradient-purple">
-                *For pricing in India or the EU, please{" "}
-              </span>
-              <a href="/Contactus" className="text-gradient underline">
-                contact us
-              </a>
-            </h2>
-          </div> */}
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
-            {plans.map((plan, index) => (
-              <div
-                key={index}
-                className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border ${
-                  plan.popular
-                    ? "border-brand-purple/60 shadow-lg shadow-brand-purple/20"
-                    : "border-white/20"
+          {/* Toggle Button */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex rounded-full bg-white/10 p-2 shadow-lg">
+              <button
+                onClick={() => setRegion("All")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                  region === "All"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-md"
+                    : "text-white/80 hover:text-white hover:bg-white/20"
                 }`}
               >
-                {/* {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="w-96 h-8 bg-gradient-purple text-white px-4 py-1 rounded-full text-sm font-medium flex items-center justify-center gap-2">
-                      <span className="flex items-center gap-1">
-                        30% Discount on{" "}
-                        <TicketPercent className="w-5 h-4 text-white" />
-                      </span>
-                      <button
-                        onClick={handleCopy}
-                        className="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded text-xs transition flex items-center gap-1"
-                      >
-                        {copied ? (
-                          <>
-                            <Check className="w-3 h-3" />
-                            Copied!
-                          </>
-                        ) : (
-                          "WELCOMEAI30"
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                )} */}
+                All
+              </button>
+              <button
+                onClick={() => setRegion("India")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center gap-2 ${
+                  region === "India"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-md"
+                    : "text-white/80 hover:text-white hover:bg-white/20"
+                }`}
+              >
+                India
+                <img
+                  src="public/lovable-Uploads/india.webp"
+                  alt="India Flag"
+                  className="w-7 h-6"
+                />
+              </button>
+              <button
+                onClick={() => setRegion("Europe")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center gap-2 ${
+                  region === "Europe"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-md"
+                    : "text-white/80 hover:text-white hover:bg-white/20"
+                }`}
+              >
+                Europe
+                <img
+                  src="public/lovable-Uploads/gcc.jpg"
+                  alt="EU Flag"
+                  className="w-8 h-6"
+                />
+              </button>
+            </div>
+          </div>
 
+          {/* Pricing Cards */}
+          {region === "Europe" ? (
+            <div className="flex justify-center mb-16 max-w-4xl mx-auto">
+              <div className="relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border border-white/20 w-full max-w-md">
                 <div className="text-center mb-8">
                   <h2 className="text-5xl md:text-4xl font-bold mb-6">
-                    <span className="text-gradient">{plan.name}</span>
+                    <span className="text-gradient">Europe</span>
                   </h2>
-                  <div className="flex items-baseline justify-center mb-6">
-                    {plan.name === "Enterprise" ? (
-                      <span className="text-3xl font-bold text-white">
-                        Custom
-                      </span>
-                    ) : (
-                      <div className="flex flex-col items-start">
-                        <div className="flex items-baseline space-x-1">
-                          <div className="text-4xl font-bold text-white">
-                            ${getPrice(plan.monthlyPrice)}
-                          </div>
-                          <div className="text-white text-m pt-1">/ month</div>
-                        </div>
-                        <div className="text-white/60 text-[11px] mt-1">
-                          30% Discount if billed yearly
-                        </div>
-                      </div>
-                    )}
+                  <div className="text-3xl font-bold text-white">
+                    Custom Pricing
                   </div>
                 </div>
-
-                <div className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex justify-between items-start"
-                    >
-                      <span className="text-white/70 text-sm font-medium">
-                        {feature.label}:
-                      </span>
-                      <span className="text-white text-sm font-semibold text-right ml-2">
-                        {feature.value}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
                 <button
-                  onClick={
-                    plan.name === "Enterprise"
-                      ? handleContactUs
-                      : handleGetStarted
-                  }
+                  onClick={handleContactUs}
                   className="w-full py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
                 >
-                  {plan.name === "Enterprise"
-                    ? "Contact Us"
-                    : "Free 30-day Trial"}
+                  Contact Us for Pricing
                 </button>
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div
+              className={`mb-16 max-w-4xl mx-auto ${
+                region === "India"
+                  ? "flex justify-center"
+                  : "grid md:grid-cols-2 gap-8"
+              }`}
+            >
+              {plans
+                .filter((plan) =>
+                  region === "All"
+                    ? plan.name !== "India"
+                    : plan.name === "India"
+                )
+                .map((plan, index) => (
+                  <div
+                    key={index}
+                    className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border ${
+                      plan.popular
+                        ? "border-brand-purple/60 shadow-lg shadow-brand-purple/20"
+                        : "border-white/20"
+                    } ${region === "India" ? "w-full max-w-md" : ""}`}
+                  >
+                    <div className="text-center mb-8">
+                      <h2 className="text-5xl md:text-4xl font-bold mb-6">
+                        <span className="text-gradient">{plan.name}</span>
+                      </h2>
+                      <div className="flex items-baseline justify-center mb-6">
+                        {plan.name === "Enterprise" ? (
+                          <span className="text-3xl font-bold text-white">
+                            Custom
+                          </span>
+                        ) : (
+                          <div className="flex flex-col items-start">
+                            <div className="flex items-baseline space-x-1">
+                              <div className="text-4xl font-bold text-white">
+                                {plan.name === "India"
+                                  ? `₹${getPrice(plan.monthlyPrice)}`
+                                  : `$${getPrice(plan.monthlyPrice)}`}
+                              </div>
+                              <div className="text-white text-m pt-1">
+                                / month
+                              </div>
+                            </div>
+                            <div className="text-white/60 text-[11px] mt-1">
+                              30% Discount if billed yearly
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="space-y-4 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex justify-between items-start"
+                        >
+                          <span className="text-white/70 text-sm font-medium">
+                            {feature.label}:
+                          </span>
+                          <span className="text-white text-sm font-semibold text-right ml-2">
+                            {feature.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={
+                        plan.name === "Enterprise"
+                          ? handleContactUs
+                          : handleGetStarted
+                      }
+                      className="w-full py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
+                    >
+                      {plan.name === "Enterprise"
+                        ? "Contact Us"
+                        : "Free 30-day Trial"}
+                    </button>
+                  </div>
+                ))}
+            </div>
+          )}
 
           {/* Pricing Table */}
           <FuturisticCard className="p-8 mb-16">

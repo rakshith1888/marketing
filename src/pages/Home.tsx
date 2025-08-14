@@ -336,7 +336,7 @@ const Home = () => {
     { name: "Looker", logo: "/lovable-uploads/looker.png" },
     { name: "Microsoft", logo: "/lovable-uploads/microsoft.png" },
     { name: "AWS", logo: "/lovable-uploads/aws.png" },
-    { name: "Snowflake", logo: "/lovable-uploads/snowflake.png" },
+    { name: "MongoDB ", logo: "/lovable-uploads/MongoDB.png" },
     { name: "Tableau", logo: "/lovable-uploads/tableau.png" },
   ];
 

@@ -11,7 +11,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Products", path: "/products" },
+    { name: "Product", path: "/product" }, // ✅ Changed from "Products" to "Product"
     { name: "Solutions", path: "/solutions", hasDropdown: true },
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
