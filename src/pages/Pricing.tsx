@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import FuturisticCard from "../components/FuturisticCard";
-import { TicketPercent, Check } from "lucide-react";
 import {
   Accordion,
   AccordionItem,
@@ -21,7 +20,7 @@ import {
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(true);
   const [copied, setCopied] = useState(false);
-  const [region, setRegion] = useState("All"); // State for toggle
+  const [region, setRegion] = useState("US"); // Default to US pricing
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
@@ -38,63 +37,148 @@ const Pricing = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const getPrice = (monthlyPrice: number) => {
+  // yearly discount logic
+  const getPrice = (monthlyPrice: number, region?: string) => {
+    if (monthlyPrice === 0) return "Custom";
     if (isYearly) {
-      switch (monthlyPrice) {
-        case 1199:
-          return 999;
-        case 299:
-          return 249;
-        case 600: // For India plan
-          return 60000; // Corrected from 60000 to 500 for 20% yearly discount
-        default:
-          return Math.round(monthlyPrice * 0.8); // 20% discount for yearly
-      }
+      // return Math.round(monthlyPrice * 0.8); // 20% discount
+    }
+    if (region === "India") {
+      return monthlyPrice.toLocaleString("en-IN")
     }
     return monthlyPrice;
   };
 
-  const plans = [
-    {
-      name: "Growth",
-      monthlyPrice: 1199,
-      features: [
-        { label: "Target Users", value: "Mid-sized businesses" },
-        { label: "Value Focus", value: "Productivity & automation" },
-        { label: "Users", value: "5" },
-        { label: "AI Questions / Month", value: "5,000" },
-        { label: "Data Size", value: "15GB" },
-      ],
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      monthlyPrice: 299,
-      features: [
-        { label: "Target Users", value: "Large enterprises, data-driven orgs" },
-        {
-          label: "Value Focus",
-          value: "Strategic impact + full customization",
-        },
-        { label: "Users", value: "Custom" },
-        { label: "AI Questions / Month", value: "Custom" },
-        { label: "Data Size", value: "Custom" },
-      ],
-      popular: false,
-    },
-    {
-      name: "India",
-      monthlyPrice: 600,
-      features: [
-        { label: "Target Users", value: "Mid-sized businesses" },
-        { label: "Value Focus", value: "Productivity & automation" },
-        { label: "Users", value: "5" },
-        { label: "AI Questions / Month", value: "5,000" },
-        { label: "Data Size", value: "15GB" },
-      ],
-      popular: true,
-    },
-  ];
+  // Plans by region
+  const plansByRegion: Record<string, any[]> = {
+    US: [
+      {
+        name: "Growth",
+        monthlyPrice: 999,
+        currency: "$",
+        features: [
+          { label: "Target Users", value: "Mid-sized businesses" },
+          { label: "Value Focus", value: "Productivity & automation" },
+          { label: "Users", value: "5" },
+          { label: "AI Questions / Month", value: "5,000" },
+          { label: "Data Size", value: "15GB" },
+        ],
+        popular: true,
+      },
+      {
+        name: "Enterprise",
+        monthlyPrice: 0,
+        currency: "$",
+        features: [
+          {
+            label: "Target Users",
+            value: "Large enterprises, data-driven orgs",
+          },
+          {
+            label: "Value Focus",
+            value: "Strategic impact + full customization",
+          },
+          { label: "Users", value: "Custom" },
+          { label: "AI Questions / Month", value: "Custom" },
+          { label: "Data Size", value: "Custom" },
+        ],
+        popular: false,
+      },
+    ],
+    India: [
+      {
+        name: "Growth",
+        monthlyPrice: 60000,
+        currency: "₹",
+        features: [
+          { label: "Target Users", value: "Mid-sized businesses" },
+          { label: "Value Focus", value: "Productivity & automation" },
+          { label: "Users", value: "5" },
+          { label: "AI Questions / Month", value: "5,000" },
+          { label: "Data Size", value: "15GB" },
+        ],
+        popular: true,
+      },
+      {
+        name: "Enterprise",
+        monthlyPrice: 0,
+        currency: "₹",
+        features: [
+          { label: "Target Users", value: "Large enterprises" },
+          {
+            label: "Value Focus",
+            value: "Strategic impact + full customization",
+          },
+          { label: "Users", value: "Custom" },
+          { label: "AI Questions / Month", value: "Custom" },
+          { label: "Data Size", value: "Custom" },
+        ],
+        popular: false,
+      },
+    ],
+    EU: [
+      {
+        name: "Growth",
+        monthlyPrice: 999,
+        currency: "€",
+        features: [
+          { label: "Target Users", value: "Mid-sized businesses" },
+          { label: "Value Focus", value: "Productivity & automation" },
+          { label: "Users", value: "5" },
+          { label: "AI Questions / Month", value: "5,000" },
+          { label: "Data Size", value: "15GB" },
+        ],
+        popular: true,
+      },
+      {
+        name: "Enterprise",
+        monthlyPrice: 0,
+        currency: "€",
+        features: [
+          { label: "Target Users", value: "Large enterprises" },
+          {
+            label: "Value Focus",
+            value: "Strategic impact + full customization",
+          },
+          { label: "Users", value: "Custom" },
+          { label: "AI Questions / Month", value: "Custom" },
+          { label: "Data Size", value: "Custom" },
+        ],
+        popular: false,
+      },
+    ],
+    GCC: [
+     {
+        name: "Growth",
+        monthlyPrice: 999,
+        currency: "€",
+        features: [
+          { label: "Target Users", value: "Mid-sized businesses" },
+          { label: "Value Focus", value: "Productivity & automation" },
+          { label: "Users", value: "5" },
+          { label: "AI Questions / Month", value: "5,000" },
+          { label: "Data Size", value: "15GB" },
+        ],
+        popular: true,
+      },
+      {
+        name: "Enterprise",
+        monthlyPrice: 0,
+        currency: "د.إ",
+        features: [
+          { label: "Target Users", value: "Large enterprises" },
+          {
+            label: "Value Focus",
+            value: "Strategic impact + full customization",
+          },
+          { label: "Users", value: "Custom" },
+          { label: "AI Questions / Month", value: "Custom" },
+          { label: "Data Size", value: "Custom" },
+        ],
+        popular: false,
+      },
+    ],
+  };
 
   const tableFeatures = [
     { feature: "Data Storage", growth: "", enterprise: "", isHeader: true },
@@ -104,7 +188,6 @@ const Pricing = () => {
       enterprise: "Yes",
     },
     { feature: "Data Size", growth: "15GB", enterprise: "Custom" },
-
     {
       feature: "Data Preparation and Synthesis",
       growth: "",
@@ -116,7 +199,6 @@ const Pricing = () => {
     { feature: "Data Model Schemas", growth: "No", enterprise: "Yes" },
     { feature: "Data Customization", growth: "Yes", enterprise: "Yes" },
     { feature: "Data Quality Checks", growth: "Yes", enterprise: "Yes" },
-
     {
       feature: "Insights and Visualizations",
       growth: "",
@@ -135,7 +217,6 @@ const Pricing = () => {
       enterprise: "Yes",
     },
     { feature: "Narratives", growth: "Yes", enterprise: "Yes" },
-
     {
       feature: "Predictions and Prescriptions",
       growth: "",
@@ -146,7 +227,6 @@ const Pricing = () => {
     { feature: "What If Analysis", growth: "Yes", enterprise: "Yes" },
     { feature: "Consolidated Reports", growth: "Yes", enterprise: "Yes" },
     { feature: "Custom code modeling", growth: "No", enterprise: "Yes" },
-
     {
       feature: "Agentic AI and Actions",
       growth: "",
@@ -181,9 +261,8 @@ const Pricing = () => {
       enterprise: "Yes",
     },
     { feature: "AI Questions", growth: "15000", enterprise: "Custom" },
-
     { feature: "Terms and Users", growth: "", enterprise: "", isHeader: true },
-    { feature: "Users", growth: "5", enterprise: "Custom", isHeader: true },
+    { feature: "Users", growth: "5", enterprise: "Custom" },
     { feature: "Share Dashboards", growth: "Yes", enterprise: "Yes" },
     { feature: "Creation, Sharing of Notes", growth: "No", enterprise: "Yes" },
   ];
@@ -223,184 +302,174 @@ const Pricing = () => {
               Choose the perfect plan for your business needs. All plans include
               our core features.
             </p>
-            {/* <p className="text-xl text-white/80 text-center mb-4">
-              <span className="gradient-purple">
-                *For pricing in India{" "}
-                <span className="inline-flex items-center">
-                  <img
-                    src="public/lovable-Uploads/india.webp"
-                    alt="India Flag"
-                    className="w-15 h-5 mr-1"
-                  />
-                </span>{" "}
-                or the EU{" "}
-                <span className="inline-flex items-center">
-                  <img
-                    src="public/lovable-Uploads/gcc.jpg"
-                    alt="EU Flag"
-                    className="w-15 h-5 mr-1"
-                  />
-                </span>{" "}
-                , please{" "}
-              </span>
-              <a href="/Contactus" className="text-gradient underline">
-                contact us
-              </a>
-            </p> */}
           </div>
 
-          {/* Toggle Button */}
+          {/* Region Buttons */}
           <div className="flex justify-center mb-12">
-            <div className="inline-flex rounded-full bg-white/10 p-2 shadow-lg">
+            <div className="inline-flex rounded-full bg-white/10 p-2 shadow-lg gap-2">
               <button
-                onClick={() => setRegion("All")}
-                className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 ${
-                  region === "All"
-                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-md"
-                    : "text-white/80 hover:text-white hover:bg-white/20"
+                onClick={() => setRegion("US")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all ${
+                  region === "US"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white"
+                    : "text-white/80 hover:bg-white/20"
                 }`}
               >
-                All
-              </button>
-              <button
-                onClick={() => setRegion("India")}
-                className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center gap-2 ${
-                  region === "India"
-                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-md"
-                    : "text-white/80 hover:text-white hover:bg-white/20"
-                }`}
-              >
-                India
+                US{" "}
                 <img
-                  src="public/lovable-Uploads/india.webp"
-                  alt="India Flag"
-                  className="w-7 h-6"
+                  src="/lovable-uploads/usa.png"
+                  alt="US Flag"
+                  className="w-8 h-6 inline ml-2"
                 />
               </button>
               <button
-                onClick={() => setRegion("Europe")}
-                className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center gap-2 ${
-                  region === "Europe"
-                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white shadow-md"
-                    : "text-white/80 hover:text-white hover:bg-white/20"
+                onClick={() => setRegion("India")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all ${
+                  region === "India"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white"
+                    : "text-white/80 hover:bg-white/20"
                 }`}
               >
-                Europe
+                India{" "}
                 <img
-                  src="public/lovable-Uploads/gcc.jpg"
+                  src="/lovable-uploads/india.webp"
+                  alt="India Flag"
+                  className="w-8 h-6 inline ml-2"
+                />
+              </button>
+              <button
+                onClick={() => setRegion("EU")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all ${
+                  region === "EU"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white"
+                    : "text-white/80 hover:bg-white/20"
+                }`}
+              >
+                EU{" "}
+                <img
+                  src="/lovable-uploads/europe.png"
                   alt="EU Flag"
-                  className="w-8 h-6"
+                  className="w-9 h-7 inline ml-2"
+                />
+              </button>
+              <button
+                onClick={() => setRegion("GCC")}
+                className={`px-6 py-3 rounded-full text-base font-semibold transition-all ${
+                  region === "GCC"
+                    ? "bg-gradient-to-r from-brand-purple to-brand-coral text-white"
+                    : "text-white/80 hover:bg-white/20"
+                }`}
+              >
+                GCC{" "}
+                <img
+                  src="/lovable-uploads/gcc.jpg"
+                  alt="GCC Flag"
+                  className="w-9 h-7 inline ml-2"
                 />
               </button>
             </div>
           </div>
 
           {/* Pricing Cards */}
-          {region === "Europe" ? (
-            <div className="flex justify-center mb-16 max-w-4xl mx-auto">
-              <div className="relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border border-white/20 w-full max-w-md">
-                <div className="text-center mb-8">
-                  <h2 className="text-5xl md:text-4xl font-bold mb-6">
-                    <span className="text-gradient">Europe</span>
-                  </h2>
-                  <div className="text-3xl font-bold text-white">
-                    Custom Pricing
-                  </div>
-                </div>
-                <button
-                  onClick={handleContactUs}
-                  className="w-full py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
+          {/* Pricing Cards */}
+          {region === "GCC" ? (
+            <div className="mb-16 max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+              {plansByRegion[region].map((plan, i) => (
+                <div
+                  key={i}
+                  className="w-full max-w-md relative rounded-2xl p-8 bg-white/5 border border-white/20 backdrop-blur-md hover:scale-105 transition-all flex flex-col"
                 >
-                  Contact Us for Pricing
-                </button>
-              </div>
+                  <div className="text-center mb-9">
+                    <h2 className="text-4xl font-bold mb-4 text-gradient">
+                      {plan.name}
+                    </h2>
+                    <div className="text-3xl font-bold text-white min-h-[4rem] flex items-center justify-center">
+                      Custom Pricing
+                    </div>
+                  </div>
+                  <div className="space-y-4 mb-6 flex-grow">
+                    {plan.features.map((f: any, idx: number) => (
+                      <div
+                        key={idx}
+                        className="flex justify-between text-sm text-white/80"
+                      >
+                        <span>{f.label}:</span>
+                        <span className="font-semibold text-white">
+                          {f.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    onClick={handleContactUs}
+                    className="w-full py-3 rounded-full font-semibold bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              ))}
             </div>
           ) : (
-            <div
-              className={`mb-16 max-w-4xl mx-auto ${
-                region === "India"
-                  ? "flex justify-center"
-                  : "grid md:grid-cols-2 gap-8"
-              }`}
-            >
-              {plans
-                .filter((plan) =>
-                  region === "All"
-                    ? plan.name !== "India"
-                    : plan.name === "India"
-                )
-                .map((plan, index) => (
-                  <div
-                    key={index}
-                    className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-md border ${
-                      plan.popular
-                        ? "border-brand-purple/60 shadow-lg shadow-brand-purple/20"
-                        : "border-white/20"
-                    } ${region === "India" ? "w-full max-w-md" : ""}`}
-                  >
-                    <div className="text-center mb-8">
-                      <h2 className="text-5xl md:text-4xl font-bold mb-6">
-                        <span className="text-gradient">{plan.name}</span>
-                      </h2>
-                      <div className="flex items-baseline justify-center mb-6">
-                        {plan.name === "Enterprise" ? (
-                          <span className="text-3xl font-bold text-white">
-                            Custom
-                          </span>
-                        ) : (
-                          <div className="flex flex-col items-start">
-                            <div className="flex items-baseline space-x-1">
-                              <div className="text-4xl font-bold text-white">
-                                {plan.name === "India"
-                                  ? `₹${getPrice(plan.monthlyPrice)}`
-                                  : `$${getPrice(plan.monthlyPrice)}`}
-                              </div>
-                              <div className="text-white text-m pt-1">
-                                / month
-                              </div>
-                            </div>
-                            <div className="text-white/60 text-[11px] mt-1">
-                              30% Discount if billed yearly
-                            </div>
-                          </div>
-                        )}
+            <div className="mb-16 max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+              {plansByRegion[region].map((plan, i) => (
+                <div
+                  key={i}
+                  className="relative rounded-2xl p-8 bg-white/5 border border-white/20 backdrop-blur-md hover:scale-105 transition-all flex flex-col"
+                >
+                  <div className="text-center mb-9">
+                    <h2 className="text-4xl font-bold mb-4 text-gradient">
+                      {plan.name}
+                    </h2>
+                    {plan.monthlyPrice === 0 ? (
+                      <div className="text-3xl font-bold text-white min-h-[4rem] flex items-center justify-center">
+                        Custom Pricing
                       </div>
-                    </div>
-
-                    <div className="space-y-4 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex justify-between items-start"
-                        >
-                          <span className="text-white/70 text-sm font-medium">
-                            {feature.label}:
-                          </span>
-                          <span className="text-white text-sm font-semibold text-right ml-2">
-                            {feature.value}
-                          </span>
+                    ) : (
+                      <div className="flex flex-col items-center min-h-[4rem] justify-center">
+                        <div className="flex items-baseline justify-center">
+                          <div className="text-4xl font-bold text-white">
+                            {plan.currency}
+                            {getPrice(plan.monthlyPrice, region)}
+                          </div>
+                          <span className="text-white/80 ml-1">/ month</span>
                         </div>
-                      ))}
-                    </div>
-
-                    <button
-                      onClick={
-                        plan.name === "Enterprise"
-                          ? handleContactUs
-                          : handleGetStarted
-                      }
-                      className="w-full py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
-                    >
-                      {plan.name === "Enterprise"
-                        ? "Contact Us"
-                        : "Free 30-day Trial"}
-                    </button>
+                        <div className="text-white/60 text-xs mt-1">
+                          30% discount if billed yearly
+                        </div>
+                      </div>
+                    )}
                   </div>
-                ))}
+                  <div className="space-y-4 mb-6 flex-grow">
+                    {plan.features.map((f: any, idx: number) => (
+                      <div
+                        key={idx}
+                        className="flex justify-between text-sm text-white/80"
+                      >
+                        <span>{f.label}:</span>
+                        <span className="font-semibold text-white">
+                          {f.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    onClick={
+                      plan.monthlyPrice === 0
+                        ? handleContactUs
+                        : handleGetStarted
+                    }
+                    className="w-full py-3 rounded-full font-semibold bg-gradient-to-r from-brand-purple to-brand-coral text-white hover:shadow-2xl"
+                  >
+                    {plan.monthlyPrice === 0
+                      ? "Contact Us"
+                      : "Free 30-day Trial"}
+                  </button>
+                </div>
+              ))}
             </div>
           )}
 
-          {/* Pricing Table */}
+          {/* Compare Table */}
           <FuturisticCard className="p-8 mb-16">
             <h2 className="text-2xl font-bold text-gradient text-center mb-8">
               Compare Plans
@@ -464,41 +533,32 @@ const Pricing = () => {
             </div>
           </FuturisticCard>
 
-          {/* FAQ Section */}
+          {/* FAQ */}
           <FuturisticCard variant="neon" className="p-6">
-            <h2 className="text-xl font-bold text-gradient text-center mb-6">
+            <h2 className="text-xl font-bold text-center text-gradient mb-4">
               Frequently Asked Questions
             </h2>
-            <div className="max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="w-full space-y-2">
-                {faqs.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border border-white/20 rounded-lg overflow-hidden"
-                  >
-                    <AccordionTrigger className="px-4 py-2 text-left hover:bg-brand-purple/20 hover:text-brand-cream transition-all duration-300 text-sm font-semibold text-white [&[data-state=open]]:bg-brand-purple/30 [&[data-state=open]]:text-brand-cream">
-                      {faq.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="px-4 pb-2 text-white/80 bg-white/5 text-sm">
-                      <p>{faq.a}</p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+            <Accordion type="single" collapsible>
+              {faqs.map((f, i) => (
+                <AccordionItem key={i} value={`faq-${i}`}>
+                  <AccordionTrigger>{f.q}</AccordionTrigger>
+                  <AccordionContent>{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </FuturisticCard>
 
+          {/* CTA */}
           <div className="text-center mt-12">
             <h2 className="text-3xl font-bold text-gradient mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-white/80 mb-8">
+            <p className="text-white/80 mb-6">
               Join thousands of businesses already using Groflex
             </p>
             <button
               onClick={handleGetStarted}
-              className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300"
+              className="px-8 py-4 bg-gradient-to-r from-brand-purple to-brand-coral text-white rounded-full font-semibold hover:shadow-2xl"
             >
               Start Free Trial
             </button>

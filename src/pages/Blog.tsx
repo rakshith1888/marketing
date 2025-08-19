@@ -10,6 +10,9 @@ const Blog = () => {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPosts, setTotalPosts] = useState(0);
+  const postsPerPage = 10;
 
   const navigate = useNavigate();
 
@@ -17,24 +20,47 @@ const Blog = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
+
+        // Fetch posts with pagination
         const res = await axios.get(
-          "https://groflex.ai/wp-json/wp/v2/posts?per_page=10&_embed"
+          `https://groflex.ai/wp-json/wp/v2/posts?per_page=${postsPerPage}&page=${currentPage}&_embed`
         );
 
-        const categoryRes = await axios.get(
-          "https://groflex.ai/wp-json/wp/v2/categories?per_page=100"
-        );
+        // Get total posts from headers
+        const totalFromHeaders =
+          res.headers["x-wp-total"] || res.headers["X-WP-Total"];
+        setTotalPosts(parseInt(totalFromHeaders) || res.data.length);
 
-        const filteredCategories = categoryRes.data.filter(
-          (cat) =>
-            cat.name !== "Uncategorized" &&
-            cat.name !== "Blog Single" &&
-            cat.name !== "Blog"
-        );
+        // Fetch categories only on first load
+        if (currentPage === 1) {
+          const categoryRes = await axios.get(
+            "https://groflex.ai/wp-json/wp/v2/categories?per_page=100"
+          );
+
+          // Filter out admin categories and empty categories
+          const filteredCategories = categoryRes.data.filter(
+            (cat) =>
+              cat.name !== "Uncategorized" &&
+              cat.name !== "Blog Single" &&
+              cat.name !== "Blog" &&
+              cat.count > 0 // Only show categories that have posts
+          );
+
+          // Sort categories by post count (most posts first)
+          filteredCategories.sort((a, b) => b.count - a.count);
+
+          setCategories([
+            {
+              id: "All",
+              name: "All",
+              count: parseInt(totalFromHeaders) || res.data.length,
+            },
+            ...filteredCategories,
+          ]);
+        }
 
         setPosts(res.data);
         setFilteredPosts(res.data);
-        setCategories([{ id: "All", name: "All" }, ...filteredCategories]);
       } catch (err) {
         console.error("Error fetching posts or categories:", err);
       } finally {
@@ -43,19 +69,78 @@ const Blog = () => {
     };
 
     fetchData();
-  }, []);
+  }, [currentPage]);
 
-  const handleCategoryFilter = (category) => {
+  const handleCategoryFilter = async (category) => {
     setActiveCategory(category);
+    setCurrentPage(1); // Reset to first page when filtering
+    setIsLoading(true);
 
-    if (category === "All") {
-      setFilteredPosts(posts);
-    } else {
-      const categoryObj = categories.find((cat) => cat.name === category);
-      const filtered = posts.filter((post) =>
-        post.categories.includes(categoryObj.id)
-      );
-      setFilteredPosts(filtered);
+    try {
+      if (category === "All") {
+        // Fetch all posts for the first page with pagination
+        const res = await axios.get(
+          `https://groflex.ai/wp-json/wp/v2/posts?per_page=${postsPerPage}&page=1&_embed`
+        );
+        const totalFromHeaders =
+          res.headers["x-wp-total"] || res.headers["X-WP-Total"];
+        setTotalPosts(parseInt(totalFromHeaders) || res.data.length);
+        setPosts(res.data);
+        setFilteredPosts(res.data);
+      } else {
+        // For specific categories, fetch ALL posts in that category (no pagination)
+        const categoryObj = categories.find((cat) => cat.name === category);
+        if (categoryObj && categoryObj.id !== "All") {
+          const res = await axios.get(
+            `https://groflex.ai/wp-json/wp/v2/posts?per_page=100&categories=${categoryObj.id}&_embed`
+          );
+          // For categories, we show all posts so total equals the array length
+          setTotalPosts(res.data.length);
+          setPosts(res.data);
+          setFilteredPosts(res.data);
+        }
+      }
+    } catch (err) {
+      console.error("Error filtering posts:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handlePageChange = async (page) => {
+    if (page === currentPage) return;
+
+    setCurrentPage(page);
+    setIsLoading(true);
+
+    try {
+      let url = `https://groflex.ai/wp-json/wp/v2/posts?per_page=${postsPerPage}&page=${page}&_embed`;
+
+      // Add category filter if not "All"
+      if (activeCategory !== "All") {
+        const categoryObj = categories.find(
+          (cat) => cat.name === activeCategory
+        );
+        if (categoryObj && categoryObj.id !== "All") {
+          url += `&categories=${categoryObj.id}`;
+        }
+      }
+
+      const res = await axios.get(url);
+
+      // Update total posts count from headers for the current filter
+      const totalFromHeaders =
+        res.headers["x-wp-total"] || res.headers["X-WP-Total"];
+      if (totalFromHeaders) {
+        setTotalPosts(parseInt(totalFromHeaders));
+      }
+
+      setPosts(res.data);
+      setFilteredPosts(res.data);
+    } catch (err) {
+      console.error("Error fetching page:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,6 +162,47 @@ const Blog = () => {
 
   const getAuthorName = (post) => {
     return post._embedded?.author?.[0]?.name || "Admin";
+  };
+
+  // Calculate pagination info
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+  const startPost = (currentPage - 1) * postsPerPage + 1;
+  const endPost = Math.min(currentPage * postsPerPage, totalPosts);
+
+  // Generate page numbers for pagination
+  const getPageNumbers = () => {
+    const pages = [];
+    const maxVisible = 5;
+
+    if (totalPages <= maxVisible) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= 3) {
+        for (let i = 1; i <= 4; i++) {
+          pages.push(i);
+        }
+        pages.push("...");
+        pages.push(totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1);
+        pages.push("...");
+        for (let i = totalPages - 3; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        pages.push(1);
+        pages.push("...");
+        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+          pages.push(i);
+        }
+        pages.push("...");
+        pages.push(totalPages);
+      }
+    }
+
+    return pages;
   };
 
   return (
@@ -105,34 +231,55 @@ const Blog = () => {
             </div>
           ) : (
             <>
-              {/* Category Filter */}
-              <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {/* Category Filter - Improved Mobile Layout */}
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-2">
                 {categories.map((category) => (
                   <button
                     key={category.id}
                     onClick={() => handleCategoryFilter(category.name)}
-                    className={`px-6 py-2 rounded-full border ${
+                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full border whitespace-nowrap ${
                       activeCategory === category.name
-                        ? "bg-brand-purple text-white"
+                        ? "bg-brand-purple text-white border-brand-purple"
                         : "border-brand-purple/50 text-white/80 hover:bg-brand-purple/20"
                     } transition-all duration-300`}
                   >
-                    {category.name}
+                    {category.name}{" "}
+                    {category.count !== undefined && `(${category.count})`}
                   </button>
                 ))}
               </div>
 
-              {/* Blog Cards */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {/* Posts Info */}
+              {activeCategory === "All" && (
+                <div className="text-center mb-8">
+                  <p className="text-white/60">
+                    Showing {startPost}-{endPost} of {totalPosts} posts
+                  </p>
+                </div>
+              )}
+
+              {activeCategory !== "All" && (
+                <div className="text-center mb-8">
+                  <p className="text-white/60">
+                    Showing all {totalPosts} posts in "{activeCategory}"
+                  </p>
+                </div>
+              )}
+
+              {/* Blog Cards - Improved Mobile Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
                 {filteredPosts.map((post, index) => {
-                  const isFirst = index === 0 && activeCategory === "All";
+                  const isFirst =
+                    index === 0 &&
+                    currentPage === 1 &&
+                    activeCategory === "All";
 
                   return (
                     <FuturisticCard
                       key={post.id}
                       variant={isFirst ? "neon" : "default"}
                       className={`p-0 transition-all duration-300 cursor-pointer ${
-                        isFirst ? "md:col-span-2 lg:col-span-3" : ""
+                        isFirst ? "sm:col-span-2 lg:col-span-3" : ""
                       }`}
                     >
                       <div
@@ -141,17 +288,17 @@ const Blog = () => {
                         }
                         className="flex flex-col h-full"
                       >
-                        {/* Image on top */}
+                        {/* Image on top - Responsive heights */}
                         <img
                           src={getPostImage(post)}
                           alt="Post"
-                          className={`w-full ${
-                            isFirst ? "h-96" : "h-56"
-                          } object-cover rounded-t-xl`}
+                          className={`w-full object-cover rounded-t-xl ${
+                            isFirst ? "h-48 sm:h-64 lg:h-96" : "h-48 sm:h-56"
+                          }`}
                         />
 
                         {/* Post Body */}
-                        <div className="p-6 flex flex-col justify-between flex-1">
+                        <div className="p-4 sm:p-6 flex flex-col justify-between flex-1">
                           <div>
                             <div className="flex items-center space-x-4 mb-3">
                               <span className="text-white/60 text-sm">
@@ -159,13 +306,17 @@ const Blog = () => {
                               </span>
                             </div>
                             <h3
-                              className="text-xl font-bold text-gradient mb-3"
+                              className={`font-bold text-gradient mb-3 ${
+                                isFirst
+                                  ? "text-xl sm:text-2xl"
+                                  : "text-lg sm:text-xl"
+                              }`}
                               dangerouslySetInnerHTML={{
                                 __html: post.title.rendered,
                               }}
                             />
                             <p
-                              className="text-white/70 mb-4 text-sm"
+                              className="text-white/70 mb-4 text-sm sm:text-base line-clamp-3"
                               dangerouslySetInnerHTML={{
                                 __html: post.excerpt.rendered,
                               }}
@@ -183,7 +334,7 @@ const Blog = () => {
                                   state: { post },
                                 });
                               }}
-                              className="text-brand-purple hover:text-brand-coral transition-colors text-sm font-semibold cursor-pointer"
+                              className="text-brand-purple hover:text-brand-coral transition-colors text-sm font-semibold cursor-pointer whitespace-nowrap"
                             >
                               Read More →
                             </span>
@@ -195,14 +346,69 @@ const Blog = () => {
                 })}
               </div>
 
+              {/* Pagination - Only show for "All" section */}
+              {totalPages > 1 && activeCategory === "All" && (
+                <div className="flex flex-col items-center space-y-4 mb-16">
+                  <div className="flex flex-wrap justify-center items-center gap-2">
+                    {/* Previous Button */}
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="px-3 py-2 rounded-lg border border-brand-purple/50 text-white/80 hover:bg-brand-purple/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                    >
+                      ← Previous
+                    </button>
+
+                    {/* Page Numbers */}
+                    {getPageNumbers().map((page, index) => (
+                      <button
+                        key={index}
+                        onClick={() =>
+                          typeof page === "number"
+                            ? handlePageChange(page)
+                            : null
+                        }
+                        disabled={page === "..." || page === currentPage}
+                        className={`px-3 py-2 rounded-lg transition-all duration-300 ${
+                          page === currentPage
+                            ? "bg-brand-purple text-white border border-brand-purple"
+                            : page === "..."
+                            ? "text-white/60 cursor-default"
+                            : "border border-brand-purple/50 text-white/80 hover:bg-brand-purple/20"
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+
+                    {/* Next Button */}
+                    <button
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="px-3 py-2 rounded-lg border border-brand-purple/50 text-white/80 hover:bg-brand-purple/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                    >
+                      Next →
+                    </button>
+                  </div>
+
+                  {/* Page Info */}
+                  <p className="text-white/60 text-sm">
+                    Page {currentPage} of {totalPages}
+                  </p>
+                </div>
+              )}
+
               {/* Newsletter Signup */}
-              <FuturisticCard variant="neon" className="p-12 text-center">
-                <h2 className="text-3xl font-bold text-gradient mb-4">
+              <FuturisticCard
+                variant="neon"
+                className="p-8 sm:p-12 text-center"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-gradient mb-4">
                   Ready to see Groflex in action
                 </h2>
                 <button
                   onClick={handleGetStarted}
-                  className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-brand-purple to-brand-coral text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-xl transition-all duration-300"
                 >
                   Start Free Trial
                 </button>
