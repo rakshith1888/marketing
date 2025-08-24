@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"; //nAdded Navigate
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
@@ -84,9 +84,13 @@ const App = () => (
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/imprint" element={<Imprint />} />
             <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
 
-            {/* 404 page */}
+            {/* Blog post routes - Handle both URL patterns */}
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            {/* Handle WordPress permalinks that don't include /blog/ prefix */}
+            <Route path="/:slug" element={<BlogPostPage />} />
+
+            {/* 404 page - This should be last */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

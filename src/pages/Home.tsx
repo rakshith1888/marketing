@@ -359,7 +359,7 @@ const Home = () => {
     {
       question: "Is our data secure with Groflex?",
       answer:
-        "Yes, we use enterprise-grade security with SOC 2 compliance, end-to-end encryption, and never store your raw data.",
+        "Yes, we use enterprise-grade security with SOC 2 compliance, end-to-end encryption.",
     },
     {
       question: "How quickly can we see results?",
@@ -554,7 +554,7 @@ const Home = () => {
             {[
               {
                 stat: "86%",
-                thrust: "Siloed Systems",
+                issue: "Siloed Systems",
                 description: "say their systems are too fragmented",
                 quote: '"We have data everywhere but insights nowhere"',
               },

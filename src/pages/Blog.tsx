@@ -283,9 +283,21 @@ const Blog = () => {
                       }`}
                     >
                       <div
-                        onClick={() =>
-                          navigate(`/blog/${post.slug}`, { state: { post } })
-                        }
+                        onClick={() => {
+                          // Use the full WordPress permalink structure if it exists
+                          if (post.link) {
+                            // Extract the slug from the WordPress link
+                            const wpUrl = new URL(post.link);
+                            const wpSlug = wpUrl.pathname.replace(
+                              /^\/|\/$/g,
+                              ""
+                            ); // Remove leading/trailing slashes
+                            navigate(`/${wpSlug}`, { state: { post } });
+                          } else {
+                            // Fallback to the original /blog/:slug structure
+                            navigate(`/blog/${post.slug}`, { state: { post } });
+                          }
+                        }}
                         className="flex flex-col h-full"
                       >
                         {/* Image on top - Responsive heights */}
@@ -330,9 +342,18 @@ const Blog = () => {
                             <span
                               onClick={(e) => {
                                 e.stopPropagation();
-                                navigate(`/blog/${post.slug}`, {
-                                  state: { post },
-                                });
+                                if (post.link) {
+                                  const wpUrl = new URL(post.link);
+                                  const wpSlug = wpUrl.pathname.replace(
+                                    /^\/|\/$/g,
+                                    ""
+                                  );
+                                  navigate(`/${wpSlug}`, { state: { post } });
+                                } else {
+                                  navigate(`/blog/${post.slug}`, {
+                                    state: { post },
+                                  });
+                                }
                               }}
                               className="text-brand-purple hover:text-brand-coral transition-colors text-sm font-semibold cursor-pointer whitespace-nowrap"
                             >

@@ -282,7 +282,7 @@ const Pricing = () => {
     },
     {
       q: "Do you offer discounts for annual subscriptions?",
-      a: "Yes, we offer a 20% discount when you choose our yearly billing option. This applies to all plans.",
+      a: "Yes, we offer a 30% discount when you choose our yearly billing option. This applies to all plans.",
     },
     {
       q: "Is customer support included in all plans?",
