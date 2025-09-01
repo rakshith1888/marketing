@@ -193,6 +193,14 @@ const Navigation = () => {
             >
               Contact Us
             </Link>
+            <a
+              href="https://app.groflex.ai/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
+            >
+              Login
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -211,6 +219,14 @@ const Navigation = () => {
             >
               Contact Us
             </Link>
+            <a
+              href="https://app.groflex.ai/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-xs sm:text-sm whitespace-nowrap"
+            >
+              Login
+            </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white/80 hover:text-white transition-colors p-1"
