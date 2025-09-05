@@ -9,14 +9,18 @@ const Navigation = () => {
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Product", path: "/product" }, // ✅ Changed from "Products" to "Product"
-    { name: "Solutions", path: "/solutions", hasDropdown: true },
-    { name: "About", path: "/about" },
-    { name: "Blog", path: "/blog" },
-    { name: "Pricing", path: "/pricing" },
-  ];
+  // Exclude /FTF from navigation unless on /FTF path
+  const navItems =
+    location.pathname === "/FTF" || location.pathname === "/ftf"
+      ? []
+      : [
+          { name: "Home", path: "/" },
+          { name: "Product", path: "/product" },
+          { name: "Solutions", path: "/solutions", hasDropdown: true },
+          { name: "About", path: "/about" },
+          { name: "Blog", path: "/blog" },
+          { name: "Pricing", path: "/pricing" },
+        ];
 
   const solutionsDropdownItems = {
     Industries: [
@@ -197,7 +201,8 @@ const Navigation = () => {
               href="https://app.groflex.ai/auth/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
+              // className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-4 py-2 lg:px-6 lg:py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
+              className="text-white/80 text-lg font-semibold"
             >
               Login
             </a>
@@ -241,7 +246,7 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* ✅ Mobile Navigation */}
+        {/* Mobile Navigation */}
         <div
           className={`md:hidden overflow-y-auto transition-all duration-300 ease-in-out ${
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"

@@ -1,7 +1,10 @@
 import { Facebook, Linkedin, Youtube } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const isMobilePage = location.pathname === "/FTF" || location.pathname === "/ftf";
+
   const legalLinks = [
     { name: "Terms & Conditions", path: "/terms-and-conditions" },
     { name: "Privacy Policy", path: "/privacy-policy" },
@@ -19,12 +22,7 @@ const Footer = () => {
       name: "X (Twitter)",
       url: "https://x.com/grofleXai",
       icon: () => (
-        <svg
-          className="w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
         </svg>
       ),
@@ -41,6 +39,129 @@ const Footer = () => {
     },
   ];
 
+  if (isMobilePage) {
+    return <MobileFooter legalLinks={legalLinks} socialLinks={socialLinks} />;
+  }
+
+  return <DesktopFooter legalLinks={legalLinks} socialLinks={socialLinks} />;
+};
+
+// Mobile-optimized footer for /ftf route
+const MobileFooter = ({ legalLinks, socialLinks }) => {
+  return (
+    <footer className="bg-black border-t border-gradient-to-r from-brand-purple to-brand-coral py-14 px-6">
+      <div className="px-4 py-8">
+        {/* Address Locations */}
+        <div className="mb-8">
+          <h4 className="text-center text-lg font-semibold mb-4 text-slate-200">
+            Our Locations
+          </h4>
+          <div className="grid grid-cols-2 gap-3">
+            {/* Location 1 */}
+            <div className="bg-slate-700/50 rounded-xl border border-slate-600/30 p-4 text-center">
+              <h5 className="text-sm font-semibold text-slate-200 mb-1">USA</h5>
+              <p className="text-xs text-slate-300 leading-tight">
+                San Francisco
+                <br />
+                CA 94114
+              </p>
+            </div>
+
+            {/* Location 2 */}
+            <div className="bg-slate-700/50 rounded-xl border border-slate-600/30 p-4 text-center">
+              <h5 className="text-sm font-semibold text-slate-200 mb-1">
+                Asia
+              </h5>
+              <p className="text-xs text-slate-300 leading-tight">
+                India
+                <br />
+                Bengaluru 560068
+              </p>
+            </div>
+
+            {/* Location 3 */}
+            <div className="bg-slate-700/50 rounded-xl border border-slate-600/30 p-4 text-center">
+              <h5 className="text-sm font-semibold text-slate-200 mb-1">
+                Middle East
+              </h5>
+              <p className="text-xs text-slate-300 leading-tight">
+                Qatar
+                <br />
+                Doha
+              </p>
+            </div>
+
+            {/* Location 4 */}
+            <div className="bg-slate-700/50 rounded-xl border border-slate-600/30 p-4 text-center">
+              <h5 className="text-sm font-semibold text-slate-200 mb-1">
+                Europe
+              </h5>
+              <p className="text-xs text-slate-300 leading-tight">
+                Germany
+                <br />
+                Dusseldorf 40213
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Links - Large, Card-style */}
+        <div className="mb-8">
+          <h4 className="text-center text-lg font-semibold mb-4 text-slate-200">
+            Connect With Us
+          </h4>
+          <div className="grid grid-cols-2 gap-3">
+            {socialLinks.map((social, index) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-4 bg-slate-700/50 rounded-xl border border-slate-600/30 hover:bg-slate-600/50 transition-all duration-300 hover:scale-105"
+                >
+                  <IconComponent className="w-6 h-6 mr-3 text-slate-300" />
+                  <span className="text-sm font-medium text-slate-200">
+                    {social.name}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Quick Links - Compact Pills */}
+        <div className="mb-6">
+          <h4 className="text-center text-sm font-medium mb-4 text-slate-400 uppercase tracking-wide">
+            Quick Links
+          </h4>
+          <div className="flex flex-wrap justify-center gap-2">
+            {legalLinks.map((link, index) => (
+              <Link
+                key={index}
+                to={link.path}
+                className="px-3 py-2 bg-slate-700/30 rounded-full text-xs text-slate-300 hover:bg-slate-600/40 hover:text-white transition-colors duration-200 border border-slate-600/20"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Copyright - Minimal */}
+        <div className="text-center pt-4 border-t border-slate-700/50">
+          <p className="text-xs text-slate-400">
+            © 2025 GrofleX AI • All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+// Keep existing desktop footer design
+const DesktopFooter = ({ legalLinks, socialLinks }) => {
   return (
     <footer className="bg-black border-t border-gradient-to-r from-brand-purple to-brand-coral py-14 px-6">
       <div className="max-w-7xl mx-auto">
@@ -58,9 +179,7 @@ const Footer = () => {
                 <p className="font-semibold text-foreground/80 mb-2">
                   Headquarters
                 </p>
-                <p className="font-semibold text-foreground/80 mb-1">
-                  USA
-                </p>
+                <p className="font-semibold text-foreground/80 mb-1">USA</p>
                 <p>2261 Market Street STE 5943</p>
                 <p>San Francisco, CA, USA 94114</p>
               </div>
