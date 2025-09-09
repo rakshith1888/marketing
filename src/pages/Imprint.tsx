@@ -42,7 +42,7 @@ const Imprint = () => {
                     <h4 className="text-lg font-medium text-white mb-2">Represented by:</h4>
                     <div className="ml-4">
                       <p>Amit Mundra, Founder & CEO</p>
-                      <p>Greg Saint James, Cofounder & CMO</p>
+                      <p>Eric Berkman, Cofounder & CMO</p>
                     </div>
                   </div>
 

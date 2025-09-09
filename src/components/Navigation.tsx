@@ -9,18 +9,20 @@ const Navigation = () => {
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const isMobile = location.pathname.toLowerCase().startsWith("/ftf");
+  const logoPath = isMobile ? "/ftf" : "/";
+
   // Exclude /FTF from navigation unless on /FTF path
-  const navItems =
-    location.pathname === "/FTF" || location.pathname === "/ftf"
-      ? []
-      : [
-          { name: "Home", path: "/" },
-          { name: "Product", path: "/product" },
-          { name: "Solutions", path: "/solutions", hasDropdown: true },
-          { name: "About", path: "/about" },
-          { name: "Blog", path: "/blog" },
-          { name: "Pricing", path: "/pricing" },
-        ];
+  const navItems = isMobile
+    ? []
+    : [
+        { name: "Home", path: "/" },
+        { name: "Product", path: "/product" },
+        { name: "Solutions", path: "/solutions", hasDropdown: true },
+        { name: "About", path: "/about" },
+        { name: "Blog", path: "/blog" },
+        { name: "Pricing", path: "/pricing" },
+      ];
 
   const solutionsDropdownItems = {
     Industries: [
@@ -93,7 +95,7 @@ const Navigation = () => {
           {/* Left side */}
           <div className="flex items-center space-x-12">
             <Link
-              to="/"
+              to={logoPath}
               className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
             >
               <img
@@ -228,7 +230,7 @@ const Navigation = () => {
               href="https://app.groflex.ai/auth/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-xs sm:text-sm whitespace-nowrap"
+              // className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-xs sm:text-sm whitespace-nowrap"
             >
               Login
             </a>

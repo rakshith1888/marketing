@@ -1,13 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Navigate,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
@@ -42,55 +36,6 @@ import BImanagers from "./pages/BImanagers";
 
 const queryClient = new QueryClient();
 
-// Component to conditionally render based on path
-const AppContent = () => {
-  const location = useLocation();
-
-  // Render only HomeMobile for /FTF route
-  if (location.pathname === "/FTF" || location.pathname === "/ftf") {
-    return <HomeMobile />;
-  }
-
-  // Render full site for all other routes
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/product" element={<ProductsPage />} />
-      <Route path="/products" element={<Navigate to="/product" replace />} />
-      <Route path="/solutions" element={<Solutions />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/pricing" element={<Pricing />} />
-      <Route path="/manufacturing" element={<Manufacturing />} />
-      <Route path="/retail" element={<Retail />} />
-      <Route path="/financial-services" element={<FinancialServices />} />
-      <Route path="/healthcare" element={<Healthcare />} />
-      <Route path="/finance" element={<Finance />} />
-      <Route path="/e-commerce" element={<Ecommerce />} />
-      <Route path="/marketing" element={<Marketing />} />
-      <Route path="/sales" element={<Sales />} />
-      <Route path="/operations" element={<Operations />} />
-      <Route path="/human-resources" element={<HumanResources />} />
-      <Route
-        path="/finance-and-accounting"
-        element={<FinanceandAccounting />}
-      />
-      <Route path="/it" element={<It />} />
-      <Route path="/business-leaders" element={<BusinessLeaders />} />
-      <Route path="/data-analysts" element={<DataAnalysts />} />
-      <Route path="/bi-managers" element={<BImanagers />} />
-      <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/cookie-policy" element={<CookiePolicy />} />
-      <Route path="/imprint" element={<Imprint />} />
-      <Route path="/ContactUs" element={<ContactUs />} />
-      <Route path="/blog/:slug" element={<BlogPostPage />} />
-      <Route path="/:slug" element={<BlogPostPage />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-};
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
@@ -98,7 +43,59 @@ const App = () => (
         <Toaster />
         <BrowserRouter>
           <ScrollToTop />
-          <AppContent />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/product" element={<ProductsPage />} />
+            <Route
+              path="/products"
+              element={<Navigate to="/product" replace />}
+            />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/manufacturing" element={<Manufacturing />} />
+            <Route path="/retail" element={<Retail />} />
+            <Route path="/financial-services" element={<FinancialServices />} />
+            <Route path="/healthcare" element={<Healthcare />} />
+            <Route path="/finance" element={<Finance />} />
+            <Route path="/e-commerce" element={<Ecommerce />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/sales" element={<Sales />} />
+            <Route path="/operations" element={<Operations />} />
+            <Route path="/human-resources" element={<HumanResources />} />
+            <Route
+              path="/finance-and-accounting"
+              element={<FinanceandAccounting />}
+            />
+            <Route path="/it" element={<It />} />
+            <Route path="/business-leaders" element={<BusinessLeaders />} />
+            <Route path="/data-analysts" element={<DataAnalysts />} />
+            <Route path="/bi-managers" element={<BImanagers />} />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditions />}
+            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/imprint" element={<Imprint />} />
+            <Route path="/Contactus" element={<ContactUs />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/:slug" element={<BlogPostPage />} />
+
+            {/* Mobile routes */}
+            <Route path="/ftf" element={<HomeMobile />} />
+            <Route path="/FTF" element={<HomeMobile />} />
+            <Route
+              path="/ftf/terms-and-conditions"
+              element={<TermsAndConditions />}
+            />
+            <Route path="/ftf/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/ftf/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/ftf/imprint" element={<Imprint />} />
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

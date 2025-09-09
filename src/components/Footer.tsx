@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const location = useLocation();
-  const isMobilePage = location.pathname === "/FTF" || location.pathname === "/ftf";
+  const isMobilePage = location.pathname.toLowerCase().startsWith("/ftf");
 
   const legalLinks = [
     { name: "Terms & Conditions", path: "/terms-and-conditions" },
@@ -140,7 +140,7 @@ const MobileFooter = ({ legalLinks, socialLinks }) => {
             {legalLinks.map((link, index) => (
               <Link
                 key={index}
-                to={link.path}
+                to={`/ftf${link.path}`}
                 className="px-3 py-2 bg-slate-700/30 rounded-full text-xs text-slate-300 hover:bg-slate-600/40 hover:text-white transition-colors duration-200 border border-slate-600/20"
               >
                 {link.name}
@@ -249,17 +249,6 @@ const DesktopFooter = ({ legalLinks, socialLinks }) => {
             <p>Tech Hub K67, Kasernenstraße 67, 40213 Düsseldorf, Germany.</p>
           </div>
         </div>
-
-        {/* Third Row: Google Map */}
-        {/* <div className="w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg border border-brand-purple/30">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2652.268544034615!2d-122.43459047315334!3d37.76433252849883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7f9548ed7e8b%3A0xa850a0737979da5e!2sgroflexerp.com!5e0!3m2!1sen!2sin!4v1753876291989!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            loading="lazy"
-            style={{ border: 0 }}
-          ></iframe>
-        </div> */}
       </div>
 
       {/* Bottom Divider */}

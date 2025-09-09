@@ -1,84 +1,117 @@
-import Layout from "../components/Layout";
-import FuturisticCard from "../components/FuturisticCard";
+import { useState, useEffect, useRef } from "react";
 import {
+  ChevronDown,
   ArrowRight,
   Zap,
   Brain,
   Target,
-  Users,
-  TrendingUp,
-  Shield,
-  CheckCircle,
   MessageSquare,
   BarChart3,
   Database,
-  Cloud,
-  ChevronDown,
   Play,
   Pause,
   Briefcase,
   Presentation,
   ChartBar,
-  Mail,
-  Calendar,
-  Snowflake,
-  Youtube,
-  X,
-  Video,
-  Volume2,
-  VolumeX,
-  Volume1,
 } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Layout from "../components/Layout";
+import FuturisticCard from "../components/FuturisticCard";
 
-const Home = () => {
-  
-const partnershipLogos = [
-  "/lovable-uploads/YECTRAm.png",
-  "/lovable-uploads/K67m.png",
-  "/lovable-uploads/INSEADm.png",
-  "/lovable-uploads/INSEAD2m.png",
-  "/lovable-uploads/IESEm.png",
-  "/lovable-uploads/BLAUm.png",
-  "/lovable-uploads/logo_stationF.png",
-  "/lovable-uploads/logo_launchpad.png",
-  "/lovable-uploads/logo_microsoft_for_startups.png",
-  "/lovable-uploads/YECTRAm.png",
-  "/lovable-uploads/K67m.png",
-  "/lovable-uploads/INSEADm.png",
-  "/lovable-uploads/INSEAD2m.png",
-  "/lovable-uploads/IESEm.png",
-  "/lovable-uploads/BLAUm.png",
-  "/lovable-uploads/logo_stationF.png",
-  "/lovable-uploads/logo_launchpad.png",
-  "/lovable-uploads/logo_microsoft_for_startups.png",
-];
+const HomeMobile = () => {
+  const contactFormRef = useRef(null);
+
+  const handleJoinPilot = () => {
+    contactFormRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const partnershipLogos = [
+    "/lovable-uploads/YECTRAm.png",
+    "/lovable-uploads/K67m.png",
+    "/lovable-uploads/INSEADm.png",
+    "/lovable-uploads/INSEAD2m.png",
+    "/lovable-uploads/IESEm.png",
+    "/lovable-uploads/BLAUm.png",
+    "/lovable-uploads/logo_stationF.png",
+    "/lovable-uploads/logo_launchpad.png",
+    "/lovable-uploads/logo_microsoft_for_startups.png",
+    "/lovable-uploads/YECTRAm.png",
+    "/lovable-uploads/K67m.png",
+    "/lovable-uploads/INSEADm.png",
+    "/lovable-uploads/INSEAD2m.png",
+    "/lovable-uploads/IESEm.png",
+    "/lovable-uploads/BLAUm.png",
+    "/lovable-uploads/logo_stationF.png",
+    "/lovable-uploads/logo_launchpad.png",
+    "/lovable-uploads/logo_microsoft_for_startups.png",
+  ];
 
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 3000,
-    slidesToShow: 4,
+    speed: 5000,
+    slidesToShow: 2.5, // Show 2-3 logos at a time
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     pauseOnHover: false,
     arrows: false,
+    swipeToSlide: true,
+    touchMove: true,
+    variableWidth: true,
+    centerMode: true,
     responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          speed: 4000,
+          autoplaySpeed: 0,
+          centerMode: true,
+          variableWidth: true,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          speed: 4500,
+          autoplaySpeed: 0,
+          centerMode: true,
+          variableWidth: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.2,
+          slidesToScroll: 1,
+          speed: 5000,
+          autoplaySpeed: 0,
+          centerMode: true,
+          variableWidth: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+          speed: 5000,
+          autoplaySpeed: 0,
+          centerMode: true,
+          variableWidth: true,
+        },
+      },
     ],
   };
 
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [expandedFaq, setExpandedFaq] = useState(null);
   const [isPlayingHero, setIsPlayingHero] = useState(true);
   const [showHeroButton, setShowHeroButton] = useState(false);
   const [isPlayingDemo, setIsPlayingDemo] = useState(false);
@@ -88,20 +121,14 @@ const partnershipLogos = [
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [showSubtitles, setShowSubtitles] = useState(false);
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
-  const demoVideoRef = useRef<HTMLVideoElement>(null);
-  const demoSectionRef = useRef<HTMLDivElement>(null);
-  const heroButtonTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const demoButtonTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const heroVideoRef = useRef(null);
+  const demoVideoRef = useRef(null);
+  const demoSectionRef = useRef(null);
+  const heroButtonTimeoutRef = useRef(null);
+  const demoButtonTimeoutRef = useRef(null);
 
   const handleGetStarted = () => {
     window.open("https://app.groflex.ai", "_blank");
-  };
-
-  const navigate = useNavigate();
-
-  const handleBookDemo = () => {
-    navigate("/Contactus");
   };
 
   const toggleHeroVideoPlay = () => {
@@ -164,7 +191,7 @@ const partnershipLogos = [
     }
   };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     if (demoVideoRef.current) {
       demoVideoRef.current.volume = newVolume;
@@ -204,7 +231,7 @@ const partnershipLogos = [
     }
   };
 
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSeek = (e) => {
     const time = parseFloat(e.target.value);
     if (demoVideoRef.current) {
       demoVideoRef.current.currentTime = time;
@@ -264,35 +291,35 @@ const partnershipLogos = [
 
   const features = [
     {
-      icon: <BarChart3 className="w-8 h-8" />,
+      icon: <BarChart3 className="w-6 h-6" />,
       title: "Predictive Forecasts",
       description:
         "Built-in ML models forecast risks and opportunities before they happen",
     },
     {
-      icon: <MessageSquare className="w-8 h-8" />,
+      icon: <MessageSquare className="w-6 h-6" />,
       title: "Natural Language Q&A",
       description:
         "Ask business questions in plain English, get context-aware recommendations",
     },
     {
-      icon: <Target className="w-8 h-8" />,
+      icon: <Target className="w-6 h-6" />,
       title: "Prescriptive Next Steps",
       description: "Suggested next-best actions with decision framing tools",
     },
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Zap className="w-6 h-6" />,
       title: "Real-Time Sync",
       description:
         "Live data updates ensure your decisions are based on current information",
     },
     {
-      icon: <Database className="w-8 h-8" />,
+      icon: <Database className="w-6 h-6" />,
       title: "Multi-Cloud Data Engine",
       description: "Connect and analyze data from any source, anywhere",
     },
     {
-      icon: <Brain className="w-8 h-8" />,
+      icon: <Brain className="w-6 h-6" />,
       title: "AI for Everyone",
       description:
         "Natural language interface works across all roles from executives to analysts",
@@ -304,17 +331,17 @@ const partnershipLogos = [
       title: "Executives",
       description:
         "Align the organization around what matters and act before issues escalate",
-      icon: <Briefcase className="w-12 h-12" />,
+      icon: <Briefcase className="w-10 h-10" />,
     },
     {
       title: "BI Managers",
       description: "Deliver recommendations not just charts",
-      icon: <Presentation className="w-12 h-12" />,
+      icon: <Presentation className="w-10 h-10" />,
     },
     {
       title: "Analysts",
       description: "Automate insight delivery and focus on high value work",
-      icon: <ChartBar className="w-12 h-12" />,
+      icon: <ChartBar className="w-10 h-10" />,
     },
   ];
 
@@ -344,11 +371,11 @@ const partnershipLogos = [
   const integrations = [
     { name: "Google", logo: "/lovable-uploads/google.png" },
     { name: "Salesforce", logo: "/lovable-uploads/salesforce.png" },
-    { name: "{Postgresql}", logo: "/lovable-uploads/postgresql.png" },
+    { name: "Postgresql", logo: "/lovable-uploads/postgresql.png" },
     { name: "Looker", logo: "/lovable-uploads/looker.png" },
     { name: "Microsoft", logo: "/lovable-uploads/microsoft.png" },
     { name: "AWS", logo: "/lovable-uploads/aws.png" },
-    { name: "MongoDB ", logo: "/lovable-uploads/MongoDB.png" },
+    { name: "MongoDB", logo: "/lovable-uploads/MongoDB.png" },
     { name: "Tableau", logo: "/lovable-uploads/tableau.png" },
   ];
 
@@ -385,91 +412,57 @@ const partnershipLogos = [
     },
   ];
 
-  const toggleFaq = (index: number) => {
+  const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
 
-  const connectApps = [
-    { name: "Teams", icon: <Users className="w-8 h-8" /> },
-    { name: "Gmail", icon: <Mail className="w-8 h-8" /> },
-    { name: "Snowflake", icon: <Database className="w-8 h-8" /> },
-  ];
-
-  const connectedPlatforms = [
-    { name: "Teams", icon: <Users className="w-12 h-12" /> },
-    { name: "Snowflake", icon: <Snowflake className="w-12 h-12" /> },
-    { name: "Google Meet", icon: <Video className="w-12 h-12" /> },
-    { name: "YouTube", icon: <Youtube className="w-12 h-12" /> },
-    { name: "X", icon: <X className="w-12 h-12" /> },
-  ];
-
   return (
     <Layout>
-      {/* 1. HERO + VIDEO SECTION - SIDE BY SIDE LAYOUT */}
-      <div className="relative overflow-hidden cyber-grid">
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-center h-14 sm:h-16">
+            <div className="flex items-center">
+              <img
+                style={{ height: "36px", width: "115px" }}
+                src="/lovable-uploads/headerlogo.png"
+                alt="Groflex Logo"
+                className="h-5 w-auto sm:h-6 md:h-7 lg:h-8"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="relative overflow-hidden cyber-grid pt-0">
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-gradient-purple rounded-full blur-2xl opacity-20 animate-float sm:w-96 sm:h-96"></div>
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float"
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-coral rounded-full blur-2xl opacity-20 animate-float sm:w-96 sm:h-96"
           style={{ animationDelay: "3s" }}
         ></div>
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-purple rounded-full blur-3xl opacity-20 animate-float"></div>
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-gradient-purple rounded-full blur-2xl opacity-20 animate-float sm:w-96 sm:h-96"></div>
         <div
-          className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-coral rounded-full blur-3xl opacity-20 animate-float"
+          className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-coral rounded-full blur-2xl opacity-20 animate-float sm:w-96 sm:h-96"
           style={{ animationDelay: "2s" }}
         ></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Side by Side Content */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center py-16 lg:py-24">
-            {/* Left Side - Hero Content */}
-            <div className="text-left space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+          <div className="flex flex-col gap-3 py-8 sm:py-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-24">
+            <div className="text-center lg:text-left space-y-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-gradient">The Business OS </span>
-                <br />
-                <span className="text-white"> for Decisive Growth</span>
+                <span className="text-white">for Decisive Growth</span>
               </h1>
-
-              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl">
-                Predict what’s coming and turn insight into action. Groflex
+              <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Predict what’s coming and turn insight into action.
                 <br />
-                Connects your data and systems to power smarter decisions.
+                Groflex connects your data and systems to power smarter
+                decisions.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button
-                  onClick={handleGetStarted}
-                  className="bg-gradient-brand text-black font-semibold px-8 py-4 text-lg rounded-full hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
-                >
-                  Start Free Trial
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <Link to="/products">
-                  <button className="bg-gradient-purple text-white font-semibold px-8 py-4 text-lg rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300 w-full">
-                    See How It Works
-                  </button>
-                </Link>
-              </div>
-
-              {/* badge */}
-              <div>
-                <a
-                  href="https://www.f6s.com/groflex-technology1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/lovable-uploads/rank2.png"
-                    alt="F65 Top Company Badge"
-                    className="w-1/2 mr-auto mt-6 bg-gradient-to-r from-brand-purple/30 to-brand-coral/30 p-2 rounded-xl shadow-xl backdrop-blur-sm"
-                  />
-                </a>
-              </div>
             </div>
-
-            {/* Right Side - Hero Video */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-lg lg:max-w-xl h-[430px] relative">
+            <div className="flex justify-center">
+              <div className="w-full max-w-md sm:max-w-lg h-64 sm:h-80 lg:h-[430px] relative">
                 <FuturisticCard
                   variant="neon"
                   className="relative overflow-hidden shadow-2xl h-full"
@@ -490,42 +483,55 @@ const partnershipLogos = [
                   {showHeroButton && (
                     <button
                       onClick={toggleHeroVideoPlay}
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 text-black p-3 rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center opacity-0 animate-fadeIn"
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 text-black p-2 sm:p-3 rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center opacity-0 animate-fadeIn"
                       style={{ animationFillMode: "forwards" }}
                       aria-label={isPlayingHero ? "Pause video" : "Play video"}
                     >
                       {isPlayingHero ? (
-                        <Pause className="w-6 h-6" />
+                        <Pause className="w-5 h-5 sm:w-6 sm:h-6" />
                       ) : (
-                        <Play className="w-6 h-6" />
+                        <Play className="w-5 h-5 sm:w-6 sm:h-6" />
                       )}
                     </button>
                   )}
                 </FuturisticCard>
               </div>
             </div>
+            <div className="flex justify-center lg:justify-start">
+              <a
+                href="https://www.f6s.com/groflex-technology1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/lovable-uploads/rank2.png"
+                  alt="F65 Top Company Badge"
+                  className="w-3/4 sm:w-1/2 mx-auto lg:mr-auto mt- bg-gradient-to-r from-brand-purple/30 to-brand-coral/30 p-2 rounded-xl shadow-xl backdrop-blur-sm"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* 2. SEE GROFLEX IN ACTION SECTION */}
-      <section className="mb-24" ref={demoSectionRef}>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+      {/* Demo Section */}
+      <section className="mb-12 sm:mb-24 pt-5" ref={demoSectionRef}>
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="text-gradient">
-              See How the Business OS Powers Smarter Decisions{" "}
+              See How the Business OS Powers Smarter Decisions
             </span>
           </h2>
-          <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-16 max-w-xl sm:max-w-3xl mx-auto pt-4">
             Explore how Groflex helps leaders get ahead with insights that don’t
             just explain but drive execution
           </p>
         </div>
-        <FuturisticCard variant="neon" className="max-w-4xl mx-auto">
+        <FuturisticCard variant="neon" className="max-w-3xl mx-auto">
           <div className="aspect-video rounded-lg overflow-hidden relative">
             <video
               ref={demoVideoRef}
-              src="public/lovable-uploads/demo.mp4"
+              src="/lovable-uploads/demo.mp4"
               title="Groflex Demo Video"
               playsInline
               onClick={toggleDemoVideoPlay}
@@ -537,13 +543,13 @@ const partnershipLogos = [
             {showDemoButton && (
               <button
                 onClick={toggleDemoVideoPlay}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 text-black p-4 rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 text-black p-3 sm:p-4 rounded-full hover:bg-white/90 transition-all duration-300 flex items-center justify-center"
                 aria-label={isPlayingDemo ? "Pause video" : "Play video"}
               >
                 {isPlayingDemo ? (
-                  <Pause className="w-8 h-8" />
+                  <Pause className="w-6 h-6 sm:w-8 sm:h-8" />
                 ) : (
-                  <Play className="w-8 h-8" />
+                  <Play className="w-6 h-6 sm:w-8 sm:h-8" />
                 )}
               </button>
             )}
@@ -551,20 +557,17 @@ const partnershipLogos = [
         </FuturisticCard>
       </section>
 
-      {/* 3. PROBLEM SECTION */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      {/* Problem Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               <span className="text-gradient">
-                The Real Problem Isn’t Data.{" "}
+                The Real Problem Isn’t Data. It’s Disconnected Decisions
               </span>
-              <br />
-              <span className="text-white">It’s Disconnected Decisions</span>
             </h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 stat: "86%",
@@ -586,96 +589,88 @@ const partnershipLogos = [
               },
             ].map((item, index) => (
               <FuturisticCard key={index} variant="hologram">
-                <div className="text-6xl font-bold text-gradient mb-6">
+                <div className="text-5xl sm:text-6xl font-bold text-gradient mb-4 sm:mb-6">
                   {item.stat}
                 </div>
-                <h3 className="text-xl font-bold text-brand-purple mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-brand-purple mb-2">
                   {item.issue}
                 </h3>
-                <p className="text-white/70 mb-4">{item.description}</p>
-                <div className="border-l-4 border-brand-coral pl-4 italic text-white/70">
+                <p className="text-white/70 mb-4 text-sm sm:text-base">
+                  {item.description}
+                </p>
+                <div className="border-l-4 border-brand-coral pl-4 italic text-white/70 text-sm sm:text-base">
                   {item.quote}
                 </div>
               </FuturisticCard>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={() =>
-                window.open("https://app.groflex.ai/auth/login", "_blank")
-              }
-              className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300"
-            >
-              Free Demo
-            </button>
-          </div>
         </div>
       </section>
 
-      {/* 4. AUDIENCE NAVIGATION */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
+      {/* Audience Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Built for Everyone</span>
-              <br />
-              <span className="text-white">
-                Who Drives the Business Forward
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              <span className="text-gradient">
+                Built for Everyone Who Drives the Business Forward
               </span>
             </h2>
+            <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-16 max-w-xl sm:max-w-3xl mx-auto">
+              Whether you’re setting strategy or building reports Groflex gives
+              every team the clarity and tools to act in sync
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {audienceCards.map((card, index) => (
               <FuturisticCard
                 key={index}
                 variant="neon"
                 className="text-center"
               >
-                <div className="text-brand-purple mb-6 flex justify-center">
+                <div className="text-brand-purple mb-4 sm:mb-6 flex justify-center">
                   {card.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gradient mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gradient mb-4">
                   {card.title}
                 </h3>
-                <p className="text-white/80 mb-6">{card.description}</p>
+                <p className="text-white/80 mb-4 sm:mb-6 text-sm sm:text-base">
+                  {card.description}
+                </p>
               </FuturisticCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. WHAT GROFLEX DOES */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Concepts Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               <span className="text-gradient">
-                From Prediction to Execution
+                From Prediction to Execution{" "}
               </span>
-              <br />
               <span className="text-white">All in One OS</span>
             </h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                icon: <Brain className="w-12 h-12" />,
+                icon: <Brain className="w-10 h-10" />,
                 title: "Predictive Intelligence",
                 description: "AI models surface risks gaps and opportunities",
               },
               {
-                icon: <Target className="w-12 h-12" />,
+                icon: <Target className="w-10 h-10" />,
                 title: "Prescriptive Action Paths",
                 description: "Built in next best action playbooks",
               },
               {
-                icon: <MessageSquare className="w-12 h-12" />,
+                icon: <MessageSquare className="w-10 h-10" />,
                 title: "Execution Ready",
                 description:
-                  " AI Recommendations flow directly into your systems",
+                  "AI Recommendations flow directly into your systems",
               },
             ].map((concept, index) => (
               <FuturisticCard
@@ -683,76 +678,104 @@ const partnershipLogos = [
                 variant="hologram"
                 className="text-center"
               >
-                <div className="text-brand-purple mb-6 flex justify-center">
+                <div className="text-brand-purple mb-4 sm:mb-6 flex justify-center">
                   {concept.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gradient mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gradient mb-4">
                   {concept.title}
                 </h3>
-                <p className="text-white/80">{concept.description}</p>
+                <p className="text-white/80 text-sm sm:text-base">
+                  {concept.description}
+                </p>
               </FuturisticCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. FEATURE GRID */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-coral/5 via-transparent to-brand-purple/5">
+      {/* Features Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-coral/5 via-transparent to-brand-purple/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Everything You Need to Run</span>
-              <br />
-              <span className="text-white">
-                a Predictive Proactive Business
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              <span className="text-gradient">
+                Everything You Need to Run a Predictive Proactive Business
               </span>
             </h2>
-            <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
-              Keep content as is in this section. Just change the Headline.
-            </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <FuturisticCard key={index} variant="neon">
-                <div className="text-brand-purple mb-6">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gradient mb-4">
+                <div className="text-brand-purple mb-4 sm:mb-6">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-gradient mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-white/80">{feature.description}</p>
+                <p className="text-white/80 text-sm sm:text-base">
+                  {feature.description}
+                </p>
               </FuturisticCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 7. SOCIAL PROOF */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Trusted by Leaders</span>
-              <br />
-              <span className="text-white">Who Don’t Wait for Reports</span>
-            </h2>
-            <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
-              C-suite, business leaders, and analysts and operators rely on
-              Groflex to know what’s coming and act with confidence{" "}
+      {/* Pilot Form Section */}
+      <section ref={contactFormRef}>
+        <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">
+              Let&apos;s Talk
+            </h1>
+            <p className="text-white/80 text-lg">
+              Schedule a demo or reach out to learn how Groflex can help your
+              business thrive.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <FuturisticCard variant="neon" className="p-8 max-w-4xl mx-auto">
+            <div className="overflow-hidden rounded-xl shadow-lg w-full">
+              <iframe
+                src="https://sibforms.com/serve/MUIFAAKayAu5X2pGgP6oFM-sUgP1mZMYaQqiAVUS39zY8bDJNjnT1ArRNIzt21QdCoz3gdKbyiyvYP7q9VKclwSvNI-yKjNZGm_sSyJWbAg2298SfqQ1JWH5wI7Pmm6DJfS5_TFUdnGoiVflgwr2DCTcTD1dHxXX-qkpmxp_fEzVot7GqFH9-4hOFqkED-PokcoO7dlDhVulWHoy"
+                width="100%"
+                height="1350rem"
+                title="Schedule Demo Form"
+                className="w-full h-[1630px]"
+                style={{ border: "none", overflow: "hidden" }}
+              />
+            </div>
+          </FuturisticCard>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              <span className="text-gradient">Trusted by Leaders</span>
+              <h3 className="text-white">Who Don’t Wait for Reports</h3>
+            </h2>
+            <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-16 max-w-xl sm:max-w-3xl mx-auto">
+              C-suite, business leaders, and analysts and operators rely on
+              Groflex to know what’s coming and act with confidence
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <FuturisticCard key={index} variant="neon">
-                <div className="text-white/80 mb-6 italic">
+                <div className="text-white/80 mb-4 sm:mb-6 italic text-sm sm:text-base">
                   "{testimonial.quote}"
                 </div>
                 <div className="border-t border-white/10 pt-4">
-                  <div className="font-bold text-gradient">
+                  <div className="font-bold text-gradient text-sm sm:text-base">
                     {testimonial.author}
                   </div>
-                  <div className="text-white/70">{testimonial.role}</div>
-                  <div className="text-brand-purple text-sm">
+                  <div className="text-white/70 text-sm sm:text-base">
+                    {testimonial.role}
+                  </div>
+                  <div className="text-brand-purple text-xs sm:text-sm">
                     {testimonial.company}
                   </div>
                 </div>
@@ -762,56 +785,46 @@ const partnershipLogos = [
         </div>
       </section>
 
-      {/* 8. AI INTERFACE DEMO - CHATBOT SCREENSHOTS */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Interface Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">One Interface.</span>
-              <br />
-              <span className="text-white">Every Answer.</span>
-              <br />
-              <span className="text-white">Connected to Execution.</span>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              <h3 className="text-gradient">One Interface</h3>
+              <h3 className="text-gradient">Every Answer</h3>
+              <h3 className="text-white">Connected to Execution</h3>
             </h2>
-            <p className="text-xl text-white/80 mb-8">
+            <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8">
               AI interface with natural language ability to get actionable
-              recommendations, and automated execution.{" "}
+              recommendations, and automated execution
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Chatbot Screenshot 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             <FuturisticCard variant="hologram">
-              <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-4 relative">
-                {/* Groflex Icon in top right */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
+              <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-3 sm:p-4 relative">
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 bg-gradient-brand rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-xs">G</span>
                 </div>
-
-                {/* Chat header */}
-                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
-                  <div className="w-8 h-8 bg-brand-purple rounded-full flex items-center justify-center">
-                    <MessageSquare className="w-4 h-4 text-white" />
+                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b border-white/10">
+                  <div className="w-6 sm:w-8 h-6 sm:h-8 bg-brand-purple rounded-full flex items-center justify-center">
+                    <MessageSquare className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
                   </div>
-                  <span className="text-white font-semibold">
+                  <span className="text-white font-semibold text-sm sm:text-base">
                     Groflex AI Assistant
                   </span>
                   <div className="ml-auto w-2 h-2 bg-green-500 rounded-full"></div>
                 </div>
-
-                {/* Chat messages */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex justify-end">
-                    <div className="bg-brand-purple/20 border border-brand-purple/30 rounded-lg px-4 py-2 max-w-xs">
-                      <p className="text-white text-sm">
+                    <div className="bg-brand-purple/20 border border-brand-purple/30 rounded-lg px-3 sm:px-4 py-2 max-w-[80%] sm:max-w-xs">
+                      <p className="text-white text-xs sm:text-sm">
                         Why is our customer churn increasing?
                       </p>
                     </div>
                   </div>
-
                   <div className="flex justify-start">
-                    <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 max-w-xs">
-                      <p className="text-white/90 text-sm mb-2">
+                    <div className="bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 max-w-[80%] sm:max-w-xs">
+                      <p className="text-white/90 text-xs sm:text-sm mb-2">
                         Based on your data analysis, churn is up 23% due to:
                       </p>
                       <ul className="text-white/80 text-xs space-y-1">
@@ -824,39 +837,31 @@ const partnershipLogos = [
                 </div>
               </div>
             </FuturisticCard>
-
-            {/* Chatbot Screenshot 2 */}
             <FuturisticCard variant="hologram">
-              <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-4 relative">
-                {/* Groflex Icon in top right */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center">
+              <div className="bg-gradient-to-br from-black/90 to-gray-900/90 rounded-lg p-3 sm:p-4 relative">
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 bg-gradient-brand rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-xs">G</span>
                 </div>
-
-                {/* Chat header */}
-                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
-                  <div className="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center">
-                    <BarChart3 className="w-4 h-4 text-white" />
+                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b border-white/10">
+                  <div className="w-6 sm:w-8 h-6 sm:h-8 bg-brand-coral rounded-full flex items-center justify-center">
+                    <BarChart3 className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
                   </div>
-                  <span className="text-white font-semibold">
+                  <span className="text-white font-semibold text-sm sm:text-base">
                     Revenue Insights
                   </span>
                   <div className="ml-auto w-2 h-2 bg-green-500 rounded-full"></div>
                 </div>
-
-                {/* Chat messages */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex justify-end">
-                    <div className="bg-brand-coral/20 border border-brand-coral/30 rounded-lg px-4 py-2 max-w-xs">
-                      <p className="text-white text-sm">
+                    <div className="bg-brand-coral/20 border border-brand-coral/30 rounded-lg px-3 sm:px-4 py-2 max-w-[80%] sm:max-w-xs">
+                      <p className="text-white text-xs sm:text-sm">
                         What should we focus on this quarter?
                       </p>
                     </div>
                   </div>
-
                   <div className="flex justify-start">
-                    <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 max-w-xs">
-                      <p className="text-white/90 text-sm mb-2">
+                    <div className="bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 max-w-[80%] sm:max-w-xs">
+                      <p className="text-white/90 text-xs sm:text-sm mb-2">
                         Recommended priorities:
                       </p>
                       <div className="space-y-2">
@@ -877,98 +882,33 @@ const partnershipLogos = [
               </div>
             </FuturisticCard>
           </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={handleGetStarted}
-              className="bg-gradient-brand text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto"
-            >
-              <Play className="w-5 h-5" />
-              Try the Live Demo
-            </button>
-          </div>
         </div>
       </section>
 
-      {/* 9. FINAL CTA SECTION */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 cyber-grid opacity-30"></div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">
-              Ready to Run Your Business Smarter
-            </span>
-          </h2>
-          <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
-            Groflex gives every team a common brain from planning to execution
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-            <FuturisticCard variant="neon" className="text-center">
-              <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-xl font-bold text-gradient mb-4">
-                For Leaders
-              </h3>
-              <p className="text-white/80 mb-6">
-                Get strategic clarity
-                <br />
-                and predictive insights
-              </p>
-              <button
-                onClick={handleGetStarted}
-                className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300"
-              >
-                Start Free Trial
-              </button>
-            </FuturisticCard>
-
-            <FuturisticCard variant="neon" className="text-center">
-              <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-xl font-bold text-gradient mb-4">
-                For Teams
-              </h3>
-              <p className="text-white/80 mb-6">
-                Take immediate action with
-                <br />
-                execution ready recommendations
-              </p>
-              <button
-                onClick={handleBookDemo}
-                className="bg-gradient-brand text-black font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300"
-              >
-                Book a Demo
-              </button>
-            </FuturisticCard>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. TOOL INTEGRATIONS */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
+      {/* Integrations Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-brand-purple/5 via-transparent to-brand-coral/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Plug Groflex</span>
-              <br />
-              <span className="text-white">Into Your Stack in Minutes</span>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              <span className="text-gradient">Plug Groflex Into</span>
+              <h3 className="text-white">Your Stack in Minutes</h3>
             </h2>
-            <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-xl sm:max-w-3xl mx-auto">
               Groflex connects to Salesforce, Google, AWS and all the tools you
               already use
             </p>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8">
             {integrations.map((integration, index) => (
               <FuturisticCard
                 key={integration.name}
-                className="flex justify-center items-center p-4 bg-white/5 rounded-lg"
+                className="flex justify-center items-center p-3 sm:p-4 bg-white/5 rounded-lg"
               >
                 <img
-                  style={{ width: 100, height: 100 }}
+                  style={{ width: 80, height: 80 }}
                   src={integration.logo}
                   alt={integration.name}
-                  className="h-12 object-contain"
+                  className="h-10 sm:h-12 object-contain"
                 />
               </FuturisticCard>
             ))}
@@ -976,28 +916,49 @@ const partnershipLogos = [
         </div>
       </section>
 
-      {/* 11. PARTNERSHIPS SECTION */}
-      <section className="bg-black py-20 text-center w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+      {/* Partnerships Section */}
+      <section className="bg-black py-12 sm:py-20 text-center w-full">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="text-gradient">Partnerships</span>
           </h2>
+          <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-xl sm:max-w-3xl mx-auto">
+            We collaborate with global technology leaders to bring you the most
+            reliable, scalable, and cutting-edge solutions.
+          </p>
         </div>
-        <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
-          We collaborate with global technology leaders to bring you the most
-          reliable, scalable, and cutting-edge solutions.
-        </p>
-
-        <div className="mb-12 bg-gradient-purple w-full">
-          <div className="w-full">
+        <div className="mb-8 sm:mb-12 bg-gradient-purple w-full overflow-hidden">
+          <div
+            className="w-full"
+            style={
+              {
+                "--slick-slide-margin": "0 16px",
+                "--slick-list-padding": "0 10px",
+              } as React.CSSProperties
+            }
+          >
+            <style>
+              {`
+                .slick-slide {
+                  margin: var(--slick-slide-margin);
+                }
+                .slick-list {
+                  padding: var(--slick-list-padding);
+                }
+              `}
+            </style>
             <Slider {...sliderSettings}>
               {partnershipLogos.map((logo, idx) => (
-                <div key={idx} className="flex justify-center items-center p-4">
-                  <div className="w-40 h-36 flex justify-center items-center">
+                <div
+                  key={idx}
+                  className="flex justify-center items-center p-3 sm:p-4 focus:outline-none"
+                >
+                  <div className="w-24 sm:w-32 h-20 sm:h-28 mx-auto flex justify-center items-center bg-white/5 rounded-lg backdrop-blur-sm">
                     <img
                       src={logo}
                       alt={`Partner logo ${idx + 1}`}
-                      className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="max-h-16 sm:max-h-20 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      style={{ maxWidth: "90%" }}
                     />
                   </div>
                 </div>
@@ -1007,15 +968,14 @@ const partnershipLogos = [
         </div>
       </section>
 
-      {/* 12. FAQ SECTION */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* FAQs Section */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               <span className="text-gradient">Still Not Clear?</span>
             </h2>
           </div>
-
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <FuturisticCard key={index} variant="hologram">
@@ -1023,18 +983,20 @@ const partnershipLogos = [
                   onClick={() => toggleFaq(index)}
                   className="w-full text-left flex items-center justify-between"
                 >
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-base sm:text-lg font-semibold text-white">
                     {faq.question}
                   </h3>
                   <ChevronDown
-                    className={`w-5 h-5 text-brand-purple transition-transform ${
+                    className={`w-4 sm:w-5 h-4 sm:h-5 text-brand-purple transition-transform ${
                       expandedFaq === index ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {expandedFaq === index && (
-                  <div className="mt-4 pt-4 border-t border-white/10">
-                    <p className="text-white/80">{faq.answer}</p>
+                  <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/10">
+                    <p className="text-white/80 text-sm sm:text-base">
+                      {faq.answer}
+                    </p>
                   </div>
                 )}
               </FuturisticCard>
@@ -1042,8 +1004,33 @@ const partnershipLogos = [
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <div className="text-center py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-gradient mb-6">
+          Ready to See Groflex in Action?
+        </h2>
+        <p className="text-white/80 mb-8 text-lg">
+          Discover how our AI-powered platform transforms data into decisive
+          action
+        </p>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <button
+            onClick={handleJoinPilot}
+            className="bg-gradient-purple text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-brand-purple/25 transition-all duration-300"
+          >
+            Join Pilot
+          </button>
+          <button
+            onClick={handleGetStarted}
+            className="bg-gradient-to-r from-brand-purple to-brand-coral text-black font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300"
+          >
+            Start Free Trial
+          </button>
+        </div>
+      </div>
     </Layout>
   );
 };
 
-export default Home;
+export default HomeMobile;
