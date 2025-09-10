@@ -513,7 +513,9 @@ const partnershipLogos = [
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-gradient">
-              See How the Business OS Powers Smarter Decisions{" "}
+              See How the Business OS
+              <br />
+              Powers Smarter Decisions
             </span>
           </h2>
           <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
@@ -707,9 +709,6 @@ const partnershipLogos = [
                 a Predictive Proactive Business
               </span>
             </h2>
-            <p className="text-xl text-white/80 text-center mb-16 max-w-3xl mx-auto">
-              Keep content as is in this section. Just change the Headline.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
