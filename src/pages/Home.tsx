@@ -431,9 +431,10 @@ const partnershipLogos = [
               </h1>
 
               <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl">
-                Predict what’s coming and turn insight into action. Groflex
+                Predict what’s coming and turn insight into action.
                 <br />
-                Connects your data and systems to power smarter decisions.
+                Groflex connects your data and systems to power smarter
+                decisions.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
